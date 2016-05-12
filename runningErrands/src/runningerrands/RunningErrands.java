@@ -21,8 +21,8 @@ public class RunningErrands {
         Player playerChar = new Player();
         
         
-        playerChar.setName("Aaron");
-        playerChar.setAge(12);
+        playerChar.setName("John");
+        playerChar.setAge(17);
         playerChar.setTimePlayed(24);
         
         String playerInfo = playerChar.toString();
