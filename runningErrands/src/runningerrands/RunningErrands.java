@@ -21,7 +21,7 @@ public class RunningErrands {
         Player playerChar = new Player();
         
         
-        playerChar.setName("John");
+        playerChar.setName("Kirk Brown");
         playerChar.setAge(17);
         playerChar.setTimePlayed(24);
         
