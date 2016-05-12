@@ -22,7 +22,7 @@ public class RunningErrands {
         
         
         playerChar.setName("Aaron");
-        playerChar.setAge(19);
+        playerChar.setAge(12);
         playerChar.setTimePlayed(24);
         
         String playerInfo = playerChar.toString();
