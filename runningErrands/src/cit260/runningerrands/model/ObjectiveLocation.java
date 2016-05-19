@@ -19,11 +19,19 @@ public class ObjectiveLocation implements Serializable{
     private boolean objectiveMet;
     private boolean objectiveBlock;
     private String objectiveConditions;
-
+    private String objectivePayout;
+            
     public ObjectiveLocation() {
     }
 
-    
+    public String getObjectivePayout() {
+        return objectivePayout;
+    }
+
+    public void setObjectivePayout(String objectivePayout) {
+        this.objectivePayout = objectivePayout;
+    }
+   
     
     public String getObjectiveName() {
         return objectiveName;
