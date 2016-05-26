@@ -103,22 +103,22 @@ public class InvestmentControlTest {
      */
     @Test
     public void testCalculateMessage() {
-        System.out.println("calculateMessage Test 1");
+        System.out.println("calculateInvestReturnMessage Test 1");
         int investmentReturn = 5000;
         InvestmentControl instance = new InvestmentControl();
         String expResult = "Congratulations! You earned 5000!";
-        String result = instance.calculateMessage(investmentReturn);
+        String result = instance.calculateInvestReturnMessage(investmentReturn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     @Test
     public void testCalculateMessage2() {
-        System.out.println("calculateMessage Test 2");
+        System.out.println("calculateInvestReturnMessage Test 2");
         int investmentReturn = 6000001;
         InvestmentControl instance = new InvestmentControl();
         String expResult = "Congratulations! You broke the bank! You earned 6000001!";
-        String result = instance.calculateMessage(investmentReturn);
+        String result = instance.calculateInvestReturnMessage(investmentReturn);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

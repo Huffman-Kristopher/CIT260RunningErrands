@@ -23,12 +23,12 @@ public class GamblingControlTest {
     @Test
     public void testCalculateWinLoss() {
         //Test Case 1
-        System.out.println("calculateWinLoss Test 1");
+        System.out.println("calculateWiningNumber Test 1");
         int bet = 500;
         int numberPick = 12345;
         GamblingControl instance = new GamblingControl();
         int expResult = 12346;
-        int result = instance.calculateWinLoss(bet, numberPick);
+        int result = instance.calculateWiningNumber(bet, numberPick);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -36,12 +36,12 @@ public class GamblingControlTest {
     @Test
     public void testCalculateWinLoss2() {
         //Test Case 2
-        System.out.println("calculateWinLoss Test 2");
+        System.out.println("calculateWiningNumber Test 2");
         int bet = -500;
         int numberPick = 12345;
         GamblingControl instance = new GamblingControl();
         int expResult = 12345;
-        int result = instance.calculateWinLoss(bet, numberPick);
+        int result = instance.calculateWiningNumber(bet, numberPick);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -49,12 +49,12 @@ public class GamblingControlTest {
     @Test
         public void testCalculateWinLoss3() {
         //Test Case 2
-        System.out.println("calculateWinLoss Test 3");
+        System.out.println("calculateWiningNumber Test 3");
         int bet = -500;
         int numberPick = 999999;
         GamblingControl instance = new GamblingControl();
         int expResult = -1;
-        int result = instance.calculateWinLoss(bet, numberPick);
+        int result = instance.calculateWiningNumber(bet, numberPick);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -49,7 +49,7 @@ public class InvestmentControl {
             investmentReturn = investmentAmount * (rate * days) - 5 + investmentAmount;
             return (int) investmentReturn;
     }
-    public String calculateMessage (int investmentReturn) {
+    public String calculateInvestReturnMessage (int investmentReturn) {
         if(investmentReturn > 6000000) {
             String invesmentResultMessage;
             invesmentResultMessage= "Congratulations! You broke the bank! You earned " + investmentReturn + "!";

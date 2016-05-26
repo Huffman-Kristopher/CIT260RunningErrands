@@ -58,22 +58,22 @@ public class ObjectiveControlTest {
      */
     @Test
     public void testCalculateMessage() {
-        System.out.println("calculateMessage");
+        System.out.println("calculateBribeMessage");
         boolean bribeResult = true;
         ObjectiveControl instance = new ObjectiveControl();
         String expResult = "Congratulations! Your bribe has succeeded!";
-        String result = instance.calculateMessage(bribeResult);
+        String result = instance.calculateBribeMessage(bribeResult);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     @Test
     public void testCalculateMessage2() {
-        System.out.println("calculateMessage Test 2");
+        System.out.println("calculateBribeMessage Test 2");
         boolean bribeResult = false;
         ObjectiveControl instance = new ObjectiveControl();
         String expResult = "We're sorry. Your bribe failed.";
-        String result = instance.calculateMessage(bribeResult);
+        String result = instance.calculateBribeMessage(bribeResult);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

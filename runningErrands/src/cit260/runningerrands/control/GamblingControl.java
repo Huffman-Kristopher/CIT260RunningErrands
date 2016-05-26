@@ -11,7 +11,7 @@ package cit260.runningerrands.control;
  */
 public class GamblingControl {
    
-    public int calculateWinLoss(int bet, int numberPick) {
+    public int calculateWiningNumber(int bet, int numberPick) {
         int winningNumber;
                 
         if (numberPick > 99999 ) { //numberPick is too big

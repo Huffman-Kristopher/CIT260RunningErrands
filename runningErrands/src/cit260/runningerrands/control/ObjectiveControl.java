@@ -33,7 +33,7 @@ public class ObjectiveControl {
         return bribeResult;
     }
     
-    public String calculateMessage (boolean bribeResult) {
+    public String calculateBribeMessage (boolean bribeResult) {
         String bribeResultMessage;
         if (bribeResult == true) {
                bribeResultMessage = "Congratulations! Your bribe has succeeded!";
