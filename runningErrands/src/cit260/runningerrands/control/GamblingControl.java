@@ -54,7 +54,7 @@ public class GamblingControl {
                return gamblingResultMessage;
         }
         
-        gamblingResultMessage = "Congratulations! You won " + payout + "!";
+        gamblingResultMessage = "Congratulations, you found a way to cheat the system! You won " + payout + "!";
         return gamblingResultMessage;
 
     }

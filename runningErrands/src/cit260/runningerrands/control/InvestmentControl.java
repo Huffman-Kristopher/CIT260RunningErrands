@@ -56,7 +56,7 @@ public class InvestmentControl {
             return invesmentResultMessage;
         }
         String invesmentResultMessage;
-        invesmentResultMessage= "Congratulations! You earned " + investmentReturn + "!";
+        invesmentResultMessage= "Your investment has matured! You earned " + investmentReturn + "!";
         return invesmentResultMessage;
     }
 }

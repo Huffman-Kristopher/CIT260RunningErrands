@@ -40,7 +40,7 @@ public class ObjectiveControl {
                return bribeResultMessage;
         }
         
-        bribeResultMessage = "We're sorry. Your bribe failed.";
+        bribeResultMessage = "Your bribe failed!";
         return bribeResultMessage;
 
     }
