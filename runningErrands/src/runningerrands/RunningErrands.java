@@ -5,6 +5,8 @@
  */
 package runningerrands;
 
+import cit260.runningerands.view.StartProgramView;
+import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Player;
 
 /**
@@ -12,22 +14,28 @@ import cit260.runningerrands.model.Player;
  * @author Kristopher Huffman and Kirk Brown
  */
 public class RunningErrands {
+       
+    private static Game currentGame = null;
+    private static Player player = null;
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Player playerChar = new Player();
-        
-        
-        playerChar.setName("Kirk Brown");
-        playerChar.setAge(17);
-        playerChar.setTimePlayed(24);
-        
-        String playerInfo = playerChar.toString();
-        System.out.println(playerInfo);
-        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
     }
-    
+
+    public static Game getCurrentGame() {
+    return currentGame;
+    }
+    public static void setCurrentGame(Game currentGame) {
+        RunningErrands.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+    return player;
+    }
+    public static void setPlayer(Player player) {
+        RunningErrands.player = player;
+    }
+
+
 }
