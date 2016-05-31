@@ -14,39 +14,35 @@ import java.util.Scanner; //if it screws up - delete this
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public class StartProgramView {
+    public class StartProgramView {
 
         private String promptMessage;
+        private String promptAgeMessage;
+        
         public StartProgramView() {
             this.promptMessage = "\nPlease enter your name: ";
             //this.promptMessage = "\nPlease enter your age:";
-            
+
             this.displayBanner();
-        }
+    }
 
     private void displayBanner() {
         System.out.println(
-         "\n*************************************"
-        +"\n*                                   *"
-        +"\n* In this action packed text based  *"
-        +"\n* role playing game you play the    *"
-        +"\n* part of a struggling lower to     *"
-        +"\n* middle class working trying to    *"
-        +"\n* make your way in life. You soon   *"
-        +"\n* learn in your journey that every  *"
-        +"\n* action has a consequence. Every   *"
-        +"\n* day is full of excitement as      *"
-        +"\n* unexpected events keep popping up *"
-        +"\n* when you try to do anything. You  *"
-        +"\n* have bills to pay, groceries to   *"
-        +"\n* buy, books to return to the       *"
-        +"\n* library. It seems that every time *"
-        +"\n* you go to do one of the tasks     *"
-        +"\n* something catastrophic happens    *"
-        +"\n* and you are faced with life       *"
-        +"\n* threatening peril.                *"
-        +"\n*                                   *" 
-        +"\n*************************************"
+         "\n*******************************************************"
+        +"\n*                                                     *"
+        +"\n* In this action packed text based role playing game  *"
+        +"\n* you play the part of a struggling lower to middle   *"
+        +"\n* class worker trying to make your way in life. You   *"
+        +"\n* soon learn in your journey that every action has a  *"
+        +"\n* consequence. Every day is full of excitement as     *"
+        +"\n* unexpected events keep popping up when you try to   *"
+        +"\n* do anything. You have bills to pay, groceries to    *"
+        +"\n* buy, books to return to the library. It seems that  *"
+        +"\n* every time you go to do one of the tasks something  *"
+        +"\n* catastrophic happens and you are faced with life    *"
+        +"\n* threatening peril.                                  *"
+        +"\n*                                                     *"
+        +"\n*******************************************************"
         );
     }
 
@@ -59,7 +55,8 @@ public class StartProgramView {
            if (playerName.toUpperCase().equals("Q")) //Prompt answered with desire to quit
                return; //exit game
            //do the action and display the next view
-           done = this.doAction(playerName);
+           int playerAge = this.getPlayerAge();
+           done = this.doAction(playerName, playerAge);
        } while (!done);
     }
 
@@ -85,14 +82,35 @@ public class StartProgramView {
         return value; // returns the value entered
     }
 
-    private boolean doAction(String playerName) {
+    private int getPlayerAge() {
+        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
+        int value = 0;
+        boolean valid = false;
+        
+        while (!valid) { //loop while not valid
+            this.promptAgeMessage = "\nPlease enter your age: ";
+            System.out.println("\n" + this.promptAgeMessage);
+            
+            value = keyboard.nextInt();
+            
+            if (value < 1) { //value is blank
+                System.out.println("\nInvalid value: Player's Age must be greater than 1");
+                continue;
+            }
+            
+            break; // end the loop
+        }
+        
+        return value; // returns the value entered
+    }
+    private boolean doAction(String playerName, int playerAge) {
         if (playerName.length() < 2) {
         System.out.println("\nInvalid player name:"
             +"The name must be greater than one character in length.");
         return false;
         }
-    
-    Player player = GameControl.createPlayer(playerName);
+        
+    Player player = GameControl.createPlayer(playerName, playerAge);
     if (player == null) {
         System.out.println("\nError creating the player.");
         return false;
@@ -105,6 +123,7 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         System.out.println("\n==========================="
                           +"\n Welcome to the game, " + player.getName() + "."
+                          +"\n We are glad to see a  " + (int) player.getAge() + " year old playing the game."
                           +"\n We hope you enjoy playing!"
                           +"\n==========================="
                  );

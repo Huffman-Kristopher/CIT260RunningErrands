@@ -14,13 +14,14 @@ import runningerrands.RunningErrands;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name, int age) {
         
         if (name == null) {
             return null;
         }
         Player player = new Player();
         player.setName(name);
+        player.setAge(age);
         RunningErrands.setPlayer(player); // Save the player
         return player;
     }
