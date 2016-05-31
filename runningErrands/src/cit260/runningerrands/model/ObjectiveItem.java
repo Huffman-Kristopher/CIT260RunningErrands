@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Kris
+ * @author Kristopher Huffman and Kirk Brown
  */
 public class ObjectiveItem implements Serializable{
     

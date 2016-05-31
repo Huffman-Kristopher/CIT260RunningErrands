@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Kris
+ * @author Kristopher Huffman and Kirk Brown
  */
 public class Car implements Serializable{
     

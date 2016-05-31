@@ -12,7 +12,7 @@ import java.util.Scanner; //if it screws up - delete this
 
 /**
  *
- * @author reddo
+ * @author Kristopher Huffman and Kirk Brown
  */
 public class StartProgramView {
 
@@ -104,8 +104,8 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         System.out.println("\n==========================="
-                          +"\n Welcome to the game " + player.getName()
-                          +"\n We hope you love our game!"
+                          +"\n Welcome to the game, " + player.getName() + "."
+                          +"\n We hope you enjoy playing!"
                           +"\n==========================="
                  );
     MainMenuView mainMenuView = new MainMenuView();

@@ -7,7 +7,7 @@ package cit260.runningerrands.control;
 
 /**
  *
- * @author reddo
+ * @author Kristopher Huffman and Kirk Brown
  */
 public class StoreControl {
     

@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
- * @author reddo
+ * @author Kristopher Huffman and Kirk Brown
  */
 public class CharacterControl {
             
