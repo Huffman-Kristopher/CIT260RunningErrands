@@ -7,6 +7,7 @@ package runningerrands;
 
 import cit260.runningerands.view.StartProgramView;
 import cit260.runningerrands.model.Game;
+import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 
 /**
@@ -17,6 +18,7 @@ public class RunningErrands {
        
     private static Game currentGame = null;
     private static Player player = null;
+    private static Persona persona = null;
 
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
@@ -35,6 +37,13 @@ public class RunningErrands {
     }
     public static void setPlayer(Player player) {
         RunningErrands.player = player;
+    }
+    
+    public static Persona getPersona() {
+    return persona;
+    }
+    public static void setPersona(Persona persona) {
+        RunningErrands.persona = persona;
     }
 
 

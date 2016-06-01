@@ -12,43 +12,43 @@ import java.util.Objects;
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public class Character implements Serializable{
+public class Persona implements Serializable{
     
     // class instance variables 
-    private String gender;
-    private String occupation;
-    private String characterName;
+    private char gender;
+    private String career;
+    private String personaName;
     private double health;
     private double money;
     private int coordinates;
 
-    public Character() {
+    public Persona() {
     }
 
     
     
-    public String getGender() {
+    public char getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(char gender) {
         this.gender = gender;
     }
 
-    public String getOccupation() {
-        return occupation;
+    public String getCareer() {
+        return career;
     }
 
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setCareer(String career) {
+        this.career = career;
     }
 
-    public String getCharacterName() {
-        return characterName;
+    public String getPersonaName() {
+        return personaName;
     }
 
-    public void setCharacterName(String characterName) {
-        this.characterName = characterName;
+    public void setPersonaName(String characterName) {
+        this.personaName = characterName;
     }
 
     public double getHealth() {
@@ -79,8 +79,8 @@ public class Character implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 13 * hash + Objects.hashCode(this.gender);
-        hash = 13 * hash + Objects.hashCode(this.occupation);
-        hash = 13 * hash + Objects.hashCode(this.characterName);
+        hash = 13 * hash + Objects.hashCode(this.career);
+        hash = 13 * hash + Objects.hashCode(this.personaName);
         hash = 13 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
         hash = 13 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
         hash = 13 * hash + this.coordinates;
@@ -98,7 +98,7 @@ public class Character implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final Persona other = (Persona) obj;
         if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
             return false;
         }
@@ -111,10 +111,10 @@ public class Character implements Serializable{
         if (!Objects.equals(this.gender, other.gender)) {
             return false;
         }
-        if (!Objects.equals(this.occupation, other.occupation)) {
+        if (!Objects.equals(this.career, other.career)) {
             return false;
         }
-        if (!Objects.equals(this.characterName, other.characterName)) {
+        if (!Objects.equals(this.personaName, other.personaName)) {
             return false;
         }
         return true;
@@ -122,7 +122,7 @@ public class Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "gender=" + gender + ", occupation=" + occupation + ", characterName=" + characterName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + '}';
+        return "Character{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + '}';
     }
     
     

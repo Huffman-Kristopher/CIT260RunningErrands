@@ -32,7 +32,7 @@ public class MainMenuView {
     void displayMainMenuView() {
         boolean done = false; // Set flag to not done
         do {
-           //Promt for and get the payers name
+           //Prompt for and get the players name
            String menuOption = this.getMenuOption();
            if (menuOption.toUpperCase().equals("Q")) //Prompt answered with desire to quit
                return; //exit game
@@ -88,14 +88,14 @@ public class MainMenuView {
         //Create new game
         GameControl.createNewGame(RunningErrands.getPlayer());
         // Display game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        StartNewGameView gameMenu = new StartNewGameView();
+        gameMenu.displayGameMenuView();
     }
     private void loadSavedGame() {
         System.out.println("*** loadSavedGame function called ***");
     }
     private void openHelpMenu() {
-        //Create new game
+        //Display Help Menu
     HelpMenuView HelpMenuView = new HelpMenuView();
             
     HelpMenuView.displayHelpMenuView();
