@@ -68,7 +68,7 @@ public class MainMenuView {
         
         switch (choice) {
             case "N": //create and start a new game
-                this.startNewGame();
+                this.createNewPersona();
                 break;
             case "L": //load saved game
                 this.loadSavedGame();
@@ -84,12 +84,10 @@ public class MainMenuView {
         return false;
     }
     
-    private void startNewGame() {
-        //Create new game
-        GameControl.createNewGame(RunningErrands.getPlayer());
+    private void createNewPersona() {
         // Display game menu
-        StartNewGameView gameMenu = new StartNewGameView();
-        gameMenu.displayGameMenuView();
+        CreateNewPersonaView createNewPersona = new CreateNewPersonaView();
+        createNewPersona.displayCreateNewPersonaView();
     }
     private void loadSavedGame() {
         System.out.println("*** loadSavedGame function called ***");

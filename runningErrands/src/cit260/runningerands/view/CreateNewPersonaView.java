@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author reddo
  */
-public class StartNewGameView {
+public class CreateNewPersonaView {
 
     private String menu;
 
-    public StartNewGameView() {
+    public CreateNewPersonaView() {
     this.menu = "\n"
               + "\n------------------------------------"
               + "\n| Please select a gender            |" 
@@ -27,7 +27,7 @@ public class StartNewGameView {
               + "\nPlease select a gender: ";
     }
         
-    void displayGameMenuView() {
+    void displayCreateNewPersonaView() {
         boolean done = false; // Set flag to not done
         do {
            //Promt for and get the payers name

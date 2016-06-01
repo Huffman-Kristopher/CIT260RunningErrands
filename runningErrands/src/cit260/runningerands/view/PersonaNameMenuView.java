@@ -6,8 +6,10 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.CharacterControl;
+import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Persona;
 import java.util.Scanner;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -82,10 +84,10 @@ class PersonaNameMenuView {
         
         switch (gender) {
             case 'M': //If gender is M, then male
-                genderDisplay = "Male";
+                genderDisplay = "male";
                 break;
             case 'F': //If gender is M, then male
-                genderDisplay = "Female";
+                genderDisplay = "memale";
                 break;
             default:
                 System.out.println("\nInvalid selection, please try again");
@@ -99,8 +101,13 @@ class PersonaNameMenuView {
                          + "\n Now - go run some errands!"
                          + "\n==========================="
          );
-        System.out.println("\nFrom here, we start the real parts of the game.");
+        this.openGameMenuView();
     }
-
-
+        
+private void openGameMenuView() {
+        GameMenuView gameMenuView = new GameMenuView();
+            
+        gameMenuView.displayGameMenuView();
+    }
+    
 }
