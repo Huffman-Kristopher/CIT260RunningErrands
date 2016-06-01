@@ -77,9 +77,24 @@ class PersonaNameMenuView {
     }
 
     private void displayNextView(Persona persona) {
+        gender = persona.getGender();
+        String genderDisplay ="";
+        
+        switch (gender) {
+            case 'M': //If gender is M, then male
+                genderDisplay = "Male";
+                break;
+            case 'F': //If gender is M, then male
+                genderDisplay = "Female";
+                break;
+            default:
+                System.out.println("\nInvalid selection, please try again");
+                break;  
+        }
+
         System.out.println("\n==========================="
                          + "\n You have created a new persona!"
-                         + "\n Your " + persona.getGender() + "persona is named " + persona.getPersonaName()
+                         + "\n Your " + genderDisplay + " persona is named " + persona.getPersonaName()
                          + "\n and is a " + persona.getCareer() + "!"
                          + "\n Now - go run some errands!"
                          + "\n==========================="

@@ -55,8 +55,8 @@ class CareerMenuView {
         do {
             //Prompt for and get the character's career
             String menuOption = this.getMenuOption(gender);
-            System.out.println("\nMenu Choice here is " + menuOption);
-            System.out.println("\nMenu Choice upper case here is " + menuOption.toUpperCase());
+            //System.out.println("\nMenu Choice here is " + menuOption);
+            //System.out.println("\nMenu Choice upper case here is " + menuOption.toUpperCase());
             if (menuOption.toUpperCase().equals("FB")) //Prompt answered with return to previous menu
                 return; //exit game
             if (menuOption.toUpperCase().equals("MB")) //Prompt answered with return to previous menu
