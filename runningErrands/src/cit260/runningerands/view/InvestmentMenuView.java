@@ -52,7 +52,7 @@ private String menu;
             value = value.trim(); // Trim off leading and trailing spaces
 
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter O, M, I, C, P, or B");
+                System.out.println("\nInvalid value: Please enter S, B, A, or R.");
                 continue;
             }
 
@@ -97,6 +97,5 @@ private String menu;
         System.out.println("*** showAccountInvestment function called ***");
     }
 
-    
 }
 
