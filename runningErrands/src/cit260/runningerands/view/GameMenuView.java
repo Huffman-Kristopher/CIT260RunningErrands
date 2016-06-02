@@ -16,7 +16,10 @@ import runningerrands.RunningErrands;
 class GameMenuView {
 
     void displayGameMenuView() {
-        GameControl.createNewGame(RunningErrands.getPlayer());
+        
+        GamblingMenuView GamblingMenuView = new GamblingMenuView();
+        GamblingMenuView.displayGamblingMenuView();
+        //GameControl.createNewGame(RunningErrands.getPlayer());
     }
     
 }

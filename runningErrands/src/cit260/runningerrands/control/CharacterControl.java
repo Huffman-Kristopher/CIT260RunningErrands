@@ -29,4 +29,16 @@ public class CharacterControl {
         RunningErrands.setPersona(persona); // Save the character
         return persona;
     }
+
+    public static int updatePersonaMoney(int depositAmount) {
+        
+        Persona persona = RunningErrands.getPersona();
+        int currentBalance = persona.getMoney();
+        int newBalance = (depositAmount + currentBalance);
+        persona.setMoney(newBalance);
+        int updatedBalance = persona.getMoney();
+        return updatedBalance;
+    }
+    
+
 }

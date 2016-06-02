@@ -5,35 +5,27 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.model.Persona;
+
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
  */
 public class GamblingControl {
-   
-    public int calculateWiningNumber(int bet, int numberPick) {
+    
+    public static int calculateWiningNumber(int bet, int numberPick) {
         int winningNumber;
-                
-        if (numberPick > 99999 ) { //numberPick is too big
-            return -1;
-        }
-
-        if (numberPick < 0) {//numberPick is too low
-            return -1;
-        }
-
-        if (bet <= 0) { //All bets zero or less win
+        if (bet < 0) { //All bets zero or less win
             winningNumber = numberPick;
             return winningNumber;
         }
-
         //All positive bets lose
         winningNumber = numberPick + 1;
         return winningNumber;
         
     }
     
-    public int calculatePayout(int bet, int numberPick, int winningNumber) {
+    public static int calculatePayout(int bet, int numberPick, int winningNumber) {
         
         int payout; 
         
@@ -42,7 +34,8 @@ public class GamblingControl {
                 return payout;
         }
         
-        payout = 0;
+        payout = 0 - bet;
+
         return payout;
 
     }

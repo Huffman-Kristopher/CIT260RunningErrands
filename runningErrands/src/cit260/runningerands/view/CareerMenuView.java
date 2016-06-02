@@ -58,9 +58,9 @@ class CareerMenuView {
             //System.out.println("\nMenu Choice here is " + menuOption);
             //System.out.println("\nMenu Choice upper case here is " + menuOption.toUpperCase());
             if (menuOption.toUpperCase().equals("FB")) //Prompt answered with return to previous menu
-                return; //exit game
+                return; //exit menu
             if (menuOption.toUpperCase().equals("MB")) //Prompt answered with return to previous menu
-                return; //exit game
+                return; //exit menu
             //do the action and display the next view
             done = this.doAction(menuOption);
         } while (!done);

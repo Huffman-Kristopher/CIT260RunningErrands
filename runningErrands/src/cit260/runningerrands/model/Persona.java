@@ -19,7 +19,7 @@ public class Persona implements Serializable{
     private String career;
     private String personaName;
     private int health;
-    private double money;
+    private int money;
     private int coordinates;
     private int age;
 
@@ -31,11 +31,6 @@ public class Persona implements Serializable{
         return age;
     }
 
-    public Persona() {
-    }
-
-    
-    
     public char getGender() {
         return gender;
     }
@@ -68,11 +63,11 @@ public class Persona implements Serializable{
         this.health = health;
     }
 
-    public double getMoney() {
+    public int getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(int money) {
         this.money = money;
     }
 

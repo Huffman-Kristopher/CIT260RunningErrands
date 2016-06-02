@@ -26,6 +26,7 @@ public class GameControl {
     }
     
     public static void createNewGame(Player player) {
+        //Test for Gambling control
         System.out.println("\nFrom here, we start the real parts of the game. createNewGame stub function called.");
     }
 
