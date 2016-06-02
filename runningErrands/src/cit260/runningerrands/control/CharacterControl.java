@@ -5,7 +5,6 @@
  */
 package cit260.runningerrands.control;
 import cit260.runningerrands.model.Persona;
-import cit260.runningerrands.model.Player;
 import java.util.concurrent.ThreadLocalRandom;
 import runningerrands.RunningErrands;
 

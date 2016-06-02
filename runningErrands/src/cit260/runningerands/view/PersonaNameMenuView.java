@@ -8,6 +8,7 @@ package cit260.runningerands.view;
 import cit260.runningerrands.control.CharacterControl;
 import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Persona;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import runningerrands.RunningErrands;
 
@@ -120,13 +121,18 @@ private void openGameMenuView() {
         boolean valid = false;
         
         while (!valid) { //loop while not valid
-            System.out.println("\n" + this.promptAgeMessage);
-            
-            value = keyboard.nextInt(); //Get the next line typed on the keyboard
-            
-            if (value < 3 || value > 120) { //value is blank
+            try {
+                System.out.println("\n" + this.promptAgeMessage);
+                value = keyboard.nextInt(); //Get the next line typed on the keyboard
+                if (value < 3 || value > 120) { //value is blank
                 System.out.println("\nInvalid value: Persona's name cannot be blank");
                 continue;
+                }
+            }
+            catch (InputMismatchException exception) 
+            {
+            System.out.println("This is not an integer");
+            value = this.getPersonaAge();
             }
             
             break; // end the loop
