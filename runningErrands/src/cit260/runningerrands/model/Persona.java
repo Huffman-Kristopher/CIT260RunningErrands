@@ -18,9 +18,18 @@ public class Persona implements Serializable{
     private char gender;
     private String career;
     private String personaName;
-    private double health;
+    private int health;
     private double money;
     private int coordinates;
+    private int age;
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     public Persona() {
     }
@@ -51,11 +60,11 @@ public class Persona implements Serializable{
         this.personaName = characterName;
     }
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 
@@ -78,12 +87,13 @@ public class Persona implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.gender);
-        hash = 13 * hash + Objects.hashCode(this.career);
-        hash = 13 * hash + Objects.hashCode(this.personaName);
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
-        hash = 13 * hash + this.coordinates;
+        hash = 97 * hash + this.gender;
+        hash = 97 * hash + Objects.hashCode(this.career);
+        hash = 97 * hash + Objects.hashCode(this.personaName);
+        hash = 97 * hash + this.health;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
+        hash = 97 * hash + this.coordinates;
+        hash = 97 * hash + this.age;
         return hash;
     }
 

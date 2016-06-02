@@ -16,23 +16,17 @@ import runningerrands.RunningErrands;
 public class CharacterControl {
 
            
-    public int calculatehealth(int age) {
-        int characterHealth;
-                
-        if (age < 1 || age > 120 ) { //numberPick is too big
-            return -1;
-        }
-        int randomNumber = ThreadLocalRandom.current().nextInt(1, 9);
-        characterHealth = (age * 3) + randomNumber;
-        return characterHealth;
+    public static Persona createPersona(String personaName, char gender, String career, int personaAge) {
         
-    }
-    public static Persona createPersona(String personaName, char gender, String career) {
-    
+        int randomNumber = ThreadLocalRandom.current().nextInt(1, 9);
+        int characterHealth = (personaAge * 3) + randomNumber;      
+        
         Persona persona = new Persona();
         persona.setGender(gender);
         persona.setPersonaName(personaName);
         persona.setCareer(career);
+        persona.setAge(personaAge);
+        persona.setHealth(characterHealth);
         RunningErrands.setPersona(persona); // Save the character
         return persona;
     }

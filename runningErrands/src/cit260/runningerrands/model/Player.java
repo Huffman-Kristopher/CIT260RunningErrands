@@ -17,7 +17,6 @@ public class Player implements Serializable{
     
     // class instance variables 
     private String name;
-    private double age;
     private double timePlayed;
 
     public Player() {
@@ -33,14 +32,6 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
-    }
-
     public double getTimePlayed() {
         return timePlayed;
     }
@@ -53,7 +44,6 @@ public class Player implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.age) ^ (Double.doubleToLongBits(this.age) >>> 32));
         hash = 53 * hash + (int) (Double.doubleToLongBits(this.timePlayed) ^ (Double.doubleToLongBits(this.timePlayed) >>> 32));
         return hash;
     }
@@ -70,9 +60,6 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.age) != Double.doubleToLongBits(other.age)) {
-            return false;
-        }
         if (Double.doubleToLongBits(this.timePlayed) != Double.doubleToLongBits(other.timePlayed)) {
             return false;
         }
@@ -84,7 +71,7 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", age=" + age + ", timePlayed=" + timePlayed + '}';
+        return "Player{" + "name=" + name + ", timePlayed=" + timePlayed + '}';
     }
     
     

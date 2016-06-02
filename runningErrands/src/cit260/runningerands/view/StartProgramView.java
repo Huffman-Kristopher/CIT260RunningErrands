@@ -21,7 +21,6 @@ import java.util.Scanner; //if it screws up - delete this
         
         public StartProgramView() {
             this.promptMessage = "\nPlease enter your name: ";
-            //this.promptMessage = "\nPlease enter your age:";
 
             this.displayBanner();
     }
@@ -55,8 +54,7 @@ import java.util.Scanner; //if it screws up - delete this
            if (playerName.toUpperCase().equals("Q")) //Prompt answered with desire to quit
                return; //exit game
            //do the action and display the next view
-           int playerAge = this.getPlayerAge();
-           done = this.doAction(playerName, playerAge);
+           done = this.doAction(playerName);
        } while (!done);
     }
 
@@ -82,35 +80,14 @@ import java.util.Scanner; //if it screws up - delete this
         return value; // returns the value entered
     }
 
-    private int getPlayerAge() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        int value = 0;
-        boolean valid = false;
-        
-        while (!valid) { //loop while not valid
-            this.promptAgeMessage = "\nPlease enter your age: ";
-            System.out.println("\n" + this.promptAgeMessage);
-            
-            value = keyboard.nextInt();
-            
-            if (value < 1) { //value is blank
-                System.out.println("\nInvalid value: Player's Age must be greater than 1");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // returns the value entered
-    }
-    private boolean doAction(String playerName, int playerAge) {
+    private boolean doAction(String playerName) {
         if (playerName.length() < 2) {
         System.out.println("\nInvalid player name:"
             +"The name must be greater than one character in length.");
         return false;
         }
         
-    Player player = GameControl.createPlayer(playerName, playerAge);
+    Player player = GameControl.createPlayer(playerName);
     if (player == null) {
         System.out.println("\nError creating the player.");
         return false;
@@ -123,7 +100,6 @@ import java.util.Scanner; //if it screws up - delete this
     private void displayNextView(Player player) {
         System.out.println("\n==========================="
                           +"\n Welcome to the game, " + player.getName() + "."
-                          +"\n We are glad to see a  " + (int) player.getAge() + " year old playing the game."
                           +"\n We hope you enjoy playing!"
                           +"\n==========================="
                  );
