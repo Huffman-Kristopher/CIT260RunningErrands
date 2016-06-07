@@ -11,7 +11,7 @@ package cit260.runningerrands.control;
  */
 public class InvestmentControl {
         
-    public int calculateInvestmentReturn(int investmentType, double investmentAmount, double days) {
+    public int calculateInvestmentReturn(int investmentType, int investmentAmount, int days) {
         double investmentReturn;
                 
         if (days < 0 || days > 29) {
@@ -24,7 +24,7 @@ public class InvestmentControl {
             return -1;
         }
         
-        if (investmentType == 2) { //Money Market
+        if (investmentType == 2) { //bond investment
             
             if (investmentAmount < 500 ) {
                 return -1;
@@ -34,7 +34,7 @@ public class InvestmentControl {
             return (int) investmentReturn;
         
         }
-        if (investmentType == 3) { //Money Market
+        if (investmentType == 3) { //Stock investment
             
             if (investmentAmount < 1500 ) {
                 return -1;
@@ -45,7 +45,7 @@ public class InvestmentControl {
         
         }
 
-            double rate = .025;
+            double rate = .025; //money market investment
             investmentReturn = investmentAmount * (rate * days) - 5 + investmentAmount;
             return (int) investmentReturn;
     }
