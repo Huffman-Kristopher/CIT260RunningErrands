@@ -21,8 +21,8 @@ class GameMenuView {
                   + "\n| Game Main Menu                        |" 
                   + "\n------------------------------------"
                   + "\nM - Map."
-                  + "\nS - Sell items."
-                  + "\nI - inventory."
+                  + "\nC - Sell items"
+                  + "\nI - inventory"
                   + "\nF – Investments"
                   + "\nG – Gambling"
                   + "\nS – save game"
@@ -32,7 +32,7 @@ class GameMenuView {
                   + "\nH – help menu"
                   + "\nQ – quit game"
                   + "\n-------------------------"
-                  + "\nPlease select an Store option: ";
+                  + "\nPlease select an Game menu option: ";
     }
         
         void displayGameMenuView() {
@@ -59,7 +59,7 @@ class GameMenuView {
             value = value.trim(); // Trim off leading and trailing spaces
 
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter M, I, F, G, S, L, V, K, H, or Q.");
+                System.out.println("\nInvalid value: Please enter M, C, I, F, G, S, L, V, K, H, or Q.");
                 continue;
             }
 
@@ -75,6 +75,9 @@ class GameMenuView {
         switch (choice) {
             case "M": //create a stock investment.
                 this.openMapMenu();
+                break;
+            case "C": //create a stock investment.
+                this.openStoreMenu();
                 break;
             case "I": //create a bond inveestment.
                 this.openInventoryMenu();
@@ -99,6 +102,9 @@ class GameMenuView {
                 break;
             case "K": //create a bond inveestment.
                 this.openStatsMenu();
+                break;
+            case "Q": //create a bond inveestment.
+                this.openMainMenu();
                 break;
             default:
                 System.out.println("\nInvalid selection, please try again");
@@ -150,6 +156,16 @@ class GameMenuView {
 
     private void openStatsMenu() {
         System.out.println("\n ***Runs stats menu function ***");
+    }
+
+    private void openStoreMenu() {
+        StoreMenuView StoreMenuView = new StoreMenuView();
+        StoreMenuView.displayStoreMenuView();
+    }
+
+    private void openMainMenu() {
+    MainMenuView MainMenuView = new MainMenuView();
+        MainMenuView.displayMainMenuView();    
     }
     
 }

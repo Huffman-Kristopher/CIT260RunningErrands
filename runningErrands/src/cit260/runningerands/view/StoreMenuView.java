@@ -65,13 +65,13 @@ private String storeMenu;
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "B": //create a stock investment.
+            case "B": //buy stuff.
                 this.openBuyMenu();
                 break;
-            case "S": //create a bond inveestment.
+            case "S": //sell stuff.
                 this.openSellMenu();
                 break;
-            case "R": //create a bond inveestment.
+            case "R": //return to game menu.
                 this.openGameMenu();
                 break;
             default:
