@@ -18,7 +18,7 @@ class GameMenuView {
     public GameMenuView() {
         this.gameMenu = "\n"
                   + "\n------------------------------------"
-                  + "\n| Store Menu                        |" 
+                  + "\n| Game Main Menu                        |" 
                   + "\n------------------------------------"
                   + "\nM - Map."
                   + "\nS - Sell items."

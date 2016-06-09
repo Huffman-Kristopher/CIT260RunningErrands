@@ -71,7 +71,7 @@ public class MainMenuView {
                 this.createNewPersona();
                 break;
             case "L": //load saved game
-                this.openInvestmentmenu();
+                this.LoadSavedGame();
                 break;
             case "H": //Open help menu
                 this.openHelpMenu();
@@ -89,7 +89,7 @@ public class MainMenuView {
         CreateNewPersonaView createNewPersona = new CreateNewPersonaView();
         createNewPersona.displayCreateNewPersonaView();
     }
-    private void loadSavedGame() {
+    private void LoadSavedGame() {
         System.out.println("*** loadSavedGame function called ***");
     }
     private void openHelpMenu() {
@@ -97,10 +97,5 @@ public class MainMenuView {
     HelpMenuView HelpMenuView = new HelpMenuView();
             
     HelpMenuView.displayHelpMenuView();
-    }
-
-    private void openInvestmentmenu() {
-        InvestmentMenuView InvestmentMenuView = new InvestmentMenuView();
-        InvestmentMenuView.displayInvestmentMenuView();
     }
 }
