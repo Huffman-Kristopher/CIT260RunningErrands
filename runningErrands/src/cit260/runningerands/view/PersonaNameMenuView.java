@@ -102,7 +102,7 @@ class PersonaNameMenuView {
         System.out.println("\n==========================="
                          + "\n You have created a new persona!"
                          + "\n Your " + persona.getAge() + " year old " + genderDisplay + " persona is named " + persona.getPersonaName()
-                         + "\n and is a " + persona.getCareer() + "! Starting health is " + persona.getHealth()
+                         + "\n and works in the " + persona.getCareer() + "field! Starting health is " + persona.getHealth()
                          + "\n Now - go run some errands!"
                          + "\n==========================="
          );
