@@ -111,57 +111,7 @@ private int investmentAmount;
 
 
 }
-     private double getinvestmentAmount() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        int value = 0;
-        boolean valid = false;
-        
-        while (!valid) { //loop while not valid
-            try {
-                System.out.println("\n" + this.investmentAmountMenu);
-                value = keyboard.nextInt(); //Get the next line typed on the keyboard
-                if (value < 0 || value > 99999 || value > getMaxInvest()) { //value is blank
-                System.out.println("\nInvestment amount is outside the accepted range. Amount must be less than one half of your money, or 100,000, whichever is smaller.");
-                continue;
-                }
-            }
-            catch (InputMismatchException exception) 
-            {
-            System.out.println("This is not an integer");
-            value = this.investmentAmount();
-            }
-            break; // end the loop
-        }
-        
-        return value; // returns the value entered
-    }
-      private String getInvestmentDays() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.investmentDaysMenu);
-
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-
-            if (value.length() < 1 || value.length() > 29) { //value is blank
-                System.out.println("\nInvalid value: Please enter a number from 1-29 or R.");
-                continue;
-            }
-
-            break; // end the loop
-        }
-
-        return value; // returns the value entered
-    }
-     private int calculateInvestmentReturn(int investmentType, int investmentAmount, int days){
-        
-        int InvestmentReturn = InvestmentControl.calculateInvestmentReturn( investmentType, investmentAmount, days);
-        int updatedBalance = CharacterControl.updatePersonaMoney(InvestmentReturn);
-        System.out.println("\nYour investment has matured " + InvestmentReturn + ". Your new balance is " + updatedBalance + ".");
-        return InvestmentReturn;
+    private void calculateInvesmentReturn() {
+         System.out.println("\n ***Runs investment function function ***");
     }
 }
-
