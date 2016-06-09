@@ -73,37 +73,37 @@ class GameMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "M": //create a stock investment.
+            case "M": //open map.
                 this.openMapMenu();
                 break;
-            case "C": //create a stock investment.
+            case "C": //open store.
                 this.openStoreMenu();
                 break;
-            case "I": //create a bond inveestment.
+            case "I": //open inventory.
                 this.openInventoryMenu();
                 break;
-            case "F": //create a bond inveestment.
+            case "F": //open inveestments.
                 this.openInvestmentMenu();
                 break;
-                case "G": //create a stock investment.
+            case "G": //gamble.
                 this.openGamblingMenu();
                 break;
-            case "S": //create a bond inveestment.
+            case "S": //save the game.
                 this.OpensaveGame();
                 break;
-            case "L": //create a bond inveestment.
+            case "L": //load the game.
                 this.openLoadGame();
                 break;
-                case "V": //create a stock investment.
+            case "V": //open email and get objectives.
                 this.openEmailMenu();
                 break;
-            case "H": //create a bond inveestment.
+            case "H": //open help menu.
                 this.openHelpMenu();
                 break;
-            case "K": //create a bond inveestment.
+            case "K": //open stats.
                 this.openStatsMenu();
                 break;
-            case "Q": //create a bond inveestment.
+            case "Q": //return to main menu.
                 this.openMainMenu();
                 break;
             default:
