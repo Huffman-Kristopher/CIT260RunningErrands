@@ -9,57 +9,73 @@ import java.util.Scanner;
 
 /**
  *
- * @author Kristopher Huffman And Kirk Brown
+ * @author Kris
  */
-class GameMenuView {
+public class MapMenuView {
     
-    private String gameMenu;
+    private String mapMenu;
 
-    public GameMenuView() {
-        this.gameMenu = "\n"
+    public MapMenuView() {
+        this.mapMenu = "\n"
                   + "\n------------------------------------"
-                  + "\n| Game Main Menu                        |" 
+                  + "\n| Map Menu                        |" 
                   + "\n------------------------------------"
-                  + "\nM - Map."
-                  + "\nV - Visit Store"
-                  + "\nI - inventory"
-                  + "\nF – Investments"
-                  + "\nG – Gambling"
-                  + "\nS – save game"
-                  + "\nL – load game"
-                  + "\nE - view email"
-                  + "\nK – stats menu"
-                  + "\nH – help menu"
-                  + "\nQ – quit game"
+                  + "\n01 - Home"
+                  + "\n02 - Mall"
+                  + "\n03 - Grocery store"
+                  + "\n04 – Gas station"
+                  + "\n05 – Gun shop"
+                  + "\n06 – Sporting goods store"
+                  + "\n07 – Library"
+                  + "\n08 - Church"
+                  + "\n09 – Hospital"
+                  + "\n10 – School"
+                  + "\n11 – Bank"
+                  + "\n12 - Convenience store"
+                  + "\n13 - Car repair shop"
+                  + "\n14 – Martial arts school"
+                  + "\n15 – Army base"
+                  + "\n16 – Post office"
+                  + "\n17 – Fireworks stand"
+                  + "\n18 - Pet store"
+                  + "\n19 – Marina "
+                  + "\n20 – Home improvement store"
+                  + "\n21 – Police station"
+                  + "\n22 - Zoo"
+                  + "\n23 - Natural history museum"
+                  + "\n24 – Cemetery "
+                  + "\n25 – Volcano"
+                  + "\n26 – Pizza parlor"
+                  + "\nR – Return to previous menu"
                   + "\n-------------------------"
                   + "\nPlease select an Game menu option: ";
     }
         
-        void displayGameMenuView() {
+        void displayMapMenuView() {
         boolean done = false; // Set flag to not done
         do {
            //Promt for and get the payers name
-           String gameMenuOption = this.getGameMenuOption();
-           if (gameMenuOption.toUpperCase().equals("R")) //Prompt answered with desire to quit
+           String mapMenuOption = this.getMapMenuOption();
+           if (mapMenuOption.toUpperCase().equals("R")) //Prompt answered with desire to quit
                return; //Return to main menu
            //do the action and display the next view
-           done = this.doAction(gameMenuOption);
+           done = this.doAction(mapMenuOption);
         } while (!done);
     }
     
-    private String getGameMenuOption() {
+    private String getMapMenuOption() {
         Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
         String value = "";
         boolean valid = false;
 
         while (!valid) { //loop while not valid
-            System.out.println("\n" + this.gameMenu);
+            System.out.println("\n" + this.mapMenu);
 
             value = keyboard.nextLine(); //Get the next line typed on the keyboard
             value = value.trim(); // Trim off leading and trailing spaces
 
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter M, V, I, F, G, S, L, E, K, H, or Q.");
+                System.out.println("\nInvalid value: Please enter a number from 01 - 26 or R");
                 continue;
             }
 

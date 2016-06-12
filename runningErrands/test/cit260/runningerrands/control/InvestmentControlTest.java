@@ -47,7 +47,7 @@ public void testCalculateInvestmentReturn2() {
     }
 public void testCalculateInvestmentReturn3() {
         System.out.println("calculateInvestmentReturn");
-        int investmentType = A;
+        int investmentType = 1;
         int investmentAmount = 1000;
         int days = 29;
         InvestmentControl instance = new InvestmentControl();
