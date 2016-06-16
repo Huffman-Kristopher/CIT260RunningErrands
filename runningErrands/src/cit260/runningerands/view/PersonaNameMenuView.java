@@ -112,7 +112,7 @@ class PersonaNameMenuView {
 private void openGameMenuView() {
         GameMenuView gameMenuView = new GameMenuView();
             
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private int getPersonaAge() {

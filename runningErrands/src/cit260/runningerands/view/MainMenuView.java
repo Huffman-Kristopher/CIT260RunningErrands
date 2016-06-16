@@ -13,12 +13,12 @@ import runningerrands.RunningErrands;
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
     private String menu;
     
     public MainMenuView() {
-        this.menu = "\n"
+        super("\n"
                   + "\n-------------------------"
                   + "\n| Main Menu             |" 
                   + "\n-------------------------"
@@ -27,46 +27,14 @@ public class MainMenuView {
                   + "\nH - Open Help menu"
                   + "\nQ - Quit Game"
                   + "\n-------------------------"
-                  + "\nPlease select a menu option: ";
-    }
-    void displayMainMenuView() {
-        boolean done = false; // Set flag to not done
-        do {
-           //Prompt for and get the players name
-           String menuOption = this.getMenuOption();
-           if (menuOption.toUpperCase().equals("Q")) //Prompt answered with desire to quit
-               return; //exit game
-           //do the action and display the next view
-           done = this.doAction(menuOption);
-        } while (!done);
+                  + "\nPlease select a menu option: ");
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter N, L, H, or Q");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // returns the value entered
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "N": //create and start a new game
                 this.createNewPersona();
                 break;
@@ -87,15 +55,14 @@ public class MainMenuView {
     private void createNewPersona() {
         // Display game menu
         CreateNewPersonaView createNewPersona = new CreateNewPersonaView();
-        createNewPersona.displayCreateNewPersonaView();
+        createNewPersona.display();
     }
     private void LoadSavedGame() {
         System.out.println("*** loadSavedGame function called ***");
     }
     private void openHelpMenu() {
         //Display Help Menu
-    HelpMenuView HelpMenuView = new HelpMenuView();
-            
-    HelpMenuView.displayHelpMenuView();
+        HelpMenuView HelpMenuView = new HelpMenuView();
+        HelpMenuView.display();
     }
 }

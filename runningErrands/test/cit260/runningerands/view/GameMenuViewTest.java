@@ -24,7 +24,22 @@ public class GameMenuViewTest {
     public void testDisplayGameMenuView() {
         System.out.println("displayGameMenuView");
         GameMenuView instance = new GameMenuView();
-        instance.displayGameMenuView();
+        instance.display();
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of doAction method, of class GameMenuView.
+     */
+    @Test
+    public void testDoAction() {
+        System.out.println("doAction");
+        String value = "";
+        GameMenuView instance = new GameMenuView();
+        boolean expResult = false;
+        boolean result = instance.doAction(value);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

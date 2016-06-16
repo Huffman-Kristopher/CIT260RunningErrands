@@ -5,17 +5,14 @@
  */
 package cit260.runningerands.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Kris
  */
-public class CombatMenuView {
-    private String combatMenu;
+public class CombatMenuView extends View {
 
     public CombatMenuView() {
-        this.combatMenu = "\n"
+        super("\n"
                   + "\n------------------------------------"
                   + "\n| Combat Menu                        |" 
                   + "\n------------------------------------"
@@ -24,47 +21,14 @@ public class CombatMenuView {
                   + "\nR - Run Away"
                   + "\nN - Negotiate"
                   + "\n-------------------------"
-                  + "\nPlease select an Game menu option: ";
-    }
-        
-        void displayCombatMenuView() {
-        boolean done = false; // Set flag to not done
-        do {
-           //Prompt for and get the players name
-           String combatMenuOption = this.getCombatMenuOption();
-           if (combatMenuOption.toUpperCase().equals("Q")) //Prompt answered with desire to quit
-               return; //exit game
-           //do the action and display the next view
-           done = this.doAction(combatMenuOption);
-        } while (!done);
+                  + "\nPlease select an Game menu option: ");
     }
 
-    private String getCombatMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.combatMenu);
-            
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter S, A, R, or N");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // returns the value entered
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "S": //create and start a new game
                 this.weaponSelect();
                 break;

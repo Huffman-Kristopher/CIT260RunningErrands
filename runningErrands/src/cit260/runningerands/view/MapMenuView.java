@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author Kris
  */
-public class MapMenuView {
+public class MapMenuView extends View {
     
-    private String mapMenu;
-
     public MapMenuView() {
-        this.mapMenu = "\n"
+        super("\n"
                   + "\n------------------------------------"
                   + "\n| Map Menu                        |" 
                   + "\n------------------------------------"
@@ -48,47 +46,14 @@ public class MapMenuView {
                   + "\n26 – Pizza parlor"
                   + "\nR – Return to previous menu"
                   + "\n-------------------------"
-                  + "\nPlease select an Game menu option: ";
+                  + "\nPlease select an Game menu option: ");
     }
+
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        void displayMapMenuView() {
-        boolean done = false; // Set flag to not done
-        do {
-           //Promt for and get the payers name
-           String mapMenuOption = this.getMapMenuOption();
-           if (mapMenuOption.toUpperCase().equals("R")) //Prompt answered with desire to quit
-               return; //Return to main menu
-           //do the action and display the next view
-           done = this.doAction(mapMenuOption);
-        } while (!done);
-    }
-    
-    private String getMapMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.mapMenu);
-
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter a number from 01 - 26 or R");
-                continue;
-            }
-
-            break; // end the loop
-        }
-
-        return value; // returns the value entered
-    }
-    
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "M": //open map.
                 this.openMapMenu();
                 break;
@@ -167,7 +132,7 @@ public class MapMenuView {
     private void openHelpMenu() {
         //Display Help Menu
         HelpMenuView HelpMenuView = new HelpMenuView();
-        HelpMenuView.displayHelpMenuView();
+        HelpMenuView.display();
     }
 
     private void openStatsMenu() {
@@ -176,12 +141,12 @@ public class MapMenuView {
 
     private void openStoreMenu() {
         StoreMenuView StoreMenuView = new StoreMenuView();
-        StoreMenuView.displayStoreMenuView();
+        StoreMenuView.display();
     }
 
     private void openMainMenu() {
     MainMenuView MainMenuView = new MainMenuView();
-        MainMenuView.displayMainMenuView();    
+        MainMenuView.display();    
     }
     
 }

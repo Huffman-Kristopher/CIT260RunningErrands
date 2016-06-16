@@ -24,7 +24,22 @@ public class HelpMenuViewTest {
     public void testDisplayHelpMenuView() {
         System.out.println("displayHelpMenuView");
         HelpMenuView instance = new HelpMenuView();
-        instance.displayHelpMenuView();
+        instance.display();
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of doAction method, of class HelpMenuView.
+     */
+    @Test
+    public void testDoAction() {
+        System.out.println("doAction");
+        String value = "";
+        HelpMenuView instance = new HelpMenuView();
+        boolean expResult = false;
+        boolean result = instance.doAction(value);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

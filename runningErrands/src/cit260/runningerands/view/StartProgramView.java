@@ -105,6 +105,6 @@ import java.util.Scanner; //if it screws up - delete this
                  );
     MainMenuView mainMenuView = new MainMenuView();
             
-    mainMenuView.displayMainMenuView();
+    mainMenuView.display();
     }
 }

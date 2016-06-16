@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author Kris
  */
-public class StoreMenuView {
-    
-private String storeMenu;
+public class StoreMenuView extends View{
 
     public StoreMenuView() {
-        this.storeMenu = "\n"
+        super("\n"
                   + "\n------------------------------------"
                   + "\n| Store Menu                        |" 
                   + "\n------------------------------------"
@@ -24,47 +22,14 @@ private String storeMenu;
                   + "\nS - Sell items."
                   + "\nR - Return to game menu"
                   + "\n-------------------------"
-                  + "\nPlease select an Store option: ";
+                  + "\nPlease select an Store option: ");
     }
+
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        void displayStoreMenuView() {
-        boolean done = false; // Set flag to not done
-        do {
-           //Promt for and get the payers name
-           String storeMenuOption = this.getStoreMenuOption();
-           if (storeMenuOption.toUpperCase().equals("R")) //Prompt answered with desire to quit
-               return; //Return to main menu
-           //do the action and display the next view
-           done = this.doAction(storeMenuOption);
-        } while (!done);
-    }
-    
-    private String getStoreMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.storeMenu);
-
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter B, S, or R.");
-                continue;
-            }
-
-            break; // end the loop
-        }
-
-        return value; // returns the value entered
-    }
-    
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "B": //buy stuff.
                 this.openBuyMenu();
                 break;
@@ -94,6 +59,6 @@ private String storeMenu;
 
     private void openGameMenu() {
        GameMenuView GameMenuView = new GameMenuView();
-       GameMenuView.displayGameMenuView();
+       GameMenuView.display();
     }
 }
