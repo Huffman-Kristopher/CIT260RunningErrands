@@ -11,18 +11,19 @@ import java.util.Scanner;
  *
  * @author Kris
  */
-public class StoreMenuView extends View{
+public class SellItemsMenu extends View{
 
-    public StoreMenuView() {
+    public SellItemsMenu() {
         super("\n"
                   + "\n------------------------------------"
-                  + "\n| Store Menu                        |" 
+                  + "\n| Sell inventory Menu                        |" 
                   + "\n------------------------------------"
-                  + "\nB - Buy items."
-                  + "\nS - Sell items."
+                  + "\n1 -  item." // place holder
+                  + "\n2 -  item." // place holder
+                  + "\n3 -  item." // place holder
                   + "\nR - Return to game menu"
                   + "\n-------------------------"
-                  + "\nPlease select an Store option: ");
+                  + "\nPlease select an Store itme option: ");
     }
 
     @Override
@@ -30,11 +31,14 @@ public class StoreMenuView extends View{
         value = value.toUpperCase();
         
         switch (value) {
-            case "B": //buy stuff.
-                this.openBuyMenu();
+            case "1": //item 1.
+                this.option1();
                 break;
-            case "S": //sell stuff.
-                this.openSellMenu();
+            case "2": //item 2.
+                this.option2();
+                break;
+            case "3": //item 3.
+                this.option3();
                 break;
             case "R": //return to game menu.
                 this.openGameMenu();
@@ -46,20 +50,21 @@ public class StoreMenuView extends View{
 
         return false;
 
-
 }
 
-    private void openBuyMenu() {
-       BuyMenuView BuyMenuView = new BuyMenuView();
-       BuyMenuView.display();
+    private void option1() {
+        System.out.println("\n ***Sell option 1 ***");
+    }
+     private void option2() {
+        System.out.println("\n ***Sell option 2 ***");
+     }
+      private void option3() {
+        System.out.println("\n ***Sell option 3 ***");
     }
 
-    private void openSellMenu() {
-        System.out.println("\n ***Runs sell menu function ***");
-    }
-
-    private void openGameMenu() {
+     private void openGameMenu() {
        GameMenuView GameMenuView = new GameMenuView();
        GameMenuView.display();
     }
 }
+

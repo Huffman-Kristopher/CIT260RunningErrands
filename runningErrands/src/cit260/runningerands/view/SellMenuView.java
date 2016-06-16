@@ -1,9 +1,11 @@
+package cit260.runningerands.view;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit260.runningerands.view;
+
 
 import java.util.Scanner;
 
@@ -11,15 +13,14 @@ import java.util.Scanner;
  *
  * @author Kris
  */
-public class StoreMenuView extends View{
+public class SellMenuView extends View{
 
-    public StoreMenuView() {
+    public SellMenuView() {
         super("\n"
                   + "\n------------------------------------"
-                  + "\n| Store Menu                        |" 
+                  + "\n| Sell Menu                        |" 
                   + "\n------------------------------------"
-                  + "\nB - Buy items."
-                  + "\nS - Sell items."
+                  + "\nS - Select item."
                   + "\nR - Return to game menu"
                   + "\n-------------------------"
                   + "\nPlease select an Store option: ");
@@ -30,11 +31,8 @@ public class StoreMenuView extends View{
         value = value.toUpperCase();
         
         switch (value) {
-            case "B": //buy stuff.
-                this.openBuyMenu();
-                break;
-            case "S": //sell stuff.
-                this.openSellMenu();
+            case "S": //select items to sell.
+                this.openSellItmesMenu();
                 break;
             case "R": //return to game menu.
                 this.openGameMenu();
@@ -46,19 +44,14 @@ public class StoreMenuView extends View{
 
         return false;
 
-
 }
 
-    private void openBuyMenu() {
-       BuyMenuView BuyMenuView = new BuyMenuView();
-       BuyMenuView.display();
+    private void openSellItmesMenu() {
+       SellItemsMenu SellItemsMenu = new SellItemsMenu();
+       SellItemsMenu.display();
     }
 
-    private void openSellMenu() {
-        System.out.println("\n ***Runs sell menu function ***");
-    }
-
-    private void openGameMenu() {
+     private void openGameMenu() {
        GameMenuView GameMenuView = new GameMenuView();
        GameMenuView.display();
     }
