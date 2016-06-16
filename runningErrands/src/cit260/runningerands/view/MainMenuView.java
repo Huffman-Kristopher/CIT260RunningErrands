@@ -15,8 +15,6 @@ import runningerrands.RunningErrands;
  */
 public class MainMenuView extends View {
     
-    private String menu;
-    
     public MainMenuView() {
         super("\n"
                   + "\n-------------------------"

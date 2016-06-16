@@ -88,8 +88,8 @@ public class GameMenuView extends View{
 
     private void openInvestmentMenu() {
         //display investment menu
-        InvestmentMenuView InvestmentMenuView = new InvestmentMenuView();
-        InvestmentMenuView.displayInvestmentMenuView();
+        InvestmentTypeMenuView InvestmentMenuView = new InvestmentTypeMenuView();
+        InvestmentMenuView.display();
     }
 
     private void openGamblingMenu()  {

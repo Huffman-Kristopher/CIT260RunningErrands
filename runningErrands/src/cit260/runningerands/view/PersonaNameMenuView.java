@@ -73,10 +73,10 @@ class PersonaNameMenuView {
         return false;
         }
         
-    Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge);
-    if (persona == null) {
-        System.out.println("\nError creating the player.");
-        return false;
+        Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge);
+        if (persona == null) {
+            System.out.println("\nError creating the player.");
+            return false;
     }
     
     this.displayNextView(persona);

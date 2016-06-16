@@ -5,58 +5,68 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.model.Investment;
+import runningerrands.RunningErrands;
+
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
  */
 public class InvestmentControl {
         
-    public int calculateInvestmentReturn(int investmentType, int investmentAmount, int days) {
-        double investmentReturn;
-                
-        if (days < 0 || days > 29) {
-            return -1;
-        }
-        if (investmentAmount < 100 || investmentAmount > 100000) {
-            return -1;
-        }
-        if (investmentType < 1 || investmentType > 3 ) {
-            return -1;
-        }
-        
-        if (investmentType == 2) { //bond investment
-            
-            if (investmentAmount < 500 ) {
-                return -1;
-            }
-            double rate = .15;
-            investmentReturn = investmentAmount * (rate * days) - 50 + investmentAmount;
-            return (int) investmentReturn;
-        
-        }
-        if (investmentType == 3) { //Stock investment
-            
-            if (investmentAmount < 1500 ) {
-                return -1;
-            }
-            double rate = .25;
-            investmentReturn = investmentAmount * (rate * days) - 100 + investmentAmount;
-            return (int) investmentReturn;
-        
-        }
+    public static Investment setInvestmentType(String investType) {
+         
+        Investment investment = new Investment();
+        investment.setInvestType(investType);
+        RunningErrands.setInvestment(investment);
+        return investment;
+    }
 
-            double rate = .025; //money market investment
-            investmentReturn = investmentAmount * (rate * days) - 5 + investmentAmount;
-            return (int) investmentReturn;
+    public static Investment setInvestmentDays(int investDays) {
+        Investment investment = RunningErrands.getInvestment();
+        investment.setInvestDays(investDays);
+        return investment;
     }
-    public String calculateInvestReturnMessage (int investmentReturn) {
-        if(investmentReturn > 6000000) {
-            String invesmentResultMessage;
-            invesmentResultMessage= "Congratulations! You broke the bank! You earned " + investmentReturn + "!";
-            return invesmentResultMessage;
+    
+    public static Investment setInvestmentAmount(int investAmount) {
+        Investment investment = RunningErrands.getInvestment();
+        investment.setInvestAmount(investAmount);
+        return investment;
+    }
+    
+    public static int calculateInvestmentReturn() {
+        Investment investment = RunningErrands.getInvestment();
+        int investAmount = investment.getInvestAmount();
+        int investDays = investment.getInvestDays();
+        int investReturn = 0;
+        double amount = investAmount;
+        double days = investDays;
+        double invReturn = investReturn;
+        
+        String investType = investment.getInvestType();
+        
+        if (investType == "2") { //bond investment
+            invReturn = amount * (.15 * days) - 50 + amount;
+            investReturn = (int) invReturn;
+            return investReturn;
         }
-        String invesmentResultMessage;
-        invesmentResultMessage= "Your investment has matured! You earned " + investmentReturn + "!";
-        return invesmentResultMessage;
+        if (investType == "3") { //Stock investment
+            invReturn = amount * (.25 * days) - 100 + amount;
+            investReturn = (int) invReturn;
+            return investReturn;
+        }
+        else {
+            invReturn = amount * (.025 * days) - 5 + amount;
+            investReturn = (int) invReturn;
+            return investReturn;
+        }
     }
+
+    public static int updateInvestmentReturn(int investReturn) {
+        Investment investment = RunningErrands.getInvestment();
+        int invReturn = investment.setInvestReturn(investReturn);
+        return invReturn;
+    }
+    
+    
 }

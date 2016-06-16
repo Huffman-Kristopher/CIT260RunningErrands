@@ -31,10 +31,10 @@ public class CreateNewPersonaView extends View {
         
         switch (value) {
             case "F": //Display Feale Career Options
-                this.openCareerMenu('F');
+                this.openCareerMenuF();
                 break;
             case "M": //load saved game
-                this.openCareerMenu('M');
+                this.openCareerMenuM();
                 break;
             default:
                 System.out.println("\nInvalid selection, please try again");
@@ -44,11 +44,16 @@ public class CreateNewPersonaView extends View {
         return false;
     }
 
-    private void openCareerMenu(char gender) {
+    private void openCareerMenuF() {
         //Display Career Menu
-        CareerMenuView careerMenuView = new CareerMenuView(gender);
-            
-        careerMenuView.displayCareerMenuView(gender);
+        CareerMenuViewF CareerMenuViewF = new CareerMenuViewF();
+        CareerMenuViewF.display();
+    }
+    
+        private void openCareerMenuM() {
+        //Display Career Menu
+        CareerMenuViewM CareerMenuViewM = new CareerMenuViewM();
+        CareerMenuViewM.display();
     }
     
 }

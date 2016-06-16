@@ -12,19 +12,13 @@ import static org.junit.Assert.*;
  *
  * @author reddo
  */
-public class InvestmentMenuViewTest {
+public class StockMenuViewTest {
     
-    public InvestmentMenuViewTest() {
+    public StockMenuViewTest() {
     }
 
-    /**
-     * Test of displayInvestmentMenuView method, of class InvestmentMenuView.
-     */
     @Test
-    public void testDisplayInvestmentMenuView() {
-        System.out.println("displayInvestmentMenuView");
-        InvestmentTypeMenuView instance = new InvestmentTypeMenuView();
-        instance.display();
+    public void testSomeMethod() {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

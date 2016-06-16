@@ -12,19 +12,22 @@ import static org.junit.Assert.*;
  *
  * @author reddo
  */
-public class InvestmentMenuViewTest {
+public class CareerMenuViewFTest {
     
-    public InvestmentMenuViewTest() {
+    public CareerMenuViewFTest() {
     }
 
     /**
-     * Test of displayInvestmentMenuView method, of class InvestmentMenuView.
+     * Test of doAction method, of class CareerMenuViewF.
      */
     @Test
-    public void testDisplayInvestmentMenuView() {
-        System.out.println("displayInvestmentMenuView");
-        InvestmentTypeMenuView instance = new InvestmentTypeMenuView();
-        instance.display();
+    public void testDoAction() {
+        System.out.println("doAction");
+        String choice = "";
+        CareerMenuViewF instance = new CareerMenuViewF();
+        boolean expResult = false;
+        boolean result = instance.doAction(choice);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
