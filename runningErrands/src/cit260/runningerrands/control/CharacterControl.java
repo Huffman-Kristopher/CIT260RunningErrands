@@ -16,7 +16,7 @@ import runningerrands.RunningErrands;
 public class CharacterControl {
 
            
-    public static Persona createPersona(String personaName, char gender, String career, int personaAge) {
+    public static Persona createPersona(String personaName, char gender, String career, int personaAge, int salary) {
         
         int randomNumber = ThreadLocalRandom.current().nextInt(1, 9);
         int characterHealth = (personaAge * 3) + randomNumber;      
@@ -28,7 +28,9 @@ public class CharacterControl {
         persona.setCareer(career);
         persona.setAge(personaAge);
         persona.setHealth(characterHealth);
+        persona.setSalary(salary);
         persona.setMoney(500);
+        persona.setDay(1);
         RunningErrands.setPersona(persona); // Save the character
         RunningErrands.setInvestment(investment);
         return persona;
@@ -44,5 +46,24 @@ public class CharacterControl {
         return updatedBalance;
     }
 
-
+    public static void addOneDay() {
+        Persona persona = RunningErrands.getPersona();
+        Investment investment = RunningErrands.getInvestment();
+        int currentDay = persona.getDay();
+        int newDay = currentDay + 1;
+        persona.setDay(newDay);
+        int investmentReturn = investment.getInvestReturn();
+        int investmentMatureDay = investment.getInvestMatureDay();
+        int personaCurrentMoney = persona.getMoney();
+        int personaSalary = persona.getSalary();
+        int personaNewMoney = personaCurrentMoney + personaSalary;
+        persona.setMoney(personaNewMoney);
+        if (investmentMatureDay == newDay ) {
+            personaCurrentMoney = persona.getMoney();
+            personaNewMoney = personaCurrentMoney + investmentReturn;
+            persona.setMoney(personaNewMoney);
+            investment = new Investment();
+            RunningErrands.setInvestment(investment);
+        }
+    }
 }

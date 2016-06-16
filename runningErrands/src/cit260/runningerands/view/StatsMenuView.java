@@ -23,7 +23,11 @@ public class StatsMenuView extends View {
     int personaHealth = persona.getHealth();
     int personaMoney = persona.getMoney();
     int investmentReturn = investment.getInvestReturn();
-    int investmentDays = investment.getInvestDays();
+    int investmentMaturityDay = investment.getInvestMatureDay();
+    int currentDay = persona.getDay();
+    int investDaysToMature = investmentMaturityDay - currentDay;
+    int personaSalary = persona.getSalary();
+
 
 
         
@@ -32,16 +36,24 @@ public class StatsMenuView extends View {
     }
     
     public String StatsValues() {
+        String investmentMessage = "";
+        if (investmentReturn == 0) {
+            investmentMessage = "\nYou do not currently have any investments pending.";
+        }
+        else {
+            investmentMessage = "\nYour investment will return $" + investmentReturn + " in " + investDaysToMature + " days.";
+        }
         String menu = ("\n"
                   + "\n------------------------------------"
                   + "\n| Character Stats                   |" 
                   + "\n------------------------------------"
-                  + "\nCharacter Name: " + personaName 
-                  + "\nCharacter Age: " + personaAge
-                  + "\nCharacter Health: " + personaHealth
-                  + "\nChosen Career: " + personaCareer
-                  + "\nCurrent Balance: " + personaMoney
-                  + "\nYour investment will return " + investmentReturn + " dollars in " + investmentDays + " days"
+                  + "\nName: " + personaName 
+                  + "\nAge: " + personaAge
+                  + "\nHealth: " + personaHealth
+                  + "\nCareer: " + personaCareer
+                  + "\nSalary: " + personaSalary
+                  + "\nCurrent Balance: $" + personaMoney
+                  + investmentMessage
                   + "\n-------------------------"
                   + "\nB - Back to main menu");
         StatsMenuView StatsMenuView = new StatsMenuView(menu);

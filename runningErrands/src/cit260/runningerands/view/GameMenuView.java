@@ -5,6 +5,11 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.CharacterControl;
+import cit260.runningerrands.model.Investment;
+import cit260.runningerrands.model.Persona;
+import runningerrands.RunningErrands;
+
 /**
  *
  * @author Kristopher Huffman And Kirk Brown
@@ -27,6 +32,7 @@ public class GameMenuView extends View{
                   + "\nS – Save Game"
 //                  + "\nL – Load Game"
                   + "\nQ – Quit Game"
+                  + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
                   + "\nPlease select a menu option: ");
     }
@@ -69,6 +75,9 @@ public class GameMenuView extends View{
                 break;
             case "Q": //return to main menu.
                 this.openMainMenu();
+                break;
+            case "A": //return to main menu.
+                this.addOneDay();
                 break;
             default:
                 System.out.println("\nInvalid selection, please try again");
@@ -133,6 +142,10 @@ public class GameMenuView extends View{
     private void openMainMenu() {
     MainMenuView MainMenuView = new MainMenuView();
         MainMenuView.display();    
+    }
+
+    private void addOneDay() {
+        CharacterControl.addOneDay();
     }
     
 }

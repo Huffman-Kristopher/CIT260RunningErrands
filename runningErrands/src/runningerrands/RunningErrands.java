@@ -54,6 +54,5 @@ public class RunningErrands {
     public static void setInvestment(Investment investment) {
         RunningErrands.investment = investment;
     }
-
-
+    
 }

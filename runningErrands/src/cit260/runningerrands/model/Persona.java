@@ -22,14 +22,8 @@ public class Persona implements Serializable{
     private int money;
     private int coordinates;
     private int age;
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
-    }
+    private int day;
+    private int salary;
 
     public char getGender() {
         return gender;
@@ -51,8 +45,8 @@ public class Persona implements Serializable{
         return personaName;
     }
 
-    public void setPersonaName(String characterName) {
-        this.personaName = characterName;
+    public void setPersonaName(String personaName) {
+        this.personaName = personaName;
     }
 
     public int getHealth() {
@@ -79,16 +73,42 @@ public class Persona implements Serializable{
         this.coordinates = coordinates;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.gender;
-        hash = 97 * hash + Objects.hashCode(this.career);
-        hash = 97 * hash + Objects.hashCode(this.personaName);
-        hash = 97 * hash + this.health;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
-        hash = 97 * hash + this.coordinates;
-        hash = 97 * hash + this.age;
+        hash = 47 * hash + this.gender;
+        hash = 47 * hash + Objects.hashCode(this.career);
+        hash = 47 * hash + Objects.hashCode(this.personaName);
+        hash = 47 * hash + this.health;
+        hash = 47 * hash + this.money;
+        hash = 47 * hash + this.coordinates;
+        hash = 47 * hash + this.age;
+        hash = 47 * hash + this.day;
+        hash = 47 * hash + this.salary;
         return hash;
     }
 
@@ -104,16 +124,25 @@ public class Persona implements Serializable{
             return false;
         }
         final Persona other = (Persona) obj;
-        if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
+        if (this.gender != other.gender) {
             return false;
         }
-        if (Double.doubleToLongBits(this.money) != Double.doubleToLongBits(other.money)) {
+        if (this.health != other.health) {
+            return false;
+        }
+        if (this.money != other.money) {
             return false;
         }
         if (this.coordinates != other.coordinates) {
             return false;
         }
-        if (!Objects.equals(this.gender, other.gender)) {
+        if (this.age != other.age) {
+            return false;
+        }
+        if (this.day != other.day) {
+            return false;
+        }
+        if (this.salary != other.salary) {
             return false;
         }
         if (!Objects.equals(this.career, other.career)) {
@@ -127,10 +156,7 @@ public class Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + '}';
+        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + '}';
     }
-    
-    
-    
     
 }

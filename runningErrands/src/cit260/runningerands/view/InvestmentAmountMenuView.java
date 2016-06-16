@@ -36,19 +36,25 @@ private Investment investment;
 
     @Override
     public boolean doAction(String value) {
-        int investAmount = Integer.parseInt(value);
         
-        if (investAmount < 100 || investAmount > 100000) {
-            System.out.println("\nInvalid selection, please try again");
+        switch (value) {
+            case "R": //create a stock investment.
+                this.openGameMenu();
+                break;
+            default:
+                int investAmount = Integer.parseInt(value);
+                Persona persona = RunningErrands.getPersona();
+                int maxBet = persona.getMoney() - 1 ;
+                if (investAmount < 1 || investAmount > maxBet) {
+                    System.out.println("\nPlease enter a bet between 1 and " + maxBet);
+                }
+                else {
+                    investment = InvestmentControl.setInvestmentAmount(investAmount);
+                    this.calculateInvesmentReturn();
+                }
+                break;
         }
-        else {
-            investment = InvestmentControl.setInvestmentAmount(investAmount);
-            this.calculateInvesmentReturn();
-        }
-                
         return false;
-
-
 }
     private void calculateInvesmentReturn() {
         //Display Help Menu
@@ -57,5 +63,10 @@ private Investment investment;
         GameMenuView GameMenuView = new GameMenuView();
         GameMenuView.display();  
         
+    }
+    
+    private void openGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 }

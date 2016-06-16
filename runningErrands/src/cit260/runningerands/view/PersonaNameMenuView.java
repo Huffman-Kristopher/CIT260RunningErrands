@@ -67,13 +67,41 @@ class PersonaNameMenuView {
     }
 
     private boolean doAction(String personaName, char gender, String career, int personaAge) {
+        int salary = 0;
         if (personaName.length() < 2) {
         System.out.println("\nInvalid persona name:"
             +"The name must be greater than one character in length.");
         return false;
         }
         
-        Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge);
+        switch (career) {
+            case "Janitor": //open map.
+                salary = 300;
+                break;
+            case "Mail Clerk": //open map.
+                salary = 500;
+                break;
+            case "Pizza Deliverer": //open map.
+                salary = 250;
+                break;
+            case "Auto Mechanic": //open map.
+                salary = 800;
+                break;
+            case "Secretary": //open map.
+                salary = 600;
+                break;
+            case "Nurse": //open map.
+                salary = 1000;
+                break;
+            case "Hair Dresser": //open map.
+                salary = 400;
+                break;
+            case "Teacher": //open map.
+                salary = 450;
+                break;
+        }
+            
+        Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge, salary);
         if (persona == null) {
             System.out.println("\nError creating the player.");
             return false;

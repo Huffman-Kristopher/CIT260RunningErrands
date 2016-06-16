@@ -55,6 +55,9 @@ private Investment investment;
                 investment = InvestmentControl.setInvestmentType(value);
                 this.selectInvestDays();
                 break;
+            case "R": //Create a money market investment.
+                 this.openGameMenu();
+                break;
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  
@@ -68,4 +71,9 @@ private Investment investment;
         //Display Help Menu
         InvestmentDaysMenuView InvestmentDaysMenuView = new InvestmentDaysMenuView();
         InvestmentDaysMenuView.display();    }
+
+    private void openGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+    }
 }

@@ -36,22 +36,31 @@ private Investment investment;
 
     @Override
     public boolean doAction(String value) {
-        int investDays = Integer.parseInt(value);
-        
-        if (investDays < 0 || investDays > 29) {
-            System.out.println("\nInvalid selection, please try again");
-       }
-        else {
-            investment = InvestmentControl.setInvestmentDays(investDays);
-            this.selectInvestAmount();
+        switch (value) {
+            case "R": //create a stock investment.
+                this.openGameMenu();
+                break;
+            default:
+                int investDays = Integer.parseInt(value);
+                if (investDays < 0 || investDays > 29) {
+                    System.out.println("\nInvalid selection, please try again");
+                }
+                else {
+                    investment = InvestmentControl.setInvestmentDays(investDays);
+                    this.selectInvestAmount();
+                }
+                break;
         }
-                
         return false;
-
 }
     private void selectInvestAmount() {
         //Display Help Menu
         InvestmentAmountMenuView InvestmentAmountMenuView = new InvestmentAmountMenuView();
         InvestmentAmountMenuView.display();
+    }
+        
+    private void openGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 }

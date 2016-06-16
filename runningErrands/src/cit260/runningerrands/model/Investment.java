@@ -20,15 +20,8 @@ public class Investment implements Serializable{
     private int investDays;
     private double apr;
     private int investReturn;
-
-    public int getInvestReturn() {
-        return investReturn;
-    }
-
-    public int setInvestReturn(int investReturn) {
-        this.investReturn = investReturn;
-        return investReturn;
-    }
+    private int investBeginningDay;
+    private int investMatureDay;
 
     public int getInvestAmount() {
         return investAmount;
@@ -70,15 +63,41 @@ public class Investment implements Serializable{
         this.apr = apr;
     }
 
+    public int getInvestReturn() {
+        return investReturn;
+    }
+
+    public void setInvestReturn(int investReturn) {
+        this.investReturn = investReturn;
+    }
+
+    public int getInvestBeginningDay() {
+        return investBeginningDay;
+    }
+
+    public void setInvestBeginningDay(int investBeginningDay) {
+        this.investBeginningDay = investBeginningDay;
+    }
+
+    public int getInvestMatureDay() {
+        return investMatureDay;
+    }
+
+    public void setInvestMatureDay(int investMatureDay) {
+        this.investMatureDay = investMatureDay;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.investAmount;
-        hash = 79 * hash + this.investPayout;
-        hash = 79 * hash + Objects.hashCode(this.investType);
-        hash = 79 * hash + this.investDays;
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.apr) ^ (Double.doubleToLongBits(this.apr) >>> 32));
-        hash = 79 * hash + this.investReturn;
+        int hash = 5;
+        hash = 31 * hash + this.investAmount;
+        hash = 31 * hash + this.investPayout;
+        hash = 31 * hash + Objects.hashCode(this.investType);
+        hash = 31 * hash + this.investDays;
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.apr) ^ (Double.doubleToLongBits(this.apr) >>> 32));
+        hash = 31 * hash + this.investReturn;
+        hash = 31 * hash + this.investBeginningDay;
+        hash = 31 * hash + this.investMatureDay;
         return hash;
     }
 
@@ -97,9 +116,6 @@ public class Investment implements Serializable{
         if (this.investAmount != other.investAmount) {
             return false;
         }
-        if (this.investReturn != other.investReturn) {
-            return false;
-        }
         if (this.investPayout != other.investPayout) {
             return false;
         }
@@ -109,10 +125,24 @@ public class Investment implements Serializable{
         if (Double.doubleToLongBits(this.apr) != Double.doubleToLongBits(other.apr)) {
             return false;
         }
+        if (this.investReturn != other.investReturn) {
+            return false;
+        }
+        if (this.investBeginningDay != other.investBeginningDay) {
+            return false;
+        }
+        if (this.investMatureDay != other.investMatureDay) {
+            return false;
+        }
         if (!Objects.equals(this.investType, other.investType)) {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Investment{" + "investAmount=" + investAmount + ", investPayout=" + investPayout + ", investType=" + investType + ", investDays=" + investDays + ", apr=" + apr + ", investReturn=" + investReturn + ", investBeginningDay=" + investBeginningDay + ", investMatureDay=" + investMatureDay + '}';
     }
 
    }

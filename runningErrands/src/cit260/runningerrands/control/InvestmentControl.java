@@ -6,6 +6,7 @@
 package cit260.runningerrands.control;
 
 import cit260.runningerrands.model.Investment;
+import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
 
 /**
@@ -23,8 +24,13 @@ public class InvestmentControl {
     }
 
     public static Investment setInvestmentDays(int investDays) {
+        Persona persona = RunningErrands.getPersona();
+        int currentDay = persona.getDay();
+        int matureDay = currentDay + investDays;
         Investment investment = RunningErrands.getInvestment();
         investment.setInvestDays(investDays);
+        investment.setInvestBeginningDay(currentDay);
+        investment.setInvestMatureDay(matureDay);
         return investment;
     }
     
@@ -64,8 +70,8 @@ public class InvestmentControl {
 
     public static int updateInvestmentReturn(int investReturn) {
         Investment investment = RunningErrands.getInvestment();
-        int invReturn = investment.setInvestReturn(investReturn);
-        return invReturn;
+        investment.setInvestReturn(investReturn);
+        return investReturn;
     }
     
     
