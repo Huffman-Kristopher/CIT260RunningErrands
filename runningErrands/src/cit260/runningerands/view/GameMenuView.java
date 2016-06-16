@@ -16,19 +16,19 @@ public class GameMenuView extends View{
                   + "\n------------------------------------"
                   + "\n| Game Main Menu                        |" 
                   + "\n------------------------------------"
-                  + "\nM - Map."
+                  + "\nM - Map"
                   + "\nV - Visit Store"
-                  + "\nI - inventory"
+                  + "\nI - Inventory"
                   + "\nF – Investments"
                   + "\nG – Gambling"
-                  + "\nS – save game"
-                  + "\nL – load game"
-                  + "\nE - view email"
-                  + "\nK – stats menu"
-                  + "\nH – help menu"
-                  + "\nQ – quit game"
+                  + "\nE - View Email"
+                  + "\nK – Character Stats"
+                  + "\nH – Help Menu"
+                  + "\nS – Save Game"
+//                  + "\nL – Load Game"
+                  + "\nQ – Quit Game"
                   + "\n-------------------------"
-                  + "\nPlease select an Game menu option: ");
+                  + "\nPlease select a menu option: ");
     }
     
     @Override
@@ -54,9 +54,10 @@ public class GameMenuView extends View{
             case "S": //save the game.
                 this.OpensaveGame();
                 break;
-            case "L": //load the game.
+/**            case "L": //load the game.
                 this.openLoadGame();
                 break;
+**/
             case "E": //open email and get objectives.
                 this.openEmailMenu();
                 break;
@@ -83,7 +84,7 @@ public class GameMenuView extends View{
     }
 
     private void openInventoryMenu() {
-        System.out.println("\n ***Runs Inventroy menu function ***");
+        System.out.println("\n ***Runs Inventory menu function ***");
     }
 
     private void openInvestmentMenu() {
@@ -118,7 +119,10 @@ public class GameMenuView extends View{
     }
 
     private void openStatsMenu() {
-        System.out.println("\n ***Runs stats menu function ***");
+        String menu = "";
+        StatsMenuView StatsMenuView = new StatsMenuView(menu);
+        menu = StatsMenuView.StatsValues();
+        StatsMenuView.display();
     }
 
     private void openStoreMenu() {

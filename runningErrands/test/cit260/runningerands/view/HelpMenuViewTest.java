@@ -18,18 +18,6 @@ public class HelpMenuViewTest {
     }
 
     /**
-     * Test of displayHelpMenuView method, of class HelpMenuView.
-     */
-    @Test
-    public void testDisplayHelpMenuView() {
-        System.out.println("displayHelpMenuView");
-        HelpMenuView instance = new HelpMenuView();
-        instance.display();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of doAction method, of class HelpMenuView.
      */
     @Test

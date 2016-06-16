@@ -18,18 +18,6 @@ public class MainMenuViewTest {
     }
 
     /**
-     * Test of displayMainMenuView method, of class MainMenuView.
-     */
-    @Test
-    public void testDisplayMainMenuView() {
-        System.out.println("displayMainMenuView");
-        MainMenuView instance = new MainMenuView();
-        instance.display();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of doAction method, of class MainMenuView.
      */
     @Test

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.runningerrands.control;
+import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Persona;
 import java.util.concurrent.ThreadLocalRandom;
 import runningerrands.RunningErrands;
@@ -21,12 +22,15 @@ public class CharacterControl {
         int characterHealth = (personaAge * 3) + randomNumber;      
         
         Persona persona = new Persona();
+        Investment investment = new Investment();
         persona.setGender(gender);
         persona.setPersonaName(personaName);
         persona.setCareer(career);
         persona.setAge(personaAge);
         persona.setHealth(characterHealth);
+        persona.setMoney(500);
         RunningErrands.setPersona(persona); // Save the character
+        RunningErrands.setInvestment(investment);
         return persona;
     }
 
@@ -39,6 +43,6 @@ public class CharacterControl {
         int updatedBalance = persona.getMoney();
         return updatedBalance;
     }
-    
+
 
 }

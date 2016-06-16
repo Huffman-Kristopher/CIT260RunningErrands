@@ -111,7 +111,6 @@ class PersonaNameMenuView {
         
 private void openGameMenuView() {
         GameMenuView gameMenuView = new GameMenuView();
-            
         gameMenuView.display();
     }
 

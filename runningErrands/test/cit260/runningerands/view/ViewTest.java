@@ -50,11 +50,5 @@ public class ViewTest {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
-
-    public class ViewImpl extends View {
-    }
-
-    public class ViewImpl extends View {
-    }
-    
 }
+   

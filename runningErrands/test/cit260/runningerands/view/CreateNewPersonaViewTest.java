@@ -18,18 +18,6 @@ public class CreateNewPersonaViewTest {
     }
 
     /**
-     * Test of displayCreateNewPersonaView method, of class CreateNewPersonaView.
-     */
-    @Test
-    public void testDisplayCreateNewPersonaView() {
-        System.out.println("displayCreateNewPersonaView");
-        CreateNewPersonaView instance = new CreateNewPersonaView();
-        instance.display();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of doAction method, of class CreateNewPersonaView.
      */
     @Test

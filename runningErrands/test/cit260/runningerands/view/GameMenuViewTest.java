@@ -18,18 +18,6 @@ public class GameMenuViewTest {
     }
 
     /**
-     * Test of displayGameMenuView method, of class GameMenuView.
-     */
-    @Test
-    public void testDisplayGameMenuView() {
-        System.out.println("displayGameMenuView");
-        GameMenuView instance = new GameMenuView();
-        instance.display();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of doAction method, of class GameMenuView.
      */
     @Test

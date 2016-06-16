@@ -71,33 +71,5 @@ public class ViewInterfaceTest {
             return false;
         }
     }
-
-    public class ViewInterfaceImpl implements ViewInterface {
-
-        public void display() {
-        }
-
-        public String getInput() {
-            return "";
-        }
-
-        public boolean doAction(String value) {
-            return false;
-        }
-    }
-
-    public class ViewInterfaceImpl implements ViewInterface {
-
-        public void display() {
-        }
-
-        public String getInput() {
-            return "";
-        }
-
-        public boolean doAction(String value) {
-            return false;
-        }
-    }
     
 }
