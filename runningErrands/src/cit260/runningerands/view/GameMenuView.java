@@ -98,14 +98,14 @@ public class GameMenuView extends View{
 
     private void openInvestmentMenu() {
         //display investment menu
-        InvestmentTypeMenuView InvestmentMenuView = new InvestmentTypeMenuView();
-        InvestmentMenuView.display();
+        InvestmentTypeMenuView investmentMenuView = new InvestmentTypeMenuView();
+        investmentMenuView.display();
     }
 
     private void openGamblingMenu()  {
         //display Gambling menu
-        GamblingMenuView GamblingMenuView = new GamblingMenuView();
-        GamblingMenuView.displayGamblingMenuView();
+        GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView();
+        gamblingAmountMenuView.display();
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }
 
@@ -123,25 +123,25 @@ public class GameMenuView extends View{
 
     private void openHelpMenu() {
         //Display Help Menu
-        HelpMenuView HelpMenuView = new HelpMenuView();
-        HelpMenuView.display();
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
 
     private void openStatsMenu() {
         String menu = "";
-        StatsMenuView StatsMenuView = new StatsMenuView(menu);
-        menu = StatsMenuView.StatsValues();
-        StatsMenuView.display();
+        StatsMenuView statsMenuView = new StatsMenuView(menu);
+        menu = statsMenuView.StatsValues();
+        statsMenuView.display();
     }
 
     private void openStoreMenu() {
-        StoreMenuView StoreMenuView = new StoreMenuView();
-        StoreMenuView.display();
+        StoreMenuView storeMenuView = new StoreMenuView();
+        storeMenuView.display();
     }
 
     private void openMainMenu() {
-    MainMenuView MainMenuView = new MainMenuView();
-        MainMenuView.display();    
+    MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();    
     }
 
     private void addOneDay() {

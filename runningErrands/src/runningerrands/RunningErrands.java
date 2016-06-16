@@ -6,6 +6,7 @@
 package runningerrands;
 
 import cit260.runningerands.view.StartProgramView;
+import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Persona;
@@ -21,6 +22,7 @@ public class RunningErrands {
     private static Player player = null;
     private static Persona persona = null;
     private static Investment investment = null;
+    private static Gambling gambling = null;
 
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
@@ -54,5 +56,11 @@ public class RunningErrands {
     public static void setInvestment(Investment investment) {
         RunningErrands.investment = investment;
     }
-    
+      
+    public static Gambling getGambling() {
+    return gambling;
+    }
+    public static void setGambling(Gambling gambling) {
+        RunningErrands.gambling = gambling;
+    }
 }

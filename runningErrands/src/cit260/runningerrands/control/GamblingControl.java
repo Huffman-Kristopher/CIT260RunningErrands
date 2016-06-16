@@ -5,7 +5,9 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Persona;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -13,42 +15,48 @@ import cit260.runningerrands.model.Persona;
  */
 public class GamblingControl {
     
-    public static int calculateWiningNumber(int bet, int numberPick) {
+    public static int calculateWiningNumber() {
         int winningNumber;
-        if (bet < 0) { //All bets zero or less win
-            winningNumber = numberPick;
+        Gambling gambling = RunningErrands.getGambling();
+        int betAmount = gambling.getBetAmount();
+        int betNumber = gambling.getBetNumbers();
+        if (betAmount < 0) { //All bets zero or less win
+            winningNumber = betNumber;
             return winningNumber;
         }
         //All positive bets lose
-        winningNumber = numberPick + 1;
+        winningNumber = betNumber + 1;
         return winningNumber;
         
     }
     
-    public static int calculatePayout(int bet, int numberPick, int winningNumber) {
-        
+    public static int calculatePayout(int winningNumber) {
         int payout; 
-        
-        if (winningNumber == numberPick) { //Define winnings
-                payout = bet * (-2);
+        Gambling gambling = RunningErrands.getGambling();
+        int betAmount = gambling.getBetAmount();
+        int betNumber = gambling.getBetNumbers();
+        if (winningNumber == betNumber) { //Define winnings
+                payout = betAmount * (-2);
                 return payout;
         }
-        
-        payout = 0 - bet;
-
+        payout = 0 - betAmount;
         return payout;
 
     }
     
-    public String calculateMessage (int payout) {
-        String gamblingResultMessage;
-        if (payout == 0) {
-               gamblingResultMessage = "Congratulations! You lost! You did not win any money!";
-               return gamblingResultMessage;
-        }
+    public static Gambling createBet(int betAmount) {
         
-        gamblingResultMessage = "Congratulations, you found a way to cheat the system! You won " + payout + "!";
-        return gamblingResultMessage;
-
+        Gambling gambling = new Gambling();
+        gambling.setBetAmount(betAmount);
+        RunningErrands.setGambling(gambling);
+        return gambling;
     }
+    
+    public static Gambling setBetNumbers(int betNumbers) {
+        
+        Gambling gambling = RunningErrands.getGambling();
+        gambling.setBetNumbers(betNumbers);
+        return gambling;
+    }
+    
 }

@@ -5,8 +5,6 @@
  */
 package cit260.runningerands.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author reddo
