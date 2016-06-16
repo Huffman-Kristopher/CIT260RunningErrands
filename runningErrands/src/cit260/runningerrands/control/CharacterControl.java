@@ -29,7 +29,7 @@ public class CharacterControl {
         persona.setAge(personaAge);
         persona.setHealth(characterHealth);
         persona.setSalary(salary);
-        persona.setMoney(500);
+        persona.setMoney(salary);
         persona.setDay(1);
         RunningErrands.setPersona(persona); // Save the character
         RunningErrands.setInvestment(investment);

@@ -99,6 +99,12 @@ class PersonaNameMenuView {
             case "Teacher": //open map.
                 salary = 450;
                 break;
+            case "CEO"://
+                salary = 1000000;
+                break;
+            case "Megastar"://
+                salary = 2000000;
+                break;
         }
             
         Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge, salary);

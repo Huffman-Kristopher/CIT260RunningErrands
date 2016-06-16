@@ -58,6 +58,10 @@ public class CareerMenuViewM extends View {
                 gender = 'M';
                 career = "Auto Mechanic";                   
                 this.openPersonaNameView(gender, career);
+            case "C": //Set gender to Male and career to Auto Mechanic
+                gender = 'M';
+                career = "CEO";                   
+                this.openPersonaNameView(gender, career);
                 break;  
         }
 

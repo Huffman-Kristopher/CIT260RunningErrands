@@ -59,6 +59,11 @@ public class CareerMenuViewF extends View {
                 career = "Teacher";                   
                 this.openPersonaNameView(gender, career);
                 break;
+            case "M": //Set gender to Female and career to Teacher
+                gender = 'F';
+                career = "Megastar";                   
+                this.openPersonaNameView(gender, career);
+                break;
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  
