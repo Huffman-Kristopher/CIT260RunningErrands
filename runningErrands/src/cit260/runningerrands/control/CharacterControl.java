@@ -31,6 +31,7 @@ public class CharacterControl {
         persona.setSalary(salary);
         persona.setMoney(salary);
         persona.setDay(1);
+        persona.setGambledToday(false);
         RunningErrands.setPersona(persona); // Save the character
         RunningErrands.setInvestment(investment);
         return persona;
@@ -58,6 +59,7 @@ public class CharacterControl {
         int personaSalary = persona.getSalary();
         int personaNewMoney = personaCurrentMoney + personaSalary;
         persona.setMoney(personaNewMoney);
+        persona.setGambledToday(false);
         if (investmentMatureDay == newDay ) {
             personaCurrentMoney = persona.getMoney();
             personaNewMoney = personaCurrentMoney + investmentReturn;

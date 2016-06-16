@@ -17,15 +17,30 @@ import runningerrands.RunningErrands;
 
 public class GamblingAmountMenuView extends View {
 
-    public GamblingAmountMenuView() {
-        
-        super("\n"
+    public GamblingAmountMenuView(String menu) {
+        super(menu);
+    }
+    
+    public String GamblingMenuValues() {
+        String menu = "";
+        Persona persona = RunningErrands.getPersona();
+        boolean gambledToday = persona.isGambledToday();
+        if (gambledToday == false) {
+            menu = ("\n"
               + "\n------------------------------------"
               + "\n| Gambling Den                      |" 
               + "\n------------------------------------"
-              + "\nPlease enter a bet amount or press 'R' to return to main menu: ");
-
+              + "\nPlease enter a bet amount or press 'R' to return to main menu: ");;
         }
+        else {
+            System.out.println("\nYou have already gambled today. Please return tomorrow.");
+            this.openGameMenu();
+        }
+        
+        GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
+        gamblingAmountMenuView.display();
+        return menu;
+    }
 
     @Override
     public boolean doAction(String value) {

@@ -112,8 +112,10 @@ public class MapMenuView extends View {
 
     private void openGamblingMenu()  {
         //display Gambling menu
-        GamblingAmountMenuView GamblingAmountMenuView = new GamblingAmountMenuView();
-        GamblingAmountMenuView.display();
+        String menu = "";
+        GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
+        menu = gamblingAmountMenuView.GamblingMenuValues();
+        gamblingAmountMenuView.display();
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }
 

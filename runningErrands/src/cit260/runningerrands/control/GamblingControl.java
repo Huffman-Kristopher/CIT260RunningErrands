@@ -33,6 +33,8 @@ public class GamblingControl {
     public static int calculatePayout(int winningNumber) {
         int payout; 
         Gambling gambling = RunningErrands.getGambling();
+        Persona persona = RunningErrands.getPersona();
+        persona.setGambledToday(true);
         int betAmount = gambling.getBetAmount();
         int betNumber = gambling.getBetNumbers();
         if (winningNumber == betNumber) { //Define winnings

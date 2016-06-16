@@ -104,7 +104,9 @@ public class GameMenuView extends View{
 
     private void openGamblingMenu()  {
         //display Gambling menu
-        GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView();
+        String menu = "";
+        GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
+        menu = gamblingAmountMenuView.GamblingMenuValues();
         gamblingAmountMenuView.display();
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }

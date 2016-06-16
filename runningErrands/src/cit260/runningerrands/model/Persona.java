@@ -24,6 +24,7 @@ public class Persona implements Serializable{
     private int age;
     private int day;
     private int salary;
+    private boolean gambledToday;
 
     public char getGender() {
         return gender;
@@ -97,18 +98,27 @@ public class Persona implements Serializable{
         this.salary = salary;
     }
 
+    public boolean isGambledToday() {
+        return gambledToday;
+    }
+
+    public void setGambledToday(boolean gambledToday) {
+        this.gambledToday = gambledToday;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + this.gender;
-        hash = 47 * hash + Objects.hashCode(this.career);
-        hash = 47 * hash + Objects.hashCode(this.personaName);
-        hash = 47 * hash + this.health;
-        hash = 47 * hash + this.money;
-        hash = 47 * hash + this.coordinates;
-        hash = 47 * hash + this.age;
-        hash = 47 * hash + this.day;
-        hash = 47 * hash + this.salary;
+        hash = 37 * hash + this.gender;
+        hash = 37 * hash + Objects.hashCode(this.career);
+        hash = 37 * hash + Objects.hashCode(this.personaName);
+        hash = 37 * hash + this.health;
+        hash = 37 * hash + this.money;
+        hash = 37 * hash + this.coordinates;
+        hash = 37 * hash + this.age;
+        hash = 37 * hash + this.day;
+        hash = 37 * hash + this.salary;
+        hash = 37 * hash + (this.gambledToday ? 1 : 0);
         return hash;
     }
 
@@ -145,6 +155,9 @@ public class Persona implements Serializable{
         if (this.salary != other.salary) {
             return false;
         }
+        if (this.gambledToday != other.gambledToday) {
+            return false;
+        }
         if (!Objects.equals(this.career, other.career)) {
             return false;
         }
@@ -156,7 +169,7 @@ public class Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + '}';
+        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + '}';
     }
-    
+   
 }
