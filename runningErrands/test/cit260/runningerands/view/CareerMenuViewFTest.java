@@ -18,13 +18,13 @@ public class CareerMenuViewFTest {
     }
 
     /**
-     * Test of doAction method, of class CareerMenuViewF.
+     * Test of doAction method, of class PersonaCareerMenuView.
      */
     @Test
     public void testDoAction() {
         System.out.println("doAction");
         String choice = "";
-        CareerMenuViewF instance = new CareerMenuViewF();
+        PersonaCareerMenuView instance = new PersonaCareerMenuView();
         boolean expResult = false;
         boolean result = instance.doAction(choice);
         assertEquals(expResult, result);

@@ -5,7 +5,7 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.CharacterControl;
+import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.control.GamblingControl;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Persona;
@@ -67,7 +67,7 @@ public class GamblingNumbersMenuView extends View {
         Gambling gambling = RunningErrands.getGambling();
         int winningNumber = GamblingControl.calculateWiningNumber();
         int winningsTotal = GamblingControl.calculatePayout(winningNumber);
-        int updatedBalance = CharacterControl.updatePersonaMoney(winningsTotal);
+        int updatedBalance = PersonaControl.updatePersonaMoney(winningsTotal);
         if (winningsTotal < 0) {
             System.out.println("\nThe winning number was " + winningNumber + "."
                     +"\nWe're sorry! You lost $" + winningsTotal * (-1) + ". Your new balance is $" + updatedBalance + ".");

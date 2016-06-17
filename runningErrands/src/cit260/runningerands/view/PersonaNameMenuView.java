@@ -5,8 +5,7 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.CharacterControl;
-import cit260.runningerrands.control.GameControl;
+import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Persona;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -16,162 +15,49 @@ import runningerrands.RunningErrands;
  *
  * @author reddo
  */
-class PersonaNameMenuView {
+public class PersonaNameMenuView extends View {
 
-    private String menu;
-    private char gender;
-    private String career; 
-    private String promptMessage;
-    private int personaAge;
-    private String promptAgeMessage;
-
-    public PersonaNameMenuView(char gender, String career) {
-            this.promptMessage = "\nPlease enter a name for your persona: ";
-            //this.promptMessage = "\nPlease enter your age:";
-            this.promptAgeMessage = "\nPlease enter an age for your persona: ";
+    public PersonaNameMenuView() {
+        super("\n"
+            + "\n------------------------------------"
+            + "\n| Character Creation: Name Selection |" 
+            + "\n------------------------------------"
+            + "\nPlease enter a name for your "
+            + "\ncharacter or press Q to quit game:"
+            + "\n");  
     }
-
-    void displayPersonaNameMenuView(char gender, String career) {
-       boolean done = false; // Set flag to not done
-       do {
-           //Promt for and get the payers name
-           String personaName = this.getPersonaName();
-           personaAge = this.getPersonaAge();
-           if (personaName.toUpperCase().equals("Q")) //Prompt answered with desire to quit
-               return; //exit game
-           //do the action and display the next view
-           done = this.doAction(personaName, gender, career, personaAge);
-       } while (!done);
-    }
-
-    private String getPersonaName() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) { //loop while not valid
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
-            value = value.trim(); // Trim off leading and trailing spaces
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Persona's name cannot be blank");
-                continue;
-            }
-            
-            break; // end the loop
+    
+    @Override
+    public boolean doAction(String value) {
+        if (value == "Q") {
+            this.openMainMenuView();
+            return true;
         }
-        
-        return value; // returns the value entered
-    }
-
-    private boolean doAction(String personaName, char gender, String career, int personaAge) {
-        int salary = 0;
-        if (personaName.length() < 2) {
+        if (value.length() < 2) {
         System.out.println("\nInvalid persona name:"
             +"The name must be greater than one character in length.");
         return false;
         }
-        
-        switch (career) {
-            case "Janitor": //open map.
-                salary = 300;
-                break;
-            case "Mail Clerk": //open map.
-                salary = 500;
-                break;
-            case "Pizza Deliverer": //open map.
-                salary = 250;
-                break;
-            case "Auto Mechanic": //open map.
-                salary = 800;
-                break;
-            case "Secretary": //open map.
-                salary = 600;
-                break;
-            case "Nurse": //open map.
-                salary = 1000;
-                break;
-            case "Hair Dresser": //open map.
-                salary = 400;
-                break;
-            case "Teacher": //open map.
-                salary = 450;
-                break;
-            case "CEO"://
-                salary = 1000000;
-                break;
-            case "Megastar"://
-                salary = 2000000;
-                break;
+        else {
+        Persona persona = RunningErrands.getPersona();
+        PersonaControl.setPersonaName(value);
+        this.openPersonaAgeMenuView();
+        return true;
         }
-            
-        Persona persona = CharacterControl.createPersona(personaName, gender, career, personaAge, salary);
-        if (persona == null) {
-            System.out.println("\nError creating the player.");
-            return false;
+    }
+
+    private void openPersonaAgeMenuView() {
+        PersonaAgeMenuView personaAgeMenuView = new PersonaAgeMenuView();
+        personaAgeMenuView.display();
     }
     
-    this.displayNextView(persona);
-    return true;
+    private void openMainMenuView() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
     }
-
-    private void displayNextView(Persona persona) {
-        gender = persona.getGender();
-        String genderDisplay ="";
-        
-        switch (gender) {
-            case 'M': //If gender is M, then male
-                genderDisplay = "male";
-                break;
-            case 'F': //If gender is M, then male
-                genderDisplay = "female";
-                break;
-            default:
-                System.out.println("\nInvalid selection, please try again");
-                break;  
-        }
-
-        System.out.println("\n==========================="
-                         + "\n You have created a new persona!"
-                         + "\n Your " + persona.getAge() + " year old " + genderDisplay + " persona is named " + persona.getPersonaName()
-                         + "\n and works in the " + persona.getCareer() + " field! Starting health is " + persona.getHealth()
-                         + "\n Now - go run some errands!"
-                         + "\n==========================="
-         );
-        this.openGameMenuView();
-    }
-        
-private void openGameMenuView() {
+    
+    private void openGameMenuView() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
-
-    private int getPersonaAge() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
-        int value = 0;
-        boolean valid = false;
-        
-        while (!valid) { //loop while not valid
-            try {
-                System.out.println("\n" + this.promptAgeMessage);
-                value = keyboard.nextInt(); //Get the next line typed on the keyboard
-                if (value < 3 || value > 120) { //value is blank
-                System.out.println("\nInvalid value: Persona's name cannot be blank");
-                continue;
-                }
-            }
-            catch (InputMismatchException exception) 
-            {
-            System.out.println("This is not an integer");
-            value = this.getPersonaAge();
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // returns the value entered
-    }
-    
 }

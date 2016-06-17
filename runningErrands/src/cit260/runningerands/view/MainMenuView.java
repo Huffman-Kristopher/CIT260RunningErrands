@@ -52,7 +52,7 @@ public class MainMenuView extends View {
     
     private void createNewPersona() {
         // Display game menu
-        CreateNewPersonaView createNewPersona = new CreateNewPersonaView();
+        PersonaGenderMenuView createNewPersona = new PersonaGenderMenuView();
         createNewPersona.display();
     }
     private void LoadSavedGame() {

@@ -23,7 +23,7 @@ public class RunningErrands {
     private static Persona persona = null;
     private static Investment investment = null;
     private static Gambling gambling = null;
-
+    
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();

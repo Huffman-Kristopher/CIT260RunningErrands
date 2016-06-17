@@ -18,13 +18,13 @@ public class CreateNewPersonaViewTest {
     }
 
     /**
-     * Test of doAction method, of class CreateNewPersonaView.
+     * Test of doAction method, of class PersonaGenderMenuView.
      */
     @Test
     public void testDoAction() {
         System.out.println("doAction");
         String value = "";
-        CreateNewPersonaView instance = new CreateNewPersonaView();
+        PersonaGenderMenuView instance = new PersonaGenderMenuView();
         boolean expResult = false;
         boolean result = instance.doAction(value);
         assertEquals(expResult, result);

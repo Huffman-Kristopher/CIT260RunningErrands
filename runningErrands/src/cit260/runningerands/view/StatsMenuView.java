@@ -7,7 +7,6 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Persona;
-import java.util.Scanner;
 import runningerrands.RunningErrands;
 
 /**
@@ -15,28 +14,26 @@ import runningerrands.RunningErrands;
  * @author Kristopher Huffman and Kirk Brown
  */
 public class StatsMenuView extends View {
-    Persona persona = RunningErrands.getPersona();
-    Investment investment = RunningErrands.getInvestment();
-    String personaName = persona.getPersonaName();
-    String personaCareer = persona.getCareer();
-    int personaAge = persona.getAge();
-    int personaHealth = persona.getHealth();
-    int personaMoney = persona.getMoney();
-    int investmentReturn = investment.getInvestReturn();
-    int investmentMaturityDay = investment.getInvestMatureDay();
-    int currentDay = persona.getDay();
-    int investDaysToMature = investmentMaturityDay - currentDay;
-    int personaSalary = persona.getSalary();
-
-
-
-        
+            
     public StatsMenuView(String menu) {
         super(menu);
     }
     
     public String StatsValues() {
+        Persona persona = RunningErrands.getPersona();
+        Investment investment = RunningErrands.getInvestment();
+        String personaName = persona.getPersonaName();
+        String personaCareer = persona.getCareer();
+        int personaAge = persona.getAge();
+        int personaHealth = persona.getHealth();
+        int personaMoney = persona.getMoney();
+        int investmentReturn = investment.getInvestReturn();
+        int investmentMaturityDay = investment.getInvestMatureDay();
+        int currentDay = persona.getDay();
+        int investDaysToMature = investmentMaturityDay - currentDay;
+        int personaSalary = persona.getSalary();
         String investmentMessage = "";
+        
         if (investmentReturn == 0) {
             investmentMessage = "\nYou do not currently have any investments pending.";
         }
