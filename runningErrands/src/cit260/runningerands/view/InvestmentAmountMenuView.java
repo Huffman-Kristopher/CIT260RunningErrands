@@ -50,16 +50,20 @@ private Investment investment;
                 }
                 else {
                     investment = InvestmentControl.setInvestmentAmount(investAmount);
-                    this.calculateInvesmentReturn();
+                    this.calculateInvesmentReturn(investAmount);
                 }
                 break;
         }
         return false;
 }
-    private void calculateInvesmentReturn() {
+    private void calculateInvesmentReturn(int investAmount) {
         //Display Help Menu
         int investReturn = InvestmentControl.calculateInvestmentReturn();
-        int updatedReturn = InvestmentControl.updateInvestmentReturn(investReturn);
+        InvestmentControl.updateInvestmentReturn(investReturn);
+        Persona persona = RunningErrands.getPersona();
+        int currentBalance = persona.getMoney();
+        int updatedBalance = currentBalance - investAmount;
+        persona.setMoney(updatedBalance);
         GameMenuView GameMenuView = new GameMenuView();
         GameMenuView.display();  
         
