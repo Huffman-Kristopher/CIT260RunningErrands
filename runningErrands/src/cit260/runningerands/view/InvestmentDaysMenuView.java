@@ -34,6 +34,7 @@ private Investment investment;
 
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
                 this.openGameMenu();
