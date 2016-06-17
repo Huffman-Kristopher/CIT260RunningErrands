@@ -11,8 +11,9 @@ import runningerrands.RunningErrands;
 
 /**
  *
- * @author Kristopher Huffman and Kirk Brown
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class StatsMenuView extends View {
             
     public StatsMenuView(String menu) {

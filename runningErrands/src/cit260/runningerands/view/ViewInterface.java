@@ -7,8 +7,9 @@ package cit260.runningerands.view;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public interface ViewInterface {
     
     public void display();

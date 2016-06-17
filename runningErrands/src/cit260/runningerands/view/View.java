@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;

@@ -7,12 +7,10 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.control.InvestmentControl;
 import cit260.runningerrands.model.Investment;
-import cit260.runningerrands.model.Persona;
-import runningerrands.RunningErrands;
 
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class InvestmentDaysMenuView extends View {
     

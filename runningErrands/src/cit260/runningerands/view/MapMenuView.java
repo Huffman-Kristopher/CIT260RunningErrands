@@ -5,11 +5,9 @@
  */
 package cit260.runningerands.view;
 
-import java.util.Scanner;
-
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class MapMenuView extends View {
     

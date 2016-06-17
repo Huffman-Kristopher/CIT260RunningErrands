@@ -5,10 +5,6 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.GameControl;
-import java.util.Scanner;
-import runningerrands.RunningErrands;
-
 /**
  *
  * @author Kristopher Huffman and Kirk Brown

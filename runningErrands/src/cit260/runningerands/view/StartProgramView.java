@@ -1,19 +1,20 @@
-package cit260.runningerands.view;
-
-import cit260.runningerrands.control.GameControl;
-import cit260.runningerrands.model.Player;
-import java.util.Scanner; //if it screws up - delete this
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+package cit260.runningerands.view;
+
+import cit260.runningerrands.control.GameControl;
+import cit260.runningerrands.model.Player;
+import java.util.Scanner; //if it screws up - delete this
+
 /**
  *
- * @author Kristopher Huffman and Kirk Brown
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
     public class StartProgramView {
 
         private String promptMessage;

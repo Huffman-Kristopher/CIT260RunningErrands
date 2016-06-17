@@ -6,12 +6,12 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.PersonaControl;
-import java.util.Scanner;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class PersonaGenderMenuView extends View {
 
     public PersonaGenderMenuView() {

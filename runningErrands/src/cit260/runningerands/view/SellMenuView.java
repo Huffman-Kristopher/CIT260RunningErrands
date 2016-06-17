@@ -6,13 +6,11 @@ package cit260.runningerands.view;
  * and open the template in the editor.
  */
 
-
-import java.util.Scanner;
-
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class SellMenuView extends View{
 
     public SellMenuView() {

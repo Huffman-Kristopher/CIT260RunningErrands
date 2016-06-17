@@ -7,14 +7,13 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Persona;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import runningerrands.RunningErrands;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class PersonaNameMenuView extends View {
 
     public PersonaNameMenuView() {
