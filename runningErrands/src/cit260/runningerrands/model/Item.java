@@ -19,6 +19,15 @@ public class Item implements Serializable{
     private int itemQuantity;
     private String description;
     private int requiredAmount;
+    private int strength;
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
 
     public String getItemName() {
         return itemName;
@@ -60,15 +69,15 @@ public class Item implements Serializable{
         this.requiredAmount = requiredAmount;
     }
 
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.itemName);
-        hash = 53 * hash + Objects.hashCode(this.itemType);
-        hash = 53 * hash + this.itemQuantity;
-        hash = 53 * hash + Objects.hashCode(this.description);
-        hash = 53 * hash + this.requiredAmount;
+        hash = 19 * hash + Objects.hashCode(this.itemName);
+        hash = 19 * hash + Objects.hashCode(this.itemType);
+        hash = 19 * hash + this.itemQuantity;
+        hash = 19 * hash + Objects.hashCode(this.description);
+        hash = 19 * hash + this.requiredAmount;
+        hash = 19 * hash + this.strength;
         return hash;
     }
 
@@ -90,6 +99,9 @@ public class Item implements Serializable{
         if (this.requiredAmount != other.requiredAmount) {
             return false;
         }
+        if (this.strength != other.strength) {
+            return false;
+        }
         if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
@@ -104,9 +116,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + '}';
+        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + '}';
     }
-
-    
     
 }
