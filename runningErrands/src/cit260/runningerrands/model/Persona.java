@@ -25,6 +25,34 @@ public class Persona implements Serializable{
     private int day;
     private int salary;
     private boolean gambledToday;
+    private Car car;
+    private Item[] item;
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+
+    public Email[] getEmail() {
+        return email;
+    }
+
+    public void setEmail(Email[] email) {
+        this.email = email;
+    }
+    private Email[] email;
+    
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     public char getGender() {
         return gender;

@@ -15,8 +15,35 @@ public class Map implements Serializable{
     
     private double rowCount;
     private double columnCount;
+    private Location[][] locations;
 
     public Map() {
+    }
+
+    public Map(int rowCount, int columnCount) {
+        
+        if (rowCount < 1 || columnCount <1) {
+            
+            System.out.println("The number of rows and columns must be greater than zero");
+            return;
+            
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                
+                locations[row][column] = location;
+            }
+                
+        }
     }
 
     
@@ -69,6 +96,10 @@ public class Map implements Serializable{
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    }
+
+    public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

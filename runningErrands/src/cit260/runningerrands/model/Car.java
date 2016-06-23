@@ -17,7 +17,16 @@ public class Car implements Serializable{
     private String carType;
     private double carFuel;
     private double carMileage;
+    private Persona persona;
 
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+    
     public Car() {
     }
 

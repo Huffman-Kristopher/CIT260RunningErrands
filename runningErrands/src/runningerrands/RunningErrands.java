@@ -9,6 +9,7 @@ import cit260.runningerands.view.StartProgramView;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
+import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 
@@ -23,6 +24,15 @@ public class RunningErrands {
     private static Persona persona = null;
     private static Investment investment = null;
     private static Gambling gambling = null;
+    private static Location locations = null;
+
+    public static Location getLocations() {
+        return locations;
+    }
+
+    public static void setLocations(Location locations) {
+        RunningErrands.locations = locations;
+    }
     
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();

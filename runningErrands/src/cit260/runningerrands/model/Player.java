@@ -18,7 +18,16 @@ public class Player implements Serializable{
     // class instance variables 
     private String name;
     private double timePlayed;
+    private Game game;
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
     public Player() {
     }
 

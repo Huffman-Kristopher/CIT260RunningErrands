@@ -6,71 +6,57 @@
 package cit260.runningerrands.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public class Npc implements Serializable{
+public enum Npc implements Serializable{
     
-    private String npcName;
-    private String Type;
+    Shopkeeper("He manages the store"),
+    Librarian("She runs the Library"),
+    Preacher("He preaches"),
+    Receptionist("Greets you as you enter"),
+    Principal("Runs the school"),
+    BankTeller("Grants access to your money"),
+    Ninja("Can't find him"),
+    Soldier("Shoots...everything"),
+    Pirate("Aye, he runs the boats"),
+    Giraffe("Yell at him... His head is way up there"),
+    Docent("Boring, but knows everything..."),
+    Ghost("Woooooooo"),
+    Joe("It's him vs. the Volcano"),
+    Guru("He knows all"),
+    Nikolai("Russian arms dealer"),
+    Sergy("Russian thug");
 
-    public Npc() {
+    private final String description;
+    private final Location coordinates;
+    private Item[] item;
+
+    public Item[] getItem() {
+        return item;
     }
 
-    
-    
-    public String getNpcName() {
-        return npcName;
+    public void setItem(Item[] item) {
+        this.item = item;
     }
 
-    public void setNpcName(String npcName) {
-        this.npcName = npcName;
+    Npc(String description) {
+        this.description = description;
+        coordinates = Location(1,1);
     }
 
-    public String getType() {
-        return Type;
+    public String getDescription() {
+        return description;
     }
 
-    public void setType(String Type) {
-        this.Type = Type;
+    public Location getCoordinates() {
+        return coordinates;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.npcName);
-        return hash;
+    private Location Location(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Npc other = (Npc) obj;
-        if (!Objects.equals(this.npcName, other.npcName)) {
-            return false;
-        }
-        if (!Objects.equals(this.Type, other.Type)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Npc{" + "npcName=" + npcName + ", Type=" + Type + '}';
-    }
-    
-    
-    
 }

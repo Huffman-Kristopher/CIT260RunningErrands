@@ -5,11 +5,65 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.model.Location;
+import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Scene;
+
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
  */
 public class MapControl {
+
+
+    static void movePersonaToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static Map createMap() {
+        Map map = new Map(20,20);
+        Scene[] scenes = createScenes();
+        assignScenesToLocations(map, scenes);
+        return map;
+    }
+
+    private static Scene[] createScenes() {
+        
+        Scene[] scenes = new Scene[SceneType.values().length];
+        
+        Scene startingScene = new Scene();
+        startingScene.setDescription(
+                "Starting Scene description");
+        startingScene.setLocationSymbol("ST");
+        startingScene.setTravelTime(0);
+        startingScene.setDistance(0);
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        Scene finishingScene = new Scene();
+        finishingScene.setDescription(
+                "Starting Scene description");
+        finishingScene.setLocationSymbol("FN");
+        finishingScene.setTravelTime(240);
+        finishingScene.setDistance(50);
+        scenes[SceneType.start.ordinal()] = finishingScene;
+        
+        return scenes;
+    }
+
+    public enum SceneType {
+        start,
+        finish;
+    }
+    
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
+        
+        locations[9][8].setScene(scenes[SceneType.finish.ordinal()]);
+        locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
+    }
     
     public boolean calculateTravel(double dollarsSpent, double fuelPrice, double mpg) {
         double distanceToLocation = 250; //needs to be pulled from map data

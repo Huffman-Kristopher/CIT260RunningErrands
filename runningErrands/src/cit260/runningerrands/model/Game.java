@@ -14,7 +14,34 @@ import java.io.Serializable;
 public class Game implements Serializable{
     
     private double totalTime;
+    private Map map;
+    private Player player;
+    private Npc[] npc;
 
+    public Npc[] getNpc() {
+        return npc;
+    }
+
+    public void setNpc(Npc[] npc) {
+        this.npc = npc;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
     public Game() {
     }
 

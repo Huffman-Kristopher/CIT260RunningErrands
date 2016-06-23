@@ -6,6 +6,11 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.PersonaControl;
+import cit260.runningerrands.model.Item;
+import cit260.runningerrands.model.Location;
+import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Persona;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -20,7 +25,7 @@ public class GameMenuView extends View{
                   + "\n------------------------------------"
                   + "\nM - Map"
                   + "\nV - Visit Store"
-                  + "\nI - Inventory"
+                  + "\nI - View Inventory"
                   + "\nF – Investments"
                   + "\nG – Gambling"
                   + "\nE - View Email"
@@ -40,13 +45,13 @@ public class GameMenuView extends View{
         
         switch (value) {
             case "M": //open map.
-                this.openMapMenu();
+                this.displayMap();
                 break;
             case "V": //open store.
                 this.openStoreMenu();
                 break;
             case "I": //open inventory.
-                this.openInventoryMenu();
+                this.viewInventory();
                 break;
             case "F": //open inveestments.
                 this.openInvestmentMenu();
@@ -87,10 +92,6 @@ public class GameMenuView extends View{
 
     private void openMapMenu() {
         System.out.println("\n ***Runs Map menu function ***");
-    }
-
-    private void openInventoryMenu() {
-        System.out.println("\n ***Runs Inventory menu function ***");
     }
 
     private void openInvestmentMenu() {
@@ -145,6 +146,48 @@ public class GameMenuView extends View{
 
     private void addOneDay() {
         PersonaControl.addOneDay();
+    }
+
+    private void viewInventory() {
+        
+        StringBuilder line;
+        Persona persona = RunningErrands.getPersona();
+        Item[] inventory = persona.getItem();
+        
+        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                              ");
+        line.insert(0, "Description");
+        line.insert(20, "Required");
+        line.insert(30, "In Stock");
+        System.out.println(line.toString());
+        
+        for (Item item : inventory) {
+            line= new StringBuilder("                              ");
+            line.insert(0,item.getDescription());
+            line.insert(23, item.getRequiredAmount());
+            line.insert(33, item.getItemQuantity());
+            
+            System.out.println(line.toString());
+        }
+        
+    }
+
+    private void displayMap() {
+        Location locations = RunningErrands.getLocations();
+        System.out.println("\n                  MAP");
+        Map map = getMap();
+        int rowCount = map.getRowCount();
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                
+                locations[row][column] = location;
+            }
+                
+        }
+        System.out.println()
     }
     
 }

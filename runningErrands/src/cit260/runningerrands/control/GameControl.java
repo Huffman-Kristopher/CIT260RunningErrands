@@ -5,6 +5,8 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.model.Game;
+import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Player;
 import runningerrands.RunningErrands;
 
@@ -26,8 +28,13 @@ public class GameControl {
     }
     
     public static void createNewGame(Player player) {
-        //Test for Gambling control
-        System.out.println("\nFrom here, we start the real parts of the game. createNewGame stub function called.");
+        
+        Game game = new Game();
+        RunningErrands.setCurrentGame(game);
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.movePersonaToStartingLocation(map);
     }
 
 }

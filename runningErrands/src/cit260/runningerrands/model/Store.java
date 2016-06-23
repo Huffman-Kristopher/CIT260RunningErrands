@@ -19,7 +19,16 @@ public class Store implements Serializable{
     private double itemCost;
     private double orderFillTime;
     private double itemQuantityAvl;
+    private Item[] item;
 
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+    
     public Store() {
     }
 

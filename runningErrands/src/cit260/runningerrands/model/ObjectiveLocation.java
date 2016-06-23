@@ -20,7 +20,16 @@ public class ObjectiveLocation implements Serializable{
     private boolean objectiveBlock;
     private String objectiveConditions;
     private String objectivePayout;
-            
+    private Location location;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    
     public ObjectiveLocation() {
     }
 

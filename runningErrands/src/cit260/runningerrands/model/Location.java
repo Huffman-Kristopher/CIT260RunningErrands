@@ -1,18 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package cit260.runningerrands.model;
 
 import java.io.Serializable;
 
 /**
- *
- * @author Kristopher Huffman and Kirk Brown
- */
+*
+* @author Kristopher Huffman and Kirk Brown
+*/
 public class Location implements Serializable{
-    
+
     private double row;
     private double column;
     private boolean vistited;
@@ -20,8 +20,8 @@ public class Location implements Serializable{
     public Location() {
     }
 
-    
-    
+ 
+
     public double getRow() {
         return row;
     }
@@ -83,7 +83,8 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", vistited=" + vistited + '}';
     }
-    
-    
-    
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -5,6 +5,9 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.GameControl;
+import runningerrands.RunningErrands;
+
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
@@ -30,7 +33,7 @@ public class MainMenuView extends View {
         
         switch (value) {
             case "N": //create and start a new game
-                this.createNewPersona();
+                this.startNewGame();
                 break;
             case "L": //load saved game
                 this.LoadSavedGame();
@@ -46,11 +49,6 @@ public class MainMenuView extends View {
         return false;
     }
     
-    private void createNewPersona() {
-        // Display game menu
-        PersonaGenderMenuView createNewPersona = new PersonaGenderMenuView();
-        createNewPersona.display();
-    }
     private void LoadSavedGame() {
         System.out.println("*** loadSavedGame function called ***");
     }
@@ -58,5 +56,11 @@ public class MainMenuView extends View {
         //Display Help Menu
         HelpMenuView HelpMenuView = new HelpMenuView();
         HelpMenuView.display();
+    }
+
+    private void startNewGame() {
+        GameControl.createNewGame(RunningErrands.getPlayer());
+        PersonaGenderMenuView createNewPersona = new PersonaGenderMenuView();
+        createNewPersona.display();
     }
 }

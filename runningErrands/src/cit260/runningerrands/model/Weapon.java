@@ -15,7 +15,16 @@ import java.util.Objects;
 public class Weapon implements Serializable{
     
     private String weaponStrength;
+    private Item item;
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
     public Weapon() {
     }
 

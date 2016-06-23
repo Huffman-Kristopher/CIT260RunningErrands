@@ -16,13 +16,10 @@ public class Item implements Serializable{
     
     private String itemName;
     private String itemType;
-    private double itemQuantity;
+    private int itemQuantity;
+    private String description;
+    private int requiredAmount;
 
-    public Item() {
-    }
-
-    
-    
     public String getItemName() {
         return itemName;
     }
@@ -39,20 +36,39 @@ public class Item implements Serializable{
         this.itemType = itemType;
     }
 
-    public double getItemQuantity() {
+    public int getItemQuantity() {
         return itemQuantity;
     }
 
-    public void setItemQuantity(double itemQuantity) {
+    public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getRequiredAmount() {
+        return requiredAmount;
+    }
+
+    public void setRequiredAmount(int requiredAmount) {
+        this.requiredAmount = requiredAmount;
+    }
+
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.itemName);
-        hash = 67 * hash + Objects.hashCode(this.itemType);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.itemQuantity) ^ (Double.doubleToLongBits(this.itemQuantity) >>> 32));
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.itemName);
+        hash = 53 * hash + Objects.hashCode(this.itemType);
+        hash = 53 * hash + this.itemQuantity;
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + this.requiredAmount;
         return hash;
     }
 
@@ -68,7 +84,10 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (Double.doubleToLongBits(this.itemQuantity) != Double.doubleToLongBits(other.itemQuantity)) {
+        if (this.itemQuantity != other.itemQuantity) {
+            return false;
+        }
+        if (this.requiredAmount != other.requiredAmount) {
             return false;
         }
         if (!Objects.equals(this.itemName, other.itemName)) {
@@ -77,14 +96,17 @@ public class Item implements Serializable{
         if (!Objects.equals(this.itemType, other.itemType)) {
             return false;
         }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + '}';
+        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + '}';
     }
-    
+
     
     
 }

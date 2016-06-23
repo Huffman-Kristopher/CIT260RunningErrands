@@ -14,12 +14,30 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
     
+    
     private String description;
     private double travelTime;
     private double distance;
-    private boolean locationBlock;
     private String locationSymbol;
+    private Location location;
+    private Item[] item;
 
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    
     public Scene() {
     }
 
@@ -37,7 +55,7 @@ public class Scene implements Serializable{
         return travelTime;
     }
 
-    public void setTravelTime(double travelTime) {
+    public void setTravelTime(int travelTime) {
         this.travelTime = travelTime;
     }
 
@@ -45,16 +63,8 @@ public class Scene implements Serializable{
         return distance;
     }
 
-    public void setDistance(double distance) {
+    public void setDistance(int distance) {
         this.distance = distance;
-    }
-
-    public boolean isLocationBlock() {
-        return locationBlock;
-    }
-
-    public void setLocationBlock(boolean locationBlock) {
-        this.locationBlock = locationBlock;
     }
 
     public String getLocationSymbol() {
@@ -71,7 +81,6 @@ public class Scene implements Serializable{
         hash = 71 * hash + Objects.hashCode(this.description);
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
-        hash = 71 * hash + (this.locationBlock ? 1 : 0);
         hash = 71 * hash + Objects.hashCode(this.locationSymbol);
         return hash;
     }
@@ -94,9 +103,6 @@ public class Scene implements Serializable{
         if (Double.doubleToLongBits(this.distance) != Double.doubleToLongBits(other.distance)) {
             return false;
         }
-        if (this.locationBlock != other.locationBlock) {
-            return false;
-        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
@@ -108,7 +114,7 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationBlock=" + locationBlock + ", locationSymbol=" + locationSymbol + '}';
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + '}';
     }
     
     

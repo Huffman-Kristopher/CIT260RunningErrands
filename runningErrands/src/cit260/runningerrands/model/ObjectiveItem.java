@@ -11,53 +11,27 @@ import java.io.Serializable;
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public class ObjectiveItem implements Serializable{
+public enum ObjectiveItem implements Serializable{
     
-    private double quantityNeeded;
+    Item1("Description here",5);
+    
+    private final double quantityNeeded;
+    private final String description;
+    private Item item;
 
-    public ObjectiveItem() {
+    ObjectiveItem(String description,int quantityNeeded) {
+        this.description = description;
+        this.quantityNeeded = quantityNeeded;
+    }
+    public Item getItem() {
+        return item;
     }
 
-    
+    public void setItem(Item item) {
+        this.item = item;
+    }
     
     public double getQuantityNeeded() {
         return quantityNeeded;
     }
-
-    public void setQuantityNeeded(double quantityNeeded) {
-        this.quantityNeeded = quantityNeeded;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.quantityNeeded) ^ (Double.doubleToLongBits(this.quantityNeeded) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ObjectiveItem other = (ObjectiveItem) obj;
-        if (Double.doubleToLongBits(this.quantityNeeded) != Double.doubleToLongBits(other.quantityNeeded)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ObjectiveItem{" + "quantityNeeded=" + quantityNeeded + '}';
-    }
-    
-    
-    
 }
