@@ -173,8 +173,10 @@ public class GameMenuView extends View{
     }
 
     private void displayMap() {
-        Location locations = RunningErrands.getLocations();
-        System.out.println("\n                  MAP");
+        /*Location locations = RunningErrands.getLocations();
+        
+        
+        System.out.println("\n   Map of Bedford Falls");
         Map map = getMap();
         int rowCount = map.getRowCount();
         for (int row = 0; row < rowCount; row++) {
@@ -187,7 +189,7 @@ public class GameMenuView extends View{
             }
                 
         }
-        System.out.println()
+        */
     }
     
 }

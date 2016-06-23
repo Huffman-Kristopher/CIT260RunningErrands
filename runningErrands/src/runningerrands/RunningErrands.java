@@ -10,6 +10,7 @@ import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Location;
+import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 
@@ -25,6 +26,15 @@ public class RunningErrands {
     private static Investment investment = null;
     private static Gambling gambling = null;
     private static Location locations = null;
+    private static Map map = null;
+
+    public static Map getMap() {
+        return map;
+    }
+
+    public static void setMap(Map map) {
+        RunningErrands.map = map;
+    }
 
     public static Location getLocations() {
         return locations;
