@@ -15,8 +15,10 @@ public enum Npc implements Serializable{
     
     Shopkeeper("He manages the store"),
     Librarian("She runs the Library"),
-    Preacher("He preaches"),
+    Priest("He preaches"),
+    Orphan("Has no one to love him"),
     Receptionist("Greets you as you enter"),
+    Officer("He will taze you"),
     Principal("Runs the school"),
     BankTeller("Grants access to your money"),
     Ninja("Can't find him"),
@@ -26,8 +28,10 @@ public enum Npc implements Serializable{
     Docent("Boring, but knows everything..."),
     Ghost("Woooooooo"),
     Joe("It's him vs. the Volcano"),
+    MarinaMike("Runs the Marina"),
     Guru("He knows all"),
     Nikolai("Russian arms dealer"),
+    PlagueMonkey("Full of disease"),
     Sergy("Russian thug");
 
     private final String description;

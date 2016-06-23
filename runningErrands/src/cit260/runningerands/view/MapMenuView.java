@@ -27,7 +27,7 @@ public class MapMenuView extends View {
                   + "\n09 – Hospital"
                   + "\n10 – School"
                   + "\n11 – Bank"
-                  + "\n12 - Convenience store"
+                  + "\n12 - Comicbook shop"
                   + "\n13 - Car repair shop"
                   + "\n14 – Martial arts school"
                   + "\n15 – Army base"
@@ -42,6 +42,7 @@ public class MapMenuView extends View {
                   + "\n24 – Cemetery "
                   + "\n25 – Volcano"
                   + "\n26 – Pizza parlor"
+                  + "\n27 - Orphanage"
                   + "\nR – Return to previous menu"
                   + "\n-------------------------"
                   + "\nPlease select an Game menu option: ");

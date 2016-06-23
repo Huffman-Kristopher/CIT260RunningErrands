@@ -33,11 +33,27 @@ public class MapControl {
         
         Scene startingScene = new Scene();
         startingScene.setDescription(
-                "Starting Scene description");
+                "This is your Home");
         startingScene.setLocationSymbol("ST");
         startingScene.setTravelTime(0);
         startingScene.setDistance(0);
         scenes[SceneType.start.ordinal()] = startingScene;
+        
+        Scene objectiveScene = new Scene();
+        objectiveScene.setDescription(
+                "This is where things are done");
+        objectiveScene.setLocationSymbol("OS");
+        objectiveScene.setTravelTime(0);
+        objectiveScene.setDistance(0);
+        scenes[SceneType.objective.ordinal()] = objectiveScene;
+        
+        Scene shopScene = new Scene();
+        shopScene.setDescription(
+                "This is your Home");
+        shopScene.setLocationSymbol("SS");
+        shopScene.setTravelTime(0);
+        shopScene.setDistance(0);
+        scenes[SceneType.shop.ordinal()] = shopScene;
         
         Scene finishingScene = new Scene();
         finishingScene.setDescription(
@@ -45,13 +61,15 @@ public class MapControl {
         finishingScene.setLocationSymbol("FN");
         finishingScene.setTravelTime(240);
         finishingScene.setDistance(50);
-        scenes[SceneType.start.ordinal()] = finishingScene;
+        scenes[SceneType.finish.ordinal()] = finishingScene;
         
         return scenes;
     }
 
     public enum SceneType {
         start,
+        objective,
+        shop,
         finish;
     }
     
@@ -59,9 +77,9 @@ public class MapControl {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.objective.ordinal()]);
         
-        locations[9][8].setScene(scenes[SceneType.finish.ordinal()]);
+        locations[9][8].setScene(scenes[SceneType.shop.ordinal()]);
         locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
     }
     
