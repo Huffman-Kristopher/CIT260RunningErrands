@@ -173,23 +173,24 @@ public class GameMenuView extends View{
     }
 
     private void displayMap() {
-        /*Location locations = RunningErrands.getLocations();
+        Location locations = RunningErrands.getLocations();
         
         
-        System.out.println("\n   Map of Bedford Falls");
-        Map map = getMap();
+        String rtn = "";
+        Map map = RunningErrands.getMap();
+        
         int rowCount = map.getRowCount();
+        int columnCount = map.getColumnCount();
         for (int row = 0; row < rowCount; row++) {
             for (int column = 0; column < columnCount; column++) {
-                Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
                 
-                locations[row][column] = location;
+                rtn += location[row][col].getType().name().charAt(0) + "\t";
+            }
+            rtn += "\n";
             }
                 
         }
-        */
+        
     }
     
 }

@@ -16,6 +16,15 @@ public class Location implements Serializable{
     private double row;
     private double column;
     private boolean vistited;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String sceneType) {
+        this.type = sceneType;
+    }
 
     public Location() {
     }

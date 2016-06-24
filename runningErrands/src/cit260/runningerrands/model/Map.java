@@ -5,7 +5,9 @@
  */
 package cit260.runningerrands.model;
 
+import cit260.runningerrands.control.MapControl.SceneType;
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -13,13 +15,28 @@ import java.io.Serializable;
  */
 public class Map implements Serializable{
     
-    private double rowCount;
-    private double columnCount;
+    private int rowCount = 9;
+    private int columnCount = 9;
     private Location[][] locations;
 
     public Map() {
+        
+        locations = new Location[rowCount][columnCount];
+        init();
+        
     }
 
+    private void init() {
+        for ( int row = 0; row < rowCount; row++ ) {
+            for (int column = 0; column < columnCount; column++) {
+                Location location = new Location();
+                location.setScene(SceneType.values() [(int) (Math.random() * SceneType.values().length)]);
+                
+                locations[row][column] = location;
+            }
+        }
+    }
+    
     public Map(int rowCount, int columnCount) {
         
         if (rowCount < 1 || columnCount <1) {
@@ -48,27 +65,28 @@ public class Map implements Serializable{
 
     
     
-    public double getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public double getColumnCount() {
+    public int getColumnCount() {
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        int hash = 7;
+        hash = 37 * hash + this.rowCount;
+        hash = 37 * hash + this.columnCount;
+        hash = 37 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -84,24 +102,24 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (this.rowCount != other.rowCount) {
             return false;
         }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
+        if (this.columnCount != other.columnCount) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
 
     public Location[][] getLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+
     
     
     
