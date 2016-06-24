@@ -53,39 +53,90 @@ public class MapMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
-            case "M": //open map.
-                this.openMapMenu();
+            case "1": //go home.
+                this.travelHome();
                 break;
-            case "V": //open store.
+            case "2": //open store.
                 this.openStoreMenu();
                 break;
-            case "I": //open inventory.
+            case "3": //open inventory.
                 this.openInventoryMenu();
                 break;
-            case "F": //open inveestments.
+            case "4": //open inveestments.
                 this.openInvestmentMenu();
                 break;
-            case "G": //gamble.
+            case "5": //gamble.
                 this.openGamblingMenu();
                 break;
-            case "S": //save the game.
+            case "6": //save the game.
                 this.OpensaveGame();
                 break;
-            case "L": //load the game.
+            case "7": //load the game.
                 this.openLoadGame();
                 break;
-            case "E": //open email and get objectives.
+            case "8": //open email and get objectives.
                 this.openEmailMenu();
                 break;
-            case "H": //open help menu.
+            case "9": //open help menu.
                 this.openHelpMenu();
                 break;
-            case "K": //open stats.
+            case "10": //open stats.
                 this.openStatsMenu();
                 break;
-            case "Q": //return to main menu.
+            case "11": //open stats.
+                this.openStatsMenu();
+                break;
+            case "12": //return to main menu.
                 this.openMainMenu();
                 break;
+            case "13": //open map.
+                this.openMapMenu();
+                break;
+            case "14": //open store.
+                this.openStoreMenu();
+                break;
+            case "15": //open inventory.
+                this.openInventoryMenu();
+                break;
+            case "16": //open inveestments.
+                this.openInvestmentMenu();
+                break;
+            case "17": //gamble.
+                this.openGamblingMenu();
+                break;
+            case "18": //save the game.
+                this.OpensaveGame();
+                break;
+            case "19": //load the game.
+                this.openLoadGame();
+                break;
+            case "20": //open email and get objectives.
+                this.openEmailMenu();
+                break;
+            case "21": //open help menu.
+                this.openHelpMenu();
+                break;
+            case "22": //open stats.
+                this.openStatsMenu();
+                break;
+            case "23": //open stats.
+                this.openStatsMenu();
+                break;
+            case "24": //return to main menu.
+                this.openMainMenu();
+                break;
+            case "25": //open stats.
+                this.openStatsMenu();
+                break;
+            case "26": //open stats.
+                this.openStatsMenu();
+                break;
+            case "27": //return to main menu.
+                this.openMainMenu();
+                break;
+            case "R": //return to main menu.
+                this.openMainMenu();
+                break; 
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  
@@ -148,6 +199,10 @@ public class MapMenuView extends View {
     private void openMainMenu() {
     MainMenuView MainMenuView = new MainMenuView();
         MainMenuView.display();    
+    }
+
+    private void travelHome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

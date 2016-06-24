@@ -49,7 +49,7 @@ public class MapControl {
         
         Scene shopScene = new Scene();
         shopScene.setDescription(
-                "This is your Home");
+                "This is a shop, buy some stuff");
         shopScene.setLocationSymbol("SS");
         shopScene.setTravelTime(0);
         shopScene.setDistance(0);
