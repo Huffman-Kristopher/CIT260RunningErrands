@@ -6,6 +6,7 @@
 package cit260.runningerrands.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
 *
@@ -13,10 +14,19 @@ import java.io.Serializable;
 */
 public class Location implements Serializable{
 
-    private double row;
-    private double column;
+    private int row;
+    private int column;
     private boolean vistited;
     private String type;
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
 
     public String getType() {
         return type;
@@ -29,13 +39,11 @@ public class Location implements Serializable{
     public Location() {
     }
 
- 
-
     public double getRow() {
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
@@ -43,7 +51,7 @@ public class Location implements Serializable{
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
@@ -57,10 +65,12 @@ public class Location implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
-        hash = 43 * hash + (this.vistited ? 1 : 0);
+        int hash = 3;
+        hash = 83 * hash + this.row;
+        hash = 83 * hash + this.column;
+        hash = 83 * hash + (this.vistited ? 1 : 0);
+        hash = 83 * hash + Objects.hashCode(this.type);
+        hash = 83 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
@@ -76,24 +86,22 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
+        if (this.column != other.column) {
             return false;
         }
         if (this.vistited != other.vistited) {
             return false;
         }
+        if (!Objects.equals(this.type, other.type)) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", vistited=" + vistited + '}';
-    }
-
-    public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

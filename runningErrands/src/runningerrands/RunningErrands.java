@@ -13,6 +13,7 @@ import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
+import cit260.runningerrands.model.Scene;
 
 /**
  *
@@ -25,8 +26,17 @@ public class RunningErrands {
     private static Persona persona = null;
     private static Investment investment = null;
     private static Gambling gambling = null;
-    private static Location locations = null;
+    private static Location[][] locations = null;
     private static Map map = null;
+    private static Scene[] scene = null;
+
+    public static Scene[] getScene() {
+        return scene;
+    }
+
+    public static void setScene(Scene[] scene) {
+        RunningErrands.scene = scene;
+    }
 
     public static Map getMap() {
         return map;
@@ -36,11 +46,11 @@ public class RunningErrands {
         RunningErrands.map = map;
     }
 
-    public static Location getLocations() {
+    public static Location[][] getLocations() {
         return locations;
     }
 
-    public static void setLocations(Location locations) {
+    public static void setLocations(Location[][] locations) {
         RunningErrands.locations = locations;
     }
     

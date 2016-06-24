@@ -33,8 +33,7 @@ public class GameControl {
         RunningErrands.setCurrentGame(game);
         Map map = MapControl.createMap();
         game.setMap(map);
-        
-        MapControl.movePersonaToStartingLocation(map);
+        /*MapControl.movePersonaToStartingLocation(map);*/
     }
 
 }

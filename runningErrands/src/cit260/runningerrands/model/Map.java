@@ -5,9 +5,11 @@
  */
 package cit260.runningerrands.model;
 
-import cit260.runningerrands.control.MapControl.SceneType;
+
+
 import java.io.Serializable;
 import java.util.Arrays;
+
 
 /**
  *
@@ -15,70 +17,51 @@ import java.util.Arrays;
  */
 public class Map implements Serializable{
     
-    private int rowCount = 9;
-    private int columnCount = 9;
+    private int rowCount = 6;
+    private int columnCount = 5;
     private Location[][] locations;
 
-    public Map() {
-        
-        locations = new Location[rowCount][columnCount];
-        init();
-        
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    private void init() {
-        for ( int row = 0; row < rowCount; row++ ) {
-            for (int column = 0; column < columnCount; column++) {
-                Location location = new Location();
-                location.setScene(SceneType.values() [(int) (Math.random() * SceneType.values().length)]);
-                
-                locations[row][column] = location;
-            }
-        }
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public int getColumnCount() {
+        return columnCount;
+    }
+    
+    public Map() {
+        
     }
     
     public Map(int rowCount, int columnCount) {
         
-        if (rowCount < 1 || columnCount <1) {
-            
-            System.out.println("The number of rows and columns must be greater than zero");
+        if(rowCount <1 || columnCount < 1) {
+            System.out.println("The number of rows and columns must be greater than zero.");
             return;
-            
         }
-        
         this.rowCount = rowCount;
         this.columnCount = columnCount;
         
         this.locations = new Location[rowCount][columnCount];
         
         for (int row = 0; row < rowCount; row++) {
-            for (int column = 0; column < columnCount; column++) {
+            for (int col = 0; col < columnCount; col++) {
                 Location location = new Location();
-                location.setColumn(column);
+                location.setColumn(col);
                 location.setRow(row);
-                
-                locations[row][column] = location;
+                location.setVistited(false);
+                locations[row][col] = location;
             }
-                
         }
-    }
-
-    
-    
-    public int getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public int getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
+        
     }
 
     @Override
@@ -114,13 +97,17 @@ public class Map implements Serializable{
         return true;
     }
 
-
-    public Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getMapString() {
+            
+        String rtn = "";
+        for (int row = 0; row < rowCount; row++) {
+            for (int col = 0; col < columnCount; col++) {
+                rtn += locations[row][col].getScene().getLocationSymbol() + "\t";
+            }
+            rtn += "\n";
+        }
+        return rtn;
+        
     }
 
-
-    
-    
-    
 }

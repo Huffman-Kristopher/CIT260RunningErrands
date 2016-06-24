@@ -5,6 +5,7 @@
  */
 package cit260.runningerrands.model;
 
+import cit260.runningerrands.control.MapControl.LocationName;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,6 +22,15 @@ public class Scene implements Serializable{
     private String locationSymbol;
     private Location location;
     private Item[] item;
+    private LocationName type;
+
+    public LocationName getType() {
+        return type;
+    }
+
+    public void setType(LocationName type) {
+        this.type = type;
+    }
 
     public Item[] getItem() {
         return item;

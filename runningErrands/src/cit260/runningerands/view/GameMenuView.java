@@ -7,8 +7,6 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Item;
-import cit260.runningerrands.model.Location;
-import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
 
@@ -173,24 +171,10 @@ public class GameMenuView extends View{
     }
 
     private void displayMap() {
-        Location locations = RunningErrands.getLocations();
-        
-        
-        String rtn = "";
-        Map map = RunningErrands.getMap();
-        
-        int rowCount = map.getRowCount();
-        int columnCount = map.getColumnCount();
-        for (int row = 0; row < rowCount; row++) {
-            for (int column = 0; column < columnCount; column++) {
-                
-                rtn += location[row][col].getType().name().charAt(0) + "\t";
-            }
-            rtn += "\n";
-            }
-                
+            
+            System.out.println(RunningErrands.getCurrentGame().getMap().getMapString());
         }
         
     }
     
-}
+

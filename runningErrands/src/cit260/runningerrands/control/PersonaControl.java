@@ -193,7 +193,7 @@ public class PersonaControl {
     }
     private static Item[] createInventoryList() {
         
-        Item[] item = new Item[75];
+        Item[] item = new Item[65];
         
         Item shirt = new Item();
         shirt.setDescription("Shirt");
@@ -319,7 +319,7 @@ public class PersonaControl {
         ancientSpellBook.setRequiredAmount(0);
         ancientSpellBook.setItemQuantity(0);
         ancientSpellBook.setStrength(10);
-        item[Items.shirt.ordinal()] = ancientSpellBook;
+        item[Items.ancientSpellBook.ordinal()] = ancientSpellBook;
         
         Item libraryCard = new Item();
         libraryCard.setDescription("Library Card");
@@ -424,7 +424,7 @@ public class PersonaControl {
         mintYoda.setRequiredAmount(0);
         mintYoda.setItemQuantity(0);
         mintYoda.setStrength(10);
-        item[Items.shirt.ordinal()] = shirt;
+        item[Items.mintYoda.ordinal()] = shirt;
         
         Item oilCan = new Item();
         oilCan.setDescription("Oil Can");
@@ -595,7 +595,7 @@ public class PersonaControl {
         item[Items.tRex.ordinal()] = tRex;
         
         Item mysticalEgyptianSceptor = new Item();
-        mysticalEgyptianSceptor.setDescription("Mystical Egyption Sceptor");
+        mysticalEgyptianSceptor.setDescription("Egyption Sceptor");
         mysticalEgyptianSceptor.setRequiredAmount(0);
         mysticalEgyptianSceptor.setItemQuantity(0);
         mysticalEgyptianSceptor.setStrength(10);
