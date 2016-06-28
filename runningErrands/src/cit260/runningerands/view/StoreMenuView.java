@@ -54,7 +54,10 @@ public class StoreMenuView extends View{
     }
 
     private void openSellMenu() {
-        System.out.println("\n ***Runs sell menu function ***");
+        String menu = "";
+        SellItemsMenu sellItemsMenu = new SellItemsMenu(menu);
+        menu = sellItemsMenu.getMenuValues();
+        sellItemsMenu.display();
     }
 
     private void openGameMenu() {

@@ -198,6 +198,8 @@ public class PersonaControl {
         Item shirt = new Item();
         shirt.setDescription("Shirt");
         shirt.setRequiredAmount(0);
+        shirt.setItemCost(0);
+        shirt.setItemValue(0);
         shirt.setItemQuantity(0);
         shirt.setStrength(10);
         item[Items.shirt.ordinal()] = shirt;
@@ -205,6 +207,8 @@ public class PersonaControl {
         Item videoGame = new Item();
         videoGame.setDescription("Video Game");
         videoGame.setRequiredAmount(0);
+        videoGame.setItemCost(0);
+        videoGame.setItemValue(0);
         videoGame.setItemQuantity(0);
         videoGame.setStrength(10);
         item[Items.videoGame.ordinal()] = videoGame;
@@ -212,6 +216,8 @@ public class PersonaControl {
         Item leatherBag = new Item();
         leatherBag.setDescription("Fancy Leather Bag");
         leatherBag.setRequiredAmount(0);
+        leatherBag.setItemCost(0);
+        leatherBag.setItemValue(0);
         leatherBag.setItemQuantity(0);
         leatherBag.setStrength(10);
         item[Items.leatherBag.ordinal()] = leatherBag;
@@ -219,20 +225,26 @@ public class PersonaControl {
         Item mountainDew = new Item();
         mountainDew.setDescription("Mountain Dew");
         mountainDew.setRequiredAmount(0);
-        mountainDew.setItemQuantity(0);
+        mountainDew.setItemCost(3);
+        mountainDew.setItemValue(1);
+        mountainDew.setItemQuantity(1);
         mountainDew.setStrength(10);
         item[Items.mountainDew.ordinal()] = mountainDew;
         
         Item drPepper = new Item();
         drPepper.setDescription("Dr. Pepper");
         drPepper.setRequiredAmount(0);
-        drPepper.setItemQuantity(0);
+        drPepper.setItemCost(3);
+        drPepper.setItemValue(1);
+        drPepper.setItemQuantity(1);
         drPepper.setStrength(10);
         item[Items.drPepper.ordinal()] = drPepper;
         
         Item bread = new Item();
         bread.setDescription("Bread");
         bread.setRequiredAmount(0);
+        bread.setItemCost(0);
+        bread.setItemValue(0);
         bread.setItemQuantity(0);
         bread.setStrength(10);
         item[Items.bread.ordinal()] = bread;
@@ -240,13 +252,17 @@ public class PersonaControl {
         Item gas = new Item();
         gas.setDescription("Gas");
         gas.setRequiredAmount(0);
-        gas.setItemQuantity(0);
+        gas.setItemCost(4);
+        gas.setItemValue(0);
+        gas.setItemQuantity(10);
         gas.setStrength(10);
         item[Items.gas.ordinal()] = gas;
         
         Item ar15 = new Item();
         ar15.setDescription("AR-15");
         ar15.setRequiredAmount(0);
+        ar15.setItemCost(0);
+        ar15.setItemValue(0);
         ar15.setItemQuantity(0);
         ar15.setStrength(10);
         item[Items.ar15.ordinal()] = ar15;
@@ -254,6 +270,8 @@ public class PersonaControl {
         Item bazooka = new Item();
         bazooka.setDescription("Bazooka");
         bazooka.setRequiredAmount(0);
+        bazooka.setItemCost(0);
+        bazooka.setItemValue(0);
         bazooka.setItemQuantity(0);
         bazooka.setStrength(10);
         item[Items.bazooka.ordinal()] = bazooka;
@@ -261,6 +279,8 @@ public class PersonaControl {
         Item crossbow = new Item();
         crossbow.setDescription("Crossbow");
         crossbow.setRequiredAmount(0);
+        crossbow.setItemCost(0);
+        crossbow.setItemValue(0);
         crossbow.setItemQuantity(0);
         crossbow.setStrength(10);
         item[Items.crossbow.ordinal()] = crossbow;
@@ -268,6 +288,8 @@ public class PersonaControl {
         Item katana = new Item();
         katana.setDescription("Katana");
         katana.setRequiredAmount(0);
+        katana.setItemCost(0);
+        katana.setItemValue(0);
         katana.setItemQuantity(0);
         katana.setStrength(10);
         item[Items.katana.ordinal()] = katana;
@@ -275,6 +297,8 @@ public class PersonaControl {
         Item nunchucks = new Item();
         nunchucks.setDescription("Nunchucks");
         nunchucks.setRequiredAmount(0);
+        shirt.setItemCost(0);
+        nunchucks.setItemValue(0);
         nunchucks.setItemQuantity(0);
         nunchucks.setStrength(10);
         item[Items.nunchucks.ordinal()] = nunchucks;
@@ -282,6 +306,8 @@ public class PersonaControl {
         Item bowstaff = new Item();
         bowstaff.setDescription("Bow Staff");
         bowstaff.setRequiredAmount(0);
+        bowstaff.setItemCost(0);
+        bowstaff.setItemValue(0);
         bowstaff.setItemQuantity(0);
         bowstaff.setStrength(10);
         item[Items.bowstaff.ordinal()] = bowstaff;
@@ -289,6 +315,8 @@ public class PersonaControl {
         Item throwingStars = new Item();
         throwingStars.setDescription("Throwing Stars");
         throwingStars.setRequiredAmount(0);
+        throwingStars.setItemCost(0);
+        throwingStars.setItemValue(0);
         throwingStars.setItemQuantity(0);
         throwingStars.setStrength(10);
         item[Items.throwingStars.ordinal()] = throwingStars;
@@ -296,6 +324,8 @@ public class PersonaControl {
         Item baseballBat = new Item();
         baseballBat.setDescription("Baseball Bat");
         baseballBat.setRequiredAmount(0);
+        baseballBat.setItemCost(0);
+        baseballBat.setItemValue(0);
         baseballBat.setItemQuantity(0);
         baseballBat.setStrength(10);
         item[Items.baseballBat.ordinal()] = baseballBat;
@@ -303,6 +333,8 @@ public class PersonaControl {
         Item dumbbells = new Item();
         dumbbells.setDescription("Dumbbells");
         dumbbells.setRequiredAmount(0);
+        dumbbells.setItemCost(0);
+        dumbbells.setItemValue(0);
         dumbbells.setItemQuantity(0);
         dumbbells.setStrength(10);
         item[Items.dumbbells.ordinal()] = dumbbells;
@@ -310,6 +342,8 @@ public class PersonaControl {
         Item golfClub = new Item();
         golfClub.setDescription("Golf Club");
         golfClub.setRequiredAmount(0);
+        golfClub.setItemCost(0);
+        golfClub.setItemValue(0);
         golfClub.setItemQuantity(0);
         golfClub.setStrength(10);
         item[Items.golfClub.ordinal()] = golfClub;
@@ -317,6 +351,8 @@ public class PersonaControl {
         Item ancientSpellBook = new Item();
         ancientSpellBook.setDescription("Ancient Spell Book");
         ancientSpellBook.setRequiredAmount(0);
+        ancientSpellBook.setItemCost(0);
+        ancientSpellBook.setItemValue(0);
         ancientSpellBook.setItemQuantity(0);
         ancientSpellBook.setStrength(10);
         item[Items.ancientSpellBook.ordinal()] = ancientSpellBook;
@@ -324,13 +360,17 @@ public class PersonaControl {
         Item libraryCard = new Item();
         libraryCard.setDescription("Library Card");
         libraryCard.setRequiredAmount(0);
-        libraryCard.setItemQuantity(0);
+        libraryCard.setItemCost(0);
+        libraryCard.setItemValue(0);
+        libraryCard.setItemQuantity(1);
         libraryCard.setStrength(10);
         item[Items.libraryCard.ordinal()] = libraryCard;
         
         Item taxForms = new Item();
         taxForms.setDescription("Tax Forms");
         taxForms.setRequiredAmount(0);
+        taxForms.setItemCost(0);
+        taxForms.setItemValue(0);
         taxForms.setItemQuantity(0);
         taxForms.setStrength(10);
         item[Items.taxForms.ordinal()] = taxForms;
@@ -338,6 +378,8 @@ public class PersonaControl {
         Item holyWater = new Item();
         holyWater.setDescription("Holy Water");
         holyWater.setRequiredAmount(0);
+        holyWater.setItemCost(0);
+        holyWater.setItemValue(0);
         holyWater.setItemQuantity(0);
         holyWater.setStrength(10);
         item[Items.holyWater.ordinal()] = holyWater;
@@ -345,6 +387,8 @@ public class PersonaControl {
         Item sacramentalWine = new Item();
         sacramentalWine.setDescription("Sacramental Wine");
         sacramentalWine.setRequiredAmount(0);
+        sacramentalWine.setItemCost(0);
+        sacramentalWine.setItemValue(0);
         sacramentalWine.setItemQuantity(0);
         sacramentalWine.setStrength(10);
         item[Items.sacramentalWine.ordinal()] = sacramentalWine;
@@ -352,6 +396,8 @@ public class PersonaControl {
         Item altarBoyVestments = new Item();
         altarBoyVestments.setDescription("Altar Boy Vestments");
         altarBoyVestments.setRequiredAmount(0);
+        altarBoyVestments.setItemCost(0);
+        altarBoyVestments.setItemValue(0);
         altarBoyVestments.setItemQuantity(0);
         altarBoyVestments.setStrength(10);
         item[Items.altarBoyVestments.ordinal()] = altarBoyVestments;
@@ -359,6 +405,8 @@ public class PersonaControl {
         Item usedNeedles = new Item();
         usedNeedles.setDescription("Used Needles");
         usedNeedles.setRequiredAmount(0);
+        usedNeedles.setItemCost(0);
+        usedNeedles.setItemValue(0);
         usedNeedles.setItemQuantity(0);
         usedNeedles.setStrength(10);
         item[Items.usedNeedles.ordinal()] = usedNeedles;
@@ -366,6 +414,8 @@ public class PersonaControl {
         Item medicine = new Item();
         medicine.setDescription("Medicine");
         medicine.setRequiredAmount(0);
+        medicine.setItemCost(0);
+        medicine.setItemValue(0);
         medicine.setItemQuantity(0);
         medicine.setStrength(10);
         item[Items.medicine.ordinal()] = medicine;
@@ -373,6 +423,8 @@ public class PersonaControl {
         Item freshOrgans = new Item();
         freshOrgans.setDescription("Fresh Organs");
         freshOrgans.setRequiredAmount(0);
+        freshOrgans.setItemCost(0);
+        freshOrgans.setItemValue(0);
         freshOrgans.setItemQuantity(0);
         freshOrgans.setStrength(10);
         item[Items.freshOrgans.ordinal()] = freshOrgans;
@@ -380,6 +432,8 @@ public class PersonaControl {
         Item textbook = new Item();
         textbook.setDescription("Textbook");
         textbook.setRequiredAmount(0);
+        textbook.setItemCost(0);
+        textbook.setItemValue(0);
         textbook.setItemQuantity(0);
         textbook.setStrength(10);
         item[Items.textbook.ordinal()] = textbook;
@@ -387,6 +441,8 @@ public class PersonaControl {
         Item reportCard = new Item();
         reportCard.setDescription("Report Card");
         reportCard.setRequiredAmount(0);
+        reportCard.setItemCost(0);
+        reportCard.setItemValue(0);
         reportCard.setItemQuantity(0);
         reportCard.setStrength(10);
         item[Items.reportCard.ordinal()] = reportCard;
@@ -394,6 +450,8 @@ public class PersonaControl {
         Item bagOfMoney = new Item();
         bagOfMoney.setDescription("Bag of Money");
         bagOfMoney.setRequiredAmount(0);
+        bagOfMoney.setItemCost(0);
+        bagOfMoney.setItemValue(0);
         bagOfMoney.setItemQuantity(0);
         bagOfMoney.setStrength(10);
         item[Items.bagOfMoney.ordinal()] = bagOfMoney;
@@ -401,6 +459,8 @@ public class PersonaControl {
         Item dyePack = new Item();
         dyePack.setDescription("Dye Pack");
         dyePack.setRequiredAmount(0);
+        dyePack.setItemCost(0);
+        dyePack.setItemValue(0);
         dyePack.setItemQuantity(0);
         dyePack.setStrength(10);
         item[Items.dyePack.ordinal()] = dyePack;
@@ -408,6 +468,8 @@ public class PersonaControl {
         Item loanApplication = new Item();
         loanApplication.setDescription("Loan Application");
         loanApplication.setRequiredAmount(0);
+        loanApplication.setItemCost(0);
+        loanApplication.setItemValue(0);
         loanApplication.setItemQuantity(0);
         loanApplication.setStrength(10);
         item[Items.loanApplication.ordinal()] = loanApplication;
@@ -415,6 +477,8 @@ public class PersonaControl {
         Item supermanComic = new Item();
         supermanComic.setDescription("Superman Comic");
         supermanComic.setRequiredAmount(0);
+        supermanComic.setItemCost(0);
+        supermanComic.setItemValue(0);
         supermanComic.setItemQuantity(0);
         supermanComic.setStrength(10);
         item[Items.supermanComic.ordinal()] = supermanComic;
@@ -422,6 +486,8 @@ public class PersonaControl {
         Item mintYoda = new Item();
         mintYoda.setDescription("Yoda - Mint condition in box");
         mintYoda.setRequiredAmount(0);
+        mintYoda.setItemCost(0);
+        mintYoda.setItemValue(0);
         mintYoda.setItemQuantity(0);
         mintYoda.setStrength(10);
         item[Items.mintYoda.ordinal()] = shirt;
@@ -429,6 +495,8 @@ public class PersonaControl {
         Item oilCan = new Item();
         oilCan.setDescription("Oil Can");
         oilCan.setRequiredAmount(0);
+        oilCan.setItemCost(0);
+        oilCan.setItemValue(0);
         oilCan.setItemQuantity(0);
         oilCan.setStrength(10);
         item[Items.oilCan.ordinal()] = oilCan;
@@ -436,6 +504,8 @@ public class PersonaControl {
         Item tireIron = new Item();
         tireIron.setDescription("Tire Iron");
         tireIron.setRequiredAmount(0);
+        tireIron.setItemCost(0);
+        tireIron.setItemValue(0);
         tireIron.setItemQuantity(0);
         tireIron.setStrength(10);
         item[Items.tireIron.ordinal()] = tireIron;
@@ -443,6 +513,8 @@ public class PersonaControl {
         Item nerveGas = new Item();
         nerveGas.setDescription("Nerve Gas");
         nerveGas.setRequiredAmount(0);
+        nerveGas.setItemCost(0);
+        nerveGas.setItemValue(0);
         nerveGas.setItemQuantity(0);
         nerveGas.setStrength(10);
         item[Items.nerveGas.ordinal()] = nerveGas;
@@ -450,6 +522,8 @@ public class PersonaControl {
         Item armyUniform = new Item();
         armyUniform.setDescription("Army Uniform");
         armyUniform.setRequiredAmount(0);
+        armyUniform.setItemCost(0);
+        armyUniform.setItemValue(0);
         armyUniform.setItemQuantity(0);
         armyUniform.setStrength(10);
         item[Items.armyUniform.ordinal()] = armyUniform;
@@ -457,6 +531,8 @@ public class PersonaControl {
         Item abramsTank = new Item();
         abramsTank.setDescription("Abrams Tank");
         abramsTank.setRequiredAmount(0);
+        abramsTank.setItemCost(0);
+        abramsTank.setItemValue(0);
         abramsTank.setItemQuantity(0);
         abramsTank.setStrength(10);
         item[Items.abramsTank.ordinal()] = abramsTank;
@@ -464,6 +540,8 @@ public class PersonaControl {
         Item bookOfStamps = new Item();
         bookOfStamps.setDescription("Book of Stamps");
         bookOfStamps.setRequiredAmount(0);
+        bookOfStamps.setItemCost(0);
+        bookOfStamps.setItemValue(0);
         bookOfStamps.setItemQuantity(0);
         bookOfStamps.setStrength(10);
         item[Items.bookOfStamps.ordinal()] = bookOfStamps;
@@ -471,6 +549,8 @@ public class PersonaControl {
         Item junkMail = new Item();
         junkMail.setDescription("Junk Mail");
         junkMail.setRequiredAmount(0);
+        junkMail.setItemCost(0);
+        junkMail.setItemValue(0);
         junkMail.setItemQuantity(0);
         junkMail.setStrength(10);
         item[Items.junkMail.ordinal()] = junkMail;
@@ -478,6 +558,8 @@ public class PersonaControl {
         Item sparklers = new Item();
         sparklers.setDescription("Sparklers");
         sparklers.setRequiredAmount(0);
+        sparklers.setItemCost(0);
+        sparklers.setItemValue(0);
         sparklers.setItemQuantity(0);
         sparklers.setStrength(10);
         item[Items.sparklers.ordinal()] = sparklers;
@@ -485,6 +567,8 @@ public class PersonaControl {
         Item m80 = new Item();
         m80.setDescription("M-80");
         m80.setRequiredAmount(0);
+        m80.setItemCost(0);
+        m80.setItemValue(0);
         m80.setItemQuantity(0);
         m80.setStrength(10);
         item[Items.m80.ordinal()] = m80;
@@ -492,6 +576,8 @@ public class PersonaControl {
         Item bottleRockets = new Item();
         bottleRockets.setDescription("Bottle Rockets");
         bottleRockets.setRequiredAmount(0);
+        bottleRockets.setItemCost(0);
+        bottleRockets.setItemValue(0);
         bottleRockets.setItemQuantity(0);
         bottleRockets.setStrength(10);
         item[Items.bottleRockets.ordinal()] = bottleRockets;
@@ -499,6 +585,8 @@ public class PersonaControl {
         Item chinchilla = new Item();
         chinchilla.setDescription("Chinchilla");
         chinchilla.setRequiredAmount(0);
+        chinchilla.setItemCost(0);
+        chinchilla.setItemValue(0);
         chinchilla.setItemQuantity(0);
         chinchilla.setStrength(10);
         item[Items.chinchilla.ordinal()] = chinchilla;
@@ -506,6 +594,8 @@ public class PersonaControl {
         Item catnip = new Item();
         catnip.setDescription("Catnip");
         catnip.setRequiredAmount(0);
+        catnip.setItemCost(0);
+        catnip.setItemValue(0);
         catnip.setItemQuantity(0);
         catnip.setStrength(10);
         item[Items.catnip.ordinal()] = catnip;
@@ -513,6 +603,8 @@ public class PersonaControl {
         Item cobra = new Item();
         cobra.setDescription("Cobra");
         cobra.setRequiredAmount(0);
+        cobra.setItemCost(0);
+        cobra.setItemValue(0);
         cobra.setItemQuantity(0);
         cobra.setStrength(10);
         item[Items.cobra.ordinal()] = cobra;
@@ -520,6 +612,8 @@ public class PersonaControl {
         Item anchor = new Item();
         anchor.setDescription("Anchor");
         anchor.setRequiredAmount(0);
+        anchor.setItemCost(0);
+        anchor.setItemValue(0);
         anchor.setItemQuantity(0);
         anchor.setStrength(10);
         item[Items.anchor.ordinal()] = anchor;
@@ -527,6 +621,8 @@ public class PersonaControl {
         Item canOfWorms = new Item();
         canOfWorms.setDescription("Can of Worms");
         canOfWorms.setRequiredAmount(0);
+        canOfWorms.setItemCost(0);
+        canOfWorms.setItemValue(0);
         canOfWorms.setItemQuantity(0);
         canOfWorms.setStrength(10);
         item[Items.canOfWorms.ordinal()] = canOfWorms;
@@ -534,6 +630,8 @@ public class PersonaControl {
         Item nailGun = new Item();
         nailGun.setDescription("Nail Gun");
         nailGun.setRequiredAmount(0);
+        nailGun.setItemCost(0);
+        nailGun.setItemValue(0);
         nailGun.setItemQuantity(0);
         nailGun.setStrength(10);
         item[Items.nailGun.ordinal()] = nailGun;
@@ -541,6 +639,8 @@ public class PersonaControl {
         Item chainsaw = new Item();
         chainsaw.setDescription("Chainsaw");
         chainsaw.setRequiredAmount(0);
+        chainsaw.setItemCost(0);
+        chainsaw.setItemValue(0);
         chainsaw.setItemQuantity(0);
         chainsaw.setStrength(10);
         item[Items.chainsaw.ordinal()] = chainsaw;
@@ -548,6 +648,8 @@ public class PersonaControl {
         Item axe = new Item();
         axe.setDescription("Axe");
         axe.setRequiredAmount(0);
+        axe.setItemCost(0);
+        axe.setItemValue(0);
         axe.setItemQuantity(0);
         axe.setStrength(10);
         item[Items.axe.ordinal()] = axe;
@@ -555,6 +657,8 @@ public class PersonaControl {
         Item nails = new Item();
         nails.setDescription("Nails");
         nails.setRequiredAmount(0);
+        nails.setItemCost(0);
+        nails.setItemValue(0);
         nails.setItemQuantity(0);
         nails.setStrength(10);
         item[Items.nails.ordinal()] = nails;
@@ -562,6 +666,8 @@ public class PersonaControl {
         Item copUniform = new Item();
         copUniform.setDescription("Cop Uniform");
         copUniform.setRequiredAmount(0);
+        copUniform.setItemCost(0);
+        copUniform.setItemValue(0);
         copUniform.setItemQuantity(0);
         copUniform.setStrength(10);
         item[Items.copUniform.ordinal()] = copUniform;
@@ -569,6 +675,8 @@ public class PersonaControl {
         Item handcuffs = new Item();
         handcuffs.setDescription("Handcuffs");
         handcuffs.setRequiredAmount(0);
+        handcuffs.setItemCost(0);
+        handcuffs.setItemValue(0);
         handcuffs.setItemQuantity(0);
         handcuffs.setStrength(10);
         item[Items.handcuffs.ordinal()] = handcuffs;
@@ -576,6 +684,8 @@ public class PersonaControl {
         Item mugShot = new Item();
         mugShot.setDescription("Mug Shot");
         mugShot.setRequiredAmount(0);
+        mugShot.setItemCost(0);
+        mugShot.setItemValue(0);
         mugShot.setItemQuantity(0);
         mugShot.setStrength(10);
         item[Items.mugShot.ordinal()] = mugShot;
@@ -583,6 +693,8 @@ public class PersonaControl {
         Item giraffe = new Item();
         giraffe.setDescription("Giraffe");
         giraffe.setRequiredAmount(0);
+        giraffe.setItemCost(0);
+        giraffe.setItemValue(0);
         giraffe.setItemQuantity(0);
         giraffe.setStrength(10);
         item[Items.giraffe.ordinal()] = giraffe;
@@ -590,6 +702,8 @@ public class PersonaControl {
         Item tRex = new Item();
         tRex.setDescription("Tyranosaurus Rex");
         tRex.setRequiredAmount(0);
+        tRex.setItemCost(0);
+        tRex.setItemValue(0);
         tRex.setItemQuantity(0);
         tRex.setStrength(10);
         item[Items.tRex.ordinal()] = tRex;
@@ -597,6 +711,8 @@ public class PersonaControl {
         Item mysticalEgyptianSceptor = new Item();
         mysticalEgyptianSceptor.setDescription("Egyption Sceptor");
         mysticalEgyptianSceptor.setRequiredAmount(0);
+        mysticalEgyptianSceptor.setItemCost(0);
+        mysticalEgyptianSceptor.setItemValue(0);
         mysticalEgyptianSceptor.setItemQuantity(0);
         mysticalEgyptianSceptor.setStrength(10);
         item[Items.mysticalEgyptianSceptor.ordinal()] = mysticalEgyptianSceptor;
@@ -604,6 +720,8 @@ public class PersonaControl {
         Item catapult = new Item();
         catapult.setDescription("Shirt");
         catapult.setRequiredAmount(0);
+        catapult.setItemCost(0);
+        catapult.setItemValue(0);
         catapult.setItemQuantity(0);
         catapult.setStrength(10);
         item[Items.catapult.ordinal()] = catapult;
@@ -611,6 +729,8 @@ public class PersonaControl {
         Item headstone = new Item();
         headstone.setDescription("Headstone");
         headstone.setRequiredAmount(0);
+        headstone.setItemCost(0);
+        headstone.setItemValue(0);
         headstone.setItemQuantity(0);
         headstone.setStrength(10);
         item[Items.headstone.ordinal()] = headstone;
@@ -618,6 +738,8 @@ public class PersonaControl {
         Item corpse = new Item();
         corpse.setDescription("Corpse");
         corpse.setRequiredAmount(0);
+        corpse.setItemCost(0);
+        corpse.setItemValue(0);
         corpse.setItemQuantity(0);
         corpse.setStrength(10);
         item[Items.corpse.ordinal()] = shirt;
@@ -625,6 +747,8 @@ public class PersonaControl {
         Item grievingWidow = new Item();
         grievingWidow.setDescription("Grieving Widow");
         grievingWidow.setRequiredAmount(0);
+        grievingWidow.setItemCost(0);
+        grievingWidow.setItemValue(0);
         grievingWidow.setItemQuantity(0);
         grievingWidow.setStrength(10);
         item[Items.grievingWidow.ordinal()] = grievingWidow;
@@ -632,6 +756,8 @@ public class PersonaControl {
         Item bucketOfLava = new Item();
         bucketOfLava.setDescription("Bucket of Lava");
         bucketOfLava.setRequiredAmount(0);
+        bucketOfLava.setItemCost(0);
+        bucketOfLava.setItemValue(0);
         bucketOfLava.setItemQuantity(0);
         bucketOfLava.setStrength(10);
         item[Items.bucketOfLava.ordinal()] = bucketOfLava;
@@ -639,6 +765,8 @@ public class PersonaControl {
         Item pizza = new Item();
         pizza.setDescription("Pizza");
         pizza.setRequiredAmount(0);
+        pizza.setItemCost(0);
+        pizza.setItemValue(0);
         pizza.setItemQuantity(0);
         pizza.setStrength(10);
         item[Items.pizza.ordinal()] = pizza;
@@ -646,6 +774,8 @@ public class PersonaControl {
         Item pizzaCutter = new Item();
         pizzaCutter.setDescription("Pizza Cutter");
         pizzaCutter.setRequiredAmount(0);
+        pizzaCutter.setItemCost(0);
+        pizzaCutter.setItemValue(0);
         pizzaCutter.setItemQuantity(0);
         pizzaCutter.setStrength(10);
         item[Items.pizzaCutter.ordinal()] = pizzaCutter;

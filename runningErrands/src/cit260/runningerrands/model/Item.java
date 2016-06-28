@@ -20,6 +20,24 @@ public class Item implements Serializable{
     private String description;
     private int requiredAmount;
     private int strength;
+    private int itemCost;
+
+    public int getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(int itemCost) {
+        this.itemCost = itemCost;
+    }
+
+    public int getItemValue() {
+        return itemValue;
+    }
+
+    public void setItemValue(int itemValue) {
+        this.itemValue = itemValue;
+    }
+    private int itemValue;
 
     public int getStrength() {
         return strength;
@@ -71,13 +89,15 @@ public class Item implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.itemName);
-        hash = 19 * hash + Objects.hashCode(this.itemType);
-        hash = 19 * hash + this.itemQuantity;
-        hash = 19 * hash + Objects.hashCode(this.description);
-        hash = 19 * hash + this.requiredAmount;
-        hash = 19 * hash + this.strength;
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.itemName);
+        hash = 97 * hash + Objects.hashCode(this.itemType);
+        hash = 97 * hash + this.itemQuantity;
+        hash = 97 * hash + Objects.hashCode(this.description);
+        hash = 97 * hash + this.requiredAmount;
+        hash = 97 * hash + this.strength;
+        hash = 97 * hash + this.itemCost;
+        hash = 97 * hash + this.itemValue;
         return hash;
     }
 
@@ -102,6 +122,12 @@ public class Item implements Serializable{
         if (this.strength != other.strength) {
             return false;
         }
+        if (this.itemCost != other.itemCost) {
+            return false;
+        }
+        if (this.itemValue != other.itemValue) {
+            return false;
+        }
         if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
@@ -116,7 +142,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + '}';
+        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + ", itemCost=" + itemCost + ", itemValue=" + itemValue + '}';
     }
-    
+
 }
