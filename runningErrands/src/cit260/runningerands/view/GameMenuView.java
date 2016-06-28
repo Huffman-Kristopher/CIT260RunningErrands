@@ -160,12 +160,19 @@ public class GameMenuView extends View{
         System.out.println(line.toString());
         
         for (Item item : inventory) {
+            
+            if(item.getItemQuantity() > 0) {
             line= new StringBuilder("                              ");
             line.insert(0,item.getDescription());
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getItemQuantity());
             
             System.out.println(line.toString());
+            }
+            else {
+                
+                /* Do nothing*/
+            }
         }
         
     }

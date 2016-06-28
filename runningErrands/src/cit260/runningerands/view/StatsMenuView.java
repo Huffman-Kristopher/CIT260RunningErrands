@@ -33,7 +33,7 @@ public class StatsMenuView extends View {
         int currentDay = persona.getDay();
         int investDaysToMature = investmentMaturityDay - currentDay;
         int personaSalary = persona.getSalary();
-        String investmentMessage = "";
+        String investmentMessage;
         
         if (investmentReturn == 0) {
             investmentMessage = "\nYou do not currently have any investments pending.";
@@ -66,7 +66,7 @@ public class StatsMenuView extends View {
         switch (value) {
             case "B": //return to main menu.
                 this.openGameMenu();
-                break;
+                return true;
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  

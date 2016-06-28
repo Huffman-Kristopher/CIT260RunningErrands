@@ -9,6 +9,7 @@ import cit260.runningerands.view.StartProgramView;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
+import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
@@ -29,6 +30,15 @@ public class RunningErrands {
     private static Location[][] locations = null;
     private static Map map = null;
     private static Scene[] scene = null;
+    private static Item item = null;
+
+    public static Item getItem() {
+        return item;
+    }
+
+    public static void setItem(Item item) {
+        RunningErrands.item = item;
+    }
 
     public static Scene[] getScene() {
         return scene;

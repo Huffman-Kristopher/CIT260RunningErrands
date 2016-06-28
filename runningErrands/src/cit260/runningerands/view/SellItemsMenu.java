@@ -23,7 +23,7 @@ public class SellItemsMenu extends View{
     
     String getMenuValues() {
         
-        StringBuilder line = null;
+        StringBuilder line;
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = persona.getItem();
         String menu = "\n"
@@ -33,64 +33,77 @@ public class SellItemsMenu extends View{
                   + "\n"
                   + "Item #  Description            In Stock  Sell Price  Total Value"
                   + "\n";
+        int totalItems = 0;            
         
         for (Item item : inventory) {
-            if(item.getItemQuantity() > 0) {
-                
-                line = new StringBuilder("                              ");
-                line.insert(0, item);
-                line.insert(8,item.getDescription());
-                line.insert(31, item.getRequiredAmount());
-                line.insert(41, item.getItemQuantity());
-                line.insert(53, (item.getItemQuantity() * item.getItemValue()));
-                menu = menu + line.toString();
-                return menu;
+            
+            if ("N".equals(item.getItemSellable())) {
+                item.setItemInSellList("N");
             }
             else {
+                if(item.getItemQuantity() > 0) {
+                    int qtyOnHand = item.getItemQuantity();
+                    int itemValue = item.getItemValue();
+                    totalItems = totalItems + item.getItemQuantity();
+                    line = new StringBuilder("\n                                                                    ");
+                    line.insert(2, item.getItemNumber());
+                    line.insert(10,item.getDescription());
+                    line.insert(33, qtyOnHand);
+                    line.insert(43,"$");
+                    line.insert(44, itemValue);
+                    line.insert(55,"$");
+                    line.insert(56, (qtyOnHand * itemValue));
+                    menu = menu + line.toString();
+                    item.setItemInSellList("Y");
+                    
+                }
+                else {
+
+                    /* Do nothing*/
+                }
                 
-                    /*Do nothing - do not display this item*/
-                return menu;
             }
         }
-        menu = menu + "\n" + "\n R - Return to game menu";
+        menu = menu + "\n------------------------------------"
+                + "\n Total items on hand: " + totalItems
+                + "\n------------------------------------"
+                + "\n"
+                + "\n Enter item number to sell"
+                + "\n R - Return to game menu";
+        SellItemsMenu sellItemsMenu = new SellItemsMenu(menu);
+        sellItemsMenu.display();        
         return menu;
     }
     
     @Override
     public boolean doAction(String value) {
-        value = value.toUpperCase();
+        int itemChoice = Integer.parseInt(value);
+        Persona persona = RunningErrands.getPersona();
+        Item[] inventory = persona.getItem();
+        Item currentItem = inventory[itemChoice];
         
         switch (value) {
-            case "1": //item 1.
-                this.option1();
-                break;
-            case "2": //item 2.
-                this.option2();
-                break;
-            case "3": //item 3.
-                this.option3();
-                break;
-            case "R": //return to game menu.
+            case "R": //Return to game menu.
                 this.openGameMenu();
                 break;
             default:
-                System.out.println("\nInvalid selection, please try again");
-                break;  
-        }
-
+                if ("N".equals(currentItem.getItemInSellList())) {
+                    
+                    System.out.println("\nPlease select a sellable item.");
+                    return false;
+                }
+                else {
+                    RunningErrands.setItem(currentItem);
+                    String menu = "";
+                    SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
+                    menu = sellItemQtyMenuView.getMenuValues(currentItem);
+                    sellItemQtyMenuView.display();
+                    return true;
+                    }
+                }
+                
         return false;
-
-}
-
-    private void option1() {
-        System.out.println("\n ***Sell option 1 ***");
-    }
-     private void option2() {
-        System.out.println("\n ***Sell option 2 ***");
-     }
-      private void option3() {
-        System.out.println("\n ***Sell option 3 ***");
-    }
+        }
 
      private void openGameMenu() {
        GameMenuView GameMenuView = new GameMenuView();

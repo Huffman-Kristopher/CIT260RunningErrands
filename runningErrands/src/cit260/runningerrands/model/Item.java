@@ -21,6 +21,33 @@ public class Item implements Serializable{
     private int requiredAmount;
     private int strength;
     private int itemCost;
+    private int itemNumber;
+    private String itemSellable;
+    private String itemInSellList;
+
+    public String getItemInSellList() {
+        return itemInSellList;
+    }
+
+    public void setItemInSellList(String itemInSellList) {
+        this.itemInSellList = itemInSellList;
+    }
+
+    public String getItemSellable() {
+        return itemSellable;
+    }
+
+    public void setItemSellable(String itemSellable) {
+        this.itemSellable = itemSellable;
+    }
+
+    public int getItemNumber() {
+        return itemNumber;
+    }
+
+    public void setItemNumber(int itemNumber) {
+        this.itemNumber = itemNumber;
+    }
 
     public int getItemCost() {
         return itemCost;
@@ -89,15 +116,18 @@ public class Item implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.itemName);
-        hash = 97 * hash + Objects.hashCode(this.itemType);
-        hash = 97 * hash + this.itemQuantity;
-        hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + this.requiredAmount;
-        hash = 97 * hash + this.strength;
-        hash = 97 * hash + this.itemCost;
-        hash = 97 * hash + this.itemValue;
+        int hash = 5;
+        hash = 79 * hash + Objects.hashCode(this.itemName);
+        hash = 79 * hash + Objects.hashCode(this.itemType);
+        hash = 79 * hash + this.itemQuantity;
+        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 79 * hash + this.requiredAmount;
+        hash = 79 * hash + this.strength;
+        hash = 79 * hash + this.itemCost;
+        hash = 79 * hash + this.itemNumber;
+        hash = 79 * hash + Objects.hashCode(this.itemSellable);
+        hash = 79 * hash + Objects.hashCode(this.itemInSellList);
+        hash = 79 * hash + this.itemValue;
         return hash;
     }
 
@@ -125,6 +155,9 @@ public class Item implements Serializable{
         if (this.itemCost != other.itemCost) {
             return false;
         }
+        if (this.itemNumber != other.itemNumber) {
+            return false;
+        }
         if (this.itemValue != other.itemValue) {
             return false;
         }
@@ -137,12 +170,13 @@ public class Item implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
+        if (!Objects.equals(this.itemSellable, other.itemSellable)) {
+            return false;
+        }
+        if (!Objects.equals(this.itemInSellList, other.itemInSellList)) {
+            return false;
+        }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + ", itemCost=" + itemCost + ", itemValue=" + itemValue + '}';
     }
 
 }
