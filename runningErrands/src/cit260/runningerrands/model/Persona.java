@@ -27,6 +27,15 @@ public class Persona implements Serializable{
     private boolean gambledToday;
     private Car car;
     private Item[] item;
+    private Location[][] location;
+
+    public Location[][] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
 
     public Item[] getItem() {
         return item;

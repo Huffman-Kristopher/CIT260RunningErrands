@@ -6,7 +6,9 @@
 package cit260.runningerrands.control;
 
 import cit260.runningerrands.model.Game;
+import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import runningerrands.RunningErrands;
 
@@ -24,6 +26,7 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
                 RunningErrands.setPlayer(player); // Save the player
+                
         return player;
     }
     
@@ -33,7 +36,8 @@ public class GameControl {
         RunningErrands.setCurrentGame(game);
         Map map = MapControl.createMap();
         game.setMap(map);
-        /*MapControl.movePersonaToStartingLocation(map);*/
+        Location[][] location = new Location[0][0];
+        MapControl.movePersonaToStartingLocation(location);
     }
 
 }

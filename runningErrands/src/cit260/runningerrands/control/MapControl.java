@@ -7,6 +7,7 @@ package cit260.runningerrands.control;
 
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Scene;
 import runningerrands.RunningErrands;
 
@@ -17,7 +18,10 @@ import runningerrands.RunningErrands;
 public class MapControl {
 
 
-    static void movePersonaToStartingLocation(Map map) {
+    public static void movePersonaToStartingLocation(Location[][] location) {
+        
+        Persona persona = RunningErrands.getPersona();
+        persona.setLocation(location);
         
     }
 
@@ -29,6 +33,7 @@ public class MapControl {
         Scene[] scenes = createScenes();
         RunningErrands.setScene(scenes);
         assignScenesToLocations(map, scenes);
+        
         return map;
     }
 
