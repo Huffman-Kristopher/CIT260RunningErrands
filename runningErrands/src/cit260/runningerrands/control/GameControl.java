@@ -8,7 +8,6 @@ package cit260.runningerrands.control;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
-import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import runningerrands.RunningErrands;
 

@@ -18,11 +18,8 @@ import java.util.Scanner; //if it screws up - delete this
     public class StartProgramView {
 
         private String promptMessage;
-        private String promptAgeMessage;
-        
         public StartProgramView() {
             this.promptMessage = "\nPlease enter your name: ";
-
             this.displayBanner();
     }
 

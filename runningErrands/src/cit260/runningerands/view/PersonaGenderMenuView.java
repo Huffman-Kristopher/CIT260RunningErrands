@@ -21,7 +21,7 @@ public class PersonaGenderMenuView extends View {
               + "\n------------------------------------"
               + "\nF - Female"
               + "\nM - Male"
-              + "\nB - Back to main menu"
+              + "\nQ - Back to main menu"
               + "\n-------------------------"
               + "\nPlease select a gender: ");
     }
@@ -42,13 +42,13 @@ public class PersonaGenderMenuView extends View {
                 break;
             case 'Q': //load saved game
                 this.openMainMenuView();
-                break;
+                return true;
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  
         }
 
-        return false;
+        return true;
     }
 
     private void openMainMenuView() {
@@ -60,7 +60,7 @@ public class PersonaGenderMenuView extends View {
         String menu = "";
         PersonaCareerMenuView personaCareerMenuView = new PersonaCareerMenuView(menu);
         menu = personaCareerMenuView.CareerMenuValues();
-        personaCareerMenuView.display();
+        
     }
 }
 

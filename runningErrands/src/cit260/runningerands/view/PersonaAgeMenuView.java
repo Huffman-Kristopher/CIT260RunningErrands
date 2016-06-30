@@ -30,8 +30,8 @@ public class PersonaAgeMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
-                this.openGameMenu();
-                break;
+                this.openMainMenuView();
+                return true;
             default:
                 try {
                     int age = Integer.parseInt(value);
@@ -50,7 +50,7 @@ public class PersonaAgeMenuView extends View {
                     System.out.println("\nPlease enter a numeric value, or press Q to return to the main menu.");
             }
         }
-        return false;
+        return true;
     }
     
     private void openPersonaDisplayMenuView() {
@@ -58,11 +58,12 @@ public class PersonaAgeMenuView extends View {
         String menu = "";
         PersonaDisplayMenuView personaDisplayMenuView = new PersonaDisplayMenuView(menu);
         menu = personaDisplayMenuView.PersonaDataValues();
-        personaDisplayMenuView.display();
+        
     }
     
-        private void openGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+        
+    private void openMainMenuView() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
     }
 }

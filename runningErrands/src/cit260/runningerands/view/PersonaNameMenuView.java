@@ -29,20 +29,20 @@ public class PersonaNameMenuView extends View {
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        if (value == "Q") {
+        if ("Q".equals(value)) {
             this.openMainMenuView();
             return true;
         }
         if (value.length() < 2) {
-        System.out.println("\nInvalid persona name:"
-            +"The name must be greater than one character in length.");
-        return false;
+            System.out.println("\nInvalid persona name:"
+                +"The name must be greater than one character in length.");
+            return false;
         }
         else {
-        Persona persona = RunningErrands.getPersona();
-        PersonaControl.setPersonaName(value);
-        this.openPersonaAgeMenuView();
-        return true;
+            Persona persona = RunningErrands.getPersona();
+            PersonaControl.setPersonaName(value);
+            this.openPersonaAgeMenuView();
+            return true;
         }
     }
 

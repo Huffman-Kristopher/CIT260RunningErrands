@@ -41,6 +41,8 @@ public class MainMenuView extends View {
             case "H": //Open help menu
                 this.openHelpMenu();
                 break;
+            case "Q": //Open help menu
+                return true;
             default:
                 System.out.println("\nInvalid selection, please try again");
                 break;  

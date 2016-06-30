@@ -65,7 +65,7 @@ public class PersonaCareerMenuView extends View {
         value = value.toUpperCase();
         Persona persona = RunningErrands.getPersona();
         char gender = persona.getGender();
-        String career = "";
+        String career;
         
         if (gender == 'F') {
             switch (value) {
@@ -96,7 +96,7 @@ public class PersonaCareerMenuView extends View {
                     break;
                 case "Q":
                     this.openMainMenuView();
-                    break;
+                    return true;
                 default:
                     System.out.println("\nInvalid selection, please try again");
                     break;  
@@ -131,14 +131,14 @@ public class PersonaCareerMenuView extends View {
                     break; 
                 case "Q":
                     this.openMainMenuView();
-                    break;
+                    return true;
                 default:
                     System.out.println("\nInvalid selection, please try again");
                     break;  
             }
         }
         
-        return false;
+        return true;
     }
 
     private void openMainMenuView() {
