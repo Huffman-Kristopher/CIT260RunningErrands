@@ -43,7 +43,7 @@ public class BuyMenuView extends View{
 }
 
     private void openSelectItmesMenu() {
-       SelectItmesMenu SelectItmesMenu = new SelectItmesMenu();
+       SelectItemsMenu SelectItmesMenu = new SelectItemsMenu();
        SelectItmesMenu.display();
     }
 

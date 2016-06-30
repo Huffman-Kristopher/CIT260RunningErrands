@@ -30,7 +30,7 @@ public class GamblingAmountMenuView extends View {
               + "\n------------------------------------"
               + "\n| Gambling Den                      |" 
               + "\n------------------------------------"
-              + "\nPlease enter a bet amount or press 'R' to return to main menu: ");;
+              + "\nPlease enter a bet amount or press 'R' to return to main menu: ");
         }
         else {
             System.out.println("\nYou have already gambled today. Please return tomorrow.");
@@ -44,12 +44,13 @@ public class GamblingAmountMenuView extends View {
 
     @Override
     public boolean doAction(String value) {
-        
+        value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
                 this.openGameMenu();
                 break;
             default:
+                try {
                 int betAmount = Integer.parseInt(value);
                 Gambling gambling = RunningErrands.getGambling();
                 Persona persona = RunningErrands.getPersona();
@@ -62,6 +63,10 @@ public class GamblingAmountMenuView extends View {
                     this.openGamblingNumbersMenuView();
                 }
                 break;
+                }
+                catch (NumberFormatException nf) {
+                    System.out.println("Please enter a numeric bet or R to return to the game menu.");
+                }
         }
         return false;
     }    

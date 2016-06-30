@@ -42,6 +42,7 @@ private Investment investment;
                 this.openGameMenu();
                 break;
             default:
+                try {
                 int investAmount = Integer.parseInt(value);
                 Persona persona = RunningErrands.getPersona();
                 int maxBet = persona.getMoney() - 1 ;
@@ -53,6 +54,9 @@ private Investment investment;
                     this.calculateInvesmentReturn(investAmount);
                 }
                 break;
+                } catch (NumberFormatException ne) {
+                    System.out.println("Please enter a numeric value or R to return to the game menu.");
+                }
         }
         return false;
 }

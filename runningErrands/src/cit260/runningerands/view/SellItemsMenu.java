@@ -23,6 +23,7 @@ public class SellItemsMenu extends View{
     
     String getMenuValues() {
         
+        int totalItems = 0; 
         StringBuilder line;
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = persona.getItem();
@@ -33,8 +34,6 @@ public class SellItemsMenu extends View{
                   + "\n"
                   + "Item #  Description            In Stock  Sell Price  Total Value"
                   + "\n";
-        int totalItems = 0;            
-        
         for (Item item : inventory) {
             
             if ("N".equals(item.getItemSellable())) {
@@ -77,11 +76,12 @@ public class SellItemsMenu extends View{
     
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
+        try {
         int itemChoice = Integer.parseInt(value);
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = persona.getItem();
         Item currentItem = inventory[itemChoice];
-        
         switch (value) {
             case "R": //Return to game menu.
                 this.openGameMenu();
@@ -101,7 +101,9 @@ public class SellItemsMenu extends View{
                     return true;
                     }
                 }
-                
+        } catch (NumberFormatException ne) {
+            System.out.println("\nInvalid selection, please select an option above.");
+        }
         return false;
         }
 

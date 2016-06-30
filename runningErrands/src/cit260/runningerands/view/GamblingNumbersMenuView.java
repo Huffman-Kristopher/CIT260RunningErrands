@@ -41,7 +41,7 @@ public class GamblingNumbersMenuView extends View {
 
     @Override
     public boolean doAction(String value) {
-        
+        value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
                 this.openGameMenu();
@@ -62,7 +62,7 @@ public class GamblingNumbersMenuView extends View {
                 }
                 break;
                 }catch (NumberFormatException nf){
-                    System.out.println("You must enter a valid option");
+                    System.out.println("Please enter a numeric value or R to return to the game menu.");
                 }
         }
         return false;

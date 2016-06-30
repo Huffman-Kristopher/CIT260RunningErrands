@@ -40,6 +40,7 @@ private Investment investment;
                 this.openGameMenu();
                 break;
             default:
+                try {
                 int investDays = Integer.parseInt(value);
                 if (investDays < 0 || investDays > 29) {
                     System.out.println("\nInvalid selection, please try again");
@@ -49,6 +50,9 @@ private Investment investment;
                     this.selectInvestAmount();
                 }
                 break;
+                } catch (NumberFormatException ne) {
+                    System.out.println("Please enter a numeric value or R to return to the game menu.");
+                }
         }
         return false;
 }

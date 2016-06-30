@@ -53,7 +53,7 @@ public class StatsMenuView extends View {
                   + "\nCurrent Balance: $" + personaMoney
                   + investmentMessage
                   + "\n-------------------------"
-                  + "\nB - Back to main menu");
+                  + "\nR - Return to main menu");
         StatsMenuView StatsMenuView = new StatsMenuView(menu);
         StatsMenuView.display();
         return menu;
@@ -64,7 +64,7 @@ public class StatsMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
-            case "B": //return to main menu.
+            case "R": //return to main menu.
                 this.openGameMenu();
                 return true;
             default:

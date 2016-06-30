@@ -10,9 +10,9 @@ package cit260.runningerands.view;
  *  @author Kristopher Huffman And Kirk Brown
  */
 
-public class SelectItmesMenu extends View{
+public class SelectItemsMenu extends View{
 
-    public SelectItmesMenu() {
+    public SelectItemsMenu() {
         super("\n"
                   + "\n------------------------------------"
                   + "\n| Shop inventory Menu                        |" 

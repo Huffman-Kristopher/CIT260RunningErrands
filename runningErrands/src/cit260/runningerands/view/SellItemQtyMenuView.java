@@ -54,33 +54,37 @@ public class SellItemQtyMenuView extends View {
     
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
         Persona persona = RunningErrands.getPersona();
         Item currentItem = RunningErrands.getItem();
         int qtyOnHand = currentItem.getItemQuantity();
-                
         switch (value) {
             case "R": //create a stock investment.
                 this.openGameMenu();
                 break;
             default:
-                int sellQty = Integer.parseInt(value);
-                if (sellQty < 1) {
-                    if(qtyOnHand == 1) {
-                        System.out.println("\nPlease enter 1 to sell or R to return to game menu.");
+                try {
+                    int sellQty = Integer.parseInt(value);
+                    if (sellQty < 1) {
+                        if(qtyOnHand == 1) {
+                            System.out.println("\nPlease enter 1 to sell or R to return to game menu.");
+                            return false;
+                        }
+
+                        System.out.println("\nPlease enter a number from 1 to " + qtyOnHand);
                         return false;
                     }
-                    
-                    System.out.println("\nPlease enter a number from 1 to " + qtyOnHand);
-                    return false;
+                    else {
+
+                        int saleAmount = ItemControl.sellItem(currentItem, sellQty);
+                        System.out.println("\nCongratulations! You just made $" + saleAmount + ".");
+                        GameMenuView GameMenuView = new GameMenuView();
+                        GameMenuView.display();
+                        return true;    
+                        }
+                } catch (NumberFormatException ne) {
+                    System.out.println("\nInvalid selection, please enter a quantity.");
                 }
-                else {
-                    
-                    int saleAmount = ItemControl.sellItem(currentItem, sellQty);
-                    System.out.println("\nCongratulations! You just made $" + saleAmount + ".");
-                    GameMenuView GameMenuView = new GameMenuView();
-                    GameMenuView.display();
-                    return true;    
-                    }
                 }
                 
         return false;

@@ -28,6 +28,7 @@ public class PersonaNameMenuView extends View {
     
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
         if (value == "Q") {
             this.openMainMenuView();
             return true;

@@ -27,18 +27,30 @@ public class PersonaAgeMenuView extends View {
     
     @Override
     public boolean doAction(String value) {
-        int age = Integer.parseInt(value);
-        if (age < 12 || age > 120) {
-            System.out.println("\nInvalid age:"
-            + "Please enter a value between 12 and 120.");
-            return false;
+        value = value.toUpperCase();
+        switch (value) {
+            case "R": //create a stock investment.
+                this.openGameMenu();
+                break;
+            default:
+                try {
+                    int age = Integer.parseInt(value);
+                    if (age < 12 || age > 120) {
+                        System.out.println("\nInvalid age:"
+                        + "Please enter a value between 12 and 120.");
+                        return false;
+                    }
+                    else {
+                    Persona persona = RunningErrands.getPersona();
+                    PersonaControl.setPersonaAge(age);
+                    this.openPersonaDisplayMenuView();
+                    return true;
+                    }
+                } catch (NumberFormatException ne) {
+                    System.out.println("\nPlease enter a numeric value, or press Q to return to the main menu.");
+            }
         }
-        else {
-        Persona persona = RunningErrands.getPersona();
-        PersonaControl.setPersonaAge(age);
-        this.openPersonaDisplayMenuView();
-        return true;
-        }
+        return false;
     }
     
     private void openPersonaDisplayMenuView() {
@@ -47,5 +59,10 @@ public class PersonaAgeMenuView extends View {
         PersonaDisplayMenuView personaDisplayMenuView = new PersonaDisplayMenuView(menu);
         menu = personaDisplayMenuView.PersonaDataValues();
         personaDisplayMenuView.display();
+    }
+    
+        private void openGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 }
