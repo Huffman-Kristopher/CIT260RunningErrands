@@ -9,6 +9,8 @@ import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.control.GamblingControl;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Persona;
+import exceptions.GamblingControlExceptions;
+import exceptions.PersonaControlExceptions;
 import runningerrands.RunningErrands;
 
 /**
@@ -45,7 +47,9 @@ public class GamblingNumbersMenuView extends View {
                 this.openGameMenu();
                 break;
             default:
-                int betNumbers = Integer.parseInt(value);
+                try{
+               int betNumbers = Integer.parseInt(value);
+                
                 Gambling gambling = RunningErrands.getGambling();
                 if (betNumbers <1 || betNumbers > 99999 ) {
                     System.out.println("\nPlease enter a bet between 1 and 99999");
@@ -57,6 +61,9 @@ public class GamblingNumbersMenuView extends View {
                     this.calculatePayout();
                 }
                 break;
+                }catch (NumberFormatException nf){
+                    System.out.println("You must enter a valid option");
+                }
         }
         return false;
     }    
@@ -65,9 +72,13 @@ public class GamblingNumbersMenuView extends View {
     private void calculatePayout() {
         
         Gambling gambling = RunningErrands.getGambling();
-        int winningNumber = GamblingControl.calculateWiningNumber();
-        int winningsTotal = GamblingControl.calculatePayout(winningNumber);
+        try{
+            int winningNumber = GamblingControl.calculateWiningNumber();
+        
+         int winningsTotal = GamblingControl.calculatePayout(winningNumber);
+        
         int updatedBalance = PersonaControl.updatePersonaMoney(winningsTotal);
+        
         if (winningsTotal < 0) {
             System.out.println("\nThe winning number was " + winningNumber + "."
                     +"\nWe're sorry! You lost $" + winningsTotal * (-1) + ". Your new balance is $" + updatedBalance + ".");
@@ -75,6 +86,9 @@ public class GamblingNumbersMenuView extends View {
         else {
             System.out.println("\nThe winning number was " + winningNumber + "."
                     +"\nYou won $" + winningsTotal + ". Your new balance is $" + updatedBalance + ".");
+        }
+        } catch (GamblingControlExceptions error) {
+            System.out.println(error.getMessage());
         }
         this.openGameMenu();
     }

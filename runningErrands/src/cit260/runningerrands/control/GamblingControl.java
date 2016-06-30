@@ -7,6 +7,7 @@ package cit260.runningerrands.control;
 
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Persona;
+import exceptions.GamblingControlExceptions;
 import runningerrands.RunningErrands;
 
 /**
@@ -15,7 +16,8 @@ import runningerrands.RunningErrands;
  */
 public class GamblingControl {
     
-    public static int calculateWiningNumber() {
+    public static int calculateWiningNumber() 
+            throws GamblingControlExceptions{
         int winningNumber;
         Gambling gambling = RunningErrands.getGambling();
         int betAmount = gambling.getBetAmount();
@@ -24,10 +26,15 @@ public class GamblingControl {
             winningNumber = betNumber;
             return winningNumber;
         }
-        //All positive bets lose
-        winningNumber = betNumber + 1;
-        return winningNumber;
+        if(betAmount == 0){
+            throw new GamblingControlExceptions("You cannot bet $0.00");
+        }
         
+        else{
+             //All positive bets lose
+        winningNumber = betNumber + 1;
+        return winningNumber;   
+        }
     }
     
     public static int calculatePayout(int winningNumber) {

@@ -9,6 +9,7 @@ import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Scene;
+import exceptions.MapControlExceptions;
 import runningerrands.RunningErrands;
 
 /**
@@ -19,10 +20,10 @@ public class MapControl {
 
 
     public static void movePersonaToStartingLocation(Location[][] location) {
-        
+   /*     
         Persona persona = RunningErrands.getPersona();
         persona.setLocation(location);
-        
+     */   
     }
 
     static Map createMap() {
@@ -362,17 +363,17 @@ public class MapControl {
         return locations;
     }
     
-    public boolean calculateTravel(double dollarsSpent, double fuelPrice, double mpg) {
+    public void calculateTravel(double dollarsSpent, double fuelPrice, double mpg)
+            throws MapControlExceptions {
         double distanceToLocation = 250; //needs to be pulled from map data
         double distanceAbleToTravel = (dollarsSpent / fuelPrice) * mpg;
                 
         if (dollarsSpent < 1.50 || dollarsSpent > 1000) { 
-            return false;
+            throw new MapControlExceptions("Value is and invalid amount of money.");
         }
         if (distanceAbleToTravel < distanceToLocation ) {
-            return false;
+            throw new MapControlExceptions("You don't have the fuel to make it!");
         }
-        return true;
     }        
             
 }
