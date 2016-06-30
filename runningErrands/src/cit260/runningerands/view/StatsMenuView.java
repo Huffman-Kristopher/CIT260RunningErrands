@@ -62,17 +62,13 @@ public class StatsMenuView extends View {
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        
         switch (value) {
             case "R": //return to main menu.
-                this.openGameMenu();
                 return true;
             default:
-                System.out.println("\nInvalid selection, please try again");
-                break;  
+                System.out.println("\nInvalid selection, please enter R to return to menu");
+                return false;
         }
-
-        return false;
 
 }
 

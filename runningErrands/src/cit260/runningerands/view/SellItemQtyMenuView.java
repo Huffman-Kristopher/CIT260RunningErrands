@@ -60,8 +60,7 @@ public class SellItemQtyMenuView extends View {
         int qtyOnHand = currentItem.getItemQuantity();
         switch (value) {
             case "R": //create a stock investment.
-                this.openGameMenu();
-                break;
+                return true;
             default:
                 try {
                     int sellQty = Integer.parseInt(value);
@@ -75,19 +74,17 @@ public class SellItemQtyMenuView extends View {
                         return false;
                     }
                     else {
-
                         int saleAmount = ItemControl.sellItem(currentItem, sellQty);
                         System.out.println("\nCongratulations! You just made $" + saleAmount + ".");
-                        GameMenuView GameMenuView = new GameMenuView();
-                        GameMenuView.display();
                         return true;    
                         }
                 } catch (NumberFormatException ne) {
                     System.out.println("\nInvalid selection, please enter a quantity.");
+                    return false;
                 }
                 }
                 
-        return false;
+        
         }
 
      private void openGameMenu() {

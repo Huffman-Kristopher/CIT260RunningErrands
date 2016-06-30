@@ -99,7 +99,7 @@ public class PersonaCareerMenuView extends View {
                     return true;
                 default:
                     System.out.println("\nInvalid selection, please try again");
-                    break;  
+                    return false;  
             }
         }
         if (gender == 'M') {
@@ -134,7 +134,7 @@ public class PersonaCareerMenuView extends View {
                     return true;
                 default:
                     System.out.println("\nInvalid selection, please try again");
-                    break;  
+                    return false; 
             }
         }
         

@@ -44,49 +44,47 @@ public class GameMenuView extends View{
         switch (value) {
             case "M": //open map.
                 this.displayMap();
-                break;
+                return false;
             case "V": //open store.
                 this.openStoreMenu();
-                break;
+                return false;
             case "I": //open inventory.
                 this.viewInventory();
-                break;
+                return false;
             case "F": //open inveestments.
                 this.openInvestmentMenu();
-                break;
+                return false;
             case "G": //gamble.
                 this.openGamblingMenu();
-                break;
+                return false;
             case "S": //save the game.
                 this.OpensaveGame();
-                break;
+                return false;
 /**            case "L": //load the game.
                 this.openLoadGame();
-                break;
+                return false;
 **/
             case "E": //open email and get objectives.
                 this.openEmailMenu();
-                break;
+                return false;
             case "H": //open help menu.
                 this.openHelpMenu();
-                break;
+                return false;
             case "K": //open stats.
                 this.openStatsMenu();
-                break;
+                return false;
             case "Q": //return to main menu.
                 this.openMainMenu();
-                break;
+                return true;
             case "A": //return to main menu.
                 this.addOneDay();
-                break;
+                return false;
             default:
-                System.out.println("\nInvalid selection, please try again");
-                break;  
+                System.out.println("\nInvalid main menu selection, please try again");
+                return false;  
         }
+    }
 
-        return false;
-
-}
 
     private void openMapMenu() {
         System.out.println("\n ***Runs Map menu function ***");
@@ -103,7 +101,7 @@ public class GameMenuView extends View{
         String menu = "";
         GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
         menu = gamblingAmountMenuView.GamblingMenuValues();
-        gamblingAmountMenuView.display();
+        
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }
 
@@ -128,8 +126,7 @@ public class GameMenuView extends View{
     private void openStatsMenu() {
         String menu = "";
         StatsMenuView statsMenuView = new StatsMenuView(menu);
-        menu = statsMenuView.StatsValues();
-        statsMenuView.display();
+        statsMenuView.StatsValues();
     }
 
     private void openStoreMenu() {

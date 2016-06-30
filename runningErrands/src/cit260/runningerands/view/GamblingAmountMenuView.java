@@ -68,7 +68,7 @@ public class GamblingAmountMenuView extends View {
                     System.out.println("Please enter a numeric bet or R to return to the game menu.");
                 }
         }
-        return false;
+        return true;
     }    
 
     private void openGamblingNumbersMenuView() {

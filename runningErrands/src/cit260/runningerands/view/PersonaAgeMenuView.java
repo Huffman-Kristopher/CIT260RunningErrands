@@ -30,7 +30,6 @@ public class PersonaAgeMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
-                this.openMainMenuView();
                 return true;
             default:
                 try {

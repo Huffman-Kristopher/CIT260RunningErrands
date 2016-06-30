@@ -31,20 +31,16 @@ public class StoreMenuView extends View{
         switch (value) {
             case "B": //buy stuff.
                 this.openBuyMenu();
-                break;
+                return true;
             case "S": //sell stuff.
                 this.openSellMenu();
-                break;
+                return true;
             case "R": //return to game menu.
-                this.openGameMenu();
-                break;
+                return true;
             default:
                 System.out.println("\nInvalid selection, please try again");
-                break;  
+                return false;  
         }
-
-        return false;
-
 
 }
 
@@ -57,7 +53,6 @@ public class StoreMenuView extends View{
         String menu = "";
         SellItemsMenu sellItemsMenu = new SellItemsMenu(menu);
         menu = sellItemsMenu.getMenuValues();
-        sellItemsMenu.display();
     }
 
     private void openGameMenu() {

@@ -77,34 +77,35 @@ public class SellItemsMenu extends View{
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        try {
-        int itemChoice = Integer.parseInt(value);
-        Persona persona = RunningErrands.getPersona();
-        Item[] inventory = persona.getItem();
-        Item currentItem = inventory[itemChoice];
         switch (value) {
             case "R": //Return to game menu.
-                this.openGameMenu();
-                break;
+                return true;
             default:
-                if ("N".equals(currentItem.getItemInSellList())) {
-                    
-                    System.out.println("\nPlease select a sellable item.");
+                try {
+                    int itemChoice = Integer.parseInt(value);
+                    Persona persona = RunningErrands.getPersona();
+                    Item[] inventory = persona.getItem();
+                    Item currentItem = inventory[itemChoice];
+                    if ("N".equals(currentItem.getItemInSellList())) {
+
+                        System.out.println("\nPlease select a sellable item.");
+                        return false;
+                    }
+
+                    else {
+                        RunningErrands.setItem(currentItem);
+                        String menu = "";
+                        SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
+                        menu = sellItemQtyMenuView.getMenuValues(currentItem);
+                        return true;
+                    }
+                } catch (NumberFormatException ne) {
+                    System.out.println("\nInvalid selection, please select an option above.");
                     return false;
                 }
-                else {
-                    RunningErrands.setItem(currentItem);
-                    String menu = "";
-                    SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
-                    menu = sellItemQtyMenuView.getMenuValues(currentItem);
-                    sellItemQtyMenuView.display();
-                    return true;
-                    }
-                }
-        } catch (NumberFormatException ne) {
-            System.out.println("\nInvalid selection, please select an option above.");
         }
-        return false;
+        
+        
         }
 
      private void openGameMenu() {

@@ -41,7 +41,6 @@ public class PersonaGenderMenuView extends View {
                 this.openCareerMenu();
                 break;
             case 'Q': //load saved game
-                this.openMainMenuView();
                 return true;
             default:
                 System.out.println("\nInvalid selection, please try again");

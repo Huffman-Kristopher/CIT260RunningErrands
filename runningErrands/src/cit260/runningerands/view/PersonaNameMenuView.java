@@ -30,7 +30,6 @@ public class PersonaNameMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase();
         if ("Q".equals(value)) {
-            this.openMainMenuView();
             return true;
         }
         if (value.length() < 2) {
