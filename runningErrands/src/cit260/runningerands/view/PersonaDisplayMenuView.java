@@ -65,7 +65,7 @@ public class PersonaDisplayMenuView extends View {
                 break;
             default:
                 System.out.println("\nInvalid selection, please try again");
-                break;  
+                return false;  
         }
         return true;
         }

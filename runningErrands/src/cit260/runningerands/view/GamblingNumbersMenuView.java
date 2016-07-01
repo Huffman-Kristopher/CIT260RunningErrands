@@ -10,7 +10,6 @@ import cit260.runningerrands.control.GamblingControl;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Persona;
 import exceptions.GamblingControlExceptions;
-import exceptions.PersonaControlExceptions;
 import runningerrands.RunningErrands;
 
 /**
@@ -75,9 +74,9 @@ public class GamblingNumbersMenuView extends View {
         try{
             int winningNumber = GamblingControl.calculateWiningNumber();
         
-         int winningsTotal = GamblingControl.calculatePayout(winningNumber);
+            int winningsTotal = GamblingControl.calculatePayout(winningNumber);
         
-        int updatedBalance = PersonaControl.updatePersonaMoney(winningsTotal);
+            int updatedBalance = PersonaControl.updatePersonaMoney(winningsTotal);
         
         if (winningsTotal < 0) {
             System.out.println("\nThe winning number was " + winningNumber + "."

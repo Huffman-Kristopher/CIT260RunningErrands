@@ -47,9 +47,9 @@ public class PersonaAgeMenuView extends View {
                     }
                 } catch (NumberFormatException ne) {
                     System.out.println("\nPlease enter a numeric value, or press Q to return to the main menu.");
+                    return false;
             }
         }
-        return true;
     }
     
     private void openPersonaDisplayMenuView() {
