@@ -18,23 +18,37 @@ import runningerrands.RunningErrands;
  */
 public class MapControl {
 
-
-    public static void movePersonaToStartingLocation(Location[][] location) {
-   /*     
+    
+    public static void movePersonaToStartingLocation() {
+               
         Persona persona = RunningErrands.getPersona();
-        persona.setLocation(location);
-     */   
+        Location[][] locations = RunningErrands.getLocations();
+        Location startingLocation = locations[0][0];
+        persona.setLocation(startingLocation);
+        RunningErrands.setPersona(persona);
+        
     }
 
+    public static void movePersonaToNewLocation(String symbol) {
+        
+        Persona persona = RunningErrands.getPersona();
+        Location[][] locations = RunningErrands.getLocations();
+        Map map = RunningErrands.getMap();
+        Location newLocation = map.getLocationFromSymbol(symbol);
+        symbol = newLocation.getScene().getLocationSymbol();
+        persona.setLocation(newLocation);
+        RunningErrands.setPersona(persona);
+        symbol = persona.getLocation().getScene().getLocationSymbol();
+        
+    }
+    
     static Map createMap() {
         Map map = new Map(6,5);
         RunningErrands.setMap(map);
-        Location[][] location = new Location[6][5];
-        RunningErrands.setLocations(location);
+        MapControl.createLocations();
         Scene[] scenes = createScenes();
         RunningErrands.setScene(scenes);
         assignScenesToLocations(map, scenes);
-        
         return map;
     }
 
@@ -353,6 +367,8 @@ public class MapControl {
         locations[5][2].setScene(scenes[LocationName.placeScene.ordinal()]);
         locations[5][3].setScene(scenes[LocationName.holderScene.ordinal()]);
         locations[5][4].setScene(scenes[LocationName.finishingScene.ordinal()]);
+        map.setLocations(locations);
+        RunningErrands.setLocations(locations);
         
     }
     

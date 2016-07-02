@@ -100,6 +100,7 @@ public class PersonaControl {
         int newBalance = (depositAmount + currentBalance);
         persona.setMoney(newBalance);
         int updatedBalance = persona.getMoney();
+        RunningErrands.setPersona(persona);
         return updatedBalance;
     }
 
@@ -123,5 +124,6 @@ public class PersonaControl {
             investment = new Investment();
             RunningErrands.setInvestment(investment);
         }
+        MapControl.movePersonaToNewLocation("01");
     }
 }

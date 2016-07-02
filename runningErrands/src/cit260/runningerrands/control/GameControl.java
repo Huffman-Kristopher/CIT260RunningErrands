@@ -35,8 +35,8 @@ public class GameControl {
         RunningErrands.setCurrentGame(game);
         Map map = MapControl.createMap();
         game.setMap(map);
-        Location[][] location = new Location[0][0];
-        MapControl.movePersonaToStartingLocation(location);
+        Location[][] locations = map.getLocations();
+        
     }
 
 }
