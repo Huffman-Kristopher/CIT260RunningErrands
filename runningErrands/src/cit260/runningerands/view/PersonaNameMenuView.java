@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
@@ -28,7 +29,6 @@ public class PersonaNameMenuView extends View {
     
     @Override
     public boolean doAction(String value) {
-        value = value.toUpperCase();
         if ("Q".equals(value)) {
             return true;
         }
@@ -40,6 +40,7 @@ public class PersonaNameMenuView extends View {
         else {
             Persona persona = RunningErrands.getPersona();
             PersonaControl.setPersonaName(value);
+            MapControl.movePersonaToStartingLocation();
             this.openPersonaAgeMenuView();
             return true;
         }

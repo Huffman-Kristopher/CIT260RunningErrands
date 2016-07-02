@@ -22,6 +22,7 @@ public class GameMenuView extends View{
                   + "\n| Game Main Menu                        |" 
                   + "\n------------------------------------"
                   + "\nM - Map"
+                  + "\nT - Travel"
                   + "\nV - Visit Store"
                   + "\nI - View Inventory"
                   + "\nF – Investments"
@@ -44,6 +45,9 @@ public class GameMenuView extends View{
         switch (value) {
             case "M": //open map.
                 this.displayMap();
+                return false;
+            case "T": //open map.
+                this.openMapMenu();
                 return false;
             case "V": //open store.
                 this.openStoreMenu();
@@ -87,7 +91,10 @@ public class GameMenuView extends View{
 
 
     private void openMapMenu() {
-        System.out.println("\n ***Runs Map menu function ***");
+        String menu = "";
+        MapMenuView mapMenuView = new MapMenuView(menu);
+        mapMenuView.MapMenuValues();
+        
     }
 
     private void openInvestmentMenu() {
@@ -100,7 +107,7 @@ public class GameMenuView extends View{
         //display Gambling menu
         String menu = "";
         GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
-        menu = gamblingAmountMenuView.GamblingMenuValues();
+        gamblingAmountMenuView.GamblingMenuValues();
         
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }

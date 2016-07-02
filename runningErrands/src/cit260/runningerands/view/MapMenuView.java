@@ -5,144 +5,53 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.MapControl;
+import cit260.runningerrands.model.Location;
+import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Persona;
+import runningerrands.RunningErrands;
+
 /**
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
 public class MapMenuView extends View {
     
-    public MapMenuView() {
-        super("\n"
-                  + "\n------------------------------------"
-                  + "\n| Map Menu                        |" 
-                  + "\n------------------------------------"
-                  + "\n01 - Home"
-                  + "\n02 - Mall"
-                  + "\n03 - Grocery store"
-                  + "\n04 – Gas station"
-                  + "\n05 – Gun shop"
-                  + "\n06 – Sporting goods store"
-                  + "\n07 – Library"
-                  + "\n08 - Church"
-                  + "\n09 – Hospital"
-                  + "\n10 – School"
-                  + "\n11 – Bank"
-                  + "\n12 - Comicbook shop"
-                  + "\n13 - Car repair shop"
-                  + "\n14 – Martial arts school"
-                  + "\n15 – Army base"
-                  + "\n16 – Post office"
-                  + "\n17 – Fireworks stand"
-                  + "\n18 - Pet store"
-                  + "\n19 – Marina "
-                  + "\n20 – Home improvement store"
-                  + "\n21 – Police station"
-                  + "\n22 - Zoo"
-                  + "\n23 - Natural history museum"
-                  + "\n24 – Cemetery "
-                  + "\n25 – Volcano"
-                  + "\n26 – Pizza parlor"
-                  + "\n27 - Orphanage"
-                  + "\nR – Return to previous menu"
-                  + "\n-------------------------"
-                  + "\nPlease select an Game menu option: ");
+    public MapMenuView(String menu) {
+        super(menu);
     }
 
+    public String MapMenuValues() {
+        
+        Persona persona = RunningErrands.getPersona();
+        Location currentlocation = persona.getLocation();
+        String locationSymbol = currentlocation.getScene().getLocationSymbol();
+        String menu = RunningErrands.getCurrentGame().getMap().getTravelMapString(locationSymbol);
+        
+        menu = "\n------------------------------------"
+                  + "\n| Map Menu                        |" 
+                  + "\n------------------------------------"
+                  + "\n" + menu;
+        menu += "-------------------------" 
+        + "\nPlease select a location to visit or press R to return to Game Menu";
+        
+        MapMenuView mapMenuView = new MapMenuView(menu);
+        mapMenuView.display();
+        return menu;
+    }
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        
-        switch (value) {
-            case "1": //go home.
-                this.travelHome();
-                break;
-            case "2": //open store.
-                this.openStoreMenu();
-                break;
-            case "3": //open inventory.
-                this.openInventoryMenu();
-                break;
-            case "4": //open inveestments.
-                this.openInvestmentMenu();
-                break;
-            case "5": //gamble.
-                this.openGamblingMenu();
-                break;
-            case "6": //save the game.
-                this.OpensaveGame();
-                break;
-            case "7": //load the game.
-                this.openLoadGame();
-                break;
-            case "8": //open email and get objectives.
-                this.openEmailMenu();
-                break;
-            case "9": //open help menu.
-                this.openHelpMenu();
-                break;
-            case "10": //open stats.
-                this.openStatsMenu();
-                break;
-            case "11": //open stats.
-                this.openStatsMenu();
-                break;
-            case "12": //return to main menu.
-                this.openMainMenu();
-                break;
-            case "13": //open map.
-                this.openMapMenu();
-                break;
-            case "14": //open store.
-                this.openStoreMenu();
-                break;
-            case "15": //open inventory.
-                this.openInventoryMenu();
-                break;
-            case "16": //open inveestments.
-                this.openInvestmentMenu();
-                break;
-            case "17": //gamble.
-                this.openGamblingMenu();
-                break;
-            case "18": //save the game.
-                this.OpensaveGame();
-                break;
-            case "19": //load the game.
-                this.openLoadGame();
-                break;
-            case "20": //open email and get objectives.
-                this.openEmailMenu();
-                break;
-            case "21": //open help menu.
-                this.openHelpMenu();
-                break;
-            case "22": //open stats.
-                this.openStatsMenu();
-                break;
-            case "23": //open stats.
-                this.openStatsMenu();
-                break;
-            case "24": //return to main menu.
-                this.openMainMenu();
-                break;
-            case "25": //open stats.
-                this.openStatsMenu();
-                break;
-            case "26": //open stats.
-                this.openStatsMenu();
-                break;
-            case "27": //return to main menu.
-                this.openMainMenu();
-                break;
-            case "R": //return to main menu.
-                this.openMainMenu();
-                break; 
-            default:
-                System.out.println("\nInvalid selection, please try again");
-                break;  
+        System.out.println(value) ;
+        if ("R".equals(value)) {
+            this.openGameMenu();
+            return true;
         }
-
-        return false;
+        else {
+                System.out.println("Inside doAction: " + value);
+                MapControl.movePersonaToNewLocation(value);
+                return true;
+        }
 
 }
 
@@ -165,7 +74,6 @@ public class MapMenuView extends View {
         String menu = "";
         GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
         menu = gamblingAmountMenuView.GamblingMenuValues();
-        gamblingAmountMenuView.display();
         //GameControl.createNewGame(RunningErrands.getPlayer());
     }
 
@@ -196,9 +104,9 @@ public class MapMenuView extends View {
         StoreMenuView.display();
     }
 
-    private void openMainMenu() {
-    MainMenuView MainMenuView = new MainMenuView();
-        MainMenuView.display();    
+    private void openGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();   
     }
 
     private void travelHome() {

@@ -20,7 +20,7 @@ public class Map implements Serializable{
     private int rowCount = 6;
     private int columnCount = 5;
     private Location[][] locations;
-
+    
     public Location[][] getLocations() {
         return locations;
     }
@@ -109,5 +109,102 @@ public class Map implements Serializable{
         return rtn;
         
     }
+    
+    public String getTravelMapString(String symbol) {
+        
+        String rtn = "";
+        for (int row = 0; row < rowCount; row++) {
+            for (int col = 0; col < columnCount; col++) {
+                if (row == rowCount -1 ) {
+                    if ( col == columnCount -1) {
+                        
+                    }
+                    else {
+                        String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                        if (locationSymbol == symbol) {
+                            
+                            rtn += "XX - You Are Here!\n";
+                            
+                        }
+                        else {
+                            rtn += locations[row][col].getScene().getLocationSymbol() + " - " + locations[row][col].getScene().getDescription() + "\n";
+                        }
+                    }
+                }
+                else {
+                    String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                    if (locationSymbol == symbol) {
+                            
+                            rtn += "XX - You Are Here!\n";
+                            
+                        }
+                        else {
+                            rtn += locations[row][col].getScene().getLocationSymbol() + " - " + locations[row][col].getScene().getDescription() + "\n";
+                    }
+                }
+            }
+        }
+        return rtn;   
+        
+    }
+    
+    public Location getLocationFromSymbol(String symbol) {
+        
+        String rtn = "";
+        for (int row = 0; row < rowCount; row++) {
+            for (int col = 0; col < columnCount; col++) {
+                if (row == rowCount -1 ) {
+                    if ( col == columnCount -1) {
+                        String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                        if (locationSymbol.equals(symbol)) {
+                            
+                            Location locationFromSymbol = locations[row][col];
+                            return locationFromSymbol;
+                            
+                        }
+                        else {
+                            
+                        }
+                        
+                    }
+                    else {
+                        String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                        if (locationSymbol.equals(symbol)) {
+                            
+                            Location locationFromSymbol = locations[row][col];
+                            return locationFromSymbol;
+                        }
+                        
+                    }
+                }
+                else {
+                    String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                    if (locationSymbol.equals(symbol)) {
+                            Location locationFromSymbol = locations[row][col];
+                            return locationFromSymbol;
+                        }
+                        
+                    }
+                
+            }
+        }
+        Location errorLocation = locations[5][4];
+        return errorLocation;
+    }
+    
 
+    public Boolean validateLocation (String symbol) {
+        Boolean value = false;
+        for (int row = 0; row < rowCount; row++) {
+            for (int col = 0; col < columnCount; col++) {
+                String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                if( locationSymbol == symbol) { 
+                    value = true;
+                    return value; 
+                }
+            }
+           
+        }
+        return value;
+    }
 }

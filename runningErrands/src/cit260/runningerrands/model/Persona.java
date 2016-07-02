@@ -6,6 +6,7 @@
 package cit260.runningerrands.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -27,13 +28,22 @@ public class Persona implements Serializable{
     private boolean gambledToday;
     private Car car;
     private Item[] item;
-    private Location[][] location;
+    private Location location;
+    private Scene scene;
 
-    public Location[][] getLocation() {
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location[][] location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
@@ -145,7 +155,7 @@ public class Persona implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 3;
         hash = 37 * hash + this.gender;
         hash = 37 * hash + Objects.hashCode(this.career);
         hash = 37 * hash + Objects.hashCode(this.personaName);
@@ -156,6 +166,11 @@ public class Persona implements Serializable{
         hash = 37 * hash + this.day;
         hash = 37 * hash + this.salary;
         hash = 37 * hash + (this.gambledToday ? 1 : 0);
+        hash = 37 * hash + Objects.hashCode(this.car);
+        hash = 37 * hash + Arrays.deepHashCode(this.item);
+        hash = 37 * hash + Objects.hashCode(this.location);
+        hash = 37 * hash + Objects.hashCode(this.scene);
+        hash = 37 * hash + Arrays.deepHashCode(this.email);
         return hash;
     }
 
@@ -201,12 +216,28 @@ public class Persona implements Serializable{
         if (!Objects.equals(this.personaName, other.personaName)) {
             return false;
         }
+        if (!Objects.equals(this.car, other.car)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.item, other.item)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.email, other.email)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + '}';
+        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + ", car=" + car + ", item=" + item + ", location=" + location + ", scene=" + scene + ", email=" + email + '}';
     }
-   
+
+    
 }
