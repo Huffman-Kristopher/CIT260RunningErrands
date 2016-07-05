@@ -9,11 +9,13 @@ package cit260.runningerands.view;
 import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Player;
 import java.util.Scanner; //if it screws up - delete this
-
+import java.io.PrintWriter;
+import java.io.BufferedReader;
 /**
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
+
 
     public class StartProgramView {
 
@@ -57,14 +59,14 @@ import java.util.Scanner; //if it screws up - delete this
     }
 
     private String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
+         // Get infile for keyboard
         String value = "";
         boolean valid = false;
         
         while (!valid) { //loop while not valid
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
+            value = this.keyboard.readLine(); //Get the next line typed on the keyboard
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank

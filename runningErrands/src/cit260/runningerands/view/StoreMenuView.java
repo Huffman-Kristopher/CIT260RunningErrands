@@ -45,8 +45,10 @@ public class StoreMenuView extends View{
 }
 
     private void openBuyMenu() {
-       BuyMenuView BuyMenuView = new BuyMenuView();
-       BuyMenuView.display();
+       String menu = "";
+        BuyItemsMenu buyItemsMenu = new BuyItemsMenu(menu);
+        menu = buyItemsMenu.getMenuValues();
+        buyItemsMenu.display();
     }
 
     private void openSellMenu() {
