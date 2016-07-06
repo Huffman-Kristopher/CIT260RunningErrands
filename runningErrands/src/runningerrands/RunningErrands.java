@@ -99,7 +99,7 @@ public class RunningErrands {
         RunningErrands.locations = locations;
     }
     
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
        try{
         //open charcter stream files ofr end user input and ouput
         RunningErrands.inFile =
