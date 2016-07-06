@@ -11,13 +11,14 @@ import cit260.runningerrands.model.Player;
 import java.util.Scanner; //if it screws up - delete this
 import java.io.PrintWriter;
 import java.io.BufferedReader;
+import java.io.IOException;
 /**
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
 
 
-    public class StartProgramView {
+    public class StartProgramView extends View{
 
         private String promptMessage;
         public StartProgramView() {
@@ -45,7 +46,7 @@ import java.io.BufferedReader;
         );
     }
 
-    public void displayStartProgramView() {
+    public void displayStartProgramView() throws IOException {
         
        boolean done = false; // Set flag to not done
        do {
@@ -58,7 +59,7 @@ import java.io.BufferedReader;
        } while (!done);
     }
 
-    private String getPlayerName() {
+    private String getPlayerName() throws IOException {
          // Get infile for keyboard
         String value = "";
         boolean valid = false;
@@ -80,7 +81,7 @@ import java.io.BufferedReader;
         return value; // returns the value entered
     }
 
-    private boolean doAction(String playerName) {
+    public boolean doAction(String playerName) {
         if (playerName.length() < 2) {
         System.out.println("\nInvalid player name:"
             +"The name must be greater than one character in length.");
