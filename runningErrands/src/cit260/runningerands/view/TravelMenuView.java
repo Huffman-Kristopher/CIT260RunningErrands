@@ -7,7 +7,6 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.model.Location;
-import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
 
@@ -15,9 +14,9 @@ import runningerrands.RunningErrands;
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
-public class MapMenuView extends View {
+public class TravelMenuView extends View {
     
-    public MapMenuView(String menu) {
+    public TravelMenuView(String menu) {
         super(menu);
     }
 
@@ -35,22 +34,23 @@ public class MapMenuView extends View {
         menu += "-------------------------" 
         + "\nPlease select a location to visit or press R to return to Game Menu";
         
-        MapMenuView mapMenuView = new MapMenuView(menu);
+        TravelMenuView mapMenuView = new TravelMenuView(menu);
         mapMenuView.display();
         return menu;
     }
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        System.out.println(value) ;
         if ("R".equals(value)) {
             this.openGameMenu();
             return true;
         }
         else {
-                System.out.println("Inside doAction: " + value);
-                MapControl.movePersonaToNewLocation(value);
-                return true;
+            MapControl.movePersonaToNewLocation(value);
+            String menu = "";
+            SceneMenuView sceneMenuView = new SceneMenuView(menu);
+            sceneMenuView.SceneMenuValues();
+            return true;
         }
 
 }

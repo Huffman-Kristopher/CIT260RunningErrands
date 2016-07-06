@@ -18,13 +18,13 @@ public class MapMenuViewTest {
     }
 
     /**
-     * Test of doAction method, of class MapMenuView.
+     * Test of doAction method, of class TravelMenuView.
      */
     @Test
     public void testDoAction() {
         System.out.println("doAction");
         String value = "";
-        MapMenuView instance = new MapMenuView();
+        TravelMenuView instance = new TravelMenuView();
         boolean expResult = false;
         boolean result = instance.doAction(value);
         assertEquals(expResult, result);

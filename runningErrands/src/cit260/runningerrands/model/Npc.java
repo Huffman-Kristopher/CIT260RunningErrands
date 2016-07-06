@@ -6,61 +6,93 @@
 package cit260.runningerrands.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
  * @author Kristopher Huffman and Kirk Brown
  */
-public enum Npc implements Serializable{
+public class Npc implements Serializable{
     
-    Shopkeeper("He manages the store"),
-    Librarian("She runs the Library"),
-    Priest("He preaches"),
-    Orphan("Has no one to love him"),
-    Receptionist("Greets you as you enter"),
-    Officer("He will taze you"),
-    Principal("Runs the school"),
-    BankTeller("Grants access to your money"),
-    Ninja("Can't find him"),
-    Soldier("Shoots...everything"),
-    Pirate("Aye, he runs the boats"),
-    Giraffe("Yell at him... His head is way up there"),
-    Docent("Boring, but knows everything..."),
-    Ghost("Woooooooo"),
-    Joe("It's him vs. the Volcano"),
-    MarinaMike("Runs the Marina"),
-    Guru("He knows all"),
-    Nikolai("Russian arms dealer"),
-    PlagueMonkey("Full of disease"),
-    Sergy("Russian thug");
+    private String npcName;
+    private String npcDescription;
+    private int npcStrength;
+    private int npcHealth;
 
-    private final String description;
-    private final Location coordinates;
-    private Item[] item;
-
-    public Item[] getItem() {
-        return item;
+    public String getNpcName() {
+        return npcName;
     }
 
-    public void setItem(Item[] item) {
-        this.item = item;
+    public void setNpcName(String npcName) {
+        this.npcName = npcName;
     }
 
-    Npc(String description) {
-        this.description = description;
-        coordinates = Location(1,1);
+    public String getNpcDescription() {
+        return npcDescription;
     }
 
-    public String getDescription() {
-        return description;
+    public void setNpcDescription(String npcDescription) {
+        this.npcDescription = npcDescription;
     }
 
-    public Location getCoordinates() {
-        return coordinates;
+    public int getNpcStrength() {
+        return npcStrength;
     }
 
-    private Location Location(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setNpcStrength(int npcStrength) {
+        this.npcStrength = npcStrength;
     }
+
+    public int getNpcHealth() {
+        return npcHealth;
+    }
+
+    public void setNpcHealth(int npcHealth) {
+        this.npcHealth = npcHealth;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.npcName);
+        hash = 47 * hash + Objects.hashCode(this.npcDescription);
+        hash = 47 * hash + this.npcStrength;
+        hash = 47 * hash + this.npcHealth;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Npc other = (Npc) obj;
+        if (this.npcStrength != other.npcStrength) {
+            return false;
+        }
+        if (this.npcHealth != other.npcHealth) {
+            return false;
+        }
+        if (!Objects.equals(this.npcName, other.npcName)) {
+            return false;
+        }
+        if (!Objects.equals(this.npcDescription, other.npcDescription)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Npc{" + "npcName=" + npcName + ", npcDescription=" + npcDescription + ", npcStrength=" + npcStrength + ", npcHealth=" + npcHealth + '}';
+    }
+
+    
 
 }

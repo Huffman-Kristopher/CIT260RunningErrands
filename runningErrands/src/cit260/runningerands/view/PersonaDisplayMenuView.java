@@ -58,7 +58,7 @@ public class PersonaDisplayMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "Y": //Set gender to Female and career to Secretary
-                this.openGameMenuView();
+                this.openSceneMenuView();
                 break;
             case "N": //Set gender to Female and career to Nurse
                 this.createNewPersona();
@@ -75,9 +75,11 @@ public class PersonaDisplayMenuView extends View {
         createNewPersona.display();
     }
     
-    private void openGameMenuView() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+    private void openSceneMenuView() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
+
     }
 }
 

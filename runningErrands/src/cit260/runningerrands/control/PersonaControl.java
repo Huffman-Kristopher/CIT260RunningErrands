@@ -6,7 +6,9 @@
 package cit260.runningerrands.control;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
+import cit260.runningerrands.model.Npc;
 import cit260.runningerrands.model.Persona;
+import cit260.runningerrands.model.Scene;
 import java.util.concurrent.ThreadLocalRandom;
 import runningerrands.RunningErrands;
 
@@ -27,7 +29,10 @@ public class PersonaControl {
         RunningErrands.setPersona(persona); // Save the character
         RunningErrands.setInvestment(investment); // Save the investment
         Item[] inventoryList = ItemControl.createInventoryList();
+        Scene[] scene = MapControl.assignItemToDeliver();
         persona.setItem(inventoryList);
+        Npc[] npcs = NPCControl.createNPCList();
+        RunningErrands.setNpc(npcs);
 
     }
     
