@@ -24,6 +24,16 @@ public class Item implements Serializable{
     private int itemNumber;
     private String itemSellable;
     private String itemInSellList;
+    private String itemBuyable;
+    private String itemInBuyList;
+
+    public void setItemInBuyList(String itemInBuyList) {
+        this.itemInBuyList = itemInBuyList;
+    }
+
+    public String getItemInBuyList() {
+        return itemInBuyList;
+    }
 
     public String getItemInSellList() {
         return itemInSellList;
@@ -41,6 +51,14 @@ public class Item implements Serializable{
         this.itemSellable = itemSellable;
     }
 
+    public String getItemBuyable() {
+        return itemSellable;
+    }
+    
+    public void setItemBuyable(String itemBuyable) {
+        this.itemBuyable = itemBuyable;
+    }
+    
     public int getItemNumber() {
         return itemNumber;
     }
@@ -126,7 +144,9 @@ public class Item implements Serializable{
         hash = 79 * hash + this.itemCost;
         hash = 79 * hash + this.itemNumber;
         hash = 79 * hash + Objects.hashCode(this.itemSellable);
+        hash = 79 * hash + Objects.hashCode(this.itemBuyable);
         hash = 79 * hash + Objects.hashCode(this.itemInSellList);
+        hash = 79 * hash + Objects.hashCode(this.itemInBuyList);
         hash = 79 * hash + this.itemValue;
         return hash;
     }
@@ -173,7 +193,13 @@ public class Item implements Serializable{
         if (!Objects.equals(this.itemSellable, other.itemSellable)) {
             return false;
         }
+        if (!Objects.equals(this.itemBuyable, other.itemBuyable)) {
+            return false;
+        }
         if (!Objects.equals(this.itemInSellList, other.itemInSellList)) {
+            return false;
+        }
+        if (!Objects.equals(this.itemInBuyList, other.itemInBuyList)) {
             return false;
         }
         return true;

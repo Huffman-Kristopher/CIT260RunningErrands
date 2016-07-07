@@ -96,6 +96,8 @@ public class ItemControl {
         secretRayGun.setItemQuantity(0);
         secretRayGun.setStrength(100000);
         secretRayGun.setItemNumber(0);
+        secretRayGun.setItemBuyable("N");
+        secretRayGun.setItemInBuyList("N");
         secretRayGun.setItemSellable("Y");
         secretRayGun.setItemInSellList("N");
         item[Items.secretRayGun.ordinal()] = secretRayGun;
@@ -103,37 +105,42 @@ public class ItemControl {
         Item shirt = new Item();
         shirt.setDescription("Shirt");
         shirt.setRequiredAmount(0);
-        shirt.setItemCost(0);
+        shirt.setItemCost(20);
         shirt.setItemValue(0);
         shirt.setItemQuantity(0);
         shirt.setStrength(10);
         shirt.setItemNumber(1);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        shirt.setItemBuyable("Y");
+        shirt.setItemSellable("Y");
+        shirt.setItemInSellList("N");
+        shirt.setItemInBuyList("Y");
         item[Items.shirt.ordinal()] = shirt;
         
         Item videoGame = new Item();
         videoGame.setDescription("Video Game");
         videoGame.setRequiredAmount(0);
-        videoGame.setItemCost(0);
+        videoGame.setItemCost(60);
         videoGame.setItemValue(0);
         videoGame.setItemQuantity(0);
         videoGame.setStrength(10);
         videoGame.setItemNumber(2);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        videoGame.setItemBuyable("Y");
+        videoGame.setItemSellable("Y");
+        videoGame.setItemInSellList("N");
+        videoGame.setItemInBuyList("Y");
         item[Items.videoGame.ordinal()] = videoGame;
         
         Item leatherBag = new Item();
         leatherBag.setDescription("Fancy Leather Bag");
         leatherBag.setRequiredAmount(0);
-        leatherBag.setItemCost(0);
+        leatherBag.setItemCost(800);
         leatherBag.setItemValue(0);
         leatherBag.setItemQuantity(0);
         leatherBag.setStrength(10);
         leatherBag.setItemNumber(3);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        leatherBag.setItemBuyable("Y");
+        leatherBag.setItemSellable("Y");
+        leatherBag.setItemInSellList("N");
         item[Items.leatherBag.ordinal()] = leatherBag;
         
         Item mountainDew = new Item();
@@ -144,8 +151,9 @@ public class ItemControl {
         mountainDew.setItemQuantity(1);
         mountainDew.setStrength(10);
         mountainDew.setItemNumber(4);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        mountainDew.setItemBuyable("Y");
+        mountainDew.setItemSellable("Y");
+        mountainDew.setItemInSellList("N");
         item[Items.mountainDew.ordinal()] = mountainDew;
         
         Item drPepper = new Item();
@@ -156,20 +164,22 @@ public class ItemControl {
         drPepper.setItemQuantity(1);
         drPepper.setStrength(10);
         drPepper.setItemNumber(5);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        drPepper.setItemBuyable("Y");
+        drPepper.setItemSellable("Y");
+        drPepper.setItemInSellList("N");
         item[Items.drPepper.ordinal()] = drPepper;
         
         Item bread = new Item();
         bread.setDescription("Bread");
         bread.setRequiredAmount(0);
-        bread.setItemCost(0);
+        bread.setItemCost(4);
         bread.setItemValue(0);
         bread.setItemQuantity(0);
         bread.setStrength(10);
         bread.setItemNumber(6);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bread.setItemBuyable("Y");
+        bread.setItemSellable("Y");
+        bread.setItemInSellList("N");
         item[Items.bread.ordinal()] = bread;
         
         Item gas = new Item();
@@ -180,128 +190,139 @@ public class ItemControl {
         gas.setItemQuantity(10);
         gas.setStrength(10);
         gas.setItemNumber(7);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        gas.setItemBuyable("Y");
+        gas.setItemSellable("Y");
+        gas.setItemInSellList("N");
         item[Items.gas.ordinal()] = gas;
         
         Item ar15 = new Item();
         ar15.setDescription("AR-15");
         ar15.setRequiredAmount(0);
-        ar15.setItemCost(0);
+        ar15.setItemCost(1500);
         ar15.setItemValue(0);
         ar15.setItemQuantity(0);
         ar15.setStrength(10);
         ar15.setItemNumber(8);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        ar15.setItemBuyable("Y");
+        ar15.setItemSellable("Y");
+        ar15.setItemInSellList("N");
         item[Items.ar15.ordinal()] = ar15;
         
         Item bazooka = new Item();
         bazooka.setDescription("Bazooka");
         bazooka.setRequiredAmount(0);
-        bazooka.setItemCost(0);
+        bazooka.setItemCost(5000);
         bazooka.setItemValue(0);
         bazooka.setItemQuantity(0);
         bazooka.setStrength(10);
         bazooka.setItemNumber(9);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bazooka.setItemBuyable("Y");
+        bazooka.setItemSellable("Y");
+        bazooka.setItemInSellList("N");
         item[Items.bazooka.ordinal()] = bazooka;
         
         Item crossbow = new Item();
         crossbow.setDescription("Crossbow");
         crossbow.setRequiredAmount(0);
-        crossbow.setItemCost(0);
+        crossbow.setItemCost(500);
         crossbow.setItemValue(0);
         crossbow.setItemQuantity(0);
         crossbow.setStrength(10);
         crossbow.setItemNumber(10);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        crossbow.setItemBuyable("Y");
+        crossbow.setItemSellable("Y");
+        crossbow.setItemInSellList("N");
         item[Items.crossbow.ordinal()] = crossbow;
         
         Item katana = new Item();
         katana.setDescription("Katana");
         katana.setRequiredAmount(0);
-        katana.setItemCost(0);
+        katana.setItemCost(400);
         katana.setItemValue(0);
         katana.setItemQuantity(0);
         katana.setStrength(10);
         katana.setItemNumber(11);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        katana.setItemBuyable("Y");
+        katana.setItemSellable("Y");
+        katana.setItemInSellList("N");
         item[Items.katana.ordinal()] = katana;
         
         Item nunchucks = new Item();
         nunchucks.setDescription("Nunchucks");
         nunchucks.setRequiredAmount(0);
-        shirt.setItemCost(0);
+        shirt.setItemCost(170);
         nunchucks.setItemValue(0);
         nunchucks.setItemQuantity(0);
         nunchucks.setStrength(10);
         nunchucks.setItemNumber(12);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        nunchucks.setItemBuyable("Y");
+        nunchucks.setItemSellable("Y");
+        nunchucks.setItemInSellList("N");
         item[Items.nunchucks.ordinal()] = nunchucks;
         
         Item bowstaff = new Item();
         bowstaff.setDescription("Bow Staff");
         bowstaff.setRequiredAmount(0);
-        bowstaff.setItemCost(0);
+        bowstaff.setItemCost(150);
         bowstaff.setItemValue(0);
         bowstaff.setItemQuantity(0);
         bowstaff.setStrength(10);
         bowstaff.setItemNumber(13);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bowstaff.setItemBuyable("Y");
+        bowstaff.setItemSellable("Y");
+        bowstaff.setItemInSellList("N");
         item[Items.bowstaff.ordinal()] = bowstaff;
         
         Item throwingStars = new Item();
         throwingStars.setDescription("Throwing Stars");
         throwingStars.setRequiredAmount(0);
-        throwingStars.setItemCost(0);
+        throwingStars.setItemCost(90);
         throwingStars.setItemValue(0);
         throwingStars.setItemQuantity(0);
         throwingStars.setStrength(10);
         throwingStars.setItemNumber(14);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        throwingStars.setItemBuyable("Y");
+        throwingStars.setItemSellable("Y");
+        throwingStars.setItemInSellList("N");
         item[Items.throwingStars.ordinal()] = throwingStars;
         
         Item baseballBat = new Item();
         baseballBat.setDescription("Baseball Bat");
         baseballBat.setRequiredAmount(0);
-        baseballBat.setItemCost(0);
+        baseballBat.setItemCost(15);
         baseballBat.setItemValue(0);
         baseballBat.setItemQuantity(0);
         baseballBat.setStrength(10);
         baseballBat.setItemNumber(15);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        baseballBat.setItemBuyable("Y");
+        baseballBat.setItemSellable("Y");
+        baseballBat.setItemInSellList("N");
         item[Items.baseballBat.ordinal()] = baseballBat;
         
         Item dumbbells = new Item();
         dumbbells.setDescription("Dumbbells");
         dumbbells.setRequiredAmount(0);
-        dumbbells.setItemCost(0);
+        dumbbells.setItemCost(20);
         dumbbells.setItemValue(0);
         dumbbells.setItemQuantity(0);
         dumbbells.setStrength(10);
         dumbbells.setItemNumber(16);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        dumbbells.setItemBuyable("Y");
+        dumbbells.setItemSellable("Y");
+        dumbbells.setItemInSellList("N");
         item[Items.dumbbells.ordinal()] = dumbbells;
         
         Item golfClub = new Item();
         golfClub.setDescription("Golf Club");
         golfClub.setRequiredAmount(0);
-        golfClub.setItemCost(0);
+        golfClub.setItemCost(100);
         golfClub.setItemValue(0);
         golfClub.setItemQuantity(0);
         golfClub.setStrength(10);
         golfClub.setItemNumber(17);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        golfClub.setItemBuyable("Y");
+        golfClub.setItemSellable("Y");
+        golfClub.setItemInSellList("N");
         item[Items.golfClub.ordinal()] = golfClub;
         
         Item ancientSpellBook = new Item();
@@ -312,8 +333,9 @@ public class ItemControl {
         ancientSpellBook.setItemQuantity(0);
         ancientSpellBook.setStrength(10);
         ancientSpellBook.setItemNumber(18);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        ancientSpellBook.setItemBuyable("N");
+        ancientSpellBook.setItemSellable("Y");
+        ancientSpellBook.setItemInSellList("N");
         item[Items.ancientSpellBook.ordinal()] = ancientSpellBook;
         
         Item libraryCard = new Item();
@@ -324,8 +346,9 @@ public class ItemControl {
         libraryCard.setItemQuantity(1);
         libraryCard.setStrength(10);
         libraryCard.setItemNumber(19);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        libraryCard.setItemBuyable("N");
+        libraryCard.setItemSellable("Y");
+        libraryCard.setItemInSellList("N");
         item[Items.libraryCard.ordinal()] = libraryCard;
         
         Item taxForms = new Item();
@@ -336,8 +359,9 @@ public class ItemControl {
         taxForms.setItemQuantity(0);
         taxForms.setStrength(10);
         taxForms.setItemNumber(20);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        taxForms.setItemBuyable("Y");
+        taxForms.setItemSellable("Y");
+        taxForms.setItemInSellList("N");
         item[Items.taxForms.ordinal()] = taxForms;
         
         Item holyWater = new Item();
@@ -348,8 +372,9 @@ public class ItemControl {
         holyWater.setItemQuantity(0);
         holyWater.setStrength(10);
         holyWater.setItemNumber(21);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        holyWater.setItemBuyable("N");
+        holyWater.setItemSellable("Y");
+        holyWater.setItemInSellList("N");
         item[Items.holyWater.ordinal()] = holyWater;
         
         Item sacramentalWine = new Item();
@@ -360,8 +385,9 @@ public class ItemControl {
         sacramentalWine.setItemQuantity(0);
         sacramentalWine.setStrength(10);
         sacramentalWine.setItemNumber(22);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        sacramentalWine.setItemBuyable("N");
+        sacramentalWine.setItemSellable("Y");
+        sacramentalWine.setItemInSellList("N");
         item[Items.sacramentalWine.ordinal()] = sacramentalWine;
         
         Item altarBoyVestments = new Item();
@@ -372,8 +398,9 @@ public class ItemControl {
         altarBoyVestments.setItemQuantity(0);
         altarBoyVestments.setStrength(10);
         altarBoyVestments.setItemNumber(23);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        altarBoyVestments.setItemBuyable("N");
+        altarBoyVestments.setItemSellable("Y");
+        altarBoyVestments.setItemInSellList("N");
         item[Items.altarBoyVestments.ordinal()] = altarBoyVestments;
         
         Item usedNeedles = new Item();
@@ -384,20 +411,22 @@ public class ItemControl {
         usedNeedles.setItemQuantity(0);
         usedNeedles.setStrength(10);
         usedNeedles.setItemNumber(24);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        usedNeedles.setItemBuyable("N");
+        usedNeedles.setItemSellable("Y");
+        usedNeedles.setItemInSellList("N");
         item[Items.usedNeedles.ordinal()] = usedNeedles;
         
         Item medicine = new Item();
         medicine.setDescription("Medicine");
         medicine.setRequiredAmount(0);
-        medicine.setItemCost(0);
+        medicine.setItemCost(10);
         medicine.setItemValue(0);
         medicine.setItemQuantity(0);
         medicine.setStrength(10);
         medicine.setItemNumber(25);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        medicine.setItemBuyable("Y");
+        medicine.setItemSellable("Y");
+        medicine.setItemInSellList("N");
         item[Items.medicine.ordinal()] = medicine;
         
         Item freshOrgans = new Item();
@@ -408,8 +437,9 @@ public class ItemControl {
         freshOrgans.setItemQuantity(0);
         freshOrgans.setStrength(10);
         freshOrgans.setItemNumber(26);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        freshOrgans.setItemBuyable("N");
+        freshOrgans.setItemSellable("Y");
+        freshOrgans.setItemInSellList("N");
         item[Items.freshOrgans.ordinal()] = freshOrgans;
         
         Item textbook = new Item();
@@ -420,8 +450,9 @@ public class ItemControl {
         textbook.setItemQuantity(0);
         textbook.setStrength(10);
         textbook.setItemNumber(27);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        textbook.setItemBuyable("N");
+        textbook.setItemSellable("Y");
+        textbook.setItemInSellList("N");
         item[Items.textbook.ordinal()] = textbook;
         
         Item reportCard = new Item();
@@ -432,20 +463,22 @@ public class ItemControl {
         reportCard.setItemQuantity(0);
         reportCard.setStrength(10);
         reportCard.setItemNumber(28);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        reportCard.setItemBuyable("N");
+        reportCard.setItemSellable("Y");
+        reportCard.setItemInSellList("N");
         item[Items.reportCard.ordinal()] = reportCard;
         
         Item bagOfMoney = new Item();
         bagOfMoney.setDescription("Bag of Money");
         bagOfMoney.setRequiredAmount(0);
         bagOfMoney.setItemCost(0);
-        bagOfMoney.setItemValue(0);
+        bagOfMoney.setItemValue(13000);
         bagOfMoney.setItemQuantity(0);
         bagOfMoney.setStrength(10);
         bagOfMoney.setItemNumber(29);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bagOfMoney.setItemBuyable("N");
+        bagOfMoney.setItemSellable("Y");
+        bagOfMoney.setItemInSellList("Y");
         item[Items.bagOfMoney.ordinal()] = bagOfMoney;
         
         Item dyePack = new Item();
@@ -456,8 +489,9 @@ public class ItemControl {
         dyePack.setItemQuantity(0);
         dyePack.setStrength(10);
         dyePack.setItemNumber(30);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        dyePack.setItemBuyable("N");
+        dyePack.setItemSellable("Y");
+        dyePack.setItemInSellList("N");
         item[Items.dyePack.ordinal()] = dyePack;
         
         Item loanApplication = new Item();
@@ -468,56 +502,61 @@ public class ItemControl {
         loanApplication.setItemQuantity(0);
         loanApplication.setStrength(10);
         loanApplication.setItemNumber(31);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        loanApplication.setItemBuyable("N");
+        loanApplication.setItemSellable("Y");
+        loanApplication.setItemInSellList("N");
         item[Items.loanApplication.ordinal()] = loanApplication;
         
         Item supermanComic = new Item();
         supermanComic.setDescription("Superman Comic");
         supermanComic.setRequiredAmount(0);
-        supermanComic.setItemCost(0);
+        supermanComic.setItemCost(5);
         supermanComic.setItemValue(0);
         supermanComic.setItemQuantity(0);
         supermanComic.setStrength(10);
         supermanComic.setItemNumber(32);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        supermanComic.setItemBuyable("Y");
+        supermanComic.setItemSellable("Y");
+        supermanComic.setItemInSellList("N");
         item[Items.supermanComic.ordinal()] = supermanComic;
         
         Item mintYoda = new Item();
         mintYoda.setDescription("Yoda - Mint condition in box");
         mintYoda.setRequiredAmount(0);
-        mintYoda.setItemCost(0);
+        mintYoda.setItemCost(120);
         mintYoda.setItemValue(0);
         mintYoda.setItemQuantity(0);
         mintYoda.setStrength(10);
         mintYoda.setItemNumber(33);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        mintYoda.setItemBuyable("Y");
+        mintYoda.setItemSellable("Y");
+        mintYoda.setItemInSellList("N");
         item[Items.mintYoda.ordinal()] = shirt;
         
         Item oilCan = new Item();
         oilCan.setDescription("Oil Can");
         oilCan.setRequiredAmount(0);
-        oilCan.setItemCost(0);
+        oilCan.setItemCost(8);
         oilCan.setItemValue(0);
         oilCan.setItemQuantity(0);
         oilCan.setStrength(10);
         oilCan.setItemNumber(34);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        oilCan.setItemBuyable("Y");
+        oilCan.setItemSellable("Y");
+        oilCan.setItemInSellList("N");
         item[Items.oilCan.ordinal()] = oilCan;
         
         Item tireIron = new Item();
         tireIron.setDescription("Tire Iron");
         tireIron.setRequiredAmount(0);
-        tireIron.setItemCost(0);
+        tireIron.setItemCost(15);
         tireIron.setItemValue(0);
         tireIron.setItemQuantity(0);
         tireIron.setStrength(10);
         tireIron.setItemNumber(35);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        tireIron.setItemBuyable("Y");
+        tireIron.setItemSellable("Y");
+        tireIron.setItemInSellList("N");
         item[Items.tireIron.ordinal()] = tireIron;
         
         Item nerveGas = new Item();
@@ -528,8 +567,9 @@ public class ItemControl {
         nerveGas.setItemQuantity(0);
         nerveGas.setStrength(10);
         nerveGas.setItemNumber(36);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        nerveGas.setItemBuyable("N");
+        nerveGas.setItemSellable("Y");
+        nerveGas.setItemInSellList("N");
         item[Items.nerveGas.ordinal()] = nerveGas;
         
         Item armyUniform = new Item();
@@ -540,8 +580,9 @@ public class ItemControl {
         armyUniform.setItemQuantity(0);
         armyUniform.setStrength(10);
         armyUniform.setItemNumber(37);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        armyUniform.setItemBuyable("N");
+        armyUniform.setItemSellable("Y");
+        armyUniform.setItemInSellList("N");
         item[Items.armyUniform.ordinal()] = armyUniform;
         
         Item abramsTank = new Item();
@@ -552,176 +593,191 @@ public class ItemControl {
         abramsTank.setItemQuantity(0);
         abramsTank.setStrength(10);
         abramsTank.setItemNumber(38);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        abramsTank.setItemBuyable("N");
+        abramsTank.setItemSellable("Y");
+        abramsTank.setItemInSellList("N");
         item[Items.abramsTank.ordinal()] = abramsTank;
         
         Item bookOfStamps = new Item();
         bookOfStamps.setDescription("Book of Stamps");
         bookOfStamps.setRequiredAmount(0);
-        bookOfStamps.setItemCost(0);
+        bookOfStamps.setItemCost(12);
         bookOfStamps.setItemValue(0);
         bookOfStamps.setItemQuantity(0);
         bookOfStamps.setStrength(10);
         bookOfStamps.setItemNumber(39);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bookOfStamps.setItemBuyable("Y");
+        bookOfStamps.setItemSellable("Y");
+        bookOfStamps.setItemInSellList("N");
         item[Items.bookOfStamps.ordinal()] = bookOfStamps;
         
         Item junkMail = new Item();
         junkMail.setDescription("Junk Mail");
         junkMail.setRequiredAmount(0);
-        junkMail.setItemCost(0);
+        junkMail.setItemCost(1);
         junkMail.setItemValue(0);
         junkMail.setItemQuantity(0);
         junkMail.setStrength(10);
         junkMail.setItemNumber(40);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        junkMail.setItemBuyable("Y");
+        junkMail.setItemSellable("Y");
+        junkMail.setItemInSellList("N");
         item[Items.junkMail.ordinal()] = junkMail;
         
         Item sparklers = new Item();
         sparklers.setDescription("Sparklers");
         sparklers.setRequiredAmount(0);
-        sparklers.setItemCost(0);
+        sparklers.setItemCost(8);
         sparklers.setItemValue(0);
         sparklers.setItemQuantity(0);
         sparklers.setStrength(10);
         sparklers.setItemNumber(41);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        sparklers.setItemBuyable("Y");
+        sparklers.setItemSellable("Y");
+        sparklers.setItemInSellList("N");
         item[Items.sparklers.ordinal()] = sparklers;
         
         Item m80 = new Item();
         m80.setDescription("M-80");
         m80.setRequiredAmount(0);
-        m80.setItemCost(0);
+        m80.setItemCost(15);
         m80.setItemValue(0);
         m80.setItemQuantity(0);
         m80.setStrength(10);
         m80.setItemNumber(42);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        m80.setItemBuyable("Y");
+        m80.setItemSellable("Y");
+        m80.setItemInSellList("N");
         item[Items.m80.ordinal()] = m80;
         
         Item bottleRockets = new Item();
         bottleRockets.setDescription("Bottle Rockets");
         bottleRockets.setRequiredAmount(0);
-        bottleRockets.setItemCost(0);
+        bottleRockets.setItemCost(10);
         bottleRockets.setItemValue(0);
         bottleRockets.setItemQuantity(0);
         bottleRockets.setStrength(10);
         bottleRockets.setItemNumber(43);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bottleRockets.setItemBuyable("Y");
+        bottleRockets.setItemSellable("Y");
+        bottleRockets.setItemInSellList("N");
         item[Items.bottleRockets.ordinal()] = bottleRockets;
         
         Item chinchilla = new Item();
         chinchilla.setDescription("Chinchilla");
         chinchilla.setRequiredAmount(0);
-        chinchilla.setItemCost(0);
+        chinchilla.setItemCost(20);
         chinchilla.setItemValue(0);
         chinchilla.setItemQuantity(0);
         chinchilla.setStrength(10);
         chinchilla.setItemNumber(44);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        chinchilla.setItemBuyable("Y");
+        chinchilla.setItemSellable("Y");
+        chinchilla.setItemInSellList("N");
         item[Items.chinchilla.ordinal()] = chinchilla;
         
         Item catnip = new Item();
         catnip.setDescription("Catnip");
         catnip.setRequiredAmount(0);
-        catnip.setItemCost(0);
+        catnip.setItemCost(10);
         catnip.setItemValue(0);
         catnip.setItemQuantity(0);
         catnip.setStrength(10);
         catnip.setItemNumber(45);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        catnip.setItemBuyable("Y");
+        catnip.setItemSellable("Y");
+        catnip.setItemInSellList("N");
         item[Items.catnip.ordinal()] = catnip;
         
         Item cobra = new Item();
         cobra.setDescription("Cobra");
         cobra.setRequiredAmount(0);
-        cobra.setItemCost(0);
+        cobra.setItemCost(400);
         cobra.setItemValue(0);
         cobra.setItemQuantity(0);
         cobra.setStrength(10);
         cobra.setItemNumber(46);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        cobra.setItemBuyable("Y");
+        cobra.setItemSellable("Y");
+        cobra.setItemInSellList("N");
         item[Items.cobra.ordinal()] = cobra;
         
         Item anchor = new Item();
         anchor.setDescription("Anchor");
         anchor.setRequiredAmount(0);
-        anchor.setItemCost(0);
+        anchor.setItemCost(130);
         anchor.setItemValue(0);
         anchor.setItemQuantity(0);
         anchor.setStrength(10);
         anchor.setItemNumber(47);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        anchor.setItemBuyable("Y");
+        anchor.setItemSellable("Y");
+        anchor.setItemInSellList("N");
         item[Items.anchor.ordinal()] = anchor;
         
         Item canOfWorms = new Item();
         canOfWorms.setDescription("Can of Worms");
         canOfWorms.setRequiredAmount(0);
-        canOfWorms.setItemCost(0);
+        canOfWorms.setItemCost(7);
         canOfWorms.setItemValue(0);
         canOfWorms.setItemQuantity(0);
         canOfWorms.setStrength(10);
         canOfWorms.setItemNumber(48);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        canOfWorms.setItemBuyable("Y");
+        canOfWorms.setItemSellable("Y");
+        canOfWorms.setItemInSellList("N");
         item[Items.canOfWorms.ordinal()] = canOfWorms;
         
         Item nailGun = new Item();
         nailGun.setDescription("Nail Gun");
         nailGun.setRequiredAmount(0);
-        nailGun.setItemCost(0);
+        nailGun.setItemCost(125);
         nailGun.setItemValue(0);
         nailGun.setItemQuantity(0);
         nailGun.setStrength(10);
         nailGun.setItemNumber(49);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        nailGun.setItemBuyable("Y");
+        nailGun.setItemSellable("Y");
+        nailGun.setItemInSellList("N");
         item[Items.nailGun.ordinal()] = nailGun;
         
         Item chainsaw = new Item();
         chainsaw.setDescription("Chainsaw");
         chainsaw.setRequiredAmount(0);
-        chainsaw.setItemCost(0);
+        chainsaw.setItemCost(75);
         chainsaw.setItemValue(0);
         chainsaw.setItemQuantity(0);
         chainsaw.setStrength(10);
         chainsaw.setItemNumber(50);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        chainsaw.setItemBuyable("Y");
+        chainsaw.setItemSellable("Y");
+        chainsaw.setItemInSellList("N");
         item[Items.chainsaw.ordinal()] = chainsaw;
         
         Item axe = new Item();
         axe.setDescription("Axe");
         axe.setRequiredAmount(0);
-        axe.setItemCost(0);
+        axe.setItemCost(25);
         axe.setItemValue(0);
         axe.setItemQuantity(0);
         axe.setStrength(10);
         axe.setItemNumber(51);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        axe.setItemBuyable("Y");
+        axe.setItemSellable("Y");
+        axe.setItemInSellList("N");
         item[Items.axe.ordinal()] = axe;
         
         Item nails = new Item();
         nails.setDescription("Nails");
         nails.setRequiredAmount(0);
-        nails.setItemCost(0);
+        nails.setItemCost(5);
         nails.setItemValue(0);
         nails.setItemQuantity(0);
         nails.setStrength(10);
         nails.setItemNumber(52);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        nails.setItemBuyable("Y");
+        nails.setItemSellable("Y");
+        nails.setItemInSellList("N");
         item[Items.nails.ordinal()] = nails;
         
         Item copUniform = new Item();
@@ -732,8 +788,9 @@ public class ItemControl {
         copUniform.setItemQuantity(0);
         copUniform.setStrength(10);
         copUniform.setItemNumber(53);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        copUniform.setItemBuyable("N");
+        copUniform.setItemSellable("Y");
+        copUniform.setItemInSellList("N");
         item[Items.copUniform.ordinal()] = copUniform;
         
         Item handcuffs = new Item();
@@ -744,8 +801,9 @@ public class ItemControl {
         handcuffs.setItemQuantity(0);
         handcuffs.setStrength(10);
         handcuffs.setItemNumber(54);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        handcuffs.setItemBuyable("N");
+        handcuffs.setItemSellable("Y");
+        handcuffs.setItemInSellList("N");
         item[Items.handcuffs.ordinal()] = handcuffs;
         
         Item mugShot = new Item();
@@ -756,8 +814,9 @@ public class ItemControl {
         mugShot.setItemQuantity(0);
         mugShot.setStrength(10);
         mugShot.setItemNumber(55);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        mugShot.setItemBuyable("N");
+        mugShot.setItemSellable("Y");
+        mugShot.setItemInSellList("N");
         item[Items.mugShot.ordinal()] = mugShot;
         
         Item giraffe = new Item();
@@ -768,8 +827,9 @@ public class ItemControl {
         giraffe.setItemQuantity(0);
         giraffe.setStrength(10);
         giraffe.setItemNumber(56);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        giraffe.setItemBuyable("N");
+        giraffe.setItemSellable("Y");
+        giraffe.setItemInSellList("N");
         item[Items.giraffe.ordinal()] = giraffe;
         
         Item tRex = new Item();
@@ -780,8 +840,9 @@ public class ItemControl {
         tRex.setItemQuantity(0);
         tRex.setStrength(10);
         tRex.setItemNumber(57);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        tRex.setItemBuyable("N");
+        tRex.setItemSellable("Y");
+        tRex.setItemInSellList("N");
         item[Items.tRex.ordinal()] = tRex;
         
         Item mysticalEgyptianSceptor = new Item();
@@ -792,8 +853,9 @@ public class ItemControl {
         mysticalEgyptianSceptor.setItemQuantity(0);
         mysticalEgyptianSceptor.setStrength(10);
         mysticalEgyptianSceptor.setItemNumber(58);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        mysticalEgyptianSceptor.setItemBuyable("N");
+        mysticalEgyptianSceptor.setItemSellable("Y");
+        mysticalEgyptianSceptor.setItemInSellList("N");
         item[Items.mysticalEgyptianSceptor.ordinal()] = mysticalEgyptianSceptor;
         
         Item catapult = new Item();
@@ -804,8 +866,9 @@ public class ItemControl {
         catapult.setItemQuantity(0);
         catapult.setStrength(10);
         catapult.setItemNumber(59);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        catapult.setItemBuyable("N");
+        catapult.setItemSellable("Y");
+        catapult.setItemInSellList("N");
         item[Items.catapult.ordinal()] = catapult;
         
         Item headstone = new Item();
@@ -816,8 +879,9 @@ public class ItemControl {
         headstone.setItemQuantity(0);
         headstone.setStrength(10);
         headstone.setItemNumber(60);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        headstone.setItemBuyable("N");
+        headstone.setItemSellable("Y");
+        headstone.setItemInSellList("N");
         item[Items.headstone.ordinal()] = headstone;
         
         Item corpse = new Item();
@@ -828,8 +892,9 @@ public class ItemControl {
         corpse.setItemQuantity(0);
         corpse.setStrength(10);
         corpse.setItemNumber(61);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        corpse.setItemBuyable("Y");
+        corpse.setItemSellable("Y");
+        corpse.setItemInSellList("N");
         item[Items.corpse.ordinal()] = shirt;
         
         Item grievingWidow = new Item();
@@ -840,8 +905,9 @@ public class ItemControl {
         grievingWidow.setItemQuantity(0);
         grievingWidow.setStrength(10);
         grievingWidow.setItemNumber(62);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        grievingWidow.setItemBuyable("N");
+        grievingWidow.setItemSellable("Y");
+        grievingWidow.setItemInSellList("N");
         item[Items.grievingWidow.ordinal()] = grievingWidow;
         
         Item bucketOfLava = new Item();
@@ -852,35 +918,53 @@ public class ItemControl {
         bucketOfLava.setItemQuantity(0);
         bucketOfLava.setStrength(10);
         bucketOfLava.setItemNumber(63);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        bucketOfLava.setItemBuyable("N");
+        bucketOfLava.setItemSellable("Y");
+        bucketOfLava.setItemInSellList("N");
+        bucketOfLava.setItemInBuyList("N");
         item[Items.bucketOfLava.ordinal()] = bucketOfLava;
         
         Item pizza = new Item();
         pizza.setDescription("Pizza");
         pizza.setRequiredAmount(0);
-        pizza.setItemCost(0);
+        pizza.setItemCost(28);
         pizza.setItemValue(0);
         pizza.setItemQuantity(0);
         pizza.setStrength(10);
         pizza.setItemNumber(64);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        pizza.setItemBuyable("Y");
+        pizza.setItemSellable("Y");
+        pizza.setItemInSellList("N");
+        pizza.setItemInBuyList("N");
         item[Items.pizza.ordinal()] = pizza;
         
         Item pizzaCutter = new Item();
         pizzaCutter.setDescription("Pizza Cutter");
         pizzaCutter.setRequiredAmount(0);
-        pizzaCutter.setItemCost(0);
+        pizzaCutter.setItemCost(10);
         pizzaCutter.setItemValue(0);
         pizzaCutter.setItemQuantity(0);
-        pizzaCutter.setStrength(10);
+        pizzaCutter.setStrength(25);
         pizzaCutter.setItemNumber(65);
-        secretRayGun.setItemSellable("Y");
-        secretRayGun.setItemInSellList("N");
+        pizzaCutter.setItemBuyable("Y");
+        pizzaCutter.setItemSellable("Y");
+        pizzaCutter.setItemInSellList("N");
+        pizzaCutter.setItemInBuyList("N");
         item[Items.pizzaCutter.ordinal()] = pizzaCutter;
         
         return item;
+    }
+    public static int buyItem (Item currentItem, int itemQuantity) {
+        
+        Persona persona = RunningErrands.getPersona();
+        int currentOnHand = currentItem.getItemQuantity();
+        int newOnHand = currentOnHand + itemQuantity;
+        currentItem.setItemQuantity(newOnHand);
+        int itemCost = currentItem.getItemCost();
+        int totalSalePrice = -itemCost * itemQuantity;
+        int updatedBalance = PersonaControl.updatePersonaMoney(totalSalePrice);
+        return totalSalePrice;
+
     }
     
     public static int sellItem (Item currentItem, int itemQuantity) {

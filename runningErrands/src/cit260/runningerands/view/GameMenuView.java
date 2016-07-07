@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
@@ -31,7 +32,7 @@ public class GameMenuView extends View{
                   + "\nK – Character Stats"
                   + "\nH – Help Menu"
                   + "\nS – Save Game"
-//                  + "\nL – Load Game"
+                  + "\nL – Load Game"
                   + "\nQ – Quit Game"
                   + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
@@ -64,10 +65,10 @@ public class GameMenuView extends View{
             case "S": //save the game.
                 this.OpensaveGame();
                 return false;
-/**            case "L": //load the game.
+           case "L": //load the game.
                 this.openLoadGame();
                 return false;
-**/
+
             case "E": //open email and get objectives.
                 this.openEmailMenu();
                 return false;
@@ -113,11 +114,25 @@ public class GameMenuView extends View{
     }
 
     private void OpensaveGame() {
-       System.out.println("\n ***Runs save Game function ***");
+       // prompt for file path to save game
+       this.console.println("\n\nEnter the file path for the folder you wish to save the game to.");
+        String filePath = this.getInput();
+       try{
+           // save the game to the speciried file.
+           GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
+       } catch (Exception ex){
+            ErrorView.display("GameMenuView", ex.getMessage());
+       }
     }
 
     private void openLoadGame() {
-        System.out.println("\n ***Runs Load Game function ***");
+        this.console.println("\n\nEnter the file path for the folder your game is saved to.");
+        String filePath = this.getInput();
+       try{
+           GameControl.getSavedGame(filePath);
+       } catch (Exception ex){
+           ErrorView.display("GameMenuView", ex.getMessage());
+       }
     }
 
     private void openEmailMenu() {

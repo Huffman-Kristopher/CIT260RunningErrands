@@ -52,7 +52,13 @@ public class MainMenuView extends View {
     }
     
     private void LoadSavedGame() {
-        System.out.println("*** loadSavedGame function called ***");
+         this.console.println("\n\nEnter the file path for the folder your game is saved to.");
+        String filePath = this.getInput();
+       try{
+           GameControl.getSavedGame(filePath);
+       } catch (Exception ex){
+           ErrorView.display("GameMenuView", ex.getMessage());
+       }
     }
     private void openHelpMenu() {
         //Display Help Menu

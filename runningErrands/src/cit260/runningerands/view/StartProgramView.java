@@ -9,13 +9,16 @@ package cit260.runningerands.view;
 import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Player;
 import java.util.Scanner; //if it screws up - delete this
-
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.IOException;
 /**
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
 
-    public class StartProgramView {
+
+    public class StartProgramView extends View{
 
         private String promptMessage;
         public StartProgramView() {
@@ -43,7 +46,7 @@ import java.util.Scanner; //if it screws up - delete this
         );
     }
 
-    public void displayStartProgramView() {
+    public void displayStartProgramView() throws IOException {
         
        boolean done = false; // Set flag to not done
        do {
@@ -56,15 +59,15 @@ import java.util.Scanner; //if it screws up - delete this
        } while (!done);
     }
 
-    private String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
+    private String getPlayerName() throws IOException {
+         // Get infile for keyboard
         String value = "";
         boolean valid = false;
         
         while (!valid) { //loop while not valid
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
+            value = this.keyboard.readLine(); //Get the next line typed on the keyboard
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank
@@ -78,7 +81,7 @@ import java.util.Scanner; //if it screws up - delete this
         return value; // returns the value entered
     }
 
-    private boolean doAction(String playerName) {
+    public boolean doAction(String playerName) {
         if (playerName.length() < 2) {
         System.out.println("\nInvalid player name:"
             +"The name must be greater than one character in length.");
