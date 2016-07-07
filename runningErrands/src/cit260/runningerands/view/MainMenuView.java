@@ -52,13 +52,8 @@ public class MainMenuView extends View {
     }
     
     private void LoadSavedGame() {
-         this.console.println("\n\nEnter the file path for the folder your game is saved to.");
-        String filePath = this.getInput();
-       try{
-           GameControl.getSavedGame(filePath);
-       } catch (Exception ex){
-           ErrorView.display("GameMenuView", ex.getMessage());
-       }
+         LoadGameView loadGameView = new LoadGameView();
+        loadGameView.display();
     }
     private void openHelpMenu() {
         //Display Help Menu

@@ -16,7 +16,7 @@ public class LoadGameView extends View{
     public LoadGameView() {
         super("\n"
                   + "\n-------------------------"
-                  + "\n| Laod Game Menu             |" 
+                  + "\n| Load Game Menu             |" 
                   + "\n-------------------------"
                   + "\n - Please Enter a name for the save game file -"
                   + "\n-------------------------"
@@ -27,6 +27,9 @@ public class LoadGameView extends View{
     public boolean doAction(String filePath) {
         try{
            GameControl.getSavedGame(filePath);
+           String menu = "";
+           SceneMenuView sceneMenuView = new SceneMenuView(menu);
+           sceneMenuView.SceneMenuValues();
        } catch (Exception ex){
            ErrorView.display("SceneMenuView", ex.getMessage());
        }

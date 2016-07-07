@@ -175,13 +175,8 @@ public class SceneMenuView extends View {
     }
 
     private void openLoadGame() {
-        this.console.println("\n\nEnter the file path for the folder your game is saved to.");
-        String filePath = this.getInput();
-       try{
-           GameControl.getSavedGame(filePath);
-       } catch (Exception ex){
-           ErrorView.display("SceneMenuView", ex.getMessage());
-       }
+         LoadGameView loadGameView = new LoadGameView();
+        loadGameView.display();
     }
 
     private void openEmailMenu() {
