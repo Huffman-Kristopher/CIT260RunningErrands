@@ -10,5 +10,5 @@ package cit260.runningerrands.control;
  * @author Kris
  */
 public class CombatControl {
-    // this is combat control //
+    // this is still combat control //
 }
