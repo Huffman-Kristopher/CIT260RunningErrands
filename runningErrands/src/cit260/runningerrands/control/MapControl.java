@@ -65,6 +65,9 @@ public class MapControl {
         startingScene.setMenuOption1("Combat Menu");
         startingScene.setMenuOption2("Conversation Menu");
         startingScene.setMenuOption3("Buy/Sell Menu");
+        startingScene.setConversationMenuType("Give");
+        startingScene.setConversationSuccessText("Enter success text");
+        startingScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.startingScene.ordinal()] = startingScene;
         
         Scene mallScene = new Scene();
@@ -75,6 +78,9 @@ public class MapControl {
         mallScene.setMenuOption1("Combat Menu");
         mallScene.setMenuOption2("Conversation Menu");
         mallScene.setMenuOption3("Buy/Sell Menu");
+        mallScene.setConversationMenuType("Give");
+        mallScene.setConversationSuccessText("Enter success text");
+        mallScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.mallScene.ordinal()] = mallScene;
         
         Scene GroceryScene = new Scene();
@@ -85,6 +91,9 @@ public class MapControl {
         GroceryScene.setMenuOption1("Combat Menu");
         GroceryScene.setMenuOption2("Conversation Menu");
         GroceryScene.setMenuOption3("Buy/Sell Menu");
+        GroceryScene.setConversationMenuType("Give");
+        GroceryScene.setConversationSuccessText("Enter success text");
+        GroceryScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.GroceryScene.ordinal()] = GroceryScene;
         
         Scene gasScene = new Scene();
@@ -95,6 +104,9 @@ public class MapControl {
         gasScene.setMenuOption1("Combat Menu");
         gasScene.setMenuOption2("Conversation Menu");
         gasScene.setMenuOption3("Buy/Sell Menu");
+        gasScene.setConversationMenuType("Give");
+        gasScene.setConversationSuccessText("Enter success text");
+        gasScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.gasScene.ordinal()] = gasScene;
         
         Scene gunShopScene = new Scene();
@@ -105,6 +117,9 @@ public class MapControl {
         gunShopScene.setMenuOption1("Combat Menu");
         gunShopScene.setMenuOption2("Conversation Menu");
         gunShopScene.setMenuOption3("Buy/Sell Menu");
+        gunShopScene.setConversationMenuType("Give");
+        gunShopScene.setConversationSuccessText("Enter success text");
+        gunShopScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.gunShopScene.ordinal()] = gunShopScene;
         
         Scene sportingScene = new Scene();
@@ -115,6 +130,9 @@ public class MapControl {
         sportingScene.setMenuOption1("Combat Menu");
         sportingScene.setMenuOption2("Conversation Menu");
         sportingScene.setMenuOption3("Buy/Sell Menu");
+        sportingScene.setConversationMenuType("Give");
+        sportingScene.setConversationSuccessText("Enter success text");
+        sportingScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.sportingScene.ordinal()] = sportingScene;
         
         Scene libraryScene = new Scene();
@@ -125,6 +143,9 @@ public class MapControl {
         libraryScene.setMenuOption1("Combat Menu");
         libraryScene.setMenuOption2("Conversation Menu");
         libraryScene.setMenuOption3("Buy/Sell Menu");
+        libraryScene.setConversationMenuType("Give");
+        libraryScene.setConversationSuccessText("Enter success text");
+        libraryScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.libraryScene.ordinal()] = libraryScene;
         
         Scene churchScene = new Scene();
@@ -135,6 +156,9 @@ public class MapControl {
         churchScene.setMenuOption1("Combat Menu");
         churchScene.setMenuOption2("Conversation Menu");
         churchScene.setMenuOption3("Buy/Sell Menu");
+        churchScene.setConversationMenuType("Give");
+        churchScene.setConversationSuccessText("Enter success text");
+        churchScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.churchScene.ordinal()] = churchScene;
         
         Scene hospitalScene = new Scene();
@@ -145,6 +169,9 @@ public class MapControl {
         hospitalScene.setMenuOption1("Combat Menu");
         hospitalScene.setMenuOption2("Conversation Menu");
         hospitalScene.setMenuOption3("Buy/Sell Menu");
+        hospitalScene.setConversationMenuType("Give");
+        hospitalScene.setConversationSuccessText("Enter success text");
+        hospitalScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.hospitalScene.ordinal()] = hospitalScene;
         
         Scene schoolScene = new Scene();
@@ -155,6 +182,9 @@ public class MapControl {
         schoolScene.setMenuOption1("Combat Menu");
         schoolScene.setMenuOption2("Conversation Menu");
         schoolScene.setMenuOption3("Buy/Sell Menu");
+        schoolScene.setConversationMenuType("Give");
+        schoolScene.setConversationSuccessText("Enter success text");
+        schoolScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.schoolScene.ordinal()] = schoolScene;
         
         Scene bankScene = new Scene();
@@ -165,6 +195,9 @@ public class MapControl {
         bankScene.setMenuOption1("Combat Menu");
         bankScene.setMenuOption2("Conversation Menu");
         bankScene.setMenuOption3("Buy/Sell Menu");
+        bankScene.setConversationMenuType("Give");
+        bankScene.setConversationSuccessText("Enter success text");
+        bankScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.bankScene.ordinal()] = bankScene;
         
         Scene comicScene = new Scene();
@@ -175,6 +208,9 @@ public class MapControl {
         comicScene.setMenuOption1("Combat Menu");
         comicScene.setMenuOption2("Conversation Menu");
         comicScene.setMenuOption3("Buy/Sell Menu");
+        comicScene.setConversationMenuType("Give");
+        comicScene.setConversationSuccessText("Enter success text");
+        comicScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.comicScene.ordinal()] = comicScene;
         
         Scene repairScene = new Scene();
@@ -185,6 +221,9 @@ public class MapControl {
         repairScene.setMenuOption1("Combat Menu");
         repairScene.setMenuOption2("Conversation Menu");
         repairScene.setMenuOption3("Buy/Sell Menu");
+        repairScene.setConversationMenuType("Give");
+        repairScene.setConversationSuccessText("Enter success text");
+        repairScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.repairScene.ordinal()] = repairScene;
         
         Scene ninjaScene = new Scene();
@@ -195,6 +234,9 @@ public class MapControl {
         ninjaScene.setMenuOption1("Combat Menu");
         ninjaScene.setMenuOption2("Conversation Menu");
         ninjaScene.setMenuOption3("Buy/Sell Menu");
+        ninjaScene.setConversationMenuType("Give");
+        ninjaScene.setConversationSuccessText("Enter success text");
+        ninjaScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.ninjaScene.ordinal()] = ninjaScene;
         
         Scene armyScene = new Scene();
@@ -205,6 +247,9 @@ public class MapControl {
         armyScene.setMenuOption1("Combat Menu");
         armyScene.setMenuOption2("Conversation Menu");
         armyScene.setMenuOption3("Buy/Sell Menu");
+        armyScene.setConversationMenuType("Give");
+        armyScene.setConversationSuccessText("Enter success text");
+        armyScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.armyScene.ordinal()] = armyScene;
         
         Scene postScene = new Scene();
@@ -215,6 +260,9 @@ public class MapControl {
         postScene.setMenuOption1("Combat Menu");
         postScene.setMenuOption2("Conversation Menu");
         postScene.setMenuOption3("Buy/Sell Menu");
+        postScene.setConversationMenuType("Give");
+        postScene.setConversationSuccessText("Enter success text");
+        postScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.postScene.ordinal()] = postScene;
         
         Scene fireworksScene = new Scene();
@@ -225,6 +273,9 @@ public class MapControl {
         fireworksScene.setMenuOption1("Combat Menu");
         fireworksScene.setMenuOption2("Conversation Menu");
         fireworksScene.setMenuOption3("Buy/Sell Menu");
+        fireworksScene.setConversationMenuType("Give");
+        fireworksScene.setConversationSuccessText("Enter success text");
+        fireworksScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.fireworksScene.ordinal()] = fireworksScene;
         
         Scene petScene = new Scene();
@@ -235,6 +286,9 @@ public class MapControl {
         petScene.setMenuOption1("Combat Menu");
         petScene.setMenuOption2("Conversation Menu");
         petScene.setMenuOption3("Buy/Sell Menu");
+        petScene.setConversationMenuType("Give");
+        petScene.setConversationSuccessText("Enter success text");
+        petScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.petScene.ordinal()] = petScene;
         
         Scene MarinaScene = new Scene();
@@ -245,6 +299,9 @@ public class MapControl {
         MarinaScene.setMenuOption1("Combat Menu");
         MarinaScene.setMenuOption2("Conversation Menu");
         MarinaScene.setMenuOption3("Buy/Sell Menu");
+        MarinaScene.setConversationMenuType("Give");
+        MarinaScene.setConversationSuccessText("Enter success text");
+        MarinaScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.MarinaScene.ordinal()] = MarinaScene;
         
         Scene improvementScene = new Scene();
@@ -255,6 +312,9 @@ public class MapControl {
         improvementScene.setMenuOption1("Combat Menu");
         improvementScene.setMenuOption2("Conversation Menu");
         improvementScene.setMenuOption3("Buy/Sell Menu");
+        improvementScene.setConversationMenuType("Give");
+        improvementScene.setConversationSuccessText("Enter success text");
+        improvementScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.improvementScene.ordinal()] = improvementScene;
         
         Scene policeScene = new Scene();
@@ -265,6 +325,9 @@ public class MapControl {
         policeScene.setMenuOption1("Combat Menu");
         policeScene.setMenuOption2("Conversation Menu");
         policeScene.setMenuOption3("Buy/Sell Menu");
+        policeScene.setConversationMenuType("Give");
+        policeScene.setConversationSuccessText("Enter success text");
+        policeScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.policeScene.ordinal()] = policeScene;
         
         Scene zooScene = new Scene();
@@ -275,6 +338,9 @@ public class MapControl {
         zooScene.setMenuOption1("Combat Menu");
         zooScene.setMenuOption2("Conversation Menu");
         zooScene.setMenuOption3("Buy/Sell Menu");
+        zooScene.setConversationMenuType("Give");
+        zooScene.setConversationSuccessText("Enter success text");
+        zooScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.zooScene.ordinal()] = zooScene;
         
         Scene museumScene = new Scene();
@@ -285,6 +351,9 @@ public class MapControl {
         museumScene.setMenuOption1("Combat Menu");
         museumScene.setMenuOption2("Conversation Menu");
         museumScene.setMenuOption3("Buy/Sell Menu");
+        museumScene.setConversationMenuType("Give");
+        museumScene.setConversationSuccessText("Enter success text");
+        museumScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.museumScene.ordinal()] = museumScene;
         
         Scene cemeteryScene = new Scene();
@@ -295,6 +364,9 @@ public class MapControl {
         cemeteryScene.setMenuOption1("Combat Menu");
         cemeteryScene.setMenuOption2("Conversation Menu");
         cemeteryScene.setMenuOption3("Buy/Sell Menu");
+        cemeteryScene.setConversationMenuType("Give");
+        cemeteryScene.setConversationSuccessText("Enter success text");
+        cemeteryScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.cemeteryScene.ordinal()] = cemeteryScene;
         
         Scene volcanoScene = new Scene();
@@ -305,6 +377,9 @@ public class MapControl {
         volcanoScene.setMenuOption1("Combat Menu");
         volcanoScene.setMenuOption2("Conversation Menu");
         volcanoScene.setMenuOption3("Buy/Sell Menu");
+        volcanoScene.setConversationMenuType("Give");
+        volcanoScene.setConversationSuccessText("Enter success text");
+        volcanoScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.volcanoScene.ordinal()] = volcanoScene;
         
         Scene pizzaScene = new Scene();
@@ -315,6 +390,9 @@ public class MapControl {
         pizzaScene.setMenuOption1("Combat Menu");
         pizzaScene.setMenuOption2("Conversation Menu");
         pizzaScene.setMenuOption3("Buy/Sell Menu");
+        pizzaScene.setConversationMenuType("Give");
+        pizzaScene.setConversationSuccessText("Enter success text");
+        pizzaScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.pizzaScene.ordinal()] = pizzaScene;
         
         Scene orphanScene = new Scene();
@@ -325,6 +403,9 @@ public class MapControl {
         orphanScene.setMenuOption1("Combat Menu");
         orphanScene.setMenuOption2("Conversation Menu");
         orphanScene.setMenuOption3("Buy/Sell Menu");
+        orphanScene.setConversationMenuType("Give");
+        orphanScene.setConversationSuccessText("Enter success text");
+        orphanScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.orphanScene.ordinal()] = orphanScene;
         
         Scene placeScene = new Scene();
@@ -335,6 +416,9 @@ public class MapControl {
         placeScene.setMenuOption1("Combat Menu");
         placeScene.setMenuOption2("Conversation Menu");
         placeScene.setMenuOption3("Buy/Sell Menu");
+        placeScene.setConversationMenuType("Give");
+        placeScene.setConversationSuccessText("Enter success text");
+        placeScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.placeScene.ordinal()] = placeScene;
         
          Scene holderScene = new Scene();
@@ -345,6 +429,9 @@ public class MapControl {
         holderScene.setMenuOption1("Combat Menu");
         holderScene.setMenuOption2("Conversation Menu");
         holderScene.setMenuOption3("Buy/Sell Menu");
+        holderScene.setConversationMenuType("Give");
+        holderScene.setConversationSuccessText("Enter success text");
+        holderScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.holderScene.ordinal()] = holderScene;
         
         Scene finishingScene = new Scene();
@@ -355,6 +442,9 @@ public class MapControl {
         finishingScene.setMenuOption1("Combat Menu");
         finishingScene.setMenuOption2("Conversation Menu");
         finishingScene.setMenuOption3("Buy/Sell Menu");
+        finishingScene.setConversationMenuType("Give");
+        finishingScene.setConversationSuccessText("Enter success text");
+        finishingScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.finishingScene.ordinal()] = finishingScene;        
         return scenes;
         

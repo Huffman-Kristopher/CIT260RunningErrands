@@ -16,6 +16,13 @@ import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import cit260.runningerrands.model.Scene;
 import cit260.runningerrands.model.Npc;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +41,34 @@ public class RunningErrands {
     private static Item[] items = null;
     private static Item item = null;
     private static Npc[] npc = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        RunningErrands.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        RunningErrands.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        RunningErrands.logFile = logFile;
+    }
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -124,15 +158,83 @@ public class RunningErrands {
     }
 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+
+       try{
+
+        //open charcter stream files ofr end user input and ouput
+
+        RunningErrands.inFile =
+
+                new BufferedReader(new InputStreamReader(System.in));
+
+ 
+
+        RunningErrands.outFile = new PrintWriter(System.out, true);
+
+         //open log file
+
+         String filePath ="log.txt";
+
+         RunningErrands.logFile = new PrintWriter (filePath);
+
+       } catch (Exception e){
+
+           System.out.println("Exception: "+ e.toString()+
+
+                                "\nCause: " + e.getCause() +
+
+                                "\nMessage: " + e.getMessage());
+
+     
+       }
+       
         StartProgramView startProgramView = new StartProgramView();
+
         try{
+
         startProgramView.displayStartProgramView();
+
         } catch (Throwable te){
+
             System.out.println(te.getMessage());
+
             te.printStackTrace();
+
             startProgramView.displayStartProgramView();
+
         }
+
+        finally {
+
+            try {
+
+               if (RunningErrands.inFile !=null)
+
+                RunningErrands.inFile.close();
+
+              
+
+               if (RunningErrands.outFile !=null)
+
+                RunningErrands.outFile.close();
+
+              
+
+               if (RunningErrands.logFile != null)
+
+                   RunningErrands.logFile.close();
+
+              
+
+            } catch (IOException ex) {
+
+                System.out.println("Error Closing FIles");
+
+            }
+
+        }
+
     }
 
 }

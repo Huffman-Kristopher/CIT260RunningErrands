@@ -5,7 +5,13 @@
  */
 package cit260.runningerands.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -15,6 +21,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = RunningErrands.getInFile();
+    protected final PrintWriter console = RunningErrands.getOutFile();
     
     public View() {
         
@@ -40,14 +49,18 @@ public abstract class View implements ViewInterface {
         
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // Get infile for keyboard
+         // Get infile for keyboard
         boolean valid = false;
         String value = null;
                 
         while (!valid) { //loop while not valid
             System.out.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine(); //Get the next line typed on the keyboard
+            try {
+                value = this.keyboard.readLine(); //Get the next line typed on the keyboard
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank

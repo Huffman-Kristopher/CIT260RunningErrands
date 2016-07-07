@@ -27,14 +27,9 @@ public class Item implements Serializable{
     private String itemInSellList;
     private Scene sceneToSell;
     private Scene sceneToBuy;
+    private String itemBuyable;
+    private String itemInBuyList;
 
-    public int getItemValue() {
-        return itemValue;
-    }
-
-    public void setItemValue(int itemValue) {
-        this.itemValue = itemValue;
-    }
     public String getItemName() {
         return itemName;
     }
@@ -91,6 +86,14 @@ public class Item implements Serializable{
         this.itemCost = itemCost;
     }
 
+    public int getItemValue() {
+        return itemValue;
+    }
+
+    public void setItemValue(int itemValue) {
+        this.itemValue = itemValue;
+    }
+
     public int getItemNumber() {
         return itemNumber;
     }
@@ -131,22 +134,40 @@ public class Item implements Serializable{
         this.sceneToBuy = sceneToBuy;
     }
 
+    public String getItemBuyable() {
+        return itemBuyable;
+    }
+
+    public void setItemBuyable(String itemBuyable) {
+        this.itemBuyable = itemBuyable;
+    }
+
+    public String getItemInBuyList() {
+        return itemInBuyList;
+    }
+
+    public void setItemInBuyList(String itemInBuyList) {
+        this.itemInBuyList = itemInBuyList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.itemName);
-        hash = 59 * hash + Objects.hashCode(this.itemType);
-        hash = 59 * hash + this.itemQuantity;
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + this.requiredAmount;
-        hash = 59 * hash + this.strength;
-        hash = 59 * hash + this.itemCost;
-        hash = 59 * hash + this.itemValue;
-        hash = 59 * hash + this.itemNumber;
-        hash = 59 * hash + Objects.hashCode(this.itemSellable);
-        hash = 59 * hash + Objects.hashCode(this.itemInSellList);
-        hash = 59 * hash + Objects.hashCode(this.sceneToSell);
-        hash = 59 * hash + Objects.hashCode(this.sceneToBuy);
+        hash = 47 * hash + Objects.hashCode(this.itemName);
+        hash = 47 * hash + Objects.hashCode(this.itemType);
+        hash = 47 * hash + this.itemQuantity;
+        hash = 47 * hash + Objects.hashCode(this.description);
+        hash = 47 * hash + this.requiredAmount;
+        hash = 47 * hash + this.strength;
+        hash = 47 * hash + this.itemCost;
+        hash = 47 * hash + this.itemValue;
+        hash = 47 * hash + this.itemNumber;
+        hash = 47 * hash + Objects.hashCode(this.itemSellable);
+        hash = 47 * hash + Objects.hashCode(this.itemInSellList);
+        hash = 47 * hash + Objects.hashCode(this.sceneToSell);
+        hash = 47 * hash + Objects.hashCode(this.sceneToBuy);
+        hash = 47 * hash + Objects.hashCode(this.itemBuyable);
+        hash = 47 * hash + Objects.hashCode(this.itemInBuyList);
         return hash;
     }
 
@@ -195,6 +216,12 @@ public class Item implements Serializable{
         if (!Objects.equals(this.itemInSellList, other.itemInSellList)) {
             return false;
         }
+        if (!Objects.equals(this.itemBuyable, other.itemBuyable)) {
+            return false;
+        }
+        if (!Objects.equals(this.itemInBuyList, other.itemInBuyList)) {
+            return false;
+        }
         if (!Objects.equals(this.sceneToSell, other.sceneToSell)) {
             return false;
         }
@@ -206,7 +233,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + ", itemCost=" + itemCost + ", itemValue=" + itemValue + ", itemNumber=" + itemNumber + ", itemSellable=" + itemSellable + ", itemInSellList=" + itemInSellList + ", sceneToSell=" + sceneToSell + ", sceneToBuy=" + sceneToBuy + '}';
+        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + ", itemCost=" + itemCost + ", itemValue=" + itemValue + ", itemNumber=" + itemNumber + ", itemSellable=" + itemSellable + ", itemInSellList=" + itemInSellList + ", sceneToSell=" + sceneToSell + ", sceneToBuy=" + sceneToBuy + ", itemBuyable=" + itemBuyable + ", itemInBuyList=" + itemInBuyList + '}';
     }
 
 
