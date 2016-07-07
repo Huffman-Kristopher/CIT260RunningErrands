@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
@@ -68,6 +69,7 @@ public class SellItemsMenu extends View{
                 + "\n------------------------------------"
                 + "\n"
                 + "\n Enter item number to sell"
+                + "\n P - Print Item List"
                 + "\n R - Return to game menu";
         SellItemsMenu sellItemsMenu = new SellItemsMenu(menu);
         sellItemsMenu.display();        
@@ -79,6 +81,16 @@ public class SellItemsMenu extends View{
         value = value.toUpperCase();
         switch (value) {
             case "R": //Return to game menu.
+                return true;
+            case "P": // Print to file.
+                this.console.println("\n\nEnter the file path for the folder you wish to save the list to.");
+        String filePath = this.getInput();
+       try{
+           // save the list to the specified file.
+           GameControl.saveItems(RunningErrands.getItems(), filePath);
+       } catch (Exception ex){
+            ErrorView.display("SellItemsMenu", ex.getMessage());
+       }
                 return true;
             default:
                 try {

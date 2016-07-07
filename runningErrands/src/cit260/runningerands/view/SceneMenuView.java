@@ -169,15 +169,9 @@ public class SceneMenuView extends View {
     }
 
     private void OpensaveGame() {
-      // prompt for file path to save game
-       this.console.println("\n\nEnter the file path for the folder you wish to save the game to.");
-        String filePath = this.getInput();
-       try{
-           // save the game to the speciried file.
-           GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
-       } catch (Exception ex){
-            ErrorView.display("SceneMenuView", ex.getMessage());
-       }
+      //Display Help Menu
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
 
     private void openLoadGame() {
