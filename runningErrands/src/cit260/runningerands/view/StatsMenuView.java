@@ -6,7 +6,10 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.model.Investment;
+import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
+import java.text.NumberFormat;
+import java.util.Locale;
 import runningerrands.RunningErrands;
 
 /**
@@ -33,8 +36,10 @@ public class StatsMenuView extends View {
         int currentDay = persona.getDay();
         int investDaysToMature = investmentMaturityDay - currentDay;
         int personaSalary = persona.getSalary();
+        String money = NumberFormat.getNumberInstance(Locale.US).format(personaMoney);
+        String salary = NumberFormat.getNumberInstance(Locale.US).format(personaSalary);
         String investmentMessage;
-        
+        String itemList = this.viewInventory();
         if (investmentReturn == 0) {
             investmentMessage = "\nYou do not currently have any investments pending.";
         }
@@ -49,14 +54,48 @@ public class StatsMenuView extends View {
                   + "\nAge: " + personaAge
                   + "\nHealth: " + personaHealth
                   + "\nCareer: " + personaCareer
-                  + "\nSalary: " + personaSalary
-                  + "\nCurrent Balance: $" + personaMoney
+                  + "\nSalary: $" + salary
+                  + "\nCurrent Balance: $" + money
                   + investmentMessage
+                  + itemList
                   + "\n-------------------------"
                   + "\nR - Return to main menu");
         StatsMenuView StatsMenuView = new StatsMenuView(menu);
         StatsMenuView.display();
         return menu;
+    }
+    
+        private String viewInventory() {
+        
+        StringBuilder line;
+        Persona persona = RunningErrands.getPersona();
+        Item[] inventory = persona.getItem();
+        
+        String itemList = "\n \n      LIST OF INVENTORY ITEMS";
+        line = new StringBuilder("                              ");
+        line.insert(0, "Description");
+        line.insert(20, "Required");
+        line.insert(30, "In Stock");
+        itemList = itemList + "\n" + line.toString();
+        
+        for (Item item : inventory) {
+            
+            if(item.getItemQuantity() > 0) {
+            line= new StringBuilder("                              ");
+            line.insert(0,item.getDescription());
+            line.insert(23, item.getRequiredAmount());
+            line.insert(33, item.getItemQuantity());
+            
+            itemList = itemList + "\n" + line.toString();
+            }
+            else {
+                
+                /* Do nothing*/
+            }
+        }
+        
+        return itemList;
+        
     }
 
     @Override

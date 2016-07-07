@@ -7,6 +7,8 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.model.Persona;
+import java.text.NumberFormat;
+import java.util.Locale;
 import runningerrands.RunningErrands;
 
 /**
@@ -32,8 +34,10 @@ public class PersonaDisplayMenuView extends View {
         String name = persona.getPersonaName();
         int age = persona.getAge();
         int health = persona.getHealth();
-        int balance = persona.getMoney();
-        int salary = persona.getSalary();
+        int personaMoney = persona.getMoney();
+        int personaSalary = persona.getSalary();
+        String money = NumberFormat.getNumberInstance(Locale.US).format(personaMoney);
+        String salary = NumberFormat.getNumberInstance(Locale.US).format(personaSalary);
         
         String menu = ("\n==========================="
             + "\nYou have created a new character!"
@@ -43,7 +47,7 @@ public class PersonaDisplayMenuView extends View {
             + "\nBeginning health: " + health
             + "\nCareer: " + career
             + "\nSalary: $" + salary
-            + "\nBeginning balance: $" + balance
+            + "\nBeginning balance: $" + money
             + "\nNow - go run some errands!"
             + "\n==========================="
             + "\nAre these correct? Enter Y for yes or N for no."
