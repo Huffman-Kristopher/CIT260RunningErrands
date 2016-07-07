@@ -1,4 +1,0 @@
-cit260.runningerands.view.PersonaCareerMenuView - 
-Invalid selection, please try again
-SceneMenuView - c:\game.txt (Access is denied)
-GameMenuView - q (The system cannot find the file specified)

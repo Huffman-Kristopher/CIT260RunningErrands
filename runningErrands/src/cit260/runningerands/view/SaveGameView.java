@@ -26,7 +26,6 @@ public class SaveGameView extends View {
 
     @Override
     public boolean doAction(String filePath) {
-        filePath = this.getInput();
       try{
            // save the game to the speciried file.
            GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
