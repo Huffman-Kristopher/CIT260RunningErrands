@@ -5,70 +5,118 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.GameControl;
+import cit260.runningerrands.control.PersonaControl;
+import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class ConversationMenuView extends View {
-    
-    public ConversationMenuView() {
-        super("\n"
-                  + "\n-------------------------"
-                  + "\n| Main Menu             |" 
-                  + "\n-------------------------"
-                  + "\nN - Start new game"
-                  + "\nL - Load saved game"
-                  + "\nH - Open Help menu"
-                  + "\nQ - Quit Game"
-                  + "\n-------------------------"
-                  + "\nPlease select a menu option: ");
+
+
+
+        
+    public ConversationMenuView(String menu) {
+        super(menu);
     }
 
+    public String CareerMenuValues() {
+        String menu = "";
+        return menu;
+      
+    }
+    
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
+        Persona persona = RunningErrands.getPersona();
+        char gender = persona.getGender();
+        String career;
         
-        switch (value) {
-            case "N": //create and start a new game
-                this.startNewGame();
-                break;
-            case "L": //load saved game
-                this.LoadSavedGame();
-                break;
-            case "H": //Open help menu
-                this.openHelpMenu();
-                break;
-            case "Q": //Open help menu
-                return true;
-            default:
-                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
-                break;  
+        if (gender == 'F') {
+            switch (value) {
+                case "S": //Set gender to Female and career to Secretary
+                    career = "Secretary";
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "N": //Set gender to Female and career to Nurse
+                    career = "Nurse";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "H": //Set gender to Female and career to Hair Dresser
+                    career = "Hair Dresser";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "T": //Set gender to Female and career to Teacher
+                    career = "Teacher";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "M": //Set gender to Female and career to Teacher
+                    career = "Megastar";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "Q":
+                    this.openMainMenuView();
+                    return true;
+                default:
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                    return false;  
+            }
         }
+        if (gender == 'M') {
+            switch (value) {
+                case "J": //Set gender to Male and career to Janitor
+                    career = "Janitor";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "M": //Set gender to Male and career to Mail Clerk
+                    career = "Mail Clerk";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "P": //Set gender to Male and career to Pizza Delivery
+                    career = "Pizza Delivery Driver";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "A": //Set gender to Male and career to Auto Mechanic
+                    career = "Auto Mechanic";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break;
+                case "C": //Set gender to Male and career to Auto Mechanic
+                    career = "CEO";                   
+                    PersonaControl.setPersonaCareer(career);
+                    this.openPersonaNameView();
+                    break; 
+                case "Q":
+                    this.openMainMenuView();
+                    return true;
+                default:
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                    return false; 
+            }
+        }
+        
+        return true;
+    }
 
-        return false;
+    private void openMainMenuView() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
     }
     
-    private void LoadSavedGame() {
-         this.console.println("\n\nEnter the file path for the folder your game is saved to.");
-        String filePath = this.getInput();
-       try{
-           GameControl.getSavedGame(filePath);
-       } catch (Exception ex){
-           ErrorView.display("GameMenuView", ex.getMessage());
-       }
+    private void openPersonaNameView() {
+        PersonaNameMenuView personaNameMenuView = new PersonaNameMenuView();
+        personaNameMenuView.display();
     }
-    private void openHelpMenu() {
-        //Display Help Menu
-        HelpMenuView HelpMenuView = new HelpMenuView();
-        HelpMenuView.display();
-    }
-
-    private void startNewGame() {
-        GameControl.createNewGame(RunningErrands.getPlayer());
-        PersonaGenderMenuView createNewPersona = new PersonaGenderMenuView();
-        createNewPersona.display();
-    }
+    
 }

@@ -111,11 +111,11 @@ public class SceneMenuView extends View {
             case "6": //open map.
                 if ("Home".equals(currentSceneDescription)) {
                     this.openTravelMenu();
-                    return false;
+                    return true;
                 }
                 else {
                     this.travelHome();
-                    return false;
+                    return true;
                 }
             case "7": //open store.
                 this.openStatsMenu();
