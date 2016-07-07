@@ -57,7 +57,7 @@ public class HelpMenuView extends View {
             case "R": //Open help menu
                 break;
             default:
-                System.out.println("\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection, please try again");
                 break;  
         }
 
@@ -67,31 +67,31 @@ public class HelpMenuView extends View {
 }
 
     private void showObjectiveHelp() {
-        System.out.println("*** showObjectiveHelp function called ***");
+        this.console.println("*** showObjectiveHelp function called ***");
     }
 
     private void showMovementHelp() {
-        System.out.println("*** showMovementHelp function called ***");
+        this.console.println("*** showMovementHelp function called ***");
     }
 
     private void showInventoryHelp() {
-        System.out.println("*** showInventoryHelp function called ***");
+        this.console.println("*** showInventoryHelp function called ***");
     }
 
     private void showCombatHelp() {
-        System.out.println("*** showCombatHelp function called ***");
+        this.console.println("*** showCombatHelp function called ***");
     }
 
     private void showPurchaseHelp() {
-        System.out.println("*** showPurchaseHelp function called ***");
+        this.console.println("*** showPurchaseHelp function called ***");
     }
 
     private void showSellHelp() {
-        System.out.println("*** showSellHelp function called ***");
+        this.console.println("*** showSellHelp function called ***");
     }
 
     private void showMoneyHelp() {
-        System.out.println("\n"
+        this.console.println("\n"
                 + "\nThere are 4 ways to earn money in this game. First, you earn "
                 + "\na Salary each day. You can view your salary on the Stats menu."
                 + "\nNext, you may choose to gamble. Gambling is risky, and if you "

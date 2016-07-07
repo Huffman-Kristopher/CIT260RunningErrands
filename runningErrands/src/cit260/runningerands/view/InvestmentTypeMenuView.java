@@ -59,7 +59,7 @@ private Investment investment;
                  this.openGameMenu();
                 break;
             default:
-                System.out.println("\nInvalid selection, please select an option above.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please select an option above.");
                 break;  
         }
 

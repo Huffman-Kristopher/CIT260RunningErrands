@@ -54,7 +54,7 @@ public abstract class View implements ViewInterface {
         String value = null;
                 
         while (!valid) { //loop while not valid
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
             try {
                 value = this.keyboard.readLine(); //Get the next line typed on the keyboard
@@ -64,7 +64,7 @@ public abstract class View implements ViewInterface {
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Please enter a valid value");
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid value: Please enter a valid value");
                 continue;
             }
             

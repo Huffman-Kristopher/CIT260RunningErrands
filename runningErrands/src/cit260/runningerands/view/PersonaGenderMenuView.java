@@ -43,7 +43,7 @@ public class PersonaGenderMenuView extends View {
             case 'Q': //load saved game
                 return true;
             default:
-                System.out.println("\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 return false;  
         }
 

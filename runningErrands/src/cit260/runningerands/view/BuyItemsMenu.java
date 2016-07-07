@@ -94,7 +94,7 @@ public class BuyItemsMenu extends View{
             try {
                 throw new PurchaseExceptions("Selected Item cannot be purchased.");
             } catch (PurchaseExceptions ex) {
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());
             }
                     
                 }

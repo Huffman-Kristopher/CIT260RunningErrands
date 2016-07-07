@@ -35,7 +35,7 @@ public class PersonaAgeMenuView extends View {
                 try {
                     int age = Integer.parseInt(value);
                     if (age < 12 || age > 120) {
-                        System.out.println("\nInvalid age:"
+                        ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid age:"
                         + "Please enter a value between 12 and 120.");
                         return false;
                     }
@@ -46,7 +46,7 @@ public class PersonaAgeMenuView extends View {
                     return true;
                     }
                 } catch (NumberFormatException ne) {
-                    System.out.println("\nPlease enter a numeric value, or press Q to return to the main menu.");
+                    ErrorView.display(this.getClass().getName(), "\nPlease enter a numeric value, or press Q to return to the main menu.");
                     return false;
             }
         }

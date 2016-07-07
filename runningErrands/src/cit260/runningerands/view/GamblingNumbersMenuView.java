@@ -51,7 +51,7 @@ public class GamblingNumbersMenuView extends View {
                 
                 Gambling gambling = RunningErrands.getGambling();
                 if (betNumbers <1 || betNumbers > 99999 ) {
-                    System.out.println("\nPlease enter a bet between 1 and 99999");
+                    this.console.println("\nPlease enter a bet between 1 and 99999");
                 }
                 else {
                     GamblingControl.setBetNumbers(betNumbers);
@@ -61,7 +61,7 @@ public class GamblingNumbersMenuView extends View {
                 }
                 break;
                 }catch (NumberFormatException nf){
-                    System.out.println("Please enter a numeric value or R to return to the game menu.");
+                    ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
                 }
         }
         return true;
@@ -79,15 +79,15 @@ public class GamblingNumbersMenuView extends View {
             int updatedBalance = PersonaControl.updatePersonaMoney(winningsTotal);
         
         if (winningsTotal < 0) {
-            System.out.println("\nThe winning number was " + winningNumber + "."
+            this.console.println("\nThe winning number was " + winningNumber + "."
                     +"\nWe're sorry! You lost $" + winningsTotal * (-1) + ". Your new balance is $" + updatedBalance + ".");
         }
         else {
-            System.out.println("\nThe winning number was " + winningNumber + "."
+            this.console.println("\nThe winning number was " + winningNumber + "."
                     +"\nYou won $" + winningsTotal + ". Your new balance is $" + updatedBalance + ".");
         }
         } catch (GamblingControlExceptions error) {
-            System.out.println(error.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input:" + error.getMessage());
         }
         this.openGameMenu();
     }

@@ -16,9 +16,7 @@ import runningerrands.RunningErrands;
 public class PersonaCareerMenuView extends View {
 
 
-//    CareerMenuView(char gender) {
-//       System.out.println("*** CareerMenuView function called with " + gender + "as gender option ***");
-//    }
+
         
     public PersonaCareerMenuView(String menu) {
         super(menu);
@@ -98,7 +96,7 @@ public class PersonaCareerMenuView extends View {
                     this.openMainMenuView();
                     return true;
                 default:
-                    System.out.println("\nInvalid selection, please try again");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                     return false;  
             }
         }
@@ -133,7 +131,7 @@ public class PersonaCareerMenuView extends View {
                     this.openMainMenuView();
                     return true;
                 default:
-                    System.out.println("\nInvalid selection, please try again");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                     return false; 
             }
         }

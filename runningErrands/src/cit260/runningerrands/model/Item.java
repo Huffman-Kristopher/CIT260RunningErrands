@@ -21,76 +21,14 @@ public class Item implements Serializable{
     private int requiredAmount;
     private int strength;
     private int itemCost;
+    private int itemValue;
     private int itemNumber;
     private String itemSellable;
     private String itemInSellList;
+    private Scene sceneToSell;
+    private Scene sceneToBuy;
     private String itemBuyable;
     private String itemInBuyList;
-
-    public void setItemInBuyList(String itemInBuyList) {
-        this.itemInBuyList = itemInBuyList;
-    }
-
-    public String getItemInBuyList() {
-        return itemInBuyList;
-    }
-
-    public String getItemInSellList() {
-        return itemInSellList;
-    }
-
-    public void setItemInSellList(String itemInSellList) {
-        this.itemInSellList = itemInSellList;
-    }
-
-    public String getItemSellable() {
-        return itemSellable;
-    }
-
-    public void setItemSellable(String itemSellable) {
-        this.itemSellable = itemSellable;
-    }
-
-    public String getItemBuyable() {
-        return itemSellable;
-    }
-    
-    public void setItemBuyable(String itemBuyable) {
-        this.itemBuyable = itemBuyable;
-    }
-    
-    public int getItemNumber() {
-        return itemNumber;
-    }
-
-    public void setItemNumber(int itemNumber) {
-        this.itemNumber = itemNumber;
-    }
-
-    public int getItemCost() {
-        return itemCost;
-    }
-
-    public void setItemCost(int itemCost) {
-        this.itemCost = itemCost;
-    }
-
-    public int getItemValue() {
-        return itemValue;
-    }
-
-    public void setItemValue(int itemValue) {
-        this.itemValue = itemValue;
-    }
-    private int itemValue;
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
 
     public String getItemName() {
         return itemName;
@@ -132,22 +70,104 @@ public class Item implements Serializable{
         this.requiredAmount = requiredAmount;
     }
 
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(int itemCost) {
+        this.itemCost = itemCost;
+    }
+
+    public int getItemValue() {
+        return itemValue;
+    }
+
+    public void setItemValue(int itemValue) {
+        this.itemValue = itemValue;
+    }
+
+    public int getItemNumber() {
+        return itemNumber;
+    }
+
+    public void setItemNumber(int itemNumber) {
+        this.itemNumber = itemNumber;
+    }
+
+    public String getItemSellable() {
+        return itemSellable;
+    }
+
+    public void setItemSellable(String itemSellable) {
+        this.itemSellable = itemSellable;
+    }
+
+    public String getItemInSellList() {
+        return itemInSellList;
+    }
+
+    public void setItemInSellList(String itemInSellList) {
+        this.itemInSellList = itemInSellList;
+    }
+
+    public Scene getSceneToSell() {
+        return sceneToSell;
+    }
+
+    public void setSceneToSell(Scene sceneToSell) {
+        this.sceneToSell = sceneToSell;
+    }
+
+    public Scene getSceneToBuy() {
+        return sceneToBuy;
+    }
+
+    public void setSceneToBuy(Scene sceneToBuy) {
+        this.sceneToBuy = sceneToBuy;
+    }
+
+    public String getItemBuyable() {
+        return itemBuyable;
+    }
+
+    public void setItemBuyable(String itemBuyable) {
+        this.itemBuyable = itemBuyable;
+    }
+
+    public String getItemInBuyList() {
+        return itemInBuyList;
+    }
+
+    public void setItemInBuyList(String itemInBuyList) {
+        this.itemInBuyList = itemInBuyList;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.itemName);
-        hash = 79 * hash + Objects.hashCode(this.itemType);
-        hash = 79 * hash + this.itemQuantity;
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + this.requiredAmount;
-        hash = 79 * hash + this.strength;
-        hash = 79 * hash + this.itemCost;
-        hash = 79 * hash + this.itemNumber;
-        hash = 79 * hash + Objects.hashCode(this.itemSellable);
-        hash = 79 * hash + Objects.hashCode(this.itemBuyable);
-        hash = 79 * hash + Objects.hashCode(this.itemInSellList);
-        hash = 79 * hash + Objects.hashCode(this.itemInBuyList);
-        hash = 79 * hash + this.itemValue;
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.itemName);
+        hash = 47 * hash + Objects.hashCode(this.itemType);
+        hash = 47 * hash + this.itemQuantity;
+        hash = 47 * hash + Objects.hashCode(this.description);
+        hash = 47 * hash + this.requiredAmount;
+        hash = 47 * hash + this.strength;
+        hash = 47 * hash + this.itemCost;
+        hash = 47 * hash + this.itemValue;
+        hash = 47 * hash + this.itemNumber;
+        hash = 47 * hash + Objects.hashCode(this.itemSellable);
+        hash = 47 * hash + Objects.hashCode(this.itemInSellList);
+        hash = 47 * hash + Objects.hashCode(this.sceneToSell);
+        hash = 47 * hash + Objects.hashCode(this.sceneToBuy);
+        hash = 47 * hash + Objects.hashCode(this.itemBuyable);
+        hash = 47 * hash + Objects.hashCode(this.itemInBuyList);
         return hash;
     }
 
@@ -175,10 +195,10 @@ public class Item implements Serializable{
         if (this.itemCost != other.itemCost) {
             return false;
         }
-        if (this.itemNumber != other.itemNumber) {
+        if (this.itemValue != other.itemValue) {
             return false;
         }
-        if (this.itemValue != other.itemValue) {
+        if (this.itemNumber != other.itemNumber) {
             return false;
         }
         if (!Objects.equals(this.itemName, other.itemName)) {
@@ -193,16 +213,28 @@ public class Item implements Serializable{
         if (!Objects.equals(this.itemSellable, other.itemSellable)) {
             return false;
         }
-        if (!Objects.equals(this.itemBuyable, other.itemBuyable)) {
+        if (!Objects.equals(this.itemInSellList, other.itemInSellList)) {
             return false;
         }
-        if (!Objects.equals(this.itemInSellList, other.itemInSellList)) {
+        if (!Objects.equals(this.itemBuyable, other.itemBuyable)) {
             return false;
         }
         if (!Objects.equals(this.itemInBuyList, other.itemInBuyList)) {
             return false;
         }
+        if (!Objects.equals(this.sceneToSell, other.sceneToSell)) {
+            return false;
+        }
+        if (!Objects.equals(this.sceneToBuy, other.sceneToBuy)) {
+            return false;
+        }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", itemQuantity=" + itemQuantity + ", description=" + description + ", requiredAmount=" + requiredAmount + ", strength=" + strength + ", itemCost=" + itemCost + ", itemValue=" + itemValue + ", itemNumber=" + itemNumber + ", itemSellable=" + itemSellable + ", itemInSellList=" + itemInSellList + ", sceneToSell=" + sceneToSell + ", sceneToBuy=" + sceneToBuy + ", itemBuyable=" + itemBuyable + ", itemInBuyList=" + itemInBuyList + '}';
+    }
+
 
 }

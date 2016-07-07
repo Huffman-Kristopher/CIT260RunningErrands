@@ -15,6 +15,7 @@ import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import cit260.runningerrands.model.Scene;
+import cit260.runningerrands.model.Npc;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -37,18 +38,12 @@ public class RunningErrands {
     private static Location[][] locations = null;
     private static Map map = null;
     private static Scene[] scene = null;
+    private static Item[] items = null;
     private static Item item = null;
+    private static Npc[] npc = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
-
-    public static PrintWriter getLogFile() {
-        return logFile;
-    }
-
-    public static void setLogFile(PrintWriter logFile) {
-        RunningErrands.logFile = logFile;
-    }
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -65,22 +60,61 @@ public class RunningErrands {
     public static void setInFile(BufferedReader inFile) {
         RunningErrands.inFile = inFile;
     }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        RunningErrands.logFile = logFile;
+    }
     
-
-    public static Item getItem() {
-        return item;
+    public static Game getCurrentGame() {
+        return currentGame;
     }
 
-    public static void setItem(Item item) {
-        RunningErrands.item = item;
+    public static void setCurrentGame(Game currentGame) {
+        RunningErrands.currentGame = currentGame;
     }
 
-    public static Scene[] getScene() {
-        return scene;
+    public static Player getPlayer() {
+        return player;
     }
 
-    public static void setScene(Scene[] scene) {
-        RunningErrands.scene = scene;
+    public static void setPlayer(Player player) {
+        RunningErrands.player = player;
+    }
+
+    public static Persona getPersona() {
+        return persona;
+    }
+
+    public static void setPersona(Persona persona) {
+        RunningErrands.persona = persona;
+    }
+
+    public static Investment getInvestment() {
+        return investment;
+    }
+
+    public static void setInvestment(Investment investment) {
+        RunningErrands.investment = investment;
+    }
+
+    public static Gambling getGambling() {
+        return gambling;
+    }
+
+    public static void setGambling(Gambling gambling) {
+        RunningErrands.gambling = gambling;
+    }
+
+    public static Location[][] getLocations() {
+        return locations;
+    }
+
+    public static void setLocations(Location[][] locations) {
+        RunningErrands.locations = locations;
     }
 
     public static Map getMap() {
@@ -91,86 +125,115 @@ public class RunningErrands {
         RunningErrands.map = map;
     }
 
-    public static Location[][] getLocations() {
-        return locations;
+    public static Scene[] getScene() {
+        return scene;
     }
 
-    public static void setLocations(Location[][] locations) {
-        RunningErrands.locations = locations;
+    public static void setScene(Scene[] scene) {
+        RunningErrands.scene = scene;
     }
+
+    public static Item[] getItems() {
+        return items;
+    }
+
+    public static void setItems(Item[] items) {
+        RunningErrands.items = items;
+    }
+
+    public static Item getItem() {
+        return item;
+    }
+
+    public static void setItem(Item item) {
+        RunningErrands.item = item;
+    }
+
+    public static Npc[] getNpc() {
+        return npc;
+    }
+
+    public static void setNpc(Npc[] npc) {
+        RunningErrands.npc = npc;
+    }
+
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
        try{
+
         //open charcter stream files ofr end user input and ouput
+
         RunningErrands.inFile =
+
                 new BufferedReader(new InputStreamReader(System.in));
 
+ 
+
         RunningErrands.outFile = new PrintWriter(System.out, true);
+
          //open log file
+
          String filePath ="log.txt";
+
          RunningErrands.logFile = new PrintWriter (filePath);
+
        } catch (Exception e){
+
            System.out.println("Exception: "+ e.toString()+
+
                                 "\nCause: " + e.getCause() +
+
                                 "\nMessage: " + e.getMessage());
+
+     
        }
+       
         StartProgramView startProgramView = new StartProgramView();
+
         try{
+
         startProgramView.displayStartProgramView();
+
         } catch (Throwable te){
+
             System.out.println(te.getMessage());
+
             te.printStackTrace();
+
             startProgramView.displayStartProgramView();
+
         }
+
         finally {
+
             try {
+
                if (RunningErrands.inFile !=null)
+
                 RunningErrands.inFile.close();
-               
+
+              
+
                if (RunningErrands.outFile !=null)
+
                 RunningErrands.outFile.close();
-               
+
+              
+
                if (RunningErrands.logFile != null)
+
                    RunningErrands.logFile.close();
-               
+
+              
+
             } catch (IOException ex) {
+
                 System.out.println("Error Closing FIles");
+
             }
+
         }
+
     }
 
-    public static Game getCurrentGame() {
-    return currentGame;
-    }
-    public static void setCurrentGame(Game currentGame) {
-        RunningErrands.currentGame = currentGame;
-    }
-
-    public static Player getPlayer() {
-    return player;
-    }
-    public static void setPlayer(Player player) {
-        RunningErrands.player = player;
-    }
-    
-    public static Persona getPersona() {
-    return persona;
-    }
-    public static void setPersona(Persona persona) {
-        RunningErrands.persona = persona;
-    }
-    
-    public static Investment getInvestment() {
-    return investment;
-    }
-    public static void setInvestment(Investment investment) {
-        RunningErrands.investment = investment;
-    }
-      
-    public static Gambling getGambling() {
-    return gambling;
-    }
-    public static void setGambling(Gambling gambling) {
-        RunningErrands.gambling = gambling;
-    }
 }

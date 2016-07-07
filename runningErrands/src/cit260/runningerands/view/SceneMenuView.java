@@ -6,92 +6,147 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.GameControl;
+import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Item;
+import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Persona;
+import cit260.runningerrands.model.Scene;
 import runningerrands.RunningErrands;
 
 /**
  *
- * @author Kristopher Huffman And Kirk Brown
+ * @author reddo
  */
-public class GameMenuView extends View{
+public class SceneMenuView extends View {
+    
+        public SceneMenuView(String menu) {
+        super(menu);
+    }
 
-    public GameMenuView() {
-        super("\n"
+    public String SceneMenuValues() {
+        
+        String menu;
+        Persona persona = RunningErrands.getPersona();
+        Location currentLocation = persona.getLocation();
+        Scene currentScene = currentLocation.getScene();
+        String currentSceneDescription = currentScene.getDescription();
+        String menuOption1 = currentScene.getMenuOption1();
+        String menuOption2 = currentScene.getMenuOption2();
+        String menuOption3 = currentScene.getMenuOption3();
+        if ( currentSceneDescription == "Home") {
+            
+            menu = "\n------------------------------------"
+                  + "\n  "  + currentSceneDescription + " Menu"
                   + "\n------------------------------------"
-                  + "\n| Game Main Menu                        |" 
-                  + "\n------------------------------------"
-                  + "\nM - Map"
-                  + "\nT - Travel"
-                  + "\nV - Visit Store"
-                  + "\nI - View Inventory"
-                  + "\nF – Investments"
-                  + "\nG – Gambling"
-                  + "\nE - View Email"
-                  + "\nK – Character Stats"
+                  + "\n1 - View Email"  
+                  + "\n2 - " + menuOption1
+                  + "\n3 - " + menuOption2
+                  + "\n4 - " + menuOption3
+                  + "\n5 - Map"
+                  + "\n6 - Travel"
+                  + "\n7 - View Stats"
+                  + "\n8 – Investments"
+                  + "\n9 – Gambling"
                   + "\nH – Help Menu"
                   + "\nS – Save Game"
-                  + "\nL – Load Game"
+//                  + "\nL – Load Game"
                   + "\nQ – Quit Game"
                   + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
-                  + "\nPlease select a menu option: ");
+                  + "\nPlease select a menu option: ";
+
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.display();
+        }
+        else {
+            String menuOption0 = "";
+            menu = "\n------------------------------------"
+                  + "\n  "  + currentSceneDescription + " Menu"
+                  + "\n------------------------------------"
+                  + "\n1 - View Email"  
+                  + "\n2 - " + menuOption1
+                  + "\n3 - " + menuOption2
+                  + "\n4 - " + menuOption3
+                  + "\n5 - Map"
+                  + "\n6 - Go Home"
+                  + "\n7 - View Stats"
+                  + "\n8 – Investments"
+                  + "\n9 – Gambling"
+                  + "\nH – Help Menu"
+                  + "\nS – Save Game"
+//                  + "\nL – Load Game"
+                  + "\nQ – Quit Game"
+                  + "\n-------------------------"
+                  + "\nPlease select a menu option: ";
+
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.display();
+        }
+        
+        return menu;
     }
     
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
         
+        String currentSceneDescription = RunningErrands.getPersona().getLocation().getScene().getDescription();
         switch (value) {
-            case "M": //open map.
+            case "1": //open email and get objectives.
+                this.openEmailMenu();
+                return false;
+            case "2":
+                this.openCombatMenu();
+                return false;
+            case "3":
+                this.openConversationMenu();
+                return false;
+            case "4":
+                this.openBuySellMenu();
+                return false;
+            case "5": //open map.
                 this.displayMap();
                 return false;
-            case "T": //open map.
-                this.openMapMenu();
+            case "6": //open map.
+                if ("Home".equals(currentSceneDescription)) {
+                    this.openTravelMenu();
+                    return false;
+                }
+                else {
+                    this.travelHome();
+                    return false;
+                }
+            case "7": //open store.
+                this.openStatsMenu();
                 return false;
-            case "V": //open store.
-                this.openStoreMenu();
-                return false;
-            case "I": //open inventory.
-                this.viewInventory();
-                return false;
-            case "F": //open inveestments.
+            case "8": //open inveestments.
                 this.openInvestmentMenu();
                 return false;
-            case "G": //gamble.
+            case "9": //gamble.
                 this.openGamblingMenu();
                 return false;
             case "S": //save the game.
                 this.OpensaveGame();
                 return false;
-           case "L": //load the game.
+/**            case "L": //load the game.
                 this.openLoadGame();
                 return false;
-
-            case "E": //open email and get objectives.
-                this.openEmailMenu();
-                return false;
+**/
             case "H": //open help menu.
                 this.openHelpMenu();
-                return false;
-            case "K": //open stats.
-                this.openStatsMenu();
                 return false;
             case "Q": //return to main menu.
                 this.openMainMenu();
                 return true;
-            case "A": //return to main menu.
-                this.addOneDay();
-                return false;
             default:
-               ErrorView.display(this.getClass().getName(), "\nInvalid main menu selection, please try again");
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid main menu selection, please try again");
                 return false;  
         }
     }
 
 
-    private void openMapMenu() {
+    private void openTravelMenu() {
         String menu = "";
         TravelMenuView mapMenuView = new TravelMenuView(menu);
         mapMenuView.MapMenuValues();
@@ -114,14 +169,14 @@ public class GameMenuView extends View{
     }
 
     private void OpensaveGame() {
-       // prompt for file path to save game
+      // prompt for file path to save game
        this.console.println("\n\nEnter the file path for the folder you wish to save the game to.");
         String filePath = this.getInput();
        try{
            // save the game to the speciried file.
            GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
        } catch (Exception ex){
-            ErrorView.display("GameMenuView", ex.getMessage());
+            ErrorView.display("SceneMenuView", ex.getMessage());
        }
     }
 
@@ -131,12 +186,12 @@ public class GameMenuView extends View{
        try{
            GameControl.getSavedGame(filePath);
        } catch (Exception ex){
-           ErrorView.display("GameMenuView", ex.getMessage());
+           ErrorView.display("SceneMenuView", ex.getMessage());
        }
     }
 
     private void openEmailMenu() {
-       this.console.println("\n ***Runs email menu function ***");
+        this.console.println("\n ***Runs email menu function ***");
     }
 
     private void openHelpMenu() {
@@ -186,7 +241,7 @@ public class GameMenuView extends View{
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getItemQuantity());
             
-            this.console.println(line.toString());
+           this.console.println(line.toString());
             }
             else {
                 
@@ -200,7 +255,25 @@ public class GameMenuView extends View{
             
             this.console.println(RunningErrands.getCurrentGame().getMap().getMapString());
         }
+
+    private void openCombatMenu() {
+        this.console.println("\n ***Runs Combat menu function ***");
+    }
+
+    private void openConversationMenu() {
+        this.console.println("\n ***Runs Conversation menu function ***");
+    }
+
+    private void openBuySellMenu() {
+        this.console.println("\n ***Runs Store menu function ***");
+    }
+
+    private void travelHome() {
+        
+        PersonaControl.addOneDay();
+        MapControl.movePersonaToNewLocation("01");
+        this.SceneMenuValues();
+        this.display();
+    }
         
     }
-    
-
