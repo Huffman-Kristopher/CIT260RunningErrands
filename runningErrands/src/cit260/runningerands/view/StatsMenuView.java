@@ -66,7 +66,7 @@ public class StatsMenuView extends View {
             case "R": //return to main menu.
                 return true;
             default:
-                System.out.println("\nInvalid selection, please enter R to return to menu");
+               ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please enter R to return to menu");
                 return false;
         }
 

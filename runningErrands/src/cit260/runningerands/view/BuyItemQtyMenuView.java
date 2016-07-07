@@ -76,7 +76,7 @@ public class BuyItemQtyMenuView extends View{
                         try {
                             throw new PurchaseExceptions ("enter 1 to sell or R to return to game menu.");
                         } catch (PurchaseExceptions ex) {
-                            System.out.println(ex.getMessage());
+                           ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());
                         }
                         
                     }
@@ -84,19 +84,19 @@ public class BuyItemQtyMenuView extends View{
                          throw new PurchaseExceptions ("Please enter a number from 1 to " + qtyOnHand);
                     }
                     catch(PurchaseExceptions ep){
-                        System.out.println(ep.getMessage());
+                        ErrorView.display(this.getClass().getName(), "Error reading input:" + ep.getMessage());
                     }
                 } 
                 else {
                     
                     int saleAmount = ItemControl.buyItem(currentItem, buyQty);
-                    System.out.println("\nCongratulations! You just bought"+ currentItem + ".");
+                    this.console.println("\nCongratulations! You just bought"+ currentItem + ".");
                     GameMenuView GameMenuView = new GameMenuView();
                     GameMenuView.display();
                     return true;    
                     }
               } catch (NumberFormatException nf){
-                  System.out.println("enter a valid number");
+                  ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
               }
                 }
                 

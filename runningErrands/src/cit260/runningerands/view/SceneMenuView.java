@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Item;
@@ -139,7 +140,7 @@ public class SceneMenuView extends View {
                 this.openMainMenu();
                 return true;
             default:
-                System.out.println("\nInvalid main menu selection, please try again");
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid main menu selection, please try again");
                 return false;  
         }
     }
@@ -168,15 +169,29 @@ public class SceneMenuView extends View {
     }
 
     private void OpensaveGame() {
-       System.out.println("\n ***Runs save Game function ***");
+      // prompt for file path to save game
+       this.console.println("\n\nEnter the file path for the folder you wish to save the game to.");
+        String filePath = this.getInput();
+       try{
+           // save the game to the speciried file.
+           GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
+       } catch (Exception ex){
+            ErrorView.display("SceneMenuView", ex.getMessage());
+       }
     }
 
     private void openLoadGame() {
-        System.out.println("\n ***Runs Load Game function ***");
+        this.console.println("\n\nEnter the file path for the folder your game is saved to.");
+        String filePath = this.getInput();
+       try{
+           GameControl.getSavedGame(filePath);
+       } catch (Exception ex){
+           ErrorView.display("SceneMenuView", ex.getMessage());
+       }
     }
 
     private void openEmailMenu() {
-        System.out.println("\n ***Runs email menu function ***");
+        this.console.println("\n ***Runs email menu function ***");
     }
 
     private void openHelpMenu() {
@@ -211,12 +226,12 @@ public class SceneMenuView extends View {
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = persona.getItem();
         
-        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                              ");
         line.insert(0, "Description");
         line.insert(20, "Required");
         line.insert(30, "In Stock");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for (Item item : inventory) {
             
@@ -226,7 +241,7 @@ public class SceneMenuView extends View {
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getItemQuantity());
             
-            System.out.println(line.toString());
+           this.console.println(line.toString());
             }
             else {
                 
@@ -238,19 +253,19 @@ public class SceneMenuView extends View {
 
     private void displayMap() {
             
-            System.out.println(RunningErrands.getCurrentGame().getMap().getMapString());
+            this.console.println(RunningErrands.getCurrentGame().getMap().getMapString());
         }
 
     private void openCombatMenu() {
-        System.out.println("\n ***Runs Combat menu function ***");
+        this.console.println("\n ***Runs Combat menu function ***");
     }
 
     private void openConversationMenu() {
-        System.out.println("\n ***Runs Conversation menu function ***");
+        this.console.println("\n ***Runs Conversation menu function ***");
     }
 
     private void openBuySellMenu() {
-        System.out.println("\n ***Runs Store menu function ***");
+        this.console.println("\n ***Runs Store menu function ***");
     }
 
     private void travelHome() {

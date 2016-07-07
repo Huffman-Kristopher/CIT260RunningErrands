@@ -42,7 +42,7 @@ public class CombatMenuView extends View {
                 this.bribe();
                 break;
             default:
-                System.out.println("\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 break;  
         }
 
@@ -51,18 +51,18 @@ public class CombatMenuView extends View {
     
     private void weaponSelect() {
         // Display weapon select
-       System.out.println("*** weapon select function called ***");
+       this.console.println("*** weapon select function called ***");
     }
     private void attack() {
         //Display attack
-        System.out.println("*** attack function called ***");
+        this.console.println("*** attack function called ***");
     }
     private void runAway() {
         //Display runaway
-    System.out.println("*** runAway function called ***");
+   this.console.println("*** runAway function called ***");
     }
     private void bribe() {
         //Display bribe
-    System.out.println("*** bribe function called ***");
+    this.console.println("*** bribe function called ***");
     }
 }

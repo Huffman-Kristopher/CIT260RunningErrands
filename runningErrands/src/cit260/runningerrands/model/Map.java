@@ -7,6 +7,7 @@ package cit260.runningerrands.model;
 
 
 
+import cit260.runningerands.view.ErrorView;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -44,7 +45,7 @@ public class Map implements Serializable{
     public Map(int rowCount, int columnCount) {
         
         if(rowCount <1 || columnCount < 1) {
-            System.out.println("The number of rows and columns must be greater than zero.");
+            ErrorView.display(this.getClass().getName(), "Error reading input:" + "The number of rows and columns must be greater than zero.");
             return;
         }
         this.rowCount = rowCount;

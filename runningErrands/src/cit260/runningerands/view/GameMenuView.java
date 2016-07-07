@@ -85,7 +85,7 @@ public class GameMenuView extends View{
                 this.addOneDay();
                 return false;
             default:
-                System.out.println("\nInvalid main menu selection, please try again");
+               ErrorView.display(this.getClass().getName(), "\nInvalid main menu selection, please try again");
                 return false;  
         }
     }
@@ -136,7 +136,7 @@ public class GameMenuView extends View{
     }
 
     private void openEmailMenu() {
-        System.out.println("\n ***Runs email menu function ***");
+       this.console.println("\n ***Runs email menu function ***");
     }
 
     private void openHelpMenu() {
@@ -171,12 +171,12 @@ public class GameMenuView extends View{
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = persona.getItem();
         
-        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                              ");
         line.insert(0, "Description");
         line.insert(20, "Required");
         line.insert(30, "In Stock");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for (Item item : inventory) {
             
@@ -186,7 +186,7 @@ public class GameMenuView extends View{
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getItemQuantity());
             
-            System.out.println(line.toString());
+            this.console.println(line.toString());
             }
             else {
                 
@@ -198,7 +198,7 @@ public class GameMenuView extends View{
 
     private void displayMap() {
             
-            System.out.println(RunningErrands.getCurrentGame().getMap().getMapString());
+            this.console.println(RunningErrands.getCurrentGame().getMap().getMapString());
         }
         
     }

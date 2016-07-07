@@ -33,7 +33,7 @@ public class GamblingAmountMenuView extends View {
               + "\nPlease enter a bet amount or press 'R' to return to main menu: ");
         }
         else {
-            System.out.println("\nYou have already gambled today. Please return tomorrow.");
+            this.console.println("\nYou have already gambled today. Please return tomorrow.");
             this.openGameMenu();
         }
         
@@ -56,7 +56,7 @@ public class GamblingAmountMenuView extends View {
                 Persona persona = RunningErrands.getPersona();
                 int maxBet = persona.getMoney() - 1 ;
                 if (betAmount == 0 || betAmount > maxBet) {
-                    System.out.println("\nPlease enter a bet between 1 and " + maxBet);
+                    this.console.println("\nPlease enter a bet between 1 and " + maxBet);
                 }
                 else {
                     gambling = GamblingControl.createBet(betAmount);
@@ -65,7 +65,7 @@ public class GamblingAmountMenuView extends View {
                 break;
                 }
                 catch (NumberFormatException nf) {
-                    System.out.println("Please enter a numeric bet or R to return to the game menu.");
+                   ErrorView.display(this.getClass().getName()," Please enter a numeric bet or R to return to the game menu.");
                 }
         }
         return true;

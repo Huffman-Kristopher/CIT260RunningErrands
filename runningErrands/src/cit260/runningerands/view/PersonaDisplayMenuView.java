@@ -64,7 +64,7 @@ public class PersonaDisplayMenuView extends View {
                 this.createNewPersona();
                 break;
             default:
-                System.out.println("\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 return false;  
         }
         return true;

@@ -66,20 +66,20 @@ public class SellItemQtyMenuView extends View {
                     int sellQty = Integer.parseInt(value);
                     if (sellQty < 1) {
                         if(qtyOnHand == 1) {
-                            System.out.println("\nPlease enter 1 to sell or R to return to game menu.");
+                            this.console.println("\nPlease enter 1 to sell or R to return to game menu.");
                             return false;
                         }
 
-                        System.out.println("\nPlease enter a number from 1 to " + qtyOnHand);
+                        this.console.println("\nPlease enter a number from 1 to " + qtyOnHand);
                         return false;
                     }
                     else {
                         int saleAmount = ItemControl.sellItem(currentItem, sellQty);
-                        System.out.println("\nCongratulations! You just made $" + saleAmount + ".");
+                        this.console.println("\nCongratulations! You just made $" + saleAmount + ".");
                         return true;    
                         }
                 } catch (NumberFormatException ne) {
-                    System.out.println("\nInvalid selection, please enter a quantity.");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please enter a quantity.");
                     return false;
                 }
                 }

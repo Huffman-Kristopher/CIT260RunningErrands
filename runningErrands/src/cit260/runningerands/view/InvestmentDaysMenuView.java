@@ -43,7 +43,7 @@ private Investment investment;
                 try {
                 int investDays = Integer.parseInt(value);
                 if (investDays < 0 || investDays > 29) {
-                    System.out.println("\nInvalid selection, please try again");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 }
                 else {
                     investment = InvestmentControl.setInvestmentDays(investDays);
@@ -51,7 +51,7 @@ private Investment investment;
                 }
                 break;
                 } catch (NumberFormatException ne) {
-                    System.out.println("Please enter a numeric value or R to return to the game menu.");
+                    ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
                 }
         }
         return false;

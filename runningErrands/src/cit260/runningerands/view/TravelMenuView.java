@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Persona;
@@ -56,11 +57,11 @@ public class TravelMenuView extends View {
 }
 
     private void openMapMenu() {
-        System.out.println("\n ***Runs Map menu function ***");
+        this.console.println("\n ***Runs Map menu function ***");
     }
 
     private void openInventoryMenu() {
-        System.out.println("\n ***Runs Inventroy menu function ***");
+        this.console.println("\n ***Runs Inventroy menu function ***");
     }
 
     private void openInvestmentMenu() {
@@ -78,15 +79,29 @@ public class TravelMenuView extends View {
     }
 
     private void OpensaveGame() {
-       System.out.println("\n ***Runs save Game function ***");
+        // prompt for file path to save game
+       this.console.println("\n\nEnter the file path for the folder you wish to save the game to.");
+        String filePath = this.getInput();
+       try{
+           // save the game to the speciried file.
+           GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
+       } catch (Exception ex){
+            ErrorView.display("SceneMenuView", ex.getMessage());
+       }
     }
 
     private void openLoadGame() {
-        System.out.println("\n ***Runs Load Game function ***");
+        this.console.println("\n\nEnter the file path for the folder your game is saved to.");
+        String filePath = this.getInput();
+       try{
+           GameControl.getSavedGame(filePath);
+       } catch (Exception ex){
+           ErrorView.display("SceneMenuView", ex.getMessage());
+       }
     }
 
     private void openEmailMenu() {
-        System.out.println("\n ***Runs email menu function ***");
+        this.console.println("\n ***Runs email menu function ***");
     }
 
     private void openHelpMenu() {
@@ -96,7 +111,7 @@ public class TravelMenuView extends View {
     }
 
     private void openStatsMenu() {
-        System.out.println("\n ***Runs stats menu function ***");
+        this.console.println("\n ***Runs stats menu function ***");
     }
 
     private void openStoreMenu() {

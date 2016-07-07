@@ -88,7 +88,7 @@ public class SellItemsMenu extends View{
                     Item currentItem = inventory[itemChoice];
                     if ("N".equals(currentItem.getItemInSellList())) {
 
-                        System.out.println("\nPlease select a sellable item.");
+                        this.console.println("\nPlease select a sellable item.");
                         return false;
                     }
 
@@ -100,7 +100,7 @@ public class SellItemsMenu extends View{
                         return true;
                     }
                 } catch (NumberFormatException ne) {
-                    System.out.println("\nInvalid selection, please select an option above.");
+                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
         }

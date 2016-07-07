@@ -159,7 +159,6 @@ public class RunningErrands {
 
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
-
        try{
 
         //open charcter stream files ofr end user input and ouput

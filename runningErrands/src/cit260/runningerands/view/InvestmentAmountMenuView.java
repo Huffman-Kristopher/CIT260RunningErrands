@@ -47,7 +47,7 @@ private Investment investment;
                 Persona persona = RunningErrands.getPersona();
                 int maxBet = persona.getMoney() - 1 ;
                 if (investAmount < 1 || investAmount > maxBet) {
-                    System.out.println("\nPlease enter a bet between 1 and " + maxBet);
+                    this.console.println("\nPlease enter a bet between 1 and " + maxBet);
                 }
                 else {
                     investment = InvestmentControl.setInvestmentAmount(investAmount);
@@ -55,7 +55,7 @@ private Investment investment;
                 }
                 break;
                 } catch (NumberFormatException ne) {
-                    System.out.println("Please enter a numeric value or R to return to the game menu.");
+                    ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
                 }
         }
         return false;

@@ -27,7 +27,7 @@ import java.io.IOException;
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
          "\n*******************************************************"
         +"\n*                                                     *"
         +"\n* In this action packed text based role playing game  *"
@@ -65,13 +65,13 @@ import java.io.IOException;
         boolean valid = false;
         
         while (!valid) { //loop while not valid
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             
             value = this.keyboard.readLine(); //Get the next line typed on the keyboard
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: Player's Name cannot be blank");
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid value: Player's Name cannot be blank");
                 continue;
             }
             
@@ -83,14 +83,14 @@ import java.io.IOException;
 
     public boolean doAction(String playerName) {
         if (playerName.length() < 2) {
-        System.out.println("\nInvalid player name:"
+        ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid player name:"
             +"The name must be greater than one character in length.");
         return false;
         }
         
     Player player = GameControl.createPlayer(playerName);
     if (player == null) {
-        System.out.println("\nError creating the player.");
+        ErrorView.display(this.getClass().getName(), "\nError creating the player.");
         return false;
     }
     
@@ -99,7 +99,7 @@ import java.io.IOException;
 }
 
     private void displayNextView(Player player) {
-        System.out.println("\n==========================="
+        this.console.println("\n==========================="
                           +"\n Welcome to the game, " + player.getName() + "."
                           +"\n We hope you enjoy playing!"
                           +"\n==========================="
