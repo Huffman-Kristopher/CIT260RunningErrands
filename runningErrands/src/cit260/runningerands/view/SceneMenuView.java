@@ -48,6 +48,7 @@ public class SceneMenuView extends View {
                   + "\n8 – Investments"
                   + "\n9 – Gambling"
                   + "\nH – Help Menu"
+                  + "\nP - Print Scene List"
                   + "\nS – Save Game"
 //                  + "\nL – Load Game"
                   + "\nQ – Quit Game"
@@ -124,6 +125,9 @@ public class SceneMenuView extends View {
                 return false;
             case "9": //gamble.
                 this.openGamblingMenu();
+                return false;
+            case "P":
+                this.printSceneList();
                 return false;
             case "S": //save the game.
                 this.OpensaveGame();
@@ -262,6 +266,11 @@ public class SceneMenuView extends View {
         MapControl.movePersonaToNewLocation("01");
         this.SceneMenuValues();
         this.display();
+    }
+
+    private void printSceneList() {
+        PrintSceneListView printScenesListView = new PrintSceneListView();
+        printScenesListView.display();
     }
         
     }

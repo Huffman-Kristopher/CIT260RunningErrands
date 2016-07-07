@@ -78,15 +78,15 @@ public class GameControl {
     }
     public static void getSavedGame(String filePath)
             throws GameControlException{
-        Game game = null;
-        Investment investment = null;
-        Item[] items = null;
-        Location[][] locations = null;
-        Map map = null;
-        Npc[] npc = null;
-        Persona persona = null;
-        Player player = null;
-        Scene[] scenes = null;
+        Game game;
+        Investment investment;
+        Item[] items;
+        Location[][] locations;
+        Map map;
+        Npc[] npc;
+        Persona persona;
+        Player player;
+        Scene[] scenes;
         
         try( FileInputStream fips = new FileInputStream(filePath)){
             ObjectInputStream input = new ObjectInputStream(fips);
