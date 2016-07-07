@@ -12,12 +12,11 @@ import runningerrands.RunningErrands;
  *
  * @author Kris
  */
-public class SaveGameView extends View {
-    
-    public SaveGameView() {
+public class LoadGameView extends View{
+    public LoadGameView() {
         super("\n"
                   + "\n-------------------------"
-                  + "\n| Save Menu             |" 
+                  + "\n| Laod Game Menu             |" 
                   + "\n-------------------------"
                   + "\n - Please Enter a name for the save game file -"
                   + "\n-------------------------"
@@ -26,11 +25,10 @@ public class SaveGameView extends View {
 
     @Override
     public boolean doAction(String filePath) {
-      try{
-           // save the game to the speciried file.
-           GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
+        try{
+           GameControl.getSavedGame(filePath);
        } catch (Exception ex){
-            ErrorView.display("SceneMenuView", ex.getMessage());
+           ErrorView.display("SceneMenuView", ex.getMessage());
        }
         return true;
     }
