@@ -6,6 +6,7 @@
 package runningerrands;
 
 import cit260.runningerands.view.StartProgramView;
+import cit260.runningerrands.model.Email;
 import cit260.runningerrands.model.Gambling;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
@@ -39,11 +40,20 @@ public class RunningErrands {
     private static Map map = null;
     private static Scene[] scene = null;
     private static Item[] items = null;
+    private static Email[] emails = null;
     private static Item item = null;
     private static Npc[] npc = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
+
+    public static Email[] getEmails() {
+        return emails;
+    }
+
+    public static void setEmails(Email[] emails) {
+        RunningErrands.emails = emails;
+    }
 
     public static PrintWriter getOutFile() {
         return outFile;
