@@ -7,6 +7,7 @@ package cit260.runningerrands.model;
 
 import cit260.runningerrands.control.MapControl.LocationName;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -29,6 +30,8 @@ public class Scene implements Serializable{
     private String conversationSuccessText;
     private String conversationFailureText;
     private String conversationMenuType;
+    private Item itemToReceive;
+    private Objective objective;
 
     public String getDescription() {
         return description;
@@ -134,22 +137,40 @@ public class Scene implements Serializable{
         this.conversationMenuType = conversationMenuType;
     }
 
+    public Item getItemToReceive() {
+        return itemToReceive;
+    }
+
+    public void setItemToReceive(Item itemToReceive) {
+        this.itemToReceive = itemToReceive;
+    }
+
+    public Objective getObjective() {
+        return objective;
+    }
+
+    public void setObjective(Objective objective) {
+        this.objective = objective;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
-        hash = 89 * hash + Objects.hashCode(this.locationSymbol);
-        hash = 89 * hash + Objects.hashCode(this.location);
-        hash = 89 * hash + Objects.hashCode(this.type);
-        hash = 89 * hash + Objects.hashCode(this.itemToDeliver);
-        hash = 89 * hash + Objects.hashCode(this.menuOption1);
-        hash = 89 * hash + Objects.hashCode(this.menuOption2);
-        hash = 89 * hash + Objects.hashCode(this.menuOption3);
-        hash = 89 * hash + Objects.hashCode(this.conversationSuccessText);
-        hash = 89 * hash + Objects.hashCode(this.conversationFailureText);
-        hash = 89 * hash + Objects.hashCode(this.conversationMenuType);
+        hash = 71 * hash + Objects.hashCode(this.description);
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 71 * hash + Objects.hashCode(this.locationSymbol);
+        hash = 71 * hash + Objects.hashCode(this.location);
+        hash = 71 * hash + Objects.hashCode(this.type);
+        hash = 71 * hash + Objects.hashCode(this.itemToDeliver);
+        hash = 71 * hash + Objects.hashCode(this.menuOption1);
+        hash = 71 * hash + Objects.hashCode(this.menuOption2);
+        hash = 71 * hash + Objects.hashCode(this.menuOption3);
+        hash = 71 * hash + Objects.hashCode(this.conversationSuccessText);
+        hash = 71 * hash + Objects.hashCode(this.conversationFailureText);
+        hash = 71 * hash + Objects.hashCode(this.conversationMenuType);
+        hash = 71 * hash + Objects.hashCode(this.itemToReceive);
+        hash = 71 * hash + Objects.hashCode(this.objective);
         return hash;
     }
 
@@ -204,12 +225,19 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.itemToDeliver, other.itemToDeliver)) {
             return false;
         }
+        if (!Objects.equals(this.itemToReceive, other.itemToReceive)) {
+            return false;
+        }
+        if (!Objects.deepEquals(this.objective, other.objective)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationSuccessText=" + conversationSuccessText + ", conversationFailureText=" + conversationFailureText + ", conversationMenuType=" + conversationMenuType + '}';
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationSuccessText=" + conversationSuccessText + ", conversationFailureText=" + conversationFailureText + ", conversationMenuType=" + conversationMenuType + ", itemToReceive=" + itemToReceive + ", objective=" + objective + '}';
     }
 
+    
 }

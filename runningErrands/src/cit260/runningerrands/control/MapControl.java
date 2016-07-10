@@ -5,10 +5,11 @@
  */
 package cit260.runningerrands.control;
 
-import cit260.runningerrands.control.ItemControl.Items;
+import cit260.runningerrands.control.ObjectiveControl.Objectives;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Objective;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Scene;
 import exceptions.MapControlExceptions;
@@ -65,7 +66,7 @@ public class MapControl {
         startingScene.setMenuOption1("Combat Menu");
         startingScene.setMenuOption2("Conversation Menu");
         startingScene.setMenuOption3("Buy/Sell Menu");
-        startingScene.setConversationMenuType("Give");
+        startingScene.setConversationMenuType("Receive");
         startingScene.setConversationSuccessText("Enter success text");
         startingScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.startingScene.ordinal()] = startingScene;
@@ -78,7 +79,7 @@ public class MapControl {
         mallScene.setMenuOption1("Combat Menu");
         mallScene.setMenuOption2("Conversation Menu");
         mallScene.setMenuOption3("Buy/Sell Menu");
-        mallScene.setConversationMenuType("Give");
+        mallScene.setConversationMenuType("Receive");
         mallScene.setConversationSuccessText("Enter success text");
         mallScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.mallScene.ordinal()] = mallScene;
@@ -91,7 +92,7 @@ public class MapControl {
         GroceryScene.setMenuOption1("Combat Menu");
         GroceryScene.setMenuOption2("Conversation Menu");
         GroceryScene.setMenuOption3("Buy/Sell Menu");
-        GroceryScene.setConversationMenuType("Give");
+        GroceryScene.setConversationMenuType("Receive");
         GroceryScene.setConversationSuccessText("Enter success text");
         GroceryScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.GroceryScene.ordinal()] = GroceryScene;
@@ -104,7 +105,7 @@ public class MapControl {
         gasScene.setMenuOption1("Combat Menu");
         gasScene.setMenuOption2("Conversation Menu");
         gasScene.setMenuOption3("Buy/Sell Menu");
-        gasScene.setConversationMenuType("Give");
+        gasScene.setConversationMenuType("Receive");
         gasScene.setConversationSuccessText("Enter success text");
         gasScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.gasScene.ordinal()] = gasScene;
@@ -130,7 +131,7 @@ public class MapControl {
         sportingScene.setMenuOption1("Combat Menu");
         sportingScene.setMenuOption2("Conversation Menu");
         sportingScene.setMenuOption3("Buy/Sell Menu");
-        sportingScene.setConversationMenuType("Give");
+        sportingScene.setConversationMenuType("Receive");
         sportingScene.setConversationSuccessText("Enter success text");
         sportingScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.sportingScene.ordinal()] = sportingScene;
@@ -182,7 +183,7 @@ public class MapControl {
         schoolScene.setMenuOption1("Combat Menu");
         schoolScene.setMenuOption2("Conversation Menu");
         schoolScene.setMenuOption3("Buy/Sell Menu");
-        schoolScene.setConversationMenuType("Give");
+        schoolScene.setConversationMenuType("Receive");
         schoolScene.setConversationSuccessText("Enter success text");
         schoolScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.schoolScene.ordinal()] = schoolScene;
@@ -208,7 +209,7 @@ public class MapControl {
         comicScene.setMenuOption1("Combat Menu");
         comicScene.setMenuOption2("Conversation Menu");
         comicScene.setMenuOption3("Buy/Sell Menu");
-        comicScene.setConversationMenuType("Give");
+        comicScene.setConversationMenuType("Receive");
         comicScene.setConversationSuccessText("Enter success text");
         comicScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.comicScene.ordinal()] = comicScene;
@@ -221,7 +222,7 @@ public class MapControl {
         repairScene.setMenuOption1("Combat Menu");
         repairScene.setMenuOption2("Conversation Menu");
         repairScene.setMenuOption3("Buy/Sell Menu");
-        repairScene.setConversationMenuType("Give");
+        repairScene.setConversationMenuType("Receive");
         repairScene.setConversationSuccessText("Enter success text");
         repairScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.repairScene.ordinal()] = repairScene;
@@ -273,7 +274,7 @@ public class MapControl {
         fireworksScene.setMenuOption1("Combat Menu");
         fireworksScene.setMenuOption2("Conversation Menu");
         fireworksScene.setMenuOption3("Buy/Sell Menu");
-        fireworksScene.setConversationMenuType("Give");
+        fireworksScene.setConversationMenuType("Receive");
         fireworksScene.setConversationSuccessText("Enter success text");
         fireworksScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.fireworksScene.ordinal()] = fireworksScene;
@@ -286,7 +287,7 @@ public class MapControl {
         petScene.setMenuOption1("Combat Menu");
         petScene.setMenuOption2("Conversation Menu");
         petScene.setMenuOption3("Buy/Sell Menu");
-        petScene.setConversationMenuType("Give");
+        petScene.setConversationMenuType("Receive");
         petScene.setConversationSuccessText("Enter success text");
         petScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.petScene.ordinal()] = petScene;
@@ -312,7 +313,7 @@ public class MapControl {
         improvementScene.setMenuOption1("Combat Menu");
         improvementScene.setMenuOption2("Conversation Menu");
         improvementScene.setMenuOption3("Buy/Sell Menu");
-        improvementScene.setConversationMenuType("Give");
+        improvementScene.setConversationMenuType("Receive");
         improvementScene.setConversationSuccessText("Enter success text");
         improvementScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.improvementScene.ordinal()] = improvementScene;
@@ -364,7 +365,7 @@ public class MapControl {
         cemeteryScene.setMenuOption1("Combat Menu");
         cemeteryScene.setMenuOption2("Conversation Menu");
         cemeteryScene.setMenuOption3("Buy/Sell Menu");
-        cemeteryScene.setConversationMenuType("Give");
+        cemeteryScene.setConversationMenuType("Receive");
         cemeteryScene.setConversationSuccessText("Enter success text");
         cemeteryScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.cemeteryScene.ordinal()] = cemeteryScene;
@@ -377,7 +378,7 @@ public class MapControl {
         volcanoScene.setMenuOption1("Combat Menu");
         volcanoScene.setMenuOption2("Conversation Menu");
         volcanoScene.setMenuOption3("Buy/Sell Menu");
-        volcanoScene.setConversationMenuType("Give");
+        volcanoScene.setConversationMenuType("Receive");
         volcanoScene.setConversationSuccessText("Enter success text");
         volcanoScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.volcanoScene.ordinal()] = volcanoScene;
@@ -403,154 +404,52 @@ public class MapControl {
         orphanScene.setMenuOption1("Combat Menu");
         orphanScene.setMenuOption2("Conversation Menu");
         orphanScene.setMenuOption3("Buy/Sell Menu");
-        orphanScene.setConversationMenuType("Give");
+        orphanScene.setConversationMenuType("Receive");
         orphanScene.setConversationSuccessText("Enter success text");
         orphanScene.setConversationFailureText("Enter failure text");
         scenes[LocationName.orphanScene.ordinal()] = orphanScene;
         
-        Scene placeScene = new Scene();
-        placeScene.setDescription("placeholder");
-        placeScene.setLocationSymbol("28");
-        placeScene.setTravelTime(0);
-        placeScene.setDistance(127);
-        placeScene.setMenuOption1("Combat Menu");
-        placeScene.setMenuOption2("Conversation Menu");
-        placeScene.setMenuOption3("Buy/Sell Menu");
-        placeScene.setConversationMenuType("Give");
-        placeScene.setConversationSuccessText("Enter success text");
-        placeScene.setConversationFailureText("Enter failure text");
-        scenes[LocationName.placeScene.ordinal()] = placeScene;
+        Scene asylumScene = new Scene();
+        asylumScene.setDescription("Insane Asylum");
+        asylumScene.setLocationSymbol("28");
+        asylumScene.setTravelTime(0);
+        asylumScene.setDistance(127);
+        asylumScene.setMenuOption1("Combat Menu");
+        asylumScene.setMenuOption2("Conversation Menu");
+        asylumScene.setMenuOption3("Buy/Sell Menu");
+        asylumScene.setConversationMenuType("Give");
+        asylumScene.setConversationSuccessText("Enter success text");
+        asylumScene.setConversationFailureText("Enter failure text");
+        scenes[LocationName.asylumScene.ordinal()] = asylumScene;
         
-         Scene holderScene = new Scene();
-        holderScene.setDescription("placeholder");
-        holderScene.setLocationSymbol("29");
-        holderScene.setTravelTime(0);
-        holderScene.setDistance(127);
-        holderScene.setMenuOption1("Combat Menu");
-        holderScene.setMenuOption2("Conversation Menu");
-        holderScene.setMenuOption3("Buy/Sell Menu");
-        holderScene.setConversationMenuType("Give");
-        holderScene.setConversationSuccessText("Enter success text");
-        holderScene.setConversationFailureText("Enter failure text");
-        scenes[LocationName.holderScene.ordinal()] = holderScene;
+         Scene accountantScene = new Scene();
+        accountantScene.setDescription("Accountant");
+        accountantScene.setLocationSymbol("29");
+        accountantScene.setTravelTime(0);
+        accountantScene.setDistance(127);
+        accountantScene.setMenuOption1("Combat Menu");
+        accountantScene.setMenuOption2("Conversation Menu");
+        accountantScene.setMenuOption3("Buy/Sell Menu");
+        accountantScene.setConversationMenuType("Receive");
+        accountantScene.setConversationSuccessText("Enter success text");
+        accountantScene.setConversationFailureText("Enter failure text");
+        scenes[LocationName.accountantScene.ordinal()] = accountantScene;
         
-        Scene finishingScene = new Scene();
-        finishingScene.setDescription("Finishing Scene");
-        finishingScene.setLocationSymbol("30");
-        finishingScene.setTravelTime(0);
-        finishingScene.setDistance(127);
-        finishingScene.setMenuOption1("Combat Menu");
-        finishingScene.setMenuOption2("Conversation Menu");
-        finishingScene.setMenuOption3("Buy/Sell Menu");
-        finishingScene.setConversationMenuType("Give");
-        finishingScene.setConversationSuccessText("Enter success text");
-        finishingScene.setConversationFailureText("Enter failure text");
-        scenes[LocationName.finishingScene.ordinal()] = finishingScene;        
+        Scene redBoxScene = new Scene();
+        redBoxScene.setDescription("Finishing Scene");
+        redBoxScene.setLocationSymbol("30");
+        redBoxScene.setTravelTime(0);
+        redBoxScene.setDistance(127);
+        redBoxScene.setMenuOption1("Combat Menu");
+        redBoxScene.setMenuOption2("Conversation Menu");
+        redBoxScene.setMenuOption3("Buy/Sell Menu");
+        redBoxScene.setConversationMenuType("Give");
+        redBoxScene.setConversationSuccessText("Enter success text");
+        redBoxScene.setConversationFailureText("Enter failure text");
+        scenes[LocationName.redBoxScene.ordinal()] = redBoxScene;        
         return scenes;
         
     }
-
-    public static Scene[] assignItemToDeliver() {
-        
-        Scene[] scenes = RunningErrands.getScene();
-        Item[] item = RunningErrands.getItems();
-        
-        Scene startingScene = scenes[LocationName.startingScene.ordinal()];
-        startingScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene mallScene = scenes[LocationName.mallScene.ordinal()];
-        mallScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-
-        
-        Scene GroceryScene = scenes[LocationName.GroceryScene.ordinal()];
-        GroceryScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene gasScene = scenes[LocationName.gasScene.ordinal()];
-        gasScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene gunShopScene = scenes[LocationName.gunShopScene.ordinal()];
-        gunShopScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene sportingScene = scenes[LocationName.sportingScene.ordinal()];
-        sportingScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene libraryScene = scenes[LocationName.libraryScene.ordinal()];
-        libraryScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene churchScene = scenes[LocationName.churchScene.ordinal()];
-        churchScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene hospitalScene = scenes[LocationName.hospitalScene.ordinal()];
-        hospitalScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene schoolScene = scenes[LocationName.schoolScene.ordinal()];
-        schoolScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene bankScene = scenes[LocationName.bankScene.ordinal()];
-        bankScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene comicScene = scenes[LocationName.comicScene.ordinal()];
-        comicScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene repairScene = scenes[LocationName.repairScene.ordinal()];
-        repairScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene ninjaScene = scenes[LocationName.ninjaScene.ordinal()];
-        ninjaScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene armyScene = scenes[LocationName.armyScene.ordinal()];
-        armyScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene postScene = scenes[LocationName.postScene.ordinal()];
-        postScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene fireworksScene = scenes[LocationName.fireworksScene.ordinal()];
-        fireworksScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene petScene = scenes[LocationName.petScene.ordinal()];
-        petScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene MarinaScene = scenes[LocationName.MarinaScene.ordinal()];
-        MarinaScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene improvementScene = scenes[LocationName.improvementScene.ordinal()];
-        improvementScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene policeScene = scenes[LocationName.policeScene.ordinal()];
-        policeScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene zooScene = scenes[LocationName.zooScene.ordinal()];
-        zooScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene museumScene = scenes[LocationName.museumScene.ordinal()];
-        museumScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene cemeteryScene = scenes[LocationName.cemeteryScene.ordinal()];
-        cemeteryScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene volcanoScene = scenes[LocationName.volcanoScene.ordinal()];
-        volcanoScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene pizzaScene = scenes[LocationName.pizzaScene.ordinal()];
-        pizzaScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene orphanScene = scenes[LocationName.orphanScene.ordinal()];
-        orphanScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene placeScene = scenes[LocationName.placeScene.ordinal()];
-        placeScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene holderScene = scenes[LocationName.holderScene.ordinal()];
-        holderScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-        
-        Scene finishingScene = scenes[LocationName.finishingScene.ordinal()];
-        finishingScene.setItemToDeliver(item[Items.videoGame.ordinal()]);
-
-        return scenes;
-        
-    }
-        
-    
 
     public enum LocationName {
         
@@ -581,9 +480,9 @@ public class MapControl {
         volcanoScene, 
         pizzaScene, 
         orphanScene, 
-        placeScene,
-        holderScene, 
-        finishingScene
+        asylumScene,
+        accountantScene, 
+        redBoxScene
         
     }
     
@@ -617,13 +516,53 @@ public class MapControl {
         locations[4][4].setScene(scenes[LocationName.volcanoScene.ordinal()]);
         locations[5][0].setScene(scenes[LocationName.pizzaScene.ordinal()]);
         locations[5][1].setScene(scenes[LocationName.orphanScene.ordinal()]);
-        locations[5][2].setScene(scenes[LocationName.placeScene.ordinal()]);
-        locations[5][3].setScene(scenes[LocationName.holderScene.ordinal()]);
-        locations[5][4].setScene(scenes[LocationName.finishingScene.ordinal()]);
+        locations[5][2].setScene(scenes[LocationName.asylumScene.ordinal()]);
+        locations[5][3].setScene(scenes[LocationName.accountantScene.ordinal()]);
+        locations[5][4].setScene(scenes[LocationName.redBoxScene.ordinal()]);
         map.setLocations(locations);
         RunningErrands.setLocations(locations);
         
     }
+
+    public static void assignObjectivesToScenes() {
+        Scene[] scenes = RunningErrands.getScene();
+        Objective[] objectives = RunningErrands.getObjective();
+        
+        scenes[LocationName.startingScene.ordinal()].setObjective(objectives[Objectives.returnVideoGame.ordinal()]);
+        scenes[LocationName.mallScene.ordinal()].setObjective(objectives[Objectives.returnFreshOrgans.ordinal()]);
+        scenes[LocationName.GroceryScene.ordinal()].setObjective(objectives[Objectives.returnDonuts.ordinal()]);
+        scenes[LocationName.gasScene.ordinal()].setObjective(objectives[Objectives.returnAbramsTank.ordinal()]);
+        scenes[LocationName.gunShopScene.ordinal()].setObjective(objectives[Objectives.returnAr15.ordinal()]);
+        scenes[LocationName.sportingScene.ordinal()].setObjective(objectives[Objectives.returnKatana.ordinal()]);
+        scenes[LocationName.libraryScene.ordinal()].setObjective(objectives[Objectives.returnAncientBookofSpells.ordinal()]);
+        scenes[LocationName.churchScene.ordinal()].setObjective(objectives[Objectives.returnSacramentalWine.ordinal()]);
+        scenes[LocationName.hospitalScene.ordinal()].setObjective(objectives[Objectives.returnFreshOrgans.ordinal()]);
+        scenes[LocationName.schoolScene.ordinal()].setObjective(objectives[Objectives.returnReportCard.ordinal()]);
+        scenes[LocationName.bankScene.ordinal()].setObjective(objectives[Objectives.returnLoanApplication.ordinal()]);
+        scenes[LocationName.comicScene.ordinal()].setObjective(objectives[Objectives.returnAncientBookofSpells.ordinal()]);
+        scenes[LocationName.repairScene.ordinal()].setObjective(objectives[Objectives.returnAr15.ordinal()]);
+        scenes[LocationName.ninjaScene.ordinal()].setObjective(objectives[Objectives.returnKatana.ordinal()]);
+        scenes[LocationName.armyScene.ordinal()].setObjective(objectives[Objectives.returnAbramsTank.ordinal()]);
+        scenes[LocationName.postScene.ordinal()].setObjective(objectives[Objectives.returnTaxForms.ordinal()]);
+        scenes[LocationName.fireworksScene.ordinal()].setObjective(objectives[Objectives.returnLoanApplication.ordinal()]);
+        scenes[LocationName.petScene.ordinal()].setObjective(objectives[Objectives.returnGiraffe.ordinal()]);
+        scenes[LocationName.MarinaScene.ordinal()].setObjective(objectives[Objectives.returnBucketOfLava.ordinal()]);
+        scenes[LocationName.improvementScene.ordinal()].setObjective(objectives[Objectives.returnMysticalEgyptianSceptor.ordinal()]);
+        scenes[LocationName.policeScene.ordinal()].setObjective(objectives[Objectives.returnDonuts.ordinal()]);
+        scenes[LocationName.zooScene.ordinal()].setObjective(objectives[Objectives.returnGiraffe.ordinal()]);
+        scenes[LocationName.museumScene.ordinal()].setObjective(objectives[Objectives.returnMysticalEgyptianSceptor.ordinal()]);
+        scenes[LocationName.cemeteryScene.ordinal()].setObjective(objectives[Objectives.returnGrievingWidow.ordinal()]);
+        scenes[LocationName.volcanoScene.ordinal()].setObjective(objectives[Objectives.returnBucketOfLava.ordinal()]);
+        scenes[LocationName.pizzaScene.ordinal()].setObjective(objectives[Objectives.returnReportCard.ordinal()]);
+        scenes[LocationName.orphanScene.ordinal()].setObjective(objectives[Objectives.returnSacramentalWine.ordinal()]);
+        scenes[LocationName.asylumScene.ordinal()].setObjective(objectives[Objectives.returnGrievingWidow.ordinal()]);
+        scenes[LocationName.accountantScene.ordinal()].setObjective(objectives[Objectives.returnTaxForms.ordinal()]);
+        scenes[LocationName.redBoxScene.ordinal()].setObjective(objectives[Objectives.returnVideoGame.ordinal()]);
+        
+        RunningErrands.setScene(scenes);
+        
+    }
+
     
     private static Location[][] createLocations() {
         

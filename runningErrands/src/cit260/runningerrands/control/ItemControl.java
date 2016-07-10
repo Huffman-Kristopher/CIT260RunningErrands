@@ -25,7 +25,7 @@ public class ItemControl {
         leatherBag, 
         mountainDew, 
         drPepper,
-        bread,
+        donuts,
         gas,
         ar15,
         bazooka, 
@@ -37,7 +37,7 @@ public class ItemControl {
         baseballBat,
         dumbbells,
         golfClub,
-        ancientSpellBook,
+        ancientBookofSpells,
         libraryCard,
         taxForms,
         holyWater,
@@ -193,21 +193,21 @@ public class ItemControl {
         drPepper.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.drPepper.ordinal()] = drPepper;
         
-        Item bread = new Item();
-        bread.setDescription("Bread");
-        bread.setRequiredAmount(0);
-        bread.setItemCost(4);
-        bread.setItemValue(0);
-        bread.setItemQuantity(0);
-        bread.setStrength(10);
-        bread.setItemNumber(6);
-        bread.setItemBuyable("Y");
-        bread.setItemSellable("Y");
-        bread.setItemInSellList("N");
-        bread.setItemType("Weapon");
-        bread.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bread.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
-        item[Items.bread.ordinal()] = bread;
+        Item donuts = new Item();
+        donuts.setDescription("Bread");
+        donuts.setRequiredAmount(0);
+        donuts.setItemCost(4);
+        donuts.setItemValue(0);
+        donuts.setItemQuantity(0);
+        donuts.setStrength(10);
+        donuts.setItemNumber(6);
+        donuts.setItemBuyable("Y");
+        donuts.setItemSellable("Y");
+        donuts.setItemInSellList("N");
+        donuts.setItemType("Weapon");
+        donuts.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        donuts.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        item[Items.donuts.ordinal()] = donuts;
         
         Item gas = new Item();
         gas.setDescription("Gas");
@@ -386,21 +386,21 @@ public class ItemControl {
         golfClub.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.golfClub.ordinal()] = golfClub;
         
-        Item ancientSpellBook = new Item();
-        ancientSpellBook.setDescription("Ancient Spell Book");
-        ancientSpellBook.setRequiredAmount(0);
-        ancientSpellBook.setItemCost(0);
-        ancientSpellBook.setItemValue(0);
-        ancientSpellBook.setItemQuantity(0);
-        ancientSpellBook.setStrength(10);
-        ancientSpellBook.setItemNumber(18);
-        ancientSpellBook.setItemBuyable("N");
-        ancientSpellBook.setItemSellable("Y");
-        ancientSpellBook.setItemInSellList("N");
-        ancientSpellBook.setItemType("Weapon");
-        ancientSpellBook.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        ancientSpellBook.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
-        item[Items.ancientSpellBook.ordinal()] = ancientSpellBook;
+        Item ancientBookofSpells = new Item();
+        ancientBookofSpells.setDescription("Ancient Book of Spells");
+        ancientBookofSpells.setRequiredAmount(0);
+        ancientBookofSpells.setItemCost(0);
+        ancientBookofSpells.setItemValue(0);
+        ancientBookofSpells.setItemQuantity(0);
+        ancientBookofSpells.setStrength(10);
+        ancientBookofSpells.setItemNumber(18);
+        ancientBookofSpells.setItemBuyable("N");
+        ancientBookofSpells.setItemSellable("Y");
+        ancientBookofSpells.setItemInSellList("N");
+        ancientBookofSpells.setItemType("Weapon");
+        ancientBookofSpells.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        ancientBookofSpells.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        item[Items.ancientBookofSpells.ordinal()] = ancientBookofSpells;
         
         Item libraryCard = new Item();
         libraryCard.setDescription("Library Card");
@@ -771,7 +771,6 @@ public class ItemControl {
         item[Items.sparklers.ordinal()] = sparklers;
         
         Item m80 = new Item();
-        m80.setDescription("M-80");
         m80.setDescription("M-80");
         m80.setRequiredAmount(0);
         m80.setItemCost(15);
@@ -1184,6 +1183,26 @@ public class ItemControl {
         int totalSalePrice = itemValue * itemQuantity;
         int updatedBalance = PersonaControl.updatePersonaMoney(totalSalePrice);
         return totalSalePrice;
+
+    }
+    
+    public static int receiveItem (Item currentItem, int itemQuantity) {
+        
+        Persona persona = RunningErrands.getPersona();
+        int currentOnHand = currentItem.getItemQuantity();
+        int newOnHand = currentOnHand + itemQuantity;
+        currentItem.setItemQuantity(newOnHand);
+        return newOnHand;
+
+    }
+        
+    public static int fulfillObjective (Item currentItem, int itemQuantity) {
+        
+        Persona persona = RunningErrands.getPersona();
+        int currentOnHand = currentItem.getItemQuantity();
+        int newOnHand = currentOnHand - itemQuantity;
+        currentItem.setItemQuantity(newOnHand);
+        return newOnHand;
 
     }
 }

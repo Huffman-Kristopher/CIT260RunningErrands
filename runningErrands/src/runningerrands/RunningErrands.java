@@ -17,6 +17,7 @@ import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import cit260.runningerrands.model.Scene;
 import cit260.runningerrands.model.Npc;
+import cit260.runningerrands.model.Objective;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,6 +47,15 @@ public class RunningErrands {
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
+    private static Objective[] objective = null;
+
+    public static Objective[] getObjective() {
+        return objective;
+    }
+
+    public static void setObjective(Objective[] objective) {
+        RunningErrands.objective = objective;
+    }
 
     public static Email[] getEmails() {
         return emails;

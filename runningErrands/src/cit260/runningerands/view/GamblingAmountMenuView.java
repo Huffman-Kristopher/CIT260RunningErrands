@@ -34,7 +34,7 @@ public class GamblingAmountMenuView extends View {
         }
         else {
             this.console.println("\nYou have already gambled today. Please return tomorrow.");
-            this.openGameMenu();
+            this.openSceneMenu();
         }
         
         GamblingAmountMenuView gamblingAmountMenuView = new GamblingAmountMenuView(menu);
@@ -47,7 +47,7 @@ public class GamblingAmountMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
-                this.openGameMenu();
+                this.openSceneMenu();
                 break;
             default:
                 try {
@@ -75,9 +75,10 @@ public class GamblingAmountMenuView extends View {
         GamblingNumbersMenuView gamblingNumbersMenuView = new GamblingNumbersMenuView();
         gamblingNumbersMenuView.display();
     }
-    private void openGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+    private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
     
 }

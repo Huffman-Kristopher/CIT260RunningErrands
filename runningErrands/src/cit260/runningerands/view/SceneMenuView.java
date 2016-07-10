@@ -253,7 +253,8 @@ public class SceneMenuView extends View {
     }
 
     private void openConversationMenu() {
-        this.console.println("\n ***Runs Conversation menu function ***");
+        ConversationMenuView conversationMenuView = new ConversationMenuView();
+        conversationMenuView.display();
     }
 
     private void openBuySellMenu() {
