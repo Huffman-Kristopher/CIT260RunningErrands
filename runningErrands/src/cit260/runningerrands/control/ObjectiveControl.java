@@ -44,7 +44,10 @@ public class ObjectiveControl {
         Objective returnAncientBookofSpells = new Objective();
         returnAncientBookofSpells.setObjectiveItem(items[Items.ancientBookofSpells.ordinal()]);
         returnAncientBookofSpells.setObjectiveQtyRequired(1);
-        returnAncientBookofSpells.setObjectiveCompleteText("Congratulations! You returned the Ancient Spell Book. You have now completed this objective");
+        returnAncientBookofSpells.setObjectiveCompleteText("Congratulations! You returned the Ancient Book of Spells. You have now completed this objective");
+        returnAncientBookofSpells.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnAncientBookofSpells.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnAncientBookofSpells.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnAncientBookofSpells.setObjectiveCompleteFlag(false);
         objective[Objectives.returnAncientBookofSpells.ordinal()] = returnAncientBookofSpells;
         
@@ -52,6 +55,9 @@ public class ObjectiveControl {
         returnLoanApplication.setObjectiveItem(items[Items.loanApplication.ordinal()]);
         returnLoanApplication.setObjectiveQtyRequired(1);
         returnLoanApplication.setObjectiveCompleteText("Congratulations! You returned the loanApplication. You have now completed this objective");
+        returnLoanApplication.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnLoanApplication.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnLoanApplication.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnLoanApplication.setObjectiveCompleteFlag(false);
         objective[Objectives.returnLoanApplication.ordinal()] = returnLoanApplication;
         
@@ -59,6 +65,9 @@ public class ObjectiveControl {
         returnGrievingWidow.setObjectiveItem(items[Items.grievingWidow.ordinal()]);
         returnGrievingWidow.setObjectiveQtyRequired(1);
         returnGrievingWidow.setObjectiveCompleteText("Congratulations! You returned the grievingWidow. You have now completed this objective");
+        returnGrievingWidow.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnGrievingWidow.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnGrievingWidow.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnGrievingWidow.setObjectiveCompleteFlag(false);
         objective[Objectives.returnGrievingWidow.ordinal()] = returnGrievingWidow;
         
@@ -66,6 +75,9 @@ public class ObjectiveControl {
         returnGiraffe.setObjectiveItem(items[Items.giraffe.ordinal()]);
         returnGiraffe.setObjectiveQtyRequired(1);
         returnGiraffe.setObjectiveCompleteText("Congratulations! You returned the giraffe. You have now completed this objective");
+        returnGiraffe.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnGiraffe.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnGiraffe.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnGiraffe.setObjectiveCompleteFlag(false);
         objective[Objectives.returnGiraffe.ordinal()] = returnGiraffe;
         
@@ -73,6 +85,9 @@ public class ObjectiveControl {
         returnAbramsTank.setObjectiveItem(items[Items.abramsTank.ordinal()]);
         returnAbramsTank.setObjectiveQtyRequired(1);
         returnAbramsTank.setObjectiveCompleteText("Congratulations! You returned the abramsTank. You have now completed this objective");
+        returnAbramsTank.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnAbramsTank.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnAbramsTank.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnAbramsTank.setObjectiveCompleteFlag(false);
         objective[Objectives.returnAbramsTank.ordinal()] = returnAbramsTank;
         
@@ -80,6 +95,9 @@ public class ObjectiveControl {
         returnAr15.setObjectiveItem(items[Items.ar15.ordinal()]);
         returnAr15.setObjectiveQtyRequired(1);
         returnAr15.setObjectiveCompleteText("Congratulations! You returned the ar15. You have now completed this objective");
+        returnAncientBookofSpells.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnAncientBookofSpells.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnAncientBookofSpells.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnAr15.setObjectiveCompleteFlag(false);
         objective[Objectives.returnAr15.ordinal()] = returnAr15;
         
@@ -87,6 +105,9 @@ public class ObjectiveControl {
         returnSacramentalWine.setObjectiveItem(items[Items.sacramentalWine.ordinal()]);
         returnSacramentalWine.setObjectiveQtyRequired(1);
         returnSacramentalWine.setObjectiveCompleteText("Congratulations! You returned the sacramentalWine. You have now completed this objective");
+        returnSacramentalWine.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnSacramentalWine.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnSacramentalWine.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnSacramentalWine.setObjectiveCompleteFlag(false);
         objective[Objectives.returnSacramentalWine.ordinal()] = returnSacramentalWine;
         
@@ -94,6 +115,9 @@ public class ObjectiveControl {
         returnTaxForms.setObjectiveItem(items[Items.taxForms.ordinal()]);
         returnTaxForms.setObjectiveQtyRequired(1);
         returnTaxForms.setObjectiveCompleteText("Congratulations! You returned the taxForms. You have now completed this objective");
+        returnTaxForms.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnTaxForms.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnTaxForms.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnTaxForms.setObjectiveCompleteFlag(false);
         objective[Objectives.returnTaxForms.ordinal()] = returnTaxForms;
         
@@ -101,6 +125,9 @@ public class ObjectiveControl {
         returnFreshOrgans.setObjectiveItem(items[Items.freshOrgans.ordinal()]);
         returnFreshOrgans.setObjectiveQtyRequired(1);
         returnFreshOrgans.setObjectiveCompleteText("Congratulations! You returned the freshOrgans. You have now completed this objective");
+        returnFreshOrgans.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnFreshOrgans.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnFreshOrgans.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnFreshOrgans.setObjectiveCompleteFlag(false);
         objective[Objectives.returnFreshOrgans.ordinal()] = returnFreshOrgans;
         
@@ -108,6 +135,9 @@ public class ObjectiveControl {
         returnBucketOfLava.setObjectiveItem(items[Items.bucketOfLava.ordinal()]);
         returnBucketOfLava.setObjectiveQtyRequired(1);
         returnBucketOfLava.setObjectiveCompleteText("Congratulations! You returned the bucketOfLava. You have now completed this objective");
+        returnBucketOfLava.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnBucketOfLava.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnBucketOfLava.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnBucketOfLava.setObjectiveCompleteFlag(false);
         objective[Objectives.returnBucketOfLava.ordinal()] = returnBucketOfLava;
         
@@ -115,6 +145,9 @@ public class ObjectiveControl {
         returnMysticalEgyptianSceptor.setObjectiveItem(items[Items.mysticalEgyptianSceptor.ordinal()]);
         returnMysticalEgyptianSceptor.setObjectiveQtyRequired(1);
         returnMysticalEgyptianSceptor.setObjectiveCompleteText("Congratulations! You returned the mysticalEgyptianSceptor. You have now completed this objective");
+        returnMysticalEgyptianSceptor.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnMysticalEgyptianSceptor.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnMysticalEgyptianSceptor.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnMysticalEgyptianSceptor.setObjectiveCompleteFlag(false);
         objective[Objectives.returnMysticalEgyptianSceptor.ordinal()] = returnMysticalEgyptianSceptor;
         
@@ -122,6 +155,9 @@ public class ObjectiveControl {
         returnReportCard.setObjectiveItem(items[Items.reportCard.ordinal()]);
         returnReportCard.setObjectiveQtyRequired(1);
         returnReportCard.setObjectiveCompleteText("Congratulations! You returned the reportCard. You have now completed this objective");
+        returnReportCard.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnReportCard.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnReportCard.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnReportCard.setObjectiveCompleteFlag(false);
         objective[Objectives.returnReportCard.ordinal()] = returnReportCard;
         
@@ -129,6 +165,9 @@ public class ObjectiveControl {
         returnKatana.setObjectiveItem(items[Items.katana.ordinal()]);
         returnKatana.setObjectiveQtyRequired(1);
         returnKatana.setObjectiveCompleteText("Congratulations! You returned the katana. You have now completed this objective");
+        returnKatana.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnKatana.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnKatana.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnKatana.setObjectiveCompleteFlag(false);
         objective[Objectives.returnKatana.ordinal()] = returnKatana;
         
@@ -136,6 +175,9 @@ public class ObjectiveControl {
         returnDonuts.setObjectiveItem(items[Items.donuts.ordinal()]);
         returnDonuts.setObjectiveQtyRequired(1);
         returnDonuts.setObjectiveCompleteText("Congratulations! You returned the donuts. You have now completed this objective");
+        returnDonuts.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnDonuts.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnDonuts.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnDonuts.setObjectiveCompleteFlag(false);
         objective[Objectives.returnDonuts.ordinal()] = returnDonuts;
         
@@ -143,6 +185,9 @@ public class ObjectiveControl {
         returnVideoGame.setObjectiveItem(items[Items.videoGame.ordinal()]);
         returnVideoGame.setObjectiveQtyRequired(1);
         returnVideoGame.setObjectiveCompleteText("Congratulations! You returned the videoGame. You have now completed this objective");
+        returnVideoGame.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
+        returnVideoGame.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
+        returnVideoGame.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
         returnVideoGame.setObjectiveCompleteFlag(false);
         objective[Objectives.returnVideoGame.ordinal()] = returnVideoGame;
         

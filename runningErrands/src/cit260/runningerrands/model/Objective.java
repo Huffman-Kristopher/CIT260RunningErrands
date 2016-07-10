@@ -19,6 +19,9 @@ public class Objective implements Serializable{
     private String objectiveCompleteText;
     private boolean objectiveCompleteFlag;
     private boolean objectiveCompletedTodayFlag;
+    private String objectiveNotEnoughText;
+    private String objectiveAlreadyHaveItemsText;
+    private String objectiveGiveItemText;
 
     public Item getObjectiveItem() {
         return objectiveItem;
@@ -60,14 +63,41 @@ public class Objective implements Serializable{
         this.objectiveCompletedTodayFlag = objectiveCompletedTodayFlag;
     }
 
+    public String getObjectiveNotEnoughText() {
+        return objectiveNotEnoughText;
+    }
+
+    public void setObjectiveNotEnoughText(String objectiveNotEnoughText) {
+        this.objectiveNotEnoughText = objectiveNotEnoughText;
+    }
+
+    public String getObjectiveAlreadyHaveItemsText() {
+        return objectiveAlreadyHaveItemsText;
+    }
+
+    public void setObjectiveAlreadyHaveItemsText(String objectiveAlreadyHaveItemsText) {
+        this.objectiveAlreadyHaveItemsText = objectiveAlreadyHaveItemsText;
+    }
+
+    public String getObjectiveGiveItemText() {
+        return objectiveGiveItemText;
+    }
+
+    public void setObjectiveGiveItemText(String objectiveGiveItemText) {
+        this.objectiveGiveItemText = objectiveGiveItemText;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 13 * hash + Objects.hashCode(this.objectiveItem);
-        hash = 13 * hash + this.objectiveQtyRequired;
-        hash = 13 * hash + Objects.hashCode(this.objectiveCompleteText);
-        hash = 13 * hash + (this.objectiveCompleteFlag ? 1 : 0);
-        hash = 13 * hash + (this.objectiveCompletedTodayFlag ? 1 : 0);
+        int hash = 5;
+        hash = 71 * hash + Objects.hashCode(this.objectiveItem);
+        hash = 71 * hash + this.objectiveQtyRequired;
+        hash = 71 * hash + Objects.hashCode(this.objectiveCompleteText);
+        hash = 71 * hash + (this.objectiveCompleteFlag ? 1 : 0);
+        hash = 71 * hash + (this.objectiveCompletedTodayFlag ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.objectiveNotEnoughText);
+        hash = 71 * hash + Objects.hashCode(this.objectiveAlreadyHaveItemsText);
+        hash = 71 * hash + Objects.hashCode(this.objectiveGiveItemText);
         return hash;
     }
 
@@ -95,6 +125,15 @@ public class Objective implements Serializable{
         if (!Objects.equals(this.objectiveCompleteText, other.objectiveCompleteText)) {
             return false;
         }
+        if (!Objects.equals(this.objectiveNotEnoughText, other.objectiveNotEnoughText)) {
+            return false;
+        }
+        if (!Objects.equals(this.objectiveAlreadyHaveItemsText, other.objectiveAlreadyHaveItemsText)) {
+            return false;
+        }
+        if (!Objects.equals(this.objectiveGiveItemText, other.objectiveGiveItemText)) {
+            return false;
+        }
         if (!Objects.equals(this.objectiveItem, other.objectiveItem)) {
             return false;
         }
@@ -103,8 +142,8 @@ public class Objective implements Serializable{
 
     @Override
     public String toString() {
-        return "Objective{" + "objectiveItem=" + objectiveItem + ", objectiveQtyRequired=" + objectiveQtyRequired + ", objectiveCompleteText=" + objectiveCompleteText + ", objectiveCompleteFlag=" + objectiveCompleteFlag + ", objectiveCompletedTodayFlag=" + objectiveCompletedTodayFlag + '}';
+        return "Objective{" + "objectiveItem=" + objectiveItem + ", objectiveQtyRequired=" + objectiveQtyRequired + ", objectiveCompleteText=" + objectiveCompleteText + ", objectiveCompleteFlag=" + objectiveCompleteFlag + ", objectiveCompletedTodayFlag=" + objectiveCompletedTodayFlag + ", objectiveNotEnoughText=" + objectiveNotEnoughText + ", objectiveAlreadyHaveItemsText=" + objectiveAlreadyHaveItemsText + ", objectiveGiveItemText=" + objectiveGiveItemText + '}';
     }
-   
+    
     
 }

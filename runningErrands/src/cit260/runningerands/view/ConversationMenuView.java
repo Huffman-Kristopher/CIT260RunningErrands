@@ -46,14 +46,14 @@ public class ConversationMenuView extends View {
                     int giveItemQtyReq = objective.getObjectiveQtyRequired();
 
                     if(giveItemQtyOnHand < giveItemQtyReq) {
-                        String sceneFailureText = currentScene.getConversationFailureText();
+                        String sceneFailureText = objective.getObjectiveNotEnoughText();
                         this.console.println(sceneFailureText);
                         this.openSceneMenuView();
                         return true;
                     }
 
                     else {
-                        String sceneSuccessText = currentScene.getConversationSuccessText();
+                        String sceneSuccessText = objective.getObjectiveCompleteText();
                         this.console.println(sceneSuccessText);
                         /** Remove required item from inventory**/
                         fulfillObjective(giveItem, giveItemQtyReq);
@@ -68,14 +68,14 @@ public class ConversationMenuView extends View {
                     int receiveItemQtyOnHand = receiveItem.getItemQuantity();
                     int receiveItemQtyReq = objective.getObjectiveQtyRequired();
                     if(receiveItemQtyOnHand >= receiveItemQtyReq) {
-                        String sceneFailureText = currentScene.getConversationFailureText();
+                        String sceneFailureText = objective.getObjectiveAlreadyHaveItemsText();
                         this.console.println(sceneFailureText);
                         this.openSceneMenuView();
                         return true;
                     }
 
                     else {
-                        String sceneSuccessText = currentScene.getConversationSuccessText();
+                        String sceneSuccessText = objective.getObjectiveGiveItemText();
                         this.console.println(sceneSuccessText);
                         receiveItem(receiveItem, receiveItemQtyReq);
                         /** Add required item to inventory**/
