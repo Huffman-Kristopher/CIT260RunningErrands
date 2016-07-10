@@ -151,9 +151,66 @@ public class ObjectiveControl {
         return objective;
     }
     
+    public static Objective[] resetObjectiveCompletedTodayFlag() {
+        
+        Objective[] objective = RunningErrands.getObjective();
+        
+        objective[0].setObjectiveCompletedTodayFlag(false);
+        objective[1].setObjectiveCompletedTodayFlag(false);
+        objective[2].setObjectiveCompletedTodayFlag(false);
+        objective[3].setObjectiveCompletedTodayFlag(false);
+        objective[4].setObjectiveCompletedTodayFlag(false);
+        objective[5].setObjectiveCompletedTodayFlag(false);
+        objective[6].setObjectiveCompletedTodayFlag(false);
+        objective[7].setObjectiveCompletedTodayFlag(false);
+        objective[8].setObjectiveCompletedTodayFlag(false);
+        objective[9].setObjectiveCompletedTodayFlag(false);
+        objective[10].setObjectiveCompletedTodayFlag(false);
+        objective[11].setObjectiveCompletedTodayFlag(false);
+        objective[12].setObjectiveCompletedTodayFlag(false);
+        objective[13].setObjectiveCompletedTodayFlag(false);
+        objective[14].setObjectiveCompletedTodayFlag(false);
+        return objective;
+    }
+    
+    public static int countObjectivcesCompleted() {
+        
+        Objective[] objectives = RunningErrands.getObjective();
+        int objectivesCompleted = 0;
+        for (Objective objective : objectives) {
+            if (objective.isObjectiveCompletedTodayFlag()) {
+                objectivesCompleted = objectivesCompleted + 1;
+            }
+            else {
+                objectivesCompleted = objectivesCompleted;
+            }
+            
+        }
+        return objectivesCompleted;
+        
+    }
+    
+    public static String checkObjectiveCompletedToday() {
+        
+        Objective[] objectives = RunningErrands.getObjective();
+        String objectiveCompleted = "No objectives completed today.";
+        for (Objective objective : objectives) {
+            if (objective.isObjectiveCompletedTodayFlag()) {
+                objectiveCompleted = objective.getObjectiveCompleteText();
+            }
+            else {
+                objectiveCompleted = objectiveCompleted;
+            }
+            
+        }
+        return objectiveCompleted;
+}
+    
+    
     public static boolean markObjectiveComplete (Objective objective) {
     
         objective.setObjectiveCompleteFlag(true);
+        objective.setObjectiveCompletedTodayFlag(true);
         return true;
     }
     

@@ -66,9 +66,7 @@ public class ConversationMenuView extends View {
                 else {
                     Item receiveItem = objective.getObjectiveItem();
                     int receiveItemQtyOnHand = receiveItem.getItemQuantity();
-                    this.console.println("Qty on Hand: " + receiveItemQtyOnHand);
                     int receiveItemQtyReq = objective.getObjectiveQtyRequired();
-                    this.console.println("Qty Required: " + receiveItemQtyReq);
                     if(receiveItemQtyOnHand >= receiveItemQtyReq) {
                         String sceneFailureText = currentScene.getConversationFailureText();
                         this.console.println(sceneFailureText);

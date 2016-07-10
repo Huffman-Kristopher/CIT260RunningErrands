@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package cit260.runningerrands.control;
+import static cit260.runningerrands.control.ObjectiveControl.checkObjectiveCompletedToday;
+import static cit260.runningerrands.control.ObjectiveControl.resetObjectiveCompletedTodayFlag;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Npc;
@@ -30,6 +32,7 @@ public class PersonaControl {
         RunningErrands.setInvestment(investment); // Save the investment
         Item[] inventoryList = ItemControl.createInventoryList();
         Objective[] objectives = ObjectiveControl.createObjectiveList();
+        resetObjectiveCompletedTodayFlag();
         MapControl.assignObjectivesToScenes();
         persona.setItem(inventoryList);
         Npc[] npcs = NPCControl.createNPCList();
@@ -49,7 +52,7 @@ public class PersonaControl {
             case "Mail Clerk": //open map.
                 salary = 500;
                 break;
-            case "Pizza Deliverer": //open map.
+            case "Pizza Delivery Driver": //open map.
                 salary = 250;
                 break;
             case "Auto Mechanic": //open map.
@@ -130,6 +133,9 @@ public class PersonaControl {
             investment = new Investment();
             RunningErrands.setInvestment(investment);
         }
+        
+        resetObjectiveCompletedTodayFlag();
         MapControl.movePersonaToNewLocation("01");
     }
+
 }

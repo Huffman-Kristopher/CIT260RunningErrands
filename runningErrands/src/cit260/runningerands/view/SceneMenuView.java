@@ -6,6 +6,8 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.MapControl;
+import static cit260.runningerrands.control.ObjectiveControl.checkObjectiveCompletedToday;
+import static cit260.runningerrands.control.ObjectiveControl.countObjectivcesCompleted;
 import cit260.runningerrands.control.PersonaControl;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Location;
@@ -262,11 +264,19 @@ public class SceneMenuView extends View {
     }
 
     private void travelHome() {
-        
-        PersonaControl.addOneDay();
-        MapControl.movePersonaToNewLocation("01");
-        this.SceneMenuValues();
-        this.display();
+        String objectiveCompletedToday = checkObjectiveCompletedToday();
+        this.console.println(objectiveCompletedToday);
+        int objectivesCompleted = countObjectivcesCompleted();
+        if (objectivesCompleted == 15) {
+            WinGameMenu winGameMenu = new WinGameMenu();
+            winGameMenu.display();
+        }
+        else {
+            PersonaControl.addOneDay();
+            MapControl.movePersonaToNewLocation("01");
+            this.SceneMenuValues();
+            this.display();
+        }
     }
 
     private void printSceneList() {

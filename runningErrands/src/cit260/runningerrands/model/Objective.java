@@ -18,6 +18,7 @@ public class Objective implements Serializable{
     private int objectiveQtyRequired;
     private String objectiveCompleteText;
     private boolean objectiveCompleteFlag;
+    private boolean objectiveCompletedTodayFlag;
 
     public Item getObjectiveItem() {
         return objectiveItem;
@@ -51,13 +52,22 @@ public class Objective implements Serializable{
         this.objectiveCompleteFlag = objectiveCompleteFlag;
     }
 
+    public boolean isObjectiveCompletedTodayFlag() {
+        return objectiveCompletedTodayFlag;
+    }
+
+    public void setObjectiveCompletedTodayFlag(boolean objectiveCompletedTodayFlag) {
+        this.objectiveCompletedTodayFlag = objectiveCompletedTodayFlag;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.objectiveItem);
-        hash = 53 * hash + this.objectiveQtyRequired;
-        hash = 53 * hash + Objects.hashCode(this.objectiveCompleteText);
-        hash = 53 * hash + (this.objectiveCompleteFlag ? 1 : 0);
+        int hash = 3;
+        hash = 13 * hash + Objects.hashCode(this.objectiveItem);
+        hash = 13 * hash + this.objectiveQtyRequired;
+        hash = 13 * hash + Objects.hashCode(this.objectiveCompleteText);
+        hash = 13 * hash + (this.objectiveCompleteFlag ? 1 : 0);
+        hash = 13 * hash + (this.objectiveCompletedTodayFlag ? 1 : 0);
         return hash;
     }
 
@@ -79,6 +89,9 @@ public class Objective implements Serializable{
         if (this.objectiveCompleteFlag != other.objectiveCompleteFlag) {
             return false;
         }
+        if (this.objectiveCompletedTodayFlag != other.objectiveCompletedTodayFlag) {
+            return false;
+        }
         if (!Objects.equals(this.objectiveCompleteText, other.objectiveCompleteText)) {
             return false;
         }
@@ -90,8 +103,8 @@ public class Objective implements Serializable{
 
     @Override
     public String toString() {
-        return "Objective{" + "objectiveItem=" + objectiveItem + ", objectiveQtyRequired=" + objectiveQtyRequired + ", objectiveCompleteText=" + objectiveCompleteText + ", objectiveCompleteFlag=" + objectiveCompleteFlag + '}';
+        return "Objective{" + "objectiveItem=" + objectiveItem + ", objectiveQtyRequired=" + objectiveQtyRequired + ", objectiveCompleteText=" + objectiveCompleteText + ", objectiveCompleteFlag=" + objectiveCompleteFlag + ", objectiveCompletedTodayFlag=" + objectiveCompletedTodayFlag + '}';
     }
-    
+   
     
 }
