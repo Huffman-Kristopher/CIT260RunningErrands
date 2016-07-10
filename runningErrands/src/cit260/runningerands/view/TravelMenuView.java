@@ -8,6 +8,7 @@ package cit260.runningerands.view;
 import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.control.MapControl;
 import cit260.runningerrands.model.Location;
+import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
 
@@ -47,11 +48,23 @@ public class TravelMenuView extends View {
             return true;
         }
         else {
+            Persona persona = RunningErrands.getPersona();
+            Location currentLocation = persona.getLocation();
+            Map map = RunningErrands.getMap();
+            Location newLocation = map.getLocationFromSymbol(value);
+            if (currentLocation == newLocation) {
+                String currentLocationDecription = currentLocation.getScene().getDescription();
+                ErrorView.display(this.getClass().getName(), "\nYou are already at " + currentLocationDecription + ", please try again");
+                return false;
+            }
+            else {
+                
             MapControl.movePersonaToNewLocation(value);
             String menu = "";
             SceneMenuView sceneMenuView = new SceneMenuView(menu);
             sceneMenuView.SceneMenuValues();
             return true;
+            }
         }
 
 }

@@ -10,7 +10,7 @@ import cit260.runningerrands.model.Email;
 import runningerrands.RunningErrands;
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class EmailControl {
     

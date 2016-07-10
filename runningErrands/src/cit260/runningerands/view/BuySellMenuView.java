@@ -7,7 +7,7 @@ package cit260.runningerands.view;
 
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class BuySellMenuView extends View{
     

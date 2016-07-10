@@ -7,7 +7,7 @@ package cit260.runningerands.view;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class WinGameMenu extends View {
         
@@ -15,15 +15,14 @@ public class WinGameMenu extends View {
         super("Congratulations! You have successfully" +
             "\ncompleted all objectives and returned" +
             "\nhome! You have won the game!!" +
-            "\nPlease press Q to quit the game and" +
-            "\nreturn to the main menu.");
+            "\nPlease press Q to exit the game.");
     }
 
     @Override
     public boolean doAction(String value) {
         switch (value) {
             case "Q": //return to main menu.
-                this.openMainMenu();
+                this.endGame();
                 return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
@@ -32,6 +31,9 @@ public class WinGameMenu extends View {
         
     }    
         
+    private void endGame() {
+        System.exit(0);
+    }
     private void openMainMenu() {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();    

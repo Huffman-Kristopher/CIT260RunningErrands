@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
- * @author Kris
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class CombatControl {
     // this is still combat control //

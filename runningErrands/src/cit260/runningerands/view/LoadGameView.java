@@ -6,12 +6,10 @@
 package cit260.runningerands.view;
 
 import cit260.runningerrands.control.GameControl;
-import runningerrands.RunningErrands;
 
 /**
  *
- * @author Kris
- */
+ *  @author Kristopher Huffman And Kirk Brown */
 public class LoadGameView extends View{
     public LoadGameView() {
         super("\n"

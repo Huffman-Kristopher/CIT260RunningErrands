@@ -436,7 +436,7 @@ public class MapControl {
         scenes[LocationName.accountantScene.ordinal()] = accountantScene;
         
         Scene redBoxScene = new Scene();
-        redBoxScene.setDescription("Finishing Scene");
+        redBoxScene.setDescription("RedBox");
         redBoxScene.setLocationSymbol("30");
         redBoxScene.setTravelTime(0);
         redBoxScene.setDistance(127);

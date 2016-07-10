@@ -5,18 +5,13 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.GameControl;
-import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Scene;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import runningerrands.RunningErrands;
 
 /**
  *
- * @author Kris
- */
+ *  @author Kristopher Huffman And Kirk Brown */
 public class PrintSceneListView extends View{
     public PrintSceneListView() {
         super("\n"

@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class Email implements Serializable {
 

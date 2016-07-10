@@ -1,2 +1,0 @@
-cit260.runningerands.view.StartProgramView - Error reading input:
-Invalid player name:The name must be greater than one character in length.

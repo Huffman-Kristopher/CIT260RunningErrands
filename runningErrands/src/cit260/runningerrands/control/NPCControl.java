@@ -9,7 +9,7 @@ import cit260.runningerrands.model.Npc;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class NPCControl {
     

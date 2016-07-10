@@ -118,7 +118,15 @@ public class Map implements Serializable{
             for (int col = 0; col < columnCount; col++) {
                 if (row == rowCount -1 ) {
                     if ( col == columnCount -1) {
-                        
+                        String locationSymbol = locations[row][col].getScene().getLocationSymbol();
+                        if (locationSymbol == symbol) {
+                            
+                            rtn += "XX - You Are Here!\n";
+                            
+                        }
+                        else {
+                            rtn += locations[row][col].getScene().getLocationSymbol() + " - " + locations[row][col].getScene().getDescription() + "\n";
+                        }
                     }
                     else {
                         String locationSymbol = locations[row][col].getScene().getLocationSymbol();
