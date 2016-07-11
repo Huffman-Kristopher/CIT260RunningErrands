@@ -122,8 +122,8 @@ public class ItemControl {
         shirt.setItemInSellList("N");
         shirt.setItemInBuyList("Y");
         shirt.setItemType("Nonweapon");
-        shirt.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        shirt.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        shirt.setSceneToBuy(scene[LocationName.mallScene.ordinal()]);
+        shirt.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.shirt.ordinal()] = shirt;
         
         Item videoGame = new Item();
@@ -140,8 +140,8 @@ public class ItemControl {
         videoGame.setItemInSellList("N");
         videoGame.setItemInBuyList("Y");
         videoGame.setItemType("Nonweapon");
-        videoGame.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        videoGame.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        videoGame.setSceneToBuy(scene[LocationName.redBoxScene.ordinal()]);
+        videoGame.setSceneToSell(scene[LocationName.comicScene.ordinal()]);
         item[Items.videoGame.ordinal()] = videoGame;
         
         Item leatherBag = new Item();
@@ -156,8 +156,8 @@ public class ItemControl {
         leatherBag.setItemSellable("Y");
         leatherBag.setItemInSellList("N");
         leatherBag.setItemType("Nonweapon");
-        leatherBag.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        leatherBag.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        leatherBag.setSceneToBuy(scene[LocationName.mallScene.ordinal()]);
+        leatherBag.setSceneToSell(scene[LocationName.armyScene.ordinal()]);
         item[Items.leatherBag.ordinal()] = leatherBag;
         
         Item mountainDew = new Item();
@@ -173,8 +173,8 @@ public class ItemControl {
         mountainDew.setItemSellable("Y");
         mountainDew.setItemInSellList("N");
         mountainDew.setItemType("Nonweapon");
-        mountainDew.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        mountainDew.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        mountainDew.setSceneToBuy(scene[LocationName.GroceryScene.ordinal()]);
+        mountainDew.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.mountainDew.ordinal()] = mountainDew;
         
         Item drPepper = new Item();
@@ -189,12 +189,12 @@ public class ItemControl {
         drPepper.setItemSellable("Y");
         drPepper.setItemInSellList("N");
         drPepper.setItemType("Nonweapon");
-        drPepper.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        drPepper.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        drPepper.setSceneToBuy(scene[LocationName.GroceryScene.ordinal()]);
+        drPepper.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.drPepper.ordinal()] = drPepper;
         
         Item donuts = new Item();
-        donuts.setDescription("Bread");
+        donuts.setDescription("Donuts");
         donuts.setRequiredAmount(0);
         donuts.setItemCost(4);
         donuts.setItemValue(0);
@@ -205,8 +205,8 @@ public class ItemControl {
         donuts.setItemSellable("Y");
         donuts.setItemInSellList("N");
         donuts.setItemType("Nonweapon");
-        donuts.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        donuts.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        donuts.setSceneToBuy(scene[LocationName.GroceryScene.ordinal()]);
+        donuts.setSceneToSell(scene[LocationName.orphanScene.ordinal()]);
         item[Items.donuts.ordinal()] = donuts;
         
         Item gas = new Item();
@@ -221,8 +221,8 @@ public class ItemControl {
         gas.setItemSellable("Y");
         gas.setItemInSellList("N");
         gas.setItemType("Nonweapon");
-        gas.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        gas.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        gas.setSceneToBuy(scene[LocationName.gasScene.ordinal()]);
+        gas.setSceneToSell(scene[LocationName.armyScene.ordinal()]);
         item[Items.gas.ordinal()] = gas;
         
         Item ar15 = new Item();
@@ -238,7 +238,7 @@ public class ItemControl {
         ar15.setItemSellable("Y");
         ar15.setItemInSellList("N");
         ar15.setItemType("Weapon");
-        ar15.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        ar15.setSceneToBuy(scene[LocationName.armyScene.ordinal()]);
         ar15.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.ar15.ordinal()] = ar15;
         
@@ -254,7 +254,7 @@ public class ItemControl {
         bazooka.setItemSellable("Y");
         bazooka.setItemInSellList("N");
         bazooka.setItemType("Weapon");
-        bazooka.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        bazooka.setSceneToBuy(scene[LocationName.armyScene.ordinal()]);
         bazooka.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.bazooka.ordinal()] = bazooka;
         
@@ -270,8 +270,8 @@ public class ItemControl {
         crossbow.setItemSellable("Y");
         crossbow.setItemInSellList("N");
         crossbow.setItemType("Weapon");
-        crossbow.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        crossbow.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        crossbow.setSceneToBuy(scene[LocationName.gunShopScene.ordinal()]);
+        crossbow.setSceneToSell(scene[LocationName.zooScene.ordinal()]);
         item[Items.crossbow.ordinal()] = crossbow;
         
         Item katana = new Item();
@@ -286,8 +286,8 @@ public class ItemControl {
         katana.setItemSellable("Y");
         katana.setItemInSellList("N");
         katana.setItemType("Weapon");
-        katana.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        katana.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        katana.setSceneToBuy(scene[LocationName.gunShopScene.ordinal()]);
+        katana.setSceneToSell(scene[LocationName.ninjaScene.ordinal()]);
         item[Items.katana.ordinal()] = katana;
         
         Item nunchucks = new Item();
@@ -302,8 +302,8 @@ public class ItemControl {
         nunchucks.setItemSellable("Y");
         nunchucks.setItemInSellList("N");
         nunchucks.setItemType("Weapon");
-        nunchucks.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        nunchucks.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        nunchucks.setSceneToBuy(scene[LocationName.orphanScene.ordinal()]);
+        nunchucks.setSceneToSell(scene[LocationName.ninjaScene.ordinal()]);
         item[Items.nunchucks.ordinal()] = nunchucks;
         
         Item bowstaff = new Item();
@@ -318,8 +318,8 @@ public class ItemControl {
         bowstaff.setItemSellable("Y");
         bowstaff.setItemInSellList("N");
         bowstaff.setItemType("Weapon");
-        bowstaff.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bowstaff.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        bowstaff.setSceneToBuy(scene[LocationName.museumScene.ordinal()]);
+        bowstaff.setSceneToSell(scene[LocationName.volcanoScene.ordinal()]);
         item[Items.bowstaff.ordinal()] = bowstaff;
         
         Item throwingStars = new Item();
@@ -334,8 +334,8 @@ public class ItemControl {
         throwingStars.setItemSellable("Y");
         throwingStars.setItemInSellList("N");
         throwingStars.setItemType("Weapon");
-        throwingStars.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        throwingStars.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        throwingStars.setSceneToBuy(scene[LocationName.ninjaScene.ordinal()]);
+        throwingStars.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.throwingStars.ordinal()] = throwingStars;
         
         Item baseballBat = new Item();
@@ -350,8 +350,8 @@ public class ItemControl {
         baseballBat.setItemSellable("Y");
         baseballBat.setItemInSellList("N");
         baseballBat.setItemType("Weapon");
-        baseballBat.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        baseballBat.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        baseballBat.setSceneToBuy(scene[LocationName.sportingScene.ordinal()]);
+        baseballBat.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.baseballBat.ordinal()] = baseballBat;
         
         Item dumbbells = new Item();
@@ -366,8 +366,8 @@ public class ItemControl {
         dumbbells.setItemSellable("Y");
         dumbbells.setItemInSellList("N");
         dumbbells.setItemType("Nonweapon");
-        dumbbells.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        dumbbells.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        dumbbells.setSceneToBuy(scene[LocationName.sportingScene.ordinal()]);
+        dumbbells.setSceneToSell(scene[LocationName.policeScene.ordinal()]);
         item[Items.dumbbells.ordinal()] = dumbbells;
         
         Item golfClub = new Item();
@@ -382,8 +382,8 @@ public class ItemControl {
         golfClub.setItemSellable("Y");
         golfClub.setItemInSellList("N");
         golfClub.setItemType("Weapon");
-        golfClub.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        golfClub.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        golfClub.setSceneToBuy(scene[LocationName.sportingScene.ordinal()]);
+        golfClub.setSceneToSell(scene[LocationName.accountantScene.ordinal()]);
         item[Items.golfClub.ordinal()] = golfClub;
         
         Item ancientBookofSpells = new Item();
@@ -398,8 +398,8 @@ public class ItemControl {
         ancientBookofSpells.setItemSellable("Y");
         ancientBookofSpells.setItemInSellList("N");
         ancientBookofSpells.setItemType("Weapon");
-        ancientBookofSpells.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        ancientBookofSpells.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        ancientBookofSpells.setSceneToBuy(scene[LocationName.libraryScene.ordinal()]);
+        ancientBookofSpells.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.ancientBookofSpells.ordinal()] = ancientBookofSpells;
         
         Item libraryCard = new Item();
@@ -414,8 +414,8 @@ public class ItemControl {
         libraryCard.setItemSellable("Y");
         libraryCard.setItemInSellList("N");
         libraryCard.setItemType("Nonweapon");
-        libraryCard.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        libraryCard.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        libraryCard.setSceneToBuy(scene[LocationName.libraryScene.ordinal()]);
+        libraryCard.setSceneToSell(scene[LocationName.orphanScene.ordinal()]);
         item[Items.libraryCard.ordinal()] = libraryCard;
         
         Item taxForms = new Item();
@@ -430,8 +430,8 @@ public class ItemControl {
         taxForms.setItemSellable("Y");
         taxForms.setItemInSellList("N");
         taxForms.setItemType("Nonweapon");
-        taxForms.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        taxForms.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        taxForms.setSceneToBuy(scene[LocationName.accountantScene.ordinal()]);
+        taxForms.setSceneToSell(scene[LocationName.libraryScene.ordinal()]);
         item[Items.taxForms.ordinal()] = taxForms;
         
         Item holyWater = new Item();
@@ -446,8 +446,8 @@ public class ItemControl {
         holyWater.setItemSellable("Y");
         holyWater.setItemInSellList("N");
         holyWater.setItemType("Weapon");
-        holyWater.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        holyWater.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        holyWater.setSceneToBuy(scene[LocationName.churchScene.ordinal()]);
+        holyWater.setSceneToSell(scene[LocationName.cemeteryScene.ordinal()]);
         item[Items.holyWater.ordinal()] = holyWater;
         
         Item sacramentalWine = new Item();
@@ -462,8 +462,8 @@ public class ItemControl {
         sacramentalWine.setItemSellable("Y");
         sacramentalWine.setItemInSellList("N");
         sacramentalWine.setItemType("Nonweapon");
-        sacramentalWine.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        sacramentalWine.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        sacramentalWine.setSceneToBuy(scene[LocationName.GroceryScene.ordinal()]);
+        sacramentalWine.setSceneToSell(scene[LocationName.churchScene.ordinal()]);
         item[Items.sacramentalWine.ordinal()] = sacramentalWine;
         
         Item altarBoyVestments = new Item();
@@ -478,8 +478,8 @@ public class ItemControl {
         altarBoyVestments.setItemSellable("Y");
         altarBoyVestments.setItemInSellList("N");
         altarBoyVestments.setItemType("Nonweapon");
-        altarBoyVestments.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        altarBoyVestments.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        altarBoyVestments.setSceneToBuy(scene[LocationName.churchScene.ordinal()]);
+        altarBoyVestments.setSceneToSell(scene[LocationName.mallScene.ordinal()]);
         item[Items.altarBoyVestments.ordinal()] = altarBoyVestments;
         
         Item usedNeedles = new Item();
@@ -494,8 +494,8 @@ public class ItemControl {
         usedNeedles.setItemSellable("Y");
         usedNeedles.setItemInSellList("N");
         usedNeedles.setItemType("Weapon");
-        usedNeedles.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        usedNeedles.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        usedNeedles.setSceneToBuy(scene[LocationName.hospitalScene.ordinal()]);
+        usedNeedles.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.usedNeedles.ordinal()] = usedNeedles;
         
         Item medicine = new Item();
@@ -510,8 +510,8 @@ public class ItemControl {
         medicine.setItemSellable("Y");
         medicine.setItemInSellList("N");
         medicine.setItemType("Nonweapon");
-        medicine.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        medicine.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        medicine.setSceneToBuy(scene[LocationName.hospitalScene.ordinal()]);
+        medicine.setSceneToSell(scene[LocationName.policeScene.ordinal()]);
         item[Items.medicine.ordinal()] = medicine;
         
         Item freshOrgans = new Item();
@@ -526,8 +526,8 @@ public class ItemControl {
         freshOrgans.setItemSellable("Y");
         freshOrgans.setItemInSellList("N");
         freshOrgans.setItemType("Nonweapon");
-        freshOrgans.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        freshOrgans.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        freshOrgans.setSceneToBuy(scene[LocationName.orphanScene.ordinal()]);
+        freshOrgans.setSceneToSell(scene[LocationName.hospitalScene.ordinal()]);
         item[Items.freshOrgans.ordinal()] = freshOrgans;
         
         Item textbook = new Item();
@@ -542,8 +542,8 @@ public class ItemControl {
         textbook.setItemSellable("Y");
         textbook.setItemInSellList("N");
         textbook.setItemType("Nonweapon");
-        textbook.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        textbook.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        textbook.setSceneToBuy(scene[LocationName.libraryScene.ordinal()]);
+        textbook.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.textbook.ordinal()] = textbook;
         
         Item reportCard = new Item();
@@ -558,8 +558,8 @@ public class ItemControl {
         reportCard.setItemSellable("Y");
         reportCard.setItemInSellList("N");
         reportCard.setItemType("Nonweapon");
-        reportCard.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        reportCard.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        reportCard.setSceneToBuy(scene[LocationName.schoolScene.ordinal()]);
+        reportCard.setSceneToSell(scene[LocationName.postScene.ordinal()]);
         item[Items.reportCard.ordinal()] = reportCard;
         
         Item bagOfMoney = new Item();
@@ -574,8 +574,8 @@ public class ItemControl {
         bagOfMoney.setItemSellable("Y");
         bagOfMoney.setItemInSellList("Y");
         bagOfMoney.setItemType("Nonweapon");
-        bagOfMoney.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bagOfMoney.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        bagOfMoney.setSceneToBuy(scene[LocationName.repairScene.ordinal()]);
+        bagOfMoney.setSceneToSell(scene[LocationName.bankScene.ordinal()]);
         item[Items.bagOfMoney.ordinal()] = bagOfMoney;
         
         Item dyePack = new Item();
@@ -591,7 +591,7 @@ public class ItemControl {
         dyePack.setItemInSellList("N");
         dyePack.setItemType("Nonweapon");
         dyePack.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        dyePack.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        dyePack.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.dyePack.ordinal()] = dyePack;
         
         Item loanApplication = new Item();
@@ -607,7 +607,7 @@ public class ItemControl {
         loanApplication.setItemInSellList("N");
         loanApplication.setItemType("Nonweapon");
         loanApplication.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        loanApplication.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        loanApplication.setSceneToSell(scene[LocationName.pizzaScene.ordinal()]);
         item[Items.loanApplication.ordinal()] = loanApplication;
         
         Item supermanComic = new Item();
@@ -622,8 +622,8 @@ public class ItemControl {
         supermanComic.setItemSellable("Y");
         supermanComic.setItemInSellList("N");
         supermanComic.setItemType("Nonweapon");
-        supermanComic.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        supermanComic.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        supermanComic.setSceneToBuy(scene[LocationName.MarinaScene.ordinal()]);
+        supermanComic.setSceneToSell(scene[LocationName.comicScene.ordinal()]);
         item[Items.supermanComic.ordinal()] = supermanComic;
         
         Item mintYoda = new Item();
@@ -638,8 +638,8 @@ public class ItemControl {
         mintYoda.setItemSellable("Y");
         mintYoda.setItemInSellList("N");
         mintYoda.setItemType("Nonweapon");
-        mintYoda.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        mintYoda.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        mintYoda.setSceneToBuy(scene[LocationName.repairScene.ordinal()]);
+        mintYoda.setSceneToSell(scene[LocationName.comicScene.ordinal()]);
         item[Items.mintYoda.ordinal()] = shirt;
         
         Item oilCan = new Item();
@@ -654,8 +654,8 @@ public class ItemControl {
         oilCan.setItemSellable("Y");
         oilCan.setItemInSellList("N");
         oilCan.setItemType("Nonweapon");
-        oilCan.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        oilCan.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        oilCan.setSceneToBuy(scene[LocationName.gasScene.ordinal()]);
+        oilCan.setSceneToSell(scene[LocationName.MarinaScene.ordinal()]);
         item[Items.oilCan.ordinal()] = oilCan;
         
         Item tireIron = new Item();
@@ -670,8 +670,8 @@ public class ItemControl {
         tireIron.setItemSellable("Y");
         tireIron.setItemInSellList("N");
         tireIron.setItemType("Weapon");
-        tireIron.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        tireIron.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        tireIron.setSceneToBuy(scene[LocationName.repairScene.ordinal()]);
+        tireIron.setSceneToSell(scene[LocationName.volcanoScene.ordinal()]);
         item[Items.tireIron.ordinal()] = tireIron;
         
         Item nerveGas = new Item();
@@ -686,8 +686,8 @@ public class ItemControl {
         nerveGas.setItemSellable("Y");
         nerveGas.setItemInSellList("N");
         nerveGas.setItemType("Weapon");
-        nerveGas.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        nerveGas.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        nerveGas.setSceneToBuy(scene[LocationName.armyScene.ordinal()]);
+        nerveGas.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.nerveGas.ordinal()] = nerveGas;
         
         Item armyUniform = new Item();
@@ -702,8 +702,8 @@ public class ItemControl {
         armyUniform.setItemSellable("Y");
         armyUniform.setItemInSellList("N");
         armyUniform.setItemType("Nonweapon");
-        armyUniform.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        armyUniform.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        armyUniform.setSceneToBuy(scene[LocationName.armyScene.ordinal()]);
+        armyUniform.setSceneToSell(scene[LocationName.fireworksScene.ordinal()]);
         item[Items.armyUniform.ordinal()] = armyUniform;
         
         Item abramsTank = new Item();
@@ -718,8 +718,8 @@ public class ItemControl {
         abramsTank.setItemSellable("Y");
         abramsTank.setItemInSellList("N");
         abramsTank.setItemType("Weapon");
-        abramsTank.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        abramsTank.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        abramsTank.setSceneToBuy(scene[LocationName.gasScene.ordinal()]);
+        abramsTank.setSceneToSell(scene[LocationName.fireworksScene.ordinal()]);
         item[Items.abramsTank.ordinal()] = abramsTank;
         
         Item bookOfStamps = new Item();
@@ -734,8 +734,8 @@ public class ItemControl {
         bookOfStamps.setItemSellable("Y");
         bookOfStamps.setItemInSellList("N");
         bookOfStamps.setItemType("Nonweapon");
-        bookOfStamps.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bookOfStamps.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        bookOfStamps.setSceneToBuy(scene[LocationName.postScene.ordinal()]);
+        bookOfStamps.setSceneToSell(scene[LocationName.accountantScene.ordinal()]);
         item[Items.bookOfStamps.ordinal()] = bookOfStamps;
         
         Item junkMail = new Item();
@@ -750,8 +750,8 @@ public class ItemControl {
         junkMail.setItemSellable("Y");
         junkMail.setItemInSellList("N");
         junkMail.setItemType("Nonweapon");
-        junkMail.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        junkMail.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        junkMail.setSceneToBuy(scene[LocationName.postScene.ordinal()]);
+        junkMail.setSceneToSell(scene[LocationName.mallScene.ordinal()]);
         item[Items.junkMail.ordinal()] = junkMail;
         
         Item sparklers = new Item();
@@ -766,7 +766,7 @@ public class ItemControl {
         sparklers.setItemSellable("Y");
         sparklers.setItemInSellList("N");
         sparklers.setItemType("Weapon");
-        sparklers.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        sparklers.setSceneToBuy(scene[LocationName.fireworksScene.ordinal()]);
         sparklers.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.sparklers.ordinal()] = sparklers;
         
@@ -782,8 +782,8 @@ public class ItemControl {
         m80.setItemSellable("Y");
         m80.setItemInSellList("N");
         m80.setItemType("Weapon");
-        m80.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        m80.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        m80.setSceneToBuy(scene[LocationName.fireworksScene.ordinal()]);
+        m80.setSceneToSell(scene[LocationName.petScene.ordinal()]);
         item[Items.m80.ordinal()] = m80;
         
         Item bottleRockets = new Item();
@@ -798,8 +798,8 @@ public class ItemControl {
         bottleRockets.setItemSellable("Y");
         bottleRockets.setItemInSellList("N");
         bottleRockets.setItemType("Weapon");
-        bottleRockets.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bottleRockets.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        bottleRockets.setSceneToBuy(scene[LocationName.fireworksScene.ordinal()]);
+        bottleRockets.setSceneToSell(scene[LocationName.startingScene.ordinal()]);
         item[Items.bottleRockets.ordinal()] = bottleRockets;
         
         Item chinchilla = new Item();
@@ -814,8 +814,8 @@ public class ItemControl {
         chinchilla.setItemSellable("Y");
         chinchilla.setItemInSellList("N");
         chinchilla.setItemType("Nonweapon");
-        chinchilla.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        chinchilla.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        chinchilla.setSceneToBuy(scene[LocationName.petScene.ordinal()]);
+        chinchilla.setSceneToSell(scene[LocationName.startingScene.ordinal()]);
         item[Items.chinchilla.ordinal()] = chinchilla;
         
         Item catnip = new Item();
@@ -830,8 +830,8 @@ public class ItemControl {
         catnip.setItemSellable("Y");
         catnip.setItemInSellList("N");
         catnip.setItemType("Nonweapon");
-        catnip.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        catnip.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        catnip.setSceneToBuy(scene[LocationName.petScene.ordinal()]);
+        catnip.setSceneToSell(scene[LocationName.comicScene.ordinal()]);
         item[Items.catnip.ordinal()] = catnip;
         
         Item cobra = new Item();
@@ -846,8 +846,8 @@ public class ItemControl {
         cobra.setItemSellable("Y");
         cobra.setItemInSellList("N");
         cobra.setItemType("Weapon");
-        cobra.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        cobra.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        cobra.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
+        cobra.setSceneToSell(scene[LocationName.petScene.ordinal()]);
         item[Items.cobra.ordinal()] = cobra;
         
         Item anchor = new Item();
@@ -862,8 +862,8 @@ public class ItemControl {
         anchor.setItemSellable("Y");
         anchor.setItemInSellList("N");
         anchor.setItemType("Nonweapon");
-        anchor.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        anchor.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        anchor.setSceneToBuy(scene[LocationName.cemeteryScene.ordinal()]);
+        anchor.setSceneToSell(scene[LocationName.MarinaScene.ordinal()]);
         item[Items.anchor.ordinal()] = anchor;
         
         Item canOfWorms = new Item();
@@ -878,8 +878,8 @@ public class ItemControl {
         canOfWorms.setItemSellable("Y");
         canOfWorms.setItemInSellList("N");
         canOfWorms.setItemType("Nonweapon");
-        canOfWorms.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        canOfWorms.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        canOfWorms.setSceneToBuy(scene[LocationName.orphanScene.ordinal()]);
+        canOfWorms.setSceneToSell(scene[LocationName.MarinaScene.ordinal()]);
         item[Items.canOfWorms.ordinal()] = canOfWorms;
         
         Item nailGun = new Item();
@@ -894,8 +894,8 @@ public class ItemControl {
         nailGun.setItemSellable("Y");
         nailGun.setItemInSellList("N");
         nailGun.setItemType("Weapon");
-        nailGun.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        nailGun.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        nailGun.setSceneToBuy(scene[LocationName.improvementScene.ordinal()]);
+        nailGun.setSceneToSell(scene[LocationName.repairScene.ordinal()]);
         item[Items.nailGun.ordinal()] = nailGun;
         
         Item chainsaw = new Item();
@@ -910,8 +910,8 @@ public class ItemControl {
         chainsaw.setItemSellable("Y");
         chainsaw.setItemInSellList("N");
         chainsaw.setItemType("Nonweapon");
-        chainsaw.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        chainsaw.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        chainsaw.setSceneToBuy(scene[LocationName.improvementScene.ordinal()]);
+        chainsaw.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.chainsaw.ordinal()] = chainsaw;
         
         Item axe = new Item();
@@ -926,8 +926,8 @@ public class ItemControl {
         axe.setItemSellable("Y");
         axe.setItemInSellList("N");
         axe.setItemType("Weapon");
-        axe.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        axe.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        axe.setSceneToBuy(scene[LocationName.cemeteryScene.ordinal()]);
+        axe.setSceneToSell(scene[LocationName.improvementScene.ordinal()]);
         item[Items.axe.ordinal()] = axe;
         
         Item nails = new Item();
@@ -942,8 +942,8 @@ public class ItemControl {
         nails.setItemSellable("Y");
         nails.setItemInSellList("N");
         nails.setItemType("Nonweapon");
-        nails.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        nails.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        nails.setSceneToBuy(scene[LocationName.improvementScene.ordinal()]);
+        nails.setSceneToSell(scene[LocationName.cemeteryScene.ordinal()]);
         item[Items.nails.ordinal()] = nails;
         
         Item copUniform = new Item();
@@ -958,7 +958,7 @@ public class ItemControl {
         copUniform.setItemSellable("Y");
         copUniform.setItemInSellList("N");
         copUniform.setItemType("Nonweapon");
-        copUniform.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
+        copUniform.setSceneToBuy(scene[LocationName.policeScene.ordinal()]);
         copUniform.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.copUniform.ordinal()] = copUniform;
         
@@ -974,8 +974,8 @@ public class ItemControl {
         handcuffs.setItemSellable("Y");
         handcuffs.setItemInSellList("N");
         handcuffs.setItemType("Nonweapon");
-        handcuffs.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        handcuffs.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        handcuffs.setSceneToBuy(scene[LocationName.policeScene.ordinal()]);
+        handcuffs.setSceneToSell(scene[LocationName.churchScene.ordinal()]);
         item[Items.handcuffs.ordinal()] = handcuffs;
         
         Item mugShot = new Item();
@@ -990,8 +990,8 @@ public class ItemControl {
         mugShot.setItemSellable("Y");
         mugShot.setItemInSellList("N");
         mugShot.setItemType("Nonweapon");
-        mugShot.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        mugShot.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        mugShot.setSceneToBuy(scene[LocationName.policeScene.ordinal()]);
+        mugShot.setSceneToSell(scene[LocationName.postScene.ordinal()]);
         item[Items.mugShot.ordinal()] = mugShot;
         
         Item giraffe = new Item();
@@ -1006,8 +1006,8 @@ public class ItemControl {
         giraffe.setItemSellable("Y");
         giraffe.setItemInSellList("N");
         giraffe.setItemType("Nonweapon");
-        giraffe.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        giraffe.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        giraffe.setSceneToBuy(scene[LocationName.petScene.ordinal()]);
+        giraffe.setSceneToSell(scene[LocationName.volcanoScene.ordinal()]);
         item[Items.giraffe.ordinal()] = giraffe;
         
         Item tRex = new Item();
@@ -1022,8 +1022,8 @@ public class ItemControl {
         tRex.setItemSellable("Y");
         tRex.setItemInSellList("N");
         tRex.setItemType("Nonweapon");
-        tRex.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        tRex.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        tRex.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
+        tRex.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.tRex.ordinal()] = tRex;
         
         Item mysticalEgyptianSceptor = new Item();
@@ -1038,8 +1038,8 @@ public class ItemControl {
         mysticalEgyptianSceptor.setItemSellable("Y");
         mysticalEgyptianSceptor.setItemInSellList("N");
         mysticalEgyptianSceptor.setItemType("Nonweapon");
-        mysticalEgyptianSceptor.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        mysticalEgyptianSceptor.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        mysticalEgyptianSceptor.setSceneToBuy(scene[LocationName.asylumScene.ordinal()]);
+        mysticalEgyptianSceptor.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.mysticalEgyptianSceptor.ordinal()] = mysticalEgyptianSceptor;
         
         Item catapult = new Item();
@@ -1054,8 +1054,8 @@ public class ItemControl {
         catapult.setItemSellable("Y");
         catapult.setItemInSellList("N");
         catapult.setItemType("Nonweapon");
-        catapult.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        catapult.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        catapult.setSceneToBuy(scene[LocationName.mallScene.ordinal()]);
+        catapult.setSceneToSell(scene[LocationName.orphanScene.ordinal()]);
         item[Items.catapult.ordinal()] = catapult;
         
         Item headstone = new Item();
@@ -1070,8 +1070,8 @@ public class ItemControl {
         headstone.setItemSellable("Y");
         headstone.setItemInSellList("N");
         headstone.setItemType("Nonweapon");
-        headstone.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        headstone.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        headstone.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
+        headstone.setSceneToSell(scene[LocationName.cemeteryScene.ordinal()]);
         item[Items.headstone.ordinal()] = headstone;
         
         Item corpse = new Item();
@@ -1086,8 +1086,8 @@ public class ItemControl {
         corpse.setItemSellable("Y");
         corpse.setItemInSellList("N");
         corpse.setItemType("Nonweapon");
-        corpse.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        corpse.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        corpse.setSceneToBuy(scene[LocationName.cemeteryScene.ordinal()]);
+        corpse.setSceneToSell(scene[LocationName.hospitalScene.ordinal()]);
         item[Items.corpse.ordinal()] = shirt;
         
         Item grievingWidow = new Item();
@@ -1102,8 +1102,8 @@ public class ItemControl {
         grievingWidow.setItemSellable("Y");
         grievingWidow.setItemInSellList("N");
         grievingWidow.setItemType("Nonweapon");
-        grievingWidow.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        grievingWidow.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        grievingWidow.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
+        grievingWidow.setSceneToSell(scene[LocationName.cemeteryScene.ordinal()]);
         item[Items.grievingWidow.ordinal()] = grievingWidow;
         
         Item bucketOfLava = new Item();
@@ -1119,8 +1119,8 @@ public class ItemControl {
         bucketOfLava.setItemInSellList("N");
         bucketOfLava.setItemInBuyList("N");
         bucketOfLava.setItemType("Nonweapon");
-        bucketOfLava.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        bucketOfLava.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        bucketOfLava.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
+        bucketOfLava.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.bucketOfLava.ordinal()] = bucketOfLava;
         
         Item pizza = new Item();
@@ -1136,8 +1136,8 @@ public class ItemControl {
         pizza.setItemInSellList("N");
         pizza.setItemInBuyList("N");
         pizza.setItemType("Nonweapon");
-        pizza.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        pizza.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        pizza.setSceneToBuy(scene[LocationName.pizzaScene.ordinal()]);
+        pizza.setSceneToSell(scene[LocationName.gasScene.ordinal()]);
         item[Items.pizza.ordinal()] = pizza;
         
         Item pizzaCutter = new Item();
@@ -1153,8 +1153,8 @@ public class ItemControl {
         pizzaCutter.setItemInSellList("N");
         pizzaCutter.setItemInBuyList("N");
         pizzaCutter.setItemType("Weapon");
-        pizzaCutter.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
-        pizzaCutter.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
+        pizzaCutter.setSceneToBuy(scene[LocationName.GroceryScene.ordinal()]);
+        pizzaCutter.setSceneToSell(scene[LocationName.pizzaScene.ordinal()]);
         item[Items.pizzaCutter.ordinal()] = pizzaCutter;
         RunningErrands.setItems(item);
         return item;
