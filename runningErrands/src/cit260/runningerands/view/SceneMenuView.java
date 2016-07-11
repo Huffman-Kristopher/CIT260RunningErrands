@@ -251,7 +251,8 @@ public class SceneMenuView extends View {
         }
 
     private void openCombatMenu() {
-        this.console.println("\n ***Runs Combat menu function ***");
+        CombatMenuView combatMenuView = new CombatMenuView();
+        combatMenuView.display();
     }
 
     private void openConversationMenu() {

@@ -40,6 +40,8 @@ public class StatsMenuView extends View {
         String salary = NumberFormat.getNumberInstance(Locale.US).format(personaSalary);
         String investmentMessage;
         String itemList = this.viewInventory();
+        String weaponItemDescription = persona.getWeaponItem().getDescription();
+        int weaponItemStrength = persona.getWeaponItem().getStrength();
         if (investmentReturn == 0) {
             investmentMessage = "\nYou do not currently have any investments pending.";
         }
@@ -58,6 +60,8 @@ public class StatsMenuView extends View {
                   + "\nCurrent Balance: $" + money
                   + investmentMessage
                   + itemList
+                  + "\nCurrent Weapon: " + weaponItemDescription
+                  + "\nWeapon Strength: " + weaponItemStrength
                   + "\n-------------------------"
                   + "\nR - Return to main menu");
         StatsMenuView StatsMenuView = new StatsMenuView(menu);

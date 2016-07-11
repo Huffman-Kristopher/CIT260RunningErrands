@@ -20,6 +20,7 @@ public class CombatMenuView extends View {
                   + "\nA - Attack"
                   + "\nR - Run Away"
                   + "\nN - Negotiate"
+                  + "\nQ - Return to Game Menu"
                   + "\n-------------------------"
                   + "\nPlease select an Game menu option: ");
     }
@@ -29,6 +30,8 @@ public class CombatMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
+            case "Q":
+                return true;
             case "S": //create and start a new game
                 this.weaponSelect();
                 break;
@@ -51,8 +54,10 @@ public class CombatMenuView extends View {
     
     private void weaponSelect() {
         // Display weapon select
-       this.console.println("*** weapon select function called ***");
-    }
+        String menu = "";
+        CombatSelectWeaponMenuView combatSelectWeaponMenuView = new CombatSelectWeaponMenuView(menu);
+        combatSelectWeaponMenuView.CombatSelectWeaponMenuValues();        
+                }
     private void attack() {
         //Display attack
         this.console.println("*** attack function called ***");
@@ -65,4 +70,5 @@ public class CombatMenuView extends View {
         //Display bribe
     this.console.println("*** bribe function called ***");
     }
+    
 }

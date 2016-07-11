@@ -30,48 +30,7 @@ public class Persona implements Serializable{
     private Item[] item;
     private Location location;
     private Scene scene;
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public Item[] getItem() {
-        return item;
-    }
-
-    public void setItem(Item[] item) {
-        this.item = item;
-    }
-
-    public Email[] getEmail() {
-        return email;
-    }
-
-    public void setEmail(Email[] email) {
-        this.email = email;
-    }
-    private Email[] email;
-    
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
+    private Item weaponItem;
 
     public char getGender() {
         return gender;
@@ -153,24 +112,64 @@ public class Persona implements Serializable{
         this.gambledToday = gambledToday;
     }
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Item getWeaponItem() {
+        return weaponItem;
+    }
+
+    public void setWeaponItem(Item weaponItem) {
+        this.weaponItem = weaponItem;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + this.gender;
-        hash = 37 * hash + Objects.hashCode(this.career);
-        hash = 37 * hash + Objects.hashCode(this.personaName);
-        hash = 37 * hash + this.health;
-        hash = 37 * hash + this.money;
-        hash = 37 * hash + this.coordinates;
-        hash = 37 * hash + this.age;
-        hash = 37 * hash + this.day;
-        hash = 37 * hash + this.salary;
-        hash = 37 * hash + (this.gambledToday ? 1 : 0);
-        hash = 37 * hash + Objects.hashCode(this.car);
-        hash = 37 * hash + Arrays.deepHashCode(this.item);
-        hash = 37 * hash + Objects.hashCode(this.location);
-        hash = 37 * hash + Objects.hashCode(this.scene);
-        hash = 37 * hash + Arrays.deepHashCode(this.email);
+        int hash = 5;
+        hash = 67 * hash + this.gender;
+        hash = 67 * hash + Objects.hashCode(this.career);
+        hash = 67 * hash + Objects.hashCode(this.personaName);
+        hash = 67 * hash + this.health;
+        hash = 67 * hash + this.money;
+        hash = 67 * hash + this.coordinates;
+        hash = 67 * hash + this.age;
+        hash = 67 * hash + this.day;
+        hash = 67 * hash + this.salary;
+        hash = 67 * hash + (this.gambledToday ? 1 : 0);
+        hash = 67 * hash + Objects.hashCode(this.car);
+        hash = 67 * hash + Arrays.deepHashCode(this.item);
+        hash = 67 * hash + Objects.hashCode(this.location);
+        hash = 67 * hash + Objects.hashCode(this.scene);
+        hash = 67 * hash + Objects.hashCode(this.weaponItem);
         return hash;
     }
 
@@ -228,7 +227,7 @@ public class Persona implements Serializable{
         if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.email, other.email)) {
+        if (!Objects.equals(this.weaponItem, other.weaponItem)) {
             return false;
         }
         return true;
@@ -236,7 +235,7 @@ public class Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + ", car=" + car + ", item=" + item + ", location=" + location + ", scene=" + scene + ", email=" + email + '}';
+        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + ", car=" + car + ", item=" + item + ", location=" + location + ", scene=" + scene + ", weaponItem=" + weaponItem + '}';
     }
 
     

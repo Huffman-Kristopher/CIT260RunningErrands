@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.runningerrands.control;
+import cit260.runningerrands.control.ItemControl.Items;
 import static cit260.runningerrands.control.ObjectiveControl.checkObjectiveCompletedToday;
 import static cit260.runningerrands.control.ObjectiveControl.resetObjectiveCompletedTodayFlag;
 import cit260.runningerrands.model.Investment;
@@ -35,6 +36,8 @@ public class PersonaControl {
         resetObjectiveCompletedTodayFlag();
         MapControl.assignObjectivesToScenes();
         persona.setItem(inventoryList);
+        Item weaponItem = inventoryList[Items.baseballBat.ordinal()];
+        persona.setWeaponItem(weaponItem);
         Npc[] npcs = NPCControl.createNPCList();
         RunningErrands.setNpc(npcs);
 
