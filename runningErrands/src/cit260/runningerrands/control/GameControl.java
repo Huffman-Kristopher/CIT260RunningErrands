@@ -11,6 +11,7 @@ import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
 import cit260.runningerrands.model.Npc;
+import cit260.runningerrands.model.Objective;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Player;
 import cit260.runningerrands.model.Scene;
@@ -60,6 +61,7 @@ public class GameControl {
             Persona persona = RunningErrands.getPersona();
             Player player = RunningErrands.getPlayer();
             Scene[] scenes = RunningErrands.getScene();
+            Objective[] objectives = RunningErrands.getObjective();
             
             output.writeObject(game); // write game object to file
             output.writeObject(investment); // write investments to file
@@ -70,6 +72,7 @@ public class GameControl {
             output.writeObject(persona); // write persona to file
             output.writeObject(player); //write player to file
             output.writeObject(scenes); // write scense to file
+            output.writeObject(objectives); // write objectives to file
             
             }
         catch (Exception e) {
@@ -87,6 +90,7 @@ public class GameControl {
         Persona persona;
         Player player;
         Scene[] scenes;
+        Objective[] objectives;
         
         try( FileInputStream fips = new FileInputStream(filePath)){
             ObjectInputStream input = new ObjectInputStream(fips);
@@ -100,6 +104,7 @@ public class GameControl {
             persona = (Persona) input.readObject();
             player = (Player) input.readObject();
             scenes = (Scene[]) input.readObject();
+            objectives = (Objective[]) input.readObject();
             
             RunningErrands.setCurrentGame(game);
             RunningErrands.setInvestment(investment);
@@ -110,6 +115,7 @@ public class GameControl {
             RunningErrands.setPersona(persona);
             RunningErrands.setPlayer(player);
             RunningErrands.setScene(scenes);
+            RunningErrands.setObjective(objectives);
             
             }
         catch(Exception e){
