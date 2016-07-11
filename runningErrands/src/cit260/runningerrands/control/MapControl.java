@@ -69,6 +69,7 @@ public class MapControl {
         startingScene.setMenuOption2("Conversation Menu");
         startingScene.setMenuOption3("Buy/Sell Menu");
         startingScene.setConversationMenuType("Receive");
+        startingScene.setBribeAttemptedToday(false);
         scenes[LocationName.startingScene.ordinal()] = startingScene;
         
         Scene mallScene = new Scene();
@@ -80,6 +81,7 @@ public class MapControl {
         mallScene.setMenuOption2("Conversation Menu");
         mallScene.setMenuOption3("Buy/Sell Menu");
         mallScene.setConversationMenuType("Receive");
+        mallScene.setBribeAttemptedToday(false);
         scenes[LocationName.mallScene.ordinal()] = mallScene;
         
         Scene GroceryScene = new Scene();
@@ -91,6 +93,7 @@ public class MapControl {
         GroceryScene.setMenuOption2("Conversation Menu");
         GroceryScene.setMenuOption3("Buy/Sell Menu");
         GroceryScene.setConversationMenuType("Receive");
+        GroceryScene.setBribeAttemptedToday(false);
         scenes[LocationName.GroceryScene.ordinal()] = GroceryScene;
         
         Scene gasScene = new Scene();
@@ -102,6 +105,7 @@ public class MapControl {
         gasScene.setMenuOption2("Conversation Menu");
         gasScene.setMenuOption3("Buy/Sell Menu");
         gasScene.setConversationMenuType("Receive");
+        gasScene.setBribeAttemptedToday(false);
         scenes[LocationName.gasScene.ordinal()] = gasScene;
         
         Scene gunShopScene = new Scene();
@@ -113,6 +117,7 @@ public class MapControl {
         gunShopScene.setMenuOption2("Conversation Menu");
         gunShopScene.setMenuOption3("Buy/Sell Menu");
         gunShopScene.setConversationMenuType("Give");
+        gunShopScene.setBribeAttemptedToday(false);
         scenes[LocationName.gunShopScene.ordinal()] = gunShopScene;
         
         Scene sportingScene = new Scene();
@@ -124,6 +129,7 @@ public class MapControl {
         sportingScene.setMenuOption2("Conversation Menu");
         sportingScene.setMenuOption3("Buy/Sell Menu");
         sportingScene.setConversationMenuType("Receive");
+        sportingScene.setBribeAttemptedToday(false);
         scenes[LocationName.sportingScene.ordinal()] = sportingScene;
         
         Scene libraryScene = new Scene();
@@ -135,6 +141,7 @@ public class MapControl {
         libraryScene.setMenuOption2("Conversation Menu");
         libraryScene.setMenuOption3("Buy/Sell Menu");
         libraryScene.setConversationMenuType("Give");
+        libraryScene.setBribeAttemptedToday(false);
         scenes[LocationName.libraryScene.ordinal()] = libraryScene;
         
         Scene churchScene = new Scene();
@@ -146,6 +153,7 @@ public class MapControl {
         churchScene.setMenuOption2("Conversation Menu");
         churchScene.setMenuOption3("Buy/Sell Menu");
         churchScene.setConversationMenuType("Give");
+        churchScene.setBribeAttemptedToday(false);
         scenes[LocationName.churchScene.ordinal()] = churchScene;
         
         Scene hospitalScene = new Scene();
@@ -157,6 +165,7 @@ public class MapControl {
         hospitalScene.setMenuOption2("Conversation Menu");
         hospitalScene.setMenuOption3("Buy/Sell Menu");
         hospitalScene.setConversationMenuType("Give");
+        hospitalScene.setBribeAttemptedToday(false);
         scenes[LocationName.hospitalScene.ordinal()] = hospitalScene;
         
         Scene schoolScene = new Scene();
@@ -168,6 +177,7 @@ public class MapControl {
         schoolScene.setMenuOption2("Conversation Menu");
         schoolScene.setMenuOption3("Buy/Sell Menu");
         schoolScene.setConversationMenuType("Receive");
+        schoolScene.setBribeAttemptedToday(false);
         scenes[LocationName.schoolScene.ordinal()] = schoolScene;
         
         Scene bankScene = new Scene();
@@ -179,6 +189,7 @@ public class MapControl {
         bankScene.setMenuOption2("Conversation Menu");
         bankScene.setMenuOption3("Buy/Sell Menu");
         bankScene.setConversationMenuType("Give");
+        bankScene.setBribeAttemptedToday(false);
         scenes[LocationName.bankScene.ordinal()] = bankScene;
         
         Scene comicScene = new Scene();
@@ -190,6 +201,7 @@ public class MapControl {
         comicScene.setMenuOption2("Conversation Menu");
         comicScene.setMenuOption3("Buy/Sell Menu");
         comicScene.setConversationMenuType("Receive");
+        comicScene.setBribeAttemptedToday(false);
         scenes[LocationName.comicScene.ordinal()] = comicScene;
         
         Scene repairScene = new Scene();
@@ -201,6 +213,7 @@ public class MapControl {
         repairScene.setMenuOption2("Conversation Menu");
         repairScene.setMenuOption3("Buy/Sell Menu");
         repairScene.setConversationMenuType("Receive");
+        repairScene.setBribeAttemptedToday(false);
         scenes[LocationName.repairScene.ordinal()] = repairScene;
         
         Scene ninjaScene = new Scene();
@@ -212,6 +225,7 @@ public class MapControl {
         ninjaScene.setMenuOption2("Conversation Menu");
         ninjaScene.setMenuOption3("Buy/Sell Menu");
         ninjaScene.setConversationMenuType("Give");
+        ninjaScene.setBribeAttemptedToday(false);
         scenes[LocationName.ninjaScene.ordinal()] = ninjaScene;
         
         Scene armyScene = new Scene();
@@ -223,6 +237,7 @@ public class MapControl {
         armyScene.setMenuOption2("Conversation Menu");
         armyScene.setMenuOption3("Buy/Sell Menu");
         armyScene.setConversationMenuType("Give");
+        armyScene.setBribeAttemptedToday(false);
         scenes[LocationName.armyScene.ordinal()] = armyScene;
         
         Scene postScene = new Scene();
@@ -234,6 +249,7 @@ public class MapControl {
         postScene.setMenuOption2("Conversation Menu");
         postScene.setMenuOption3("Buy/Sell Menu");
         postScene.setConversationMenuType("Give");
+        postScene.setBribeAttemptedToday(false);
         scenes[LocationName.postScene.ordinal()] = postScene;
         
         Scene fireworksScene = new Scene();
@@ -245,6 +261,7 @@ public class MapControl {
         fireworksScene.setMenuOption2("Conversation Menu");
         fireworksScene.setMenuOption3("Buy/Sell Menu");
         fireworksScene.setConversationMenuType("Receive");
+        fireworksScene.setBribeAttemptedToday(false);
         scenes[LocationName.fireworksScene.ordinal()] = fireworksScene;
         
         Scene petScene = new Scene();
@@ -256,6 +273,7 @@ public class MapControl {
         petScene.setMenuOption2("Conversation Menu");
         petScene.setMenuOption3("Buy/Sell Menu");
         petScene.setConversationMenuType("Receive");
+        petScene.setBribeAttemptedToday(false);
         scenes[LocationName.petScene.ordinal()] = petScene;
         
         Scene MarinaScene = new Scene();
@@ -267,6 +285,7 @@ public class MapControl {
         MarinaScene.setMenuOption2("Conversation Menu");
         MarinaScene.setMenuOption3("Buy/Sell Menu");
         MarinaScene.setConversationMenuType("Give");
+        MarinaScene.setBribeAttemptedToday(false);
         scenes[LocationName.MarinaScene.ordinal()] = MarinaScene;
         
         Scene improvementScene = new Scene();
@@ -278,6 +297,7 @@ public class MapControl {
         improvementScene.setMenuOption2("Conversation Menu");
         improvementScene.setMenuOption3("Buy/Sell Menu");
         improvementScene.setConversationMenuType("Receive");
+        improvementScene.setBribeAttemptedToday(false);
         scenes[LocationName.improvementScene.ordinal()] = improvementScene;
         
         Scene policeScene = new Scene();
@@ -289,6 +309,7 @@ public class MapControl {
         policeScene.setMenuOption2("Conversation Menu");
         policeScene.setMenuOption3("Buy/Sell Menu");
         policeScene.setConversationMenuType("Give");
+        policeScene.setBribeAttemptedToday(false);
         scenes[LocationName.policeScene.ordinal()] = policeScene;
         
         Scene zooScene = new Scene();
@@ -300,6 +321,7 @@ public class MapControl {
         zooScene.setMenuOption2("Conversation Menu");
         zooScene.setMenuOption3("Buy/Sell Menu");
         zooScene.setConversationMenuType("Give");
+        zooScene.setBribeAttemptedToday(false);
         scenes[LocationName.zooScene.ordinal()] = zooScene;
         
         Scene museumScene = new Scene();
@@ -311,6 +333,7 @@ public class MapControl {
         museumScene.setMenuOption2("Conversation Menu");
         museumScene.setMenuOption3("Buy/Sell Menu");
         museumScene.setConversationMenuType("Give");
+        museumScene.setBribeAttemptedToday(false);
         scenes[LocationName.museumScene.ordinal()] = museumScene;
         
         Scene cemeteryScene = new Scene();
@@ -322,6 +345,7 @@ public class MapControl {
         cemeteryScene.setMenuOption2("Conversation Menu");
         cemeteryScene.setMenuOption3("Buy/Sell Menu");
         cemeteryScene.setConversationMenuType("Receive");
+        cemeteryScene.setBribeAttemptedToday(false);
         scenes[LocationName.cemeteryScene.ordinal()] = cemeteryScene;
         
         Scene volcanoScene = new Scene();
@@ -333,6 +357,7 @@ public class MapControl {
         volcanoScene.setMenuOption2("Conversation Menu");
         volcanoScene.setMenuOption3("Buy/Sell Menu");
         volcanoScene.setConversationMenuType("Receive");
+        volcanoScene.setBribeAttemptedToday(false);
         scenes[LocationName.volcanoScene.ordinal()] = volcanoScene;
         
         Scene pizzaScene = new Scene();
@@ -344,6 +369,7 @@ public class MapControl {
         pizzaScene.setMenuOption2("Conversation Menu");
         pizzaScene.setMenuOption3("Buy/Sell Menu");
         pizzaScene.setConversationMenuType("Give");
+        pizzaScene.setBribeAttemptedToday(false);
         scenes[LocationName.pizzaScene.ordinal()] = pizzaScene;
         
         Scene orphanScene = new Scene();
@@ -355,6 +381,7 @@ public class MapControl {
         orphanScene.setMenuOption2("Conversation Menu");
         orphanScene.setMenuOption3("Buy/Sell Menu");
         orphanScene.setConversationMenuType("Receive");
+        orphanScene.setBribeAttemptedToday(false);
         scenes[LocationName.orphanScene.ordinal()] = orphanScene;
         
         Scene asylumScene = new Scene();
@@ -366,6 +393,7 @@ public class MapControl {
         asylumScene.setMenuOption2("Conversation Menu");
         asylumScene.setMenuOption3("Buy/Sell Menu");
         asylumScene.setConversationMenuType("Give");
+        asylumScene.setBribeAttemptedToday(false);
         scenes[LocationName.asylumScene.ordinal()] = asylumScene;
         
          Scene accountantScene = new Scene();
@@ -377,6 +405,7 @@ public class MapControl {
         accountantScene.setMenuOption2("Conversation Menu");
         accountantScene.setMenuOption3("Buy/Sell Menu");
         accountantScene.setConversationMenuType("Receive");
+        accountantScene.setBribeAttemptedToday(false);
         scenes[LocationName.accountantScene.ordinal()] = accountantScene;
         
         Scene redBoxScene = new Scene();
@@ -388,6 +417,7 @@ public class MapControl {
         redBoxScene.setMenuOption2("Conversation Menu");
         redBoxScene.setMenuOption3("Buy/Sell Menu");
         redBoxScene.setConversationMenuType("Give");
+        redBoxScene.setBribeAttemptedToday(false);
         scenes[LocationName.redBoxScene.ordinal()] = redBoxScene;        
         return scenes;
         

@@ -9,6 +9,7 @@ import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Npc;
 import cit260.runningerrands.model.Persona;
+import cit260.runningerrands.model.Scene;
 import java.util.concurrent.ThreadLocalRandom;
 import runningerrands.RunningErrands;
 
@@ -130,6 +131,10 @@ public class PersonaControl {
             persona.setMoney(personaNewMoney);
             investment = new Investment();
             RunningErrands.setInvestment(investment);
+        }
+        Scene[] scenes = RunningErrands.getScene();
+        for (Scene scene : scenes) {
+            scene.setBribeAttemptedToday(false);
         }
         Npc[] npcs = RunningErrands.getNpc();
         for (Npc npc : npcs) {

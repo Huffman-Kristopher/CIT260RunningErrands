@@ -42,7 +42,7 @@ public class CombatAttackMenuView extends View {
                 + "\n------------------------------------"
                 + "\n| Combat Attack Menu                        |" 
                 + "\n------------------------------------"
-                + "\nPlease select an Game menu option: "
+                + "\nPlease select a Game menu option: "
                 + "\nA - Attack"
                 + "\nE - Escape"
                 + "\nB - Bribe"
@@ -76,9 +76,6 @@ public class CombatAttackMenuView extends View {
         int minimumDamage = 1;
         
         switch (value) {
-            case "R": //Return to game menu.
-
-                return true;
             case "A":
                 try {
                     if(npcStrength > playerStrength) {
@@ -188,6 +185,9 @@ public class CombatAttackMenuView extends View {
                     else {
                         persona.setHealth(newPlayerHealth);
                         this.console.println("You received " + playerDamage + " damage while trying to escape. Your new health is " + newPlayerHealth + ".");
+                        String menu = "";
+                        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+                        sceneMenuView.SceneMenuValues();
                         return true;
                     }
                     
@@ -197,7 +197,20 @@ public class CombatAttackMenuView extends View {
                 }
             case "B":
                 try {
-                    
+                    boolean bribeAttemptedToday = scene.isBribeAttemptedToday();
+                    if(bribeAttemptedToday) {
+                        this.console.println("I'm sorry. You may only make one bribe attempt per day. Please select another option.");
+                        String menu = "";
+                        CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
+                        combatAttackMenuView.CombatAttackMenuValues();
+                        return true;
+                    }
+                    else {
+                        String menu = "";
+                        CombatBribeMenuView combatBribeMenuView = new CombatBribeMenuView(menu);
+                        combatBribeMenuView.CombatBribeMenuValues();
+                        return true;
+                    }
                 } catch (NumberFormatException ne) {
                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
@@ -209,7 +222,8 @@ public class CombatAttackMenuView extends View {
         }
         
         
-        }
+    }
+    
     private void travelHome() {
         String objectiveCompletedToday = checkObjectiveCompletedToday();
         this.console.println(objectiveCompletedToday);

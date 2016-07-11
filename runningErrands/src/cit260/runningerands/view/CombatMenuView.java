@@ -22,9 +22,9 @@ public class CombatMenuView extends View {
                   + "\n------------------------------------"
                   + "\nS - Select Weapon"
                   + "\nA - Attack"
-                  + "\nQ - Return to Game Menu"
+                  + "\nR - Return to Game Menu"
                   + "\n-------------------------"
-                  + "\nPlease select an Game menu option: ");
+                  + "\nPlease select a Game menu option: ");
     }
 
     @Override
@@ -32,19 +32,13 @@ public class CombatMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
-            case "Q":
+            case "R":
                 return true;
             case "S": //create and start a new game
                 this.weaponSelect();
                 break;
             case "A": //load saved game
                 this.attack();
-                break;
-            case "R": //Open help menu
-                this.runAway();
-                break;
-            case "N": //Open help menu
-                this.bribe();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
@@ -66,20 +60,23 @@ public class CombatMenuView extends View {
         Npc npc = persona.getLocation().getScene().getNpc();
         int npcHealth = npc.getNpcHealth();
         String npcName = npc.getNpcName();
-        if (npcHealth < 0) {
+        if (npcHealth <= 0) {
             this.console.println("You have already defeated " + npcName + " today. Please try again another day.");
+            CombatMenuView combatMenuView = new CombatMenuView();
+            combatMenuView.display();
         }
+        else {
         String menu = "";
         CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
         combatAttackMenuView.CombatAttackMenuValues();
+        }
     }
-    private void runAway() {
-        //Display runaway
-   this.console.println("*** runAway function called ***");
-    }
+
     private void bribe() {
         //Display bribe
-    this.console.println("*** bribe function called ***");
+        String menu = "";
+        CombatBribeMenuView combatBribeMenuView = new CombatBribeMenuView(menu);
+        combatBribeMenuView.CombatBribeMenuValues();
     }
     
 }
