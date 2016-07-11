@@ -5,10 +5,12 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.control.NPCControl.NPCList;
 import cit260.runningerrands.control.ObjectiveControl.Objectives;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Map;
+import cit260.runningerrands.model.Npc;
 import cit260.runningerrands.model.Objective;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Scene;
@@ -467,6 +469,7 @@ public class MapControl {
     public static void assignObjectivesToScenes() {
         Scene[] scenes = RunningErrands.getScene();
         Objective[] objectives = RunningErrands.getObjective();
+        Npc[] npc = RunningErrands.getNpc();
         
         scenes[LocationName.startingScene.ordinal()].setObjective(objectives[Objectives.returnVideoGame.ordinal()]);
         scenes[LocationName.mallScene.ordinal()].setObjective(objectives[Objectives.returnFreshOrgans.ordinal()]);
@@ -498,11 +501,41 @@ public class MapControl {
         scenes[LocationName.asylumScene.ordinal()].setObjective(objectives[Objectives.returnGrievingWidow.ordinal()]);
         scenes[LocationName.accountantScene.ordinal()].setObjective(objectives[Objectives.returnTaxForms.ordinal()]);
         scenes[LocationName.redBoxScene.ordinal()].setObjective(objectives[Objectives.returnVideoGame.ordinal()]);
+
+        scenes[LocationName.startingScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.mallScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.GroceryScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.gasScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.gunShopScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.sportingScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.libraryScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.churchScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.hospitalScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.schoolScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.bankScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.comicScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.repairScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.ninjaScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.armyScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.postScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.fireworksScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.petScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.MarinaScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.improvementScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.policeScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.zooScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.museumScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.cemeteryScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.volcanoScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.pizzaScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.orphanScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.asylumScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.accountantScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        scenes[LocationName.redBoxScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
         
         RunningErrands.setScene(scenes);
         
     }
-
     
     private static Location[][] createLocations() {
         

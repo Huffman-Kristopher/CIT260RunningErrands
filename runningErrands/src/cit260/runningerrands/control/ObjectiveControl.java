@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.runningerrands.control;
+import cit260.runningerands.view.WinGameMenu;
 import cit260.runningerrands.control.ItemControl.Items;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Objective;
@@ -235,6 +236,20 @@ public class ObjectiveControl {
         
     }
     
+    public static int countTotalObjectivces() {
+        
+        Objective[] objectives = RunningErrands.getObjective();
+        int totalObjectives = 0;
+        for (Objective objective : objectives) {
+            
+                totalObjectives = totalObjectives + 1;
+            
+            }
+        
+        return totalObjectives;
+        
+    }    
+    
     public static String checkObjectiveCompletedToday() {
         
         Objective[] objectives = RunningErrands.getObjective();
@@ -257,6 +272,20 @@ public class ObjectiveControl {
         objective.setObjectiveCompleteFlag(true);
         objective.setObjectiveCompletedTodayFlag(true);
         return true;
+    }
+    
+    public static boolean checkWinCondition() {
+        
+        int totalObjectives = ObjectiveControl.countTotalObjectivces();
+        int objectivesCompleted = countObjectivcesCompleted();
+        if (objectivesCompleted == totalObjectives) {
+            WinGameMenu winGameMenu = new WinGameMenu();
+            winGameMenu.display();
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
 }

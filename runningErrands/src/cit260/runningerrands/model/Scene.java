@@ -30,6 +30,7 @@ public class Scene implements Serializable{
     private String conversationMenuType;
     private Item itemToReceive;
     private Objective objective;
+    private Npc npc;
 
     public String getDescription() {
         return description;
@@ -135,22 +136,31 @@ public class Scene implements Serializable{
         this.objective = objective;
     }
 
+    public Npc getNpc() {
+        return npc;
+    }
+
+    public void setNpc(Npc npc) {
+        this.npc = npc;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.description);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.locationSymbol);
-        hash = 53 * hash + Objects.hashCode(this.location);
-        hash = 53 * hash + Objects.hashCode(this.type);
-        hash = 53 * hash + Objects.hashCode(this.itemToDeliver);
-        hash = 53 * hash + Objects.hashCode(this.menuOption1);
-        hash = 53 * hash + Objects.hashCode(this.menuOption2);
-        hash = 53 * hash + Objects.hashCode(this.menuOption3);
-        hash = 53 * hash + Objects.hashCode(this.conversationMenuType);
-        hash = 53 * hash + Objects.hashCode(this.itemToReceive);
-        hash = 53 * hash + Objects.hashCode(this.objective);
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.description);
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 41 * hash + Objects.hashCode(this.locationSymbol);
+        hash = 41 * hash + Objects.hashCode(this.location);
+        hash = 41 * hash + Objects.hashCode(this.type);
+        hash = 41 * hash + Objects.hashCode(this.itemToDeliver);
+        hash = 41 * hash + Objects.hashCode(this.menuOption1);
+        hash = 41 * hash + Objects.hashCode(this.menuOption2);
+        hash = 41 * hash + Objects.hashCode(this.menuOption3);
+        hash = 41 * hash + Objects.hashCode(this.conversationMenuType);
+        hash = 41 * hash + Objects.hashCode(this.itemToReceive);
+        hash = 41 * hash + Objects.hashCode(this.objective);
+        hash = 41 * hash + Objects.hashCode(this.npc);
         return hash;
     }
 
@@ -205,14 +215,15 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.objective, other.objective)) {
             return false;
         }
+        if (!Objects.equals(this.npc, other.npc)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationMenuType=" + conversationMenuType + ", itemToReceive=" + itemToReceive + ", objective=" + objective + '}';
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationMenuType=" + conversationMenuType + ", itemToReceive=" + itemToReceive + ", objective=" + objective + ", npc=" + npc + '}';
     }
 
-    
-    
 }

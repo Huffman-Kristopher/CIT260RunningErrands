@@ -5,6 +5,10 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.model.Npc;
+import cit260.runningerrands.model.Persona;
+import runningerrands.RunningErrands;
+
 /**
  *
  * @author Kristopher Huffman And Kirk Brown
@@ -18,8 +22,6 @@ public class CombatMenuView extends View {
                   + "\n------------------------------------"
                   + "\nS - Select Weapon"
                   + "\nA - Attack"
-                  + "\nR - Run Away"
-                  + "\nN - Negotiate"
                   + "\nQ - Return to Game Menu"
                   + "\n-------------------------"
                   + "\nPlease select an Game menu option: ");
@@ -60,7 +62,16 @@ public class CombatMenuView extends View {
                 }
     private void attack() {
         //Display attack
-        this.console.println("*** attack function called ***");
+        Persona persona = RunningErrands.getPersona();
+        Npc npc = persona.getLocation().getScene().getNpc();
+        int npcHealth = npc.getNpcHealth();
+        String npcName = npc.getNpcName();
+        if (npcHealth < 0) {
+            this.console.println("You have already defeated " + npcName + " today. Please try again another day.");
+        }
+        String menu = "";
+        CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
+        combatAttackMenuView.CombatAttackMenuValues();
     }
     private void runAway() {
         //Display runaway

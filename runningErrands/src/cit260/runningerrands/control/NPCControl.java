@@ -39,7 +39,7 @@ public class NPCControl {
     }
     
         public static Npc[] createNPCList() {
-        
+        /** NPC health is always 100 on this list. If the value goes down in combat, it resets with the add new day function**/
         Npc[] npcs = new Npc[20];
         
         Npc shopkeeper = new Npc();

@@ -5,6 +5,7 @@
  */
 package cit260.runningerrands.control;
 
+import static cit260.runningerrands.control.ObjectiveControl.resetObjectiveCompletedTodayFlag;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
@@ -47,6 +48,12 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         Location[][] locations = map.getLocations();
+        Npc[] npcs = NPCControl.createNPCList();
+        RunningErrands.setNpc(npcs);
+        Item[] inventoryList = ItemControl.createInventoryList();
+        Objective[] objectives = ObjectiveControl.createObjectiveList();
+        resetObjectiveCompletedTodayFlag();
+        MapControl.assignObjectivesToScenes();
         
     }
     public static void saveGame(Game game, String filePath)

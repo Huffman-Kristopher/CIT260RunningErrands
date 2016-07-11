@@ -5,11 +5,8 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Item;
-import cit260.runningerrands.model.Location;
 import cit260.runningerrands.model.Persona;
-import cit260.runningerrands.model.Scene;
 import runningerrands.RunningErrands;
 
 /**

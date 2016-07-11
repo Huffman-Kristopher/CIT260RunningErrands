@@ -5,12 +5,9 @@
  */
 package cit260.runningerrands.control;
 import cit260.runningerrands.control.ItemControl.Items;
-import static cit260.runningerrands.control.ObjectiveControl.checkObjectiveCompletedToday;
-import static cit260.runningerrands.control.ObjectiveControl.resetObjectiveCompletedTodayFlag;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Npc;
-import cit260.runningerrands.model.Objective;
 import cit260.runningerrands.model.Persona;
 import java.util.concurrent.ThreadLocalRandom;
 import runningerrands.RunningErrands;
@@ -31,15 +28,10 @@ public class PersonaControl {
         persona.setGambledToday(false);
         RunningErrands.setPersona(persona); // Save the character
         RunningErrands.setInvestment(investment); // Save the investment
-        Item[] inventoryList = ItemControl.createInventoryList();
-        Objective[] objectives = ObjectiveControl.createObjectiveList();
-        resetObjectiveCompletedTodayFlag();
-        MapControl.assignObjectivesToScenes();
+        Item[] inventoryList = RunningErrands.getItems();
         persona.setItem(inventoryList);
         Item weaponItem = inventoryList[Items.baseballBat.ordinal()];
         persona.setWeaponItem(weaponItem);
-        Npc[] npcs = NPCControl.createNPCList();
-        RunningErrands.setNpc(npcs);
 
     }
     
@@ -94,6 +86,7 @@ public class PersonaControl {
         int randomNumber = ThreadLocalRandom.current().nextInt(1, 9);
         int personaHealth = (age * 3) + randomNumber;
         persona.setHealth(personaHealth);
+        persona.setInitialHealth(personaHealth);
         RunningErrands.setPersona(persona); // Save the character
     }
     
@@ -126,6 +119,8 @@ public class PersonaControl {
         int investmentMatureDay = investment.getInvestMatureDay();
         int personaCurrentMoney = persona.getMoney();
         int personaSalary = persona.getSalary();
+        int personaInitialHealth = persona.getInitialHealth();
+        persona.setHealth(personaInitialHealth);
         int personaNewMoney = personaCurrentMoney + personaSalary;
         persona.setMoney(personaNewMoney);
         persona.setGambledToday(false);
@@ -136,8 +131,12 @@ public class PersonaControl {
             investment = new Investment();
             RunningErrands.setInvestment(investment);
         }
+        Npc[] npcs = RunningErrands.getNpc();
+        for (Npc npc : npcs) {
+            npc.setNpcHealth(100);
+        }
         
-        resetObjectiveCompletedTodayFlag();
+        ObjectiveControl.resetObjectiveCompletedTodayFlag();
         MapControl.movePersonaToNewLocation("01");
     }
 

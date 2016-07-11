@@ -96,14 +96,14 @@ public class ItemControl {
         secretRayGun.setRequiredAmount(0);
         secretRayGun.setItemCost(0);
         secretRayGun.setItemValue(100000);
-        secretRayGun.setItemQuantity(0);
+        secretRayGun.setItemQuantity(1);
         secretRayGun.setStrength(100000);
         secretRayGun.setItemNumber(0);
         secretRayGun.setItemBuyable("N");
         secretRayGun.setItemInBuyList("N");
         secretRayGun.setItemSellable("Y");
         secretRayGun.setItemInSellList("N");
-        secretRayGun.setItemType("Nonweapon");
+        secretRayGun.setItemType("Weapon");
         secretRayGun.setSceneToBuy(scene[LocationName.bankScene.ordinal()]);
         secretRayGun.setSceneToSell(scene[LocationName.gunShopScene.ordinal()]);
         item[Items.secretRayGun.ordinal()] = secretRayGun;
@@ -247,7 +247,7 @@ public class ItemControl {
         bazooka.setRequiredAmount(0);
         bazooka.setItemCost(5000);
         bazooka.setItemValue(0);
-        bazooka.setItemQuantity(0);
+        bazooka.setItemQuantity(1);
         bazooka.setStrength(100);
         bazooka.setItemNumber(9);
         bazooka.setItemBuyable("Y");
@@ -1188,7 +1188,6 @@ public class ItemControl {
     
     public static int receiveItem (Item currentItem, int itemQuantity) {
         
-        Persona persona = RunningErrands.getPersona();
         int currentOnHand = currentItem.getItemQuantity();
         int newOnHand = currentOnHand + itemQuantity;
         currentItem.setItemQuantity(newOnHand);
