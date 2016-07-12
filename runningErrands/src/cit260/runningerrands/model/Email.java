@@ -10,11 +10,40 @@ import java.util.Objects;
 
 /**
  *
- *  @author Kristopher Huffman And Kirk Brown
+ * @author Kristopher Huffman And Kirk Brown
  */
 public class Email implements Serializable {
 
-    @Override
+    
+    
+    
+   private String description;
+   private String Subject;
+   private int days;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getSubject() {
+        return Subject;
+    }
+
+    public void setSubject(String Subject) {
+        this.Subject = Subject;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }@Override
     public int hashCode() {
         int hash = 3;
         hash = 29 * hash + Objects.hashCode(this.description);
@@ -47,35 +76,6 @@ public class Email implements Serializable {
         return true;
     }
 
-    
-    
-   private String description;
-   private String Subject;
-   private int days;
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getSubject() {
-        return Subject;
-    }
-
-    public void setSubject(String Subject) {
-        this.Subject = Subject;
-    }
-
-    public int getDays() {
-        return days;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
-    }
    @Override
     public String toString() {
         return "Email{" + "description=" + description + ", Subject=" + Subject + ", days=" + days + '}';
