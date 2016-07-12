@@ -185,7 +185,9 @@ public class SceneMenuView extends View {
     }
 
     private void openEmailMenu() {
-        this.console.println("\n ***Runs email menu function ***");
+        String menu = "";
+        EmailMenuView emailMenuView = new EmailMenuView(menu);
+        emailMenuView.display();
     }
 
     private void openHelpMenu() {
