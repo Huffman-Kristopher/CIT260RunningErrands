@@ -8,9 +8,6 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Player;
-import java.util.Scanner; //if it screws up - delete this
-import java.io.PrintWriter;
-import java.io.BufferedReader;
 import java.io.IOException;
 /**
  *

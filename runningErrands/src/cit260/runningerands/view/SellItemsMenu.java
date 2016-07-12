@@ -5,7 +5,6 @@
  */
 package cit260.runningerands.view;
 
-import cit260.runningerrands.control.GameControl;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
 import runningerrands.RunningErrands;
