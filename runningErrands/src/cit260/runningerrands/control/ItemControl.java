@@ -113,7 +113,7 @@ public class ItemControl {
         shirt.setDescription("Shirt");
         shirt.setRequiredAmount(0);
         shirt.setItemCost(20);
-        shirt.setItemValue(0);
+        shirt.setItemValue(20);
         shirt.setItemQuantity(0);
         shirt.setStrength(10);
         shirt.setItemNumber(0);
@@ -131,7 +131,7 @@ public class ItemControl {
         videoGame.setDescription("Video Game");
         videoGame.setRequiredAmount(0);
         videoGame.setItemCost(60);
-        videoGame.setItemValue(0);
+        videoGame.setItemValue(60);
         videoGame.setItemQuantity(0);
         videoGame.setStrength(10);
         videoGame.setItemNumber(2);
@@ -148,7 +148,7 @@ public class ItemControl {
         leatherBag.setDescription("Fancy Leather Bag");
         leatherBag.setRequiredAmount(0);
         leatherBag.setItemCost(800);
-        leatherBag.setItemValue(0);
+        leatherBag.setItemValue(400);
         leatherBag.setItemQuantity(0);
         leatherBag.setStrength(10);
         leatherBag.setItemNumber(3);
@@ -197,7 +197,7 @@ public class ItemControl {
         donuts.setDescription("Donuts");
         donuts.setRequiredAmount(0);
         donuts.setItemCost(4);
-        donuts.setItemValue(0);
+        donuts.setItemValue(2);
         donuts.setItemQuantity(0);
         donuts.setStrength(10);
         donuts.setItemNumber(6);
@@ -213,7 +213,7 @@ public class ItemControl {
         gas.setDescription("Gas");
         gas.setRequiredAmount(0);
         gas.setItemCost(4);
-        gas.setItemValue(0);
+        gas.setItemValue(4);
         gas.setItemQuantity(10);
         gas.setStrength(10);
         gas.setItemNumber(7);
@@ -230,7 +230,7 @@ public class ItemControl {
         ar15.setDescription("AR-15");
         ar15.setRequiredAmount(0);
         ar15.setItemCost(1500);
-        ar15.setItemValue(0);
+        ar15.setItemValue(750);
         ar15.setItemQuantity(0);
         ar15.setStrength(30);
         ar15.setItemNumber(8);
@@ -246,7 +246,7 @@ public class ItemControl {
         bazooka.setDescription("Bazooka");
         bazooka.setRequiredAmount(0);
         bazooka.setItemCost(5000);
-        bazooka.setItemValue(0);
+        bazooka.setItemValue(2500);
         bazooka.setItemQuantity(0);
         bazooka.setStrength(1000);
         bazooka.setItemNumber(9);
@@ -262,7 +262,7 @@ public class ItemControl {
         crossbow.setDescription("Crossbow");
         crossbow.setRequiredAmount(0);
         crossbow.setItemCost(500);
-        crossbow.setItemValue(0);
+        crossbow.setItemValue(250);
         crossbow.setItemQuantity(0);
         crossbow.setStrength(27);
         crossbow.setItemNumber(10);
@@ -278,7 +278,7 @@ public class ItemControl {
         katana.setDescription("Katana");
         katana.setRequiredAmount(0);
         katana.setItemCost(400);
-        katana.setItemValue(0);
+        katana.setItemValue(320);
         katana.setItemQuantity(0);
         katana.setStrength(20);
         katana.setItemNumber(11);
@@ -294,7 +294,7 @@ public class ItemControl {
         nunchucks.setDescription("Nunchucks");
         nunchucks.setRequiredAmount(0);
         nunchucks.setItemCost(170);
-        nunchucks.setItemValue(0);
+        nunchucks.setItemValue(170);
         nunchucks.setItemQuantity(0);
         nunchucks.setStrength(15);
         nunchucks.setItemNumber(12);
@@ -310,7 +310,7 @@ public class ItemControl {
         bowstaff.setDescription("Bow Staff");
         bowstaff.setRequiredAmount(0);
         bowstaff.setItemCost(150);
-        bowstaff.setItemValue(0);
+        bowstaff.setItemValue(10);
         bowstaff.setItemQuantity(0);
         bowstaff.setStrength(10);
         bowstaff.setItemNumber(13);
@@ -326,7 +326,7 @@ public class ItemControl {
         throwingStars.setDescription("Throwing Stars");
         throwingStars.setRequiredAmount(0);
         throwingStars.setItemCost(90);
-        throwingStars.setItemValue(0);
+        throwingStars.setItemValue(20);
         throwingStars.setItemQuantity(0);
         throwingStars.setStrength(15);
         throwingStars.setItemNumber(14);
@@ -342,7 +342,7 @@ public class ItemControl {
         baseballBat.setDescription("Baseball Bat");
         baseballBat.setRequiredAmount(0);
         baseballBat.setItemCost(15);
-        baseballBat.setItemValue(0);
+        baseballBat.setItemValue(5);
         baseballBat.setItemQuantity(1);
         baseballBat.setStrength(10);
         baseballBat.setItemNumber(15);
@@ -358,7 +358,7 @@ public class ItemControl {
         dumbbells.setDescription("Dumbbells");
         dumbbells.setRequiredAmount(0);
         dumbbells.setItemCost(20);
-        dumbbells.setItemValue(0);
+        dumbbells.setItemValue(10);
         dumbbells.setItemQuantity(0);
         dumbbells.setStrength(10);
         dumbbells.setItemNumber(16);
@@ -374,7 +374,7 @@ public class ItemControl {
         golfClub.setDescription("Golf Club");
         golfClub.setRequiredAmount(0);
         golfClub.setItemCost(100);
-        golfClub.setItemValue(0);
+        golfClub.setItemValue(10);
         golfClub.setItemQuantity(0);
         golfClub.setStrength(10);
         golfClub.setItemNumber(17);
@@ -389,8 +389,8 @@ public class ItemControl {
         Item ancientBookofSpells = new Item();
         ancientBookofSpells.setDescription("Ancient Book of Spells");
         ancientBookofSpells.setRequiredAmount(0);
-        ancientBookofSpells.setItemCost(0);
-        ancientBookofSpells.setItemValue(0);
+        ancientBookofSpells.setItemCost(10000);
+        ancientBookofSpells.setItemValue(10);
         ancientBookofSpells.setItemQuantity(0);
         ancientBookofSpells.setStrength(75);
         ancientBookofSpells.setItemNumber(18);
@@ -440,7 +440,7 @@ public class ItemControl {
         holyWater.setItemCost(0);
         holyWater.setItemValue(0);
         holyWater.setItemQuantity(0);
-        holyWater.setStrength(36);
+        holyWater.setStrength(-36);
         holyWater.setItemNumber(21);
         holyWater.setItemBuyable("N");
         holyWater.setItemSellable("Y");
@@ -453,8 +453,8 @@ public class ItemControl {
         Item sacramentalWine = new Item();
         sacramentalWine.setDescription("Sacramental Wine");
         sacramentalWine.setRequiredAmount(0);
-        sacramentalWine.setItemCost(0);
-        sacramentalWine.setItemValue(0);
+        sacramentalWine.setItemCost(10);
+        sacramentalWine.setItemValue(10);
         sacramentalWine.setItemQuantity(0);
         sacramentalWine.setStrength(10);
         sacramentalWine.setItemNumber(22);
@@ -469,8 +469,8 @@ public class ItemControl {
         Item altarBoyVestments = new Item();
         altarBoyVestments.setDescription("Altar Boy Vestments");
         altarBoyVestments.setRequiredAmount(0);
-        altarBoyVestments.setItemCost(0);
-        altarBoyVestments.setItemValue(0);
+        altarBoyVestments.setItemCost(130);
+        altarBoyVestments.setItemValue(10);
         altarBoyVestments.setItemQuantity(0);
         altarBoyVestments.setStrength(10);
         altarBoyVestments.setItemNumber(23);
@@ -485,8 +485,8 @@ public class ItemControl {
         Item usedNeedles = new Item();
         usedNeedles.setDescription("Used Needles");
         usedNeedles.setRequiredAmount(0);
-        usedNeedles.setItemCost(0);
-        usedNeedles.setItemValue(0);
+        usedNeedles.setItemCost(190);
+        usedNeedles.setItemValue(10);
         usedNeedles.setItemQuantity(0);
         usedNeedles.setStrength(56);
         usedNeedles.setItemNumber(24);
@@ -502,7 +502,7 @@ public class ItemControl {
         medicine.setDescription("Medicine");
         medicine.setRequiredAmount(0);
         medicine.setItemCost(10);
-        medicine.setItemValue(0);
+        medicine.setItemValue(5);
         medicine.setItemQuantity(0);
         medicine.setStrength(10);
         medicine.setItemNumber(25);
@@ -517,8 +517,8 @@ public class ItemControl {
         Item freshOrgans = new Item();
         freshOrgans.setDescription("Fresh Organs");
         freshOrgans.setRequiredAmount(0);
-        freshOrgans.setItemCost(0);
-        freshOrgans.setItemValue(0);
+        freshOrgans.setItemCost(7000);
+        freshOrgans.setItemValue(7000);
         freshOrgans.setItemQuantity(0);
         freshOrgans.setStrength(10);
         freshOrgans.setItemNumber(26);
@@ -533,7 +533,7 @@ public class ItemControl {
         Item textbook = new Item();
         textbook.setDescription("Textbook");
         textbook.setRequiredAmount(0);
-        textbook.setItemCost(0);
+        textbook.setItemCost(185);
         textbook.setItemValue(0);
         textbook.setItemQuantity(0);
         textbook.setStrength(10);
@@ -549,7 +549,7 @@ public class ItemControl {
         Item reportCard = new Item();
         reportCard.setDescription("Report Card");
         reportCard.setRequiredAmount(0);
-        reportCard.setItemCost(0);
+        reportCard.setItemCost(190);
         reportCard.setItemValue(0);
         reportCard.setItemQuantity(0);
         reportCard.setStrength(10);
@@ -565,7 +565,7 @@ public class ItemControl {
         Item bagOfMoney = new Item();
         bagOfMoney.setDescription("Bag of Money");
         bagOfMoney.setRequiredAmount(0);
-        bagOfMoney.setItemCost(0);
+        bagOfMoney.setItemCost(9000);
         bagOfMoney.setItemValue(13000);
         bagOfMoney.setItemQuantity(0);
         bagOfMoney.setStrength(10);
@@ -614,7 +614,7 @@ public class ItemControl {
         supermanComic.setDescription("Superman Comic");
         supermanComic.setRequiredAmount(0);
         supermanComic.setItemCost(5);
-        supermanComic.setItemValue(0);
+        supermanComic.setItemValue(10);
         supermanComic.setItemQuantity(0);
         supermanComic.setStrength(10);
         supermanComic.setItemNumber(32);
@@ -630,7 +630,7 @@ public class ItemControl {
         mintYoda.setDescription("Yoda - Mint condition in box");
         mintYoda.setRequiredAmount(0);
         mintYoda.setItemCost(120);
-        mintYoda.setItemValue(0);
+        mintYoda.setItemValue(300);
         mintYoda.setItemQuantity(0);
         mintYoda.setStrength(10);
         mintYoda.setItemNumber(33);
@@ -646,7 +646,7 @@ public class ItemControl {
         oilCan.setDescription("Oil Can");
         oilCan.setRequiredAmount(0);
         oilCan.setItemCost(8);
-        oilCan.setItemValue(0);
+        oilCan.setItemValue(4);
         oilCan.setItemQuantity(0);
         oilCan.setStrength(10);
         oilCan.setItemNumber(34);
@@ -662,7 +662,7 @@ public class ItemControl {
         tireIron.setDescription("Tire Iron");
         tireIron.setRequiredAmount(0);
         tireIron.setItemCost(15);
-        tireIron.setItemValue(0);
+        tireIron.setItemValue(7);
         tireIron.setItemQuantity(0);
         tireIron.setStrength(16);
         tireIron.setItemNumber(35);
@@ -677,8 +677,8 @@ public class ItemControl {
         Item nerveGas = new Item();
         nerveGas.setDescription("Nerve Gas");
         nerveGas.setRequiredAmount(0);
-        nerveGas.setItemCost(0);
-        nerveGas.setItemValue(0);
+        nerveGas.setItemCost(13000);
+        nerveGas.setItemValue(750);
         nerveGas.setItemQuantity(0);
         nerveGas.setStrength(45);
         nerveGas.setItemNumber(36);
@@ -693,8 +693,8 @@ public class ItemControl {
         Item armyUniform = new Item();
         armyUniform.setDescription("Army Uniform");
         armyUniform.setRequiredAmount(0);
-        armyUniform.setItemCost(0);
-        armyUniform.setItemValue(0);
+        armyUniform.setItemCost(80);
+        armyUniform.setItemValue(30);
         armyUniform.setItemQuantity(0);
         armyUniform.setStrength(10);
         armyUniform.setItemNumber(37);
@@ -709,8 +709,8 @@ public class ItemControl {
         Item abramsTank = new Item();
         abramsTank.setDescription("Abrams Tank");
         abramsTank.setRequiredAmount(0);
-        abramsTank.setItemCost(0);
-        abramsTank.setItemValue(0);
+        abramsTank.setItemCost(1900000);
+        abramsTank.setItemValue(30000);
         abramsTank.setItemQuantity(0);
         abramsTank.setStrength(1020);
         abramsTank.setItemNumber(38);
@@ -838,7 +838,7 @@ public class ItemControl {
         cobra.setDescription("Cobra");
         cobra.setRequiredAmount(0);
         cobra.setItemCost(400);
-        cobra.setItemValue(0);
+        cobra.setItemValue(120);
         cobra.setItemQuantity(0);
         cobra.setStrength(74);
         cobra.setItemNumber(46);
@@ -886,7 +886,7 @@ public class ItemControl {
         nailGun.setDescription("Nail Gun");
         nailGun.setRequiredAmount(0);
         nailGun.setItemCost(125);
-        nailGun.setItemValue(0);
+        nailGun.setItemValue(30);
         nailGun.setItemQuantity(0);
         nailGun.setStrength(21);
         nailGun.setItemNumber(49);
@@ -902,7 +902,7 @@ public class ItemControl {
         chainsaw.setDescription("Chainsaw");
         chainsaw.setRequiredAmount(0);
         chainsaw.setItemCost(75);
-        chainsaw.setItemValue(0);
+        chainsaw.setItemValue(30);
         chainsaw.setItemQuantity(0);
         chainsaw.setStrength(33);
         chainsaw.setItemNumber(50);
@@ -949,8 +949,8 @@ public class ItemControl {
         Item copUniform = new Item();
         copUniform.setDescription("Cop Uniform");
         copUniform.setRequiredAmount(0);
-        copUniform.setItemCost(0);
-        copUniform.setItemValue(0);
+        copUniform.setItemCost(80);
+        copUniform.setItemValue(20);
         copUniform.setItemQuantity(0);
         copUniform.setStrength(10);
         copUniform.setItemNumber(53);
@@ -965,7 +965,7 @@ public class ItemControl {
         Item handcuffs = new Item();
         handcuffs.setDescription("Handcuffs");
         handcuffs.setRequiredAmount(0);
-        handcuffs.setItemCost(0);
+        handcuffs.setItemCost(20);
         handcuffs.setItemValue(0);
         handcuffs.setItemQuantity(0);
         handcuffs.setStrength(10);
@@ -1045,15 +1045,15 @@ public class ItemControl {
         Item catapult = new Item();
         catapult.setDescription("Catapult");
         catapult.setRequiredAmount(0);
-        catapult.setItemCost(0);
-        catapult.setItemValue(0);
+        catapult.setItemCost(6000);
+        catapult.setItemValue(200);
         catapult.setItemQuantity(0);
-        catapult.setStrength(10);
+        catapult.setStrength(100);
         catapult.setItemNumber(59);
         catapult.setItemBuyable("N");
         catapult.setItemSellable("Y");
         catapult.setItemInSellList("N");
-        catapult.setItemType("Nonweapon");
+        catapult.setItemType("Weapon");
         catapult.setSceneToBuy(scene[LocationName.mallScene.ordinal()]);
         catapult.setSceneToSell(scene[LocationName.orphanScene.ordinal()]);
         item[Items.catapult.ordinal()] = catapult;

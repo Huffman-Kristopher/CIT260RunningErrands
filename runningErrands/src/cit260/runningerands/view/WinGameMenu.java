@@ -14,7 +14,8 @@ public class WinGameMenu extends View {
     public WinGameMenu() {
         super("Congratulations! You have successfully" +
             "\ncompleted all objectives and returned" +
-            "\nhome! You have won the game!!" +
+            "\nhome! Unfortunately the volcano still errupted"+
+            "\n and you died, buy you have won the game you're just dead!!" +
             "\nPlease press Q to exit the game.");
     }
 

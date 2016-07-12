@@ -48,7 +48,7 @@ public class ObjectiveControl {
         returnAncientBookofSpells.setObjectiveCompleteText("Congratulations! You returned the Ancient Book of Spells. You have now completed this objective");
         returnAncientBookofSpells.setObjectiveNotEnoughText("I'm sorry. You do not have an Ancient Book of Spells. Please go find one and return it to us!");
         returnAncientBookofSpells.setObjectiveAlreadyHaveItemsText("Welcome back! Unfortunately, I do not have any more Ancient Books of Spells to give you.");
-        returnAncientBookofSpells.setObjectiveGiveItemText("Thank you for visiting the Amazing Store of Comics! Why don't you take this Anceint Book of Spells? It really doesn't fit in our normal genre.");
+        returnAncientBookofSpells.setObjectiveGiveItemText("Thanks for visiting the Amazing Store of Comics! You look like a nerd, here you can use this for your D&D parties or something...");
         returnAncientBookofSpells.setObjectiveCompleteFlag(false);
         objective[Objectives.returnAncientBookofSpells.ordinal()] = returnAncientBookofSpells;
         

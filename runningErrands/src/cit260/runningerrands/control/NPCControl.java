@@ -152,7 +152,7 @@ public class NPCControl {
         pirate.setNpcName("Blackbeard");
         pirate.setNpcDescription("Aye, matey! This here's Captain Blackbeard and he's yer worst nightmare. He'll " 
                 + "\nslice you open and throw you overboard. His leadership style of \"Do it or I'll " 
-                + "\nkill you\" doesn't exactly lend itself to loyalt, but his sword will make you " 
+                + "\nkill you\" doesn't exactly lend itself to loyalty, but his sword will make you " 
                 + "\nregret crossing him.");
         pirate.setNpcHealth(40);
         pirate.setNpcStrength(175);
