@@ -31,10 +31,9 @@ public class BuyItemsMenu extends View{
                   + "\n| Buy Menu                            |" 
                   + "\n------------------------------------"
                   + "\n"
-                  + "Item #  Description            In Stock  Buy Price  Total Value"
+                  + "Item #  Description            # Owned   Buy Price"
                   + "\n";
-        int totalItems = 0;            
-        
+
         for (Item item : inventory) {
             String sceneToBuy = item.getSceneToBuy().getLocationSymbol();
             int itemNumber = item.getItemNumber();
@@ -46,26 +45,20 @@ public class BuyItemsMenu extends View{
                         
                         int qtyOnHand = item.getItemQuantity();
                         int itemCost = item.getItemCost();
-                        totalItems = totalItems + item.getItemQuantity();
                         line = new StringBuilder("\n                                                                    ");
                         line.insert(2, item.getItemNumber());
                         line.insert(10,item.getDescription());
                         line.insert(33, qtyOnHand);
                         line.insert(43,"$");
                         line.insert(44, itemCost);
-                        line.insert(55,"$");
-                        line.insert(56, (qtyOnHand * itemCost));
                         menu = menu + line.toString();
-                        item.setItemInBuyList("Y");
                     }
                 }
         }
         menu = menu + "\n------------------------------------"
-                + "\n Total items on hand: " + totalItems
-                + "\n------------------------------------"
                 + "\n"
-                + "\n Enter the item number of the item you wish to purchase."
-                + "\n R - Return to game menu";
+                + "\n Enter the item number of the item you wish to purchase"
+                + "\n or enter R to return to game menu";
         BuyItemsMenu buyItemsMenu = new BuyItemsMenu(menu);
         buyItemsMenu.display();        
         return menu;

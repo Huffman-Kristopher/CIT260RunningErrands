@@ -24,45 +24,40 @@ public class SellItemsMenu extends View{
     
     String getMenuValues() {
         
-        int totalItems = 0; 
         StringBuilder line;
         Persona persona = RunningErrands.getPersona();
-        Item[] inventory = persona.getItem();
+        Item[] inventory = RunningErrands.getItems();
+        String currentScene = persona.getLocation().getScene().getLocationSymbol();
         String menu = "\n"
                   + "\n------------------------------------"
                   + "\n| Sell Menu                            |" 
                   + "\n------------------------------------"
                   + "\n"
-                  + "Item #  Description            In Stock  Sell Price  Total Value"
+                  + "Item #  Description            On Hand  Sell Price  Total Value"
                   + "\n";
-        for (Item item : inventory) {
-            
-            if ("N".equals(item.getItemSellable())) {
-                item.setItemInSellList("N");
-            }
-            else {
-                if(item.getItemQuantity() > 0) {
-                    int qtyOnHand = item.getItemQuantity();
-                    int itemValue = item.getItemValue();
-                    totalItems = totalItems + item.getItemQuantity();
-                    line = new StringBuilder("\n                                                                    ");
-                    line.insert(2, item.getItemNumber());
-                    line.insert(10,item.getDescription());
-                    line.insert(33, qtyOnHand);
-                    line.insert(43,"$");
-                    line.insert(44, itemValue);
-                    line.insert(55,"$");
-                    line.insert(56, (qtyOnHand * itemValue));
-                    menu = menu + line.toString();
-                    item.setItemInSellList("Y");
-                    
-                }
-                else {
-
-                    /* Do nothing*/
-                }
+        
+        int totalItems = 0; 
                 
-            }
+        for (Item item : inventory) {
+            String sceneToSell = item.getSceneToSell().getLocationSymbol();
+            int itemNumber = item.getItemNumber();
+                if(sceneToSell == currentScene) {
+                    if(itemNumber == 0) {
+                        /** Do nothing - keep Secret Ray Gun off the list **/
+                    }
+                    else{
+                        
+                        int qtyOnHand = item.getItemQuantity();
+                        int itemCost = item.getItemCost();
+                        line = new StringBuilder("\n                                                                    ");
+                        line.insert(2, item.getItemNumber());
+                        line.insert(10,item.getDescription());
+                        line.insert(33, qtyOnHand);
+                        line.insert(43,"$");
+                        line.insert(44, itemCost);
+                        menu = menu + line.toString();
+                    }
+                }
         }
         menu = menu + "\n------------------------------------"
                 + "\n Total items on hand: " + totalItems
@@ -80,49 +75,36 @@ public class SellItemsMenu extends View{
     public boolean doAction(String value) {
         value = value.toUpperCase();
         switch (value) {
-            case "R": //Return to game menu.
-                return true;
-            case "P": // Print to file.
-                this.console.println("\n\nEnter the file path for the folder you wish to save the list to.");
-        String filePath = this.getInput();
-       try{
-           // save the list to the specified file.
-           GameControl.saveItems(RunningErrands.getItems(), filePath);
-       } catch (Exception ex){
-            ErrorView.display("SellItemsMenu", ex.getMessage());
-       }
-                return true;
+            case "R": //create a buy menu.
+                this.openSceneMenu();
+                break;
             default:
-                try {
-                    int itemChoice = Integer.parseInt(value);
-                    Persona persona = RunningErrands.getPersona();
-                    Item[] inventory = persona.getItem();
-                    Item currentItem = inventory[itemChoice];
-                    if ("N".equals(currentItem.getItemInSellList())) {
-
-                        this.console.println("\nPlease select a sellable item.");
-                        return false;
-                    }
-
-                    else {
-                        RunningErrands.setItem(currentItem);
-                        String menu = "";
-                        SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
-                        menu = sellItemQtyMenuView.getMenuValues(currentItem);
-                        return true;
-                    }
-                } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                int itemChoice = Integer.parseInt(value);
+                Persona persona = RunningErrands.getPersona();
+                Item[] inventory = persona.getItem();
+                Item currentItem = inventory[itemChoice];
+                String currentLocationSymbol = persona.getLocation().getScene().getLocationSymbol();
+                String itemSellLocationSymbol = currentItem.getSceneToSell().getLocationSymbol();
+                if (currentLocationSymbol != itemSellLocationSymbol) {
+                        this.console.println("Selected Item cannot be sold at this location.");
                     return false;
                 }
+                else {
+                    persona.setItemToTrade(currentItem);
+                    String menu = "";
+                    SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
+                    menu = sellItemQtyMenuView.getMenuValues(currentItem);
+                    sellItemQtyMenuView.display();
+                    return true;
+                }
         }
-        
-        
-        }
+        return false;
+    }
 
-     private void openGameMenu() {
-       GameMenuView GameMenuView = new GameMenuView();
-       GameMenuView.display();
+     private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
 }
 

@@ -35,17 +35,17 @@ public class SellItemQtyMenuView extends View {
             + "Item #  Description            In Stock  Sell Price  Total Value"
             + "\n";        
 
+            int qtyOnHand = currentItem.getItemQuantity();
+            int itemCost = currentItem.getItemCost();
             line = new StringBuilder("\n                                                                    ");
-            line.insert(2, currentItem.getItemNumber());
-            line.insert(10,currentItem.getDescription());
-            line.insert(33, currentItem.getRequiredAmount());
-            line.insert(43, currentItem.getItemQuantity());
-            line.insert(55, (currentItem.getItemQuantity() * currentItem.getItemValue()));
+            line.insert(0, currentItem.getItemNumber());
+            line.insert(8,currentItem.getDescription());
+            line.insert(31, qtyOnHand);
+            line.insert(40,"$");
+            line.insert(41, itemCost);
+            line.insert(53,"$");
+            line.insert(54, (qtyOnHand * itemCost));
             menu = menu + line.toString();
-            menu = menu + "\n" 
-                    + "\n Enter a quantity to sell"
-                    + "\n R - Return to game menu";
-            this.itemToSell = currentItem;
             SellItemQtyMenuView sellItemQtyMenuView = new SellItemQtyMenuView(menu);
             sellItemQtyMenuView.display();
             
@@ -55,37 +55,47 @@ public class SellItemQtyMenuView extends View {
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        Persona persona = RunningErrands.getPersona();
-        Item currentItem = RunningErrands.getItem();
-        int qtyOnHand = currentItem.getItemQuantity();
         switch (value) {
-            case "R": //create a stock investment.
-                return true;
+            case "R": //create a buy menu.
+                this.openGameMenu();
+                break;
             default:
-                try {
+              try{
+                
+                    Persona persona = RunningErrands.getPersona();
                     int sellQty = Integer.parseInt(value);
-                    if (sellQty < 1) {
-                        if(qtyOnHand == 1) {
-                            this.console.println("\nPlease enter 1 to sell or R to return to game menu.");
-                            return false;
-                        }
-
-                        this.console.println("\nPlease enter a number from 1 to " + qtyOnHand);
+                    Item itemToTrade = persona.getItemToTrade();
+                    String itemToTradeName = itemToTrade.getItemName();
+                    int qtyOnHand = itemToTrade.getItemQuantity();
+                    if(sellQty < 1) {
+                        this.console.println("Quantity to buy must be greater than zero.");
                         return false;
                     }
                     else {
-                        int saleAmount = ItemControl.sellItem(currentItem, sellQty);
-                        this.console.println("\nCongratulations! You just made $" + saleAmount + ".");
-                        return true;    
+                        if (sellQty > qtyOnHand) {
+                            this.console.println("Quantity to buy cannot be greater than the quantity on hand.");
                         }
-                } catch (NumberFormatException ne) {
-                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please enter a quantity.");
-                    return false;
+                        else {
+
+                            int itemCost = itemToTrade.getItemCost();
+                            int sellingPrice = sellQty * itemCost;
+                            int moneyOnHand = persona.getMoney();
+                                this.console.println("You have successfully completed your sale of " + itemToTradeName + " at a cost of " + sellingPrice);
+                                ItemControl.sellItem(itemToTrade, sellQty);
+                                String menu = "";
+                                SceneMenuView sceneMenuView = new SceneMenuView(menu);
+                                sceneMenuView.SceneMenuValues();
+                                return true;
+                        }
+                    }
+                    
+                } catch (NumberFormatException nf){
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
                 }
-                }
-                
-        
         }
+                
+        return false;
+    }
 
      private void openGameMenu() {
        GameMenuView GameMenuView = new GameMenuView();

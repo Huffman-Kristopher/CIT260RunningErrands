@@ -17,8 +17,6 @@ import runningerrands.RunningErrands;
 
 public class BuyItemQtyMenuView extends View{
 
-   public Item itemToBuy;
-    
     public BuyItemQtyMenuView(String menu) {
         super(menu);
     }
@@ -44,7 +42,6 @@ public class BuyItemQtyMenuView extends View{
             menu = menu + "\n" 
                     + "\n Enter a quantity to Purchase"
                     + "\n R - Return to game menu";
-            this.itemToBuy = currentItem;
             BuyItemQtyMenuView buyItemQtyMenuView = new BuyItemQtyMenuView(menu);
             buyItemQtyMenuView.display();
             

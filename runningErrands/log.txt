@@ -1,0 +1,6 @@
+cit260.runningerands.view.StoreMenuView - Error reading input:
+Invalid selection, please try again
+cit260.runningerands.view.SceneMenuView - Error reading input:
+Invalid main menu selection, please try again
+cit260.runningerands.view.PersonaAgeMenuView - 
+Please enter a numeric value, or press Q to return to the main menu.
