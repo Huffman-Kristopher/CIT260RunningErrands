@@ -34,7 +34,7 @@ public class GameMenuView extends View{
                   + "\nS – Save Game"
                   + "\nL – Load Game"
                   + "\nQ – Quit Game"
-                  + "\nA - TEST ADDING ONE DAY"
+               //   + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
                   + "\nPlease select a menu option: ");
     }
@@ -81,9 +81,9 @@ public class GameMenuView extends View{
             case "Q": //return to main menu.
                 this.openMainMenu();
                 return true;
-            case "A": //return to main menu.
-                this.addOneDay();
-                return false;
+          //  case "A": //return to main menu.
+            //    this.addOneDay();
+              //  return false;
             default:
                ErrorView.display(this.getClass().getName(), "\nInvalid main menu selection, please try again");
                 return false;  
@@ -161,10 +161,10 @@ public class GameMenuView extends View{
         mainMenuView.display();    
     }
 
-    private void addOneDay() {
+ /**   private void addOneDay() {
         PersonaControl.addOneDay();
     }
-
+**/
     private void viewInventory() {
         
         StringBuilder line;
