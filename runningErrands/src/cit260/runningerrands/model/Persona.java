@@ -32,6 +32,7 @@ public class Persona implements Serializable{
     private Scene scene;
     private Item weaponItem;
     private int initialHealth;
+    private Item itemToTrade;
 
     public char getGender() {
         return gender;
@@ -161,25 +162,34 @@ public class Persona implements Serializable{
         this.initialHealth = initialHealth;
     }
 
+    public Item getItemToTrade() {
+        return itemToTrade;
+    }
+
+    public void setItemToTrade(Item itemToTrade) {
+        this.itemToTrade = itemToTrade;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 97 * hash + this.gender;
-        hash = 97 * hash + Objects.hashCode(this.career);
-        hash = 97 * hash + Objects.hashCode(this.personaName);
-        hash = 97 * hash + this.health;
-        hash = 97 * hash + this.money;
-        hash = 97 * hash + this.coordinates;
-        hash = 97 * hash + this.age;
-        hash = 97 * hash + this.day;
-        hash = 97 * hash + this.salary;
-        hash = 97 * hash + (this.gambledToday ? 1 : 0);
-        hash = 97 * hash + Objects.hashCode(this.car);
-        hash = 97 * hash + Arrays.deepHashCode(this.item);
-        hash = 97 * hash + Objects.hashCode(this.location);
-        hash = 97 * hash + Objects.hashCode(this.scene);
-        hash = 97 * hash + Objects.hashCode(this.weaponItem);
-        hash = 97 * hash + this.initialHealth;
+        hash = 43 * hash + this.gender;
+        hash = 43 * hash + Objects.hashCode(this.career);
+        hash = 43 * hash + Objects.hashCode(this.personaName);
+        hash = 43 * hash + this.health;
+        hash = 43 * hash + this.money;
+        hash = 43 * hash + this.coordinates;
+        hash = 43 * hash + this.age;
+        hash = 43 * hash + this.day;
+        hash = 43 * hash + this.salary;
+        hash = 43 * hash + (this.gambledToday ? 1 : 0);
+        hash = 43 * hash + Objects.hashCode(this.car);
+        hash = 43 * hash + Arrays.deepHashCode(this.item);
+        hash = 43 * hash + Objects.hashCode(this.location);
+        hash = 43 * hash + Objects.hashCode(this.scene);
+        hash = 43 * hash + Objects.hashCode(this.weaponItem);
+        hash = 43 * hash + this.initialHealth;
+        hash = 43 * hash + Objects.hashCode(this.itemToTrade);
         return hash;
     }
 
@@ -243,13 +253,16 @@ public class Persona implements Serializable{
         if (!Objects.equals(this.weaponItem, other.weaponItem)) {
             return false;
         }
+        if (!Objects.equals(this.itemToTrade, other.itemToTrade)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + ", car=" + car + ", item=" + item + ", location=" + location + ", scene=" + scene + ", weaponItem=" + weaponItem + ", initialHealth=" + initialHealth + '}';
+        return "Persona{" + "gender=" + gender + ", career=" + career + ", personaName=" + personaName + ", health=" + health + ", money=" + money + ", coordinates=" + coordinates + ", age=" + age + ", day=" + day + ", salary=" + salary + ", gambledToday=" + gambledToday + ", car=" + car + ", item=" + item + ", location=" + location + ", scene=" + scene + ", weaponItem=" + weaponItem + ", initialHealth=" + initialHealth + ", itemToTrade=" + itemToTrade + '}';
     }
-
+    
     
 }

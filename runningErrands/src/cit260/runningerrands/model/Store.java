@@ -19,21 +19,8 @@ public class Store implements Serializable{
     private double itemCost;
     private double orderFillTime;
     private double itemQuantityAvl;
-    private Item[] item;
+    private Item item;
 
-    public Item[] getItem() {
-        return item;
-    }
-
-    public void setItem(Item[] item) {
-        this.item = item;
-    }
-    
-    public Store() {
-    }
-
-    
-    
     public String getItemType() {
         return itemType;
     }
@@ -74,14 +61,23 @@ public class Store implements Serializable{
         this.itemQuantityAvl = itemQuantityAvl;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.itemType);
-        hash = 47 * hash + Objects.hashCode(this.itemName);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.itemCost) ^ (Double.doubleToLongBits(this.itemCost) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.orderFillTime) ^ (Double.doubleToLongBits(this.orderFillTime) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.itemQuantityAvl) ^ (Double.doubleToLongBits(this.itemQuantityAvl) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.itemType);
+        hash = 37 * hash + Objects.hashCode(this.itemName);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.itemCost) ^ (Double.doubleToLongBits(this.itemCost) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.orderFillTime) ^ (Double.doubleToLongBits(this.orderFillTime) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.itemQuantityAvl) ^ (Double.doubleToLongBits(this.itemQuantityAvl) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.item);
         return hash;
     }
 
@@ -112,14 +108,16 @@ public class Store implements Serializable{
         if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
+        if (!Objects.equals(this.item, other.item)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Store{" + "itemType=" + itemType + ", itemName=" + itemName + ", itemCost=" + itemCost + ", orderFillTime=" + orderFillTime + ", itemQuantityAvl=" + itemQuantityAvl + '}';
+        return "Store{" + "itemType=" + itemType + ", itemName=" + itemName + ", itemCost=" + itemCost + ", orderFillTime=" + orderFillTime + ", itemQuantityAvl=" + itemQuantityAvl + ", item=" + item + '}';
     }
-    
-    
+   
         
 }

@@ -7,9 +7,6 @@ package cit260.runningerands.view;
 
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
-import exceptions.PurchaseExceptions;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import runningerrands.RunningErrands;
 
 /**
@@ -17,17 +14,18 @@ import runningerrands.RunningErrands;
  * @author Kristopher Huffman And Kirk Brown
  */
 public class BuyItemsMenu extends View{
-    
+
     public BuyItemsMenu(String menu) {
         super(menu);
     }
 
-    
     String getMenuValues() {
         
         StringBuilder line;
         Persona persona = RunningErrands.getPersona();
-        Item[] inventory = persona.getItem();
+        Item[] inventory = RunningErrands.getItems();
+        String currentScene = persona.getLocation().getScene().getLocationSymbol();
+        
         String menu = "\n"
                   + "\n------------------------------------"
                   + "\n| Buy Menu                            |" 
@@ -38,33 +36,29 @@ public class BuyItemsMenu extends View{
         int totalItems = 0;            
         
         for (Item item : inventory) {
-            
-            if ("N".equals(item.getItemBuyable())) {
-                item.setItemInBuyList("N");
-            }
-            else {
-                if(item.getItemQuantity() > 0) {
-                    int qtyOnHand = item.getItemQuantity();
-                    int itemCost = item.getItemCost();
-                    totalItems = totalItems + item.getItemQuantity();
-                    line = new StringBuilder("\n                                                                    ");
-                    line.insert(2, item.getItemNumber());
-                    line.insert(10,item.getDescription());
-                    line.insert(33, qtyOnHand);
-                    line.insert(43,"$");
-                    line.insert(44, itemCost);
-                    line.insert(55,"$");
-                    line.insert(56, (qtyOnHand * itemCost));
-                    menu = menu + line.toString();
-                    item.setItemInBuyList("Y");
-                    
+            String sceneToBuy = item.getSceneToBuy().getLocationSymbol();
+            int itemNumber = item.getItemNumber();
+                if(sceneToBuy == currentScene) {
+                    if(itemNumber == 0) {
+                        /** Do nothing - keep Secret Ray Gun off the list **/
+                    }
+                    else{
+                        
+                        int qtyOnHand = item.getItemQuantity();
+                        int itemCost = item.getItemCost();
+                        totalItems = totalItems + item.getItemQuantity();
+                        line = new StringBuilder("\n                                                                    ");
+                        line.insert(2, item.getItemNumber());
+                        line.insert(10,item.getDescription());
+                        line.insert(33, qtyOnHand);
+                        line.insert(43,"$");
+                        line.insert(44, itemCost);
+                        line.insert(55,"$");
+                        line.insert(56, (qtyOnHand * itemCost));
+                        menu = menu + line.toString();
+                        item.setItemInBuyList("Y");
+                    }
                 }
-                else {
-
-                    /* Do nothing*/
-                }
-                
-            }
         }
         menu = menu + "\n------------------------------------"
                 + "\n Total items on hand: " + totalItems
@@ -76,43 +70,40 @@ public class BuyItemsMenu extends View{
         buyItemsMenu.display();        
         return menu;
     }
-    
+
     @Override
     public boolean doAction(String value) {
-        int itemChoice = Integer.parseInt(value);
-        Persona persona = RunningErrands.getPersona();
-        Item[] inventory = persona.getItem();
-        Item currentItem = inventory[itemChoice];
-        
+        value = value.toUpperCase();
         switch (value) {
-            case "R": //Return to game menu.
-                this.openGameMenu();
+            case "R": //create a buy menu.
+                this.openSceneMenu();
                 break;
             default:
-                
-                if ("N".equals(currentItem.getItemInBuyList())) {
-            try {
-                throw new PurchaseExceptions("Selected Item cannot be purchased.");
-            } catch (PurchaseExceptions ex) {
-                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());
-            }
-                    
+                int itemChoice = Integer.parseInt(value);
+                Persona persona = RunningErrands.getPersona();
+                Item[] inventory = persona.getItem();
+                Item currentItem = inventory[itemChoice];
+                String currentLocationSymbol = persona.getLocation().getScene().getLocationSymbol();
+                String itemBuyLocationSymbol = currentItem.getSceneToBuy().getLocationSymbol();
+                if (currentLocationSymbol != itemBuyLocationSymbol) {
+                        this.console.println("Selected Item cannot be purchased at this location.");
+                    return false;
                 }
                 else {
-                    RunningErrands.setItem(currentItem);
+                    persona.setItemToTrade(currentItem);
                     String menu = "";
                     BuyItemQtyMenuView buyItemQtyMenuView = new BuyItemQtyMenuView(menu);
                     menu = buyItemQtyMenuView.getMenuValues(currentItem);
                     buyItemQtyMenuView.display();
                     return true;
-                    }
                 }
-                
-        return false;
         }
+        return false;  
+    }
 
-     private void openGameMenu() {
-       GameMenuView GameMenuView = new GameMenuView();
-       GameMenuView.display();
+     private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
 }

@@ -105,7 +105,7 @@ public class SceneMenuView extends View {
                 this.openConversationMenu();
                 return false;
             case "4":
-                this.openBuySellMenu();
+                this.openStoreMenu();
                 return false;
             case "5": //open map.
                 this.displayMap();
@@ -258,10 +258,6 @@ public class SceneMenuView extends View {
     private void openConversationMenu() {
         ConversationMenuView conversationMenuView = new ConversationMenuView();
         conversationMenuView.display();
-    }
-
-    private void openBuySellMenu() {
-        this.console.println("\n ***Runs Store menu function ***");
     }
 
     private void travelHome() {

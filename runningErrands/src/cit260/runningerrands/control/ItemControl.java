@@ -96,7 +96,7 @@ public class ItemControl {
         secretRayGun.setRequiredAmount(0);
         secretRayGun.setItemCost(0);
         secretRayGun.setItemValue(100000);
-        secretRayGun.setItemQuantity(1);
+        secretRayGun.setItemQuantity(0);
         secretRayGun.setStrength(100000);
         secretRayGun.setItemNumber(0);
         secretRayGun.setItemBuyable("N");
@@ -116,7 +116,7 @@ public class ItemControl {
         shirt.setItemValue(0);
         shirt.setItemQuantity(0);
         shirt.setStrength(10);
-        shirt.setItemNumber(1);
+        shirt.setItemNumber(0);
         shirt.setItemBuyable("Y");
         shirt.setItemSellable("Y");
         shirt.setItemInSellList("N");
@@ -166,7 +166,7 @@ public class ItemControl {
         mountainDew.setRequiredAmount(0);
         mountainDew.setItemCost(3);
         mountainDew.setItemValue(1);
-        mountainDew.setItemQuantity(1);
+        mountainDew.setItemQuantity(10);
         mountainDew.setStrength(10);
         mountainDew.setItemNumber(4);
         mountainDew.setItemBuyable("Y");
@@ -182,7 +182,7 @@ public class ItemControl {
         drPepper.setRequiredAmount(0);
         drPepper.setItemCost(3);
         drPepper.setItemValue(1);
-        drPepper.setItemQuantity(1);
+        drPepper.setItemQuantity(10);
         drPepper.setStrength(10);
         drPepper.setItemNumber(5);
         drPepper.setItemBuyable("Y");
@@ -231,7 +231,7 @@ public class ItemControl {
         ar15.setRequiredAmount(0);
         ar15.setItemCost(1500);
         ar15.setItemValue(0);
-        ar15.setItemQuantity(1);
+        ar15.setItemQuantity(0);
         ar15.setStrength(30);
         ar15.setItemNumber(8);
         ar15.setItemBuyable("Y");
@@ -247,7 +247,7 @@ public class ItemControl {
         bazooka.setRequiredAmount(0);
         bazooka.setItemCost(5000);
         bazooka.setItemValue(0);
-        bazooka.setItemQuantity(1);
+        bazooka.setItemQuantity(0);
         bazooka.setStrength(100);
         bazooka.setItemNumber(9);
         bazooka.setItemBuyable("Y");
@@ -318,7 +318,7 @@ public class ItemControl {
         bowstaff.setItemSellable("Y");
         bowstaff.setItemInSellList("N");
         bowstaff.setItemType("Weapon");
-        bowstaff.setSceneToBuy(scene[LocationName.museumScene.ordinal()]);
+        bowstaff.setSceneToBuy(scene[LocationName.startingScene.ordinal()]);
         bowstaff.setSceneToSell(scene[LocationName.volcanoScene.ordinal()]);
         item[Items.bowstaff.ordinal()] = bowstaff;
         
@@ -542,7 +542,7 @@ public class ItemControl {
         textbook.setItemSellable("Y");
         textbook.setItemInSellList("N");
         textbook.setItemType("Nonweapon");
-        textbook.setSceneToBuy(scene[LocationName.libraryScene.ordinal()]);
+        textbook.setSceneToBuy(scene[LocationName.startingScene.ordinal()]);
         textbook.setSceneToSell(scene[LocationName.schoolScene.ordinal()]);
         item[Items.textbook.ordinal()] = textbook;
         
@@ -686,7 +686,7 @@ public class ItemControl {
         nerveGas.setItemSellable("Y");
         nerveGas.setItemInSellList("N");
         nerveGas.setItemType("Weapon");
-        nerveGas.setSceneToBuy(scene[LocationName.armyScene.ordinal()]);
+        nerveGas.setSceneToBuy(scene[LocationName.startingScene.ordinal()]);
         nerveGas.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.nerveGas.ordinal()] = nerveGas;
         

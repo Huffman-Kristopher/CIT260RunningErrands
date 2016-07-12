@@ -574,6 +574,22 @@ public class MapControl {
         return locations;
     }
     
+    public Scene getSceneFromLocationSymbol(String locationSymbol) {
+        
+        Scene[] scenes = RunningErrands.getScene();
+        Scene sceneFromLocationSymbol = null;
+        for (Scene scene : scenes) {
+            if (scene.getLocationSymbol() == locationSymbol) {
+                sceneFromLocationSymbol = scene;
+            }
+            else {
+                /** Do nothing **/
+            }
+        }
+        
+        return sceneFromLocationSymbol;
+    }
+    
     public void calculateTravel(double dollarsSpent, double fuelPrice, double mpg)
             throws MapControlExceptions {
         double distanceToLocation = 250; //needs to be pulled from map data
