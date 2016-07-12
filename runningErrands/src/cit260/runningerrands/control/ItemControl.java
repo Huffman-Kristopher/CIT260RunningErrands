@@ -248,7 +248,7 @@ public class ItemControl {
         bazooka.setItemCost(5000);
         bazooka.setItemValue(0);
         bazooka.setItemQuantity(0);
-        bazooka.setStrength(100);
+        bazooka.setStrength(1000);
         bazooka.setItemNumber(9);
         bazooka.setItemBuyable("Y");
         bazooka.setItemSellable("Y");
@@ -264,7 +264,7 @@ public class ItemControl {
         crossbow.setItemCost(500);
         crossbow.setItemValue(0);
         crossbow.setItemQuantity(0);
-        crossbow.setStrength(10);
+        crossbow.setStrength(27);
         crossbow.setItemNumber(10);
         crossbow.setItemBuyable("Y");
         crossbow.setItemSellable("Y");
@@ -280,7 +280,7 @@ public class ItemControl {
         katana.setItemCost(400);
         katana.setItemValue(0);
         katana.setItemQuantity(0);
-        katana.setStrength(10);
+        katana.setStrength(20);
         katana.setItemNumber(11);
         katana.setItemBuyable("Y");
         katana.setItemSellable("Y");
@@ -296,7 +296,7 @@ public class ItemControl {
         nunchucks.setItemCost(170);
         nunchucks.setItemValue(0);
         nunchucks.setItemQuantity(0);
-        nunchucks.setStrength(10);
+        nunchucks.setStrength(15);
         nunchucks.setItemNumber(12);
         nunchucks.setItemBuyable("Y");
         nunchucks.setItemSellable("Y");
@@ -328,7 +328,7 @@ public class ItemControl {
         throwingStars.setItemCost(90);
         throwingStars.setItemValue(0);
         throwingStars.setItemQuantity(0);
-        throwingStars.setStrength(10);
+        throwingStars.setStrength(15);
         throwingStars.setItemNumber(14);
         throwingStars.setItemBuyable("Y");
         throwingStars.setItemSellable("Y");
@@ -392,14 +392,14 @@ public class ItemControl {
         ancientBookofSpells.setItemCost(0);
         ancientBookofSpells.setItemValue(0);
         ancientBookofSpells.setItemQuantity(0);
-        ancientBookofSpells.setStrength(10);
+        ancientBookofSpells.setStrength(75);
         ancientBookofSpells.setItemNumber(18);
         ancientBookofSpells.setItemBuyable("N");
         ancientBookofSpells.setItemSellable("Y");
         ancientBookofSpells.setItemInSellList("N");
         ancientBookofSpells.setItemType("Weapon");
-        ancientBookofSpells.setSceneToBuy(scene[LocationName.libraryScene.ordinal()]);
-        ancientBookofSpells.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
+        ancientBookofSpells.setSceneToBuy(scene[LocationName.museumScene.ordinal()]);
+        ancientBookofSpells.setSceneToSell(scene[LocationName.libraryScene.ordinal()]);
         item[Items.ancientBookofSpells.ordinal()] = ancientBookofSpells;
         
         Item libraryCard = new Item();
@@ -440,7 +440,7 @@ public class ItemControl {
         holyWater.setItemCost(0);
         holyWater.setItemValue(0);
         holyWater.setItemQuantity(0);
-        holyWater.setStrength(10);
+        holyWater.setStrength(36);
         holyWater.setItemNumber(21);
         holyWater.setItemBuyable("N");
         holyWater.setItemSellable("Y");
@@ -488,7 +488,7 @@ public class ItemControl {
         usedNeedles.setItemCost(0);
         usedNeedles.setItemValue(0);
         usedNeedles.setItemQuantity(0);
-        usedNeedles.setStrength(10);
+        usedNeedles.setStrength(56);
         usedNeedles.setItemNumber(24);
         usedNeedles.setItemBuyable("N");
         usedNeedles.setItemSellable("Y");
@@ -664,7 +664,7 @@ public class ItemControl {
         tireIron.setItemCost(15);
         tireIron.setItemValue(0);
         tireIron.setItemQuantity(0);
-        tireIron.setStrength(10);
+        tireIron.setStrength(16);
         tireIron.setItemNumber(35);
         tireIron.setItemBuyable("Y");
         tireIron.setItemSellable("Y");
@@ -680,7 +680,7 @@ public class ItemControl {
         nerveGas.setItemCost(0);
         nerveGas.setItemValue(0);
         nerveGas.setItemQuantity(0);
-        nerveGas.setStrength(10);
+        nerveGas.setStrength(45);
         nerveGas.setItemNumber(36);
         nerveGas.setItemBuyable("N");
         nerveGas.setItemSellable("Y");
@@ -712,7 +712,7 @@ public class ItemControl {
         abramsTank.setItemCost(0);
         abramsTank.setItemValue(0);
         abramsTank.setItemQuantity(0);
-        abramsTank.setStrength(10);
+        abramsTank.setStrength(1020);
         abramsTank.setItemNumber(38);
         abramsTank.setItemBuyable("N");
         abramsTank.setItemSellable("Y");
@@ -760,7 +760,7 @@ public class ItemControl {
         sparklers.setItemCost(8);
         sparklers.setItemValue(0);
         sparklers.setItemQuantity(0);
-        sparklers.setStrength(10);
+        sparklers.setStrength(5);
         sparklers.setItemNumber(41);
         sparklers.setItemBuyable("Y");
         sparklers.setItemSellable("Y");
@@ -792,7 +792,7 @@ public class ItemControl {
         bottleRockets.setItemCost(10);
         bottleRockets.setItemValue(0);
         bottleRockets.setItemQuantity(0);
-        bottleRockets.setStrength(10);
+        bottleRockets.setStrength(6);
         bottleRockets.setItemNumber(43);
         bottleRockets.setItemBuyable("Y");
         bottleRockets.setItemSellable("Y");
@@ -840,7 +840,7 @@ public class ItemControl {
         cobra.setItemCost(400);
         cobra.setItemValue(0);
         cobra.setItemQuantity(0);
-        cobra.setStrength(10);
+        cobra.setStrength(74);
         cobra.setItemNumber(46);
         cobra.setItemBuyable("Y");
         cobra.setItemSellable("Y");
@@ -888,7 +888,7 @@ public class ItemControl {
         nailGun.setItemCost(125);
         nailGun.setItemValue(0);
         nailGun.setItemQuantity(0);
-        nailGun.setStrength(10);
+        nailGun.setStrength(21);
         nailGun.setItemNumber(49);
         nailGun.setItemBuyable("Y");
         nailGun.setItemSellable("Y");
@@ -904,12 +904,12 @@ public class ItemControl {
         chainsaw.setItemCost(75);
         chainsaw.setItemValue(0);
         chainsaw.setItemQuantity(0);
-        chainsaw.setStrength(10);
+        chainsaw.setStrength(33);
         chainsaw.setItemNumber(50);
         chainsaw.setItemBuyable("Y");
         chainsaw.setItemSellable("Y");
         chainsaw.setItemInSellList("N");
-        chainsaw.setItemType("Nonweapon");
+        chainsaw.setItemType("Weapon");
         chainsaw.setSceneToBuy(scene[LocationName.improvementScene.ordinal()]);
         chainsaw.setSceneToSell(scene[LocationName.asylumScene.ordinal()]);
         item[Items.chainsaw.ordinal()] = chainsaw;
@@ -920,7 +920,7 @@ public class ItemControl {
         axe.setItemCost(25);
         axe.setItemValue(0);
         axe.setItemQuantity(0);
-        axe.setStrength(10);
+        axe.setStrength(22);
         axe.setItemNumber(51);
         axe.setItemBuyable("Y");
         axe.setItemSellable("Y");
@@ -1016,12 +1016,12 @@ public class ItemControl {
         tRex.setItemCost(0);
         tRex.setItemValue(0);
         tRex.setItemQuantity(0);
-        tRex.setStrength(10);
+        tRex.setStrength(900);
         tRex.setItemNumber(57);
         tRex.setItemBuyable("N");
         tRex.setItemSellable("Y");
         tRex.setItemInSellList("N");
-        tRex.setItemType("Nonweapon");
+        tRex.setItemType("Weapon");
         tRex.setSceneToBuy(scene[LocationName.volcanoScene.ordinal()]);
         tRex.setSceneToSell(scene[LocationName.museumScene.ordinal()]);
         item[Items.tRex.ordinal()] = tRex;
@@ -1043,7 +1043,7 @@ public class ItemControl {
         item[Items.mysticalEgyptianSceptor.ordinal()] = mysticalEgyptianSceptor;
         
         Item catapult = new Item();
-        catapult.setDescription("Shirt");
+        catapult.setDescription("Catapult");
         catapult.setRequiredAmount(0);
         catapult.setItemCost(0);
         catapult.setItemValue(0);
@@ -1146,7 +1146,7 @@ public class ItemControl {
         pizzaCutter.setItemCost(10);
         pizzaCutter.setItemValue(0);
         pizzaCutter.setItemQuantity(0);
-        pizzaCutter.setStrength(25);
+        pizzaCutter.setStrength(17);
         pizzaCutter.setItemNumber(65);
         pizzaCutter.setItemBuyable("Y");
         pizzaCutter.setItemSellable("Y");
