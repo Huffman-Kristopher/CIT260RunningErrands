@@ -18,10 +18,8 @@ public class HelpMenuView extends View {
                   + "\n------------------------------------"
                   + "\nO - What is the game's objective?"
                   + "\nM - How do I get where I'm going? (movement)"
-                  + "\nI - How do I use my inventory"
                   + "\nC - How do I engage in combat?"
                   + "\nP - How do I purchase items?"
-                  + "\nS - How do I sell items?"
                   + "\nE - How do I earn money?"
                   + "\nR - Return to main menu"
                   + "\n-------------------------"
@@ -39,18 +37,14 @@ public class HelpMenuView extends View {
             case "M": //load saved game
                 this.showMovementHelp();
                 break;
-            case "I": //Open help menu
-                this.showInventoryHelp();
-                break;
+           
             case "C": //Open help menu
                 this.showCombatHelp();
                 break;
             case "P": //Open help menu
                 this.showPurchaseHelp();
                 break;
-            case "S": //Open help menu
-                this.showSellHelp();
-                break;
+            
             case "E": //Open help menu
                 this.showMoneyHelp();
                 break;
@@ -67,29 +61,47 @@ public class HelpMenuView extends View {
 }
 
     private void showObjectiveHelp() {
-        this.console.println("*** showObjectiveHelp function called ***");
+        this.console.println("\n"
+                + "\n Each place has an objective.  "
+                + "\n Travel to a place and find a hint for what the objective is"
+                + "\n or try to find hints in your emails."
+                + "\n");
     }
 
     private void showMovementHelp() {
-        this.console.println("*** showMovementHelp function called ***");
+        this.console.println("\n"
+                + "\nBring up the travel menu and select a destination by typing "
+                + "\nits corrisponding number. Youwill then go to that location"
+                + "\n and have options based on the location you are in. "
+                + "\n");
     }
 
-    private void showInventoryHelp() {
-        this.console.println("*** showInventoryHelp function called ***");
-    }
+   
 
     private void showCombatHelp() {
-        this.console.println("*** showCombatHelp function called ***");
+        this.console.println("\n"
+                + "\nCombat can be brutal. Be sure to have a good weapon before"
+                + "\nYou engage in combat. You start off with a baseball bat, and "
+                + "\nit can handle some stuff, let me tell you.  "
+                + "\nYou have three options in the combat menu, first is selecting a "
+                + "\nweapon. open this menu to shoose your weapon. Second is to "
+                + "\nAttack, this is where all the magic happens or you die, one"
+                + "\n or the other. Last you can run away, like a coward, but maybe "
+                + "\nyou live another day. Keep in mind people can hit you while "
+                + "\nyou run away."
+                + "\n");
     }
 
     private void showPurchaseHelp() {
-        this.console.println("*** showPurchaseHelp function called ***");
+        this.console.println("\n"
+                + "\nDifferent places have different things to purchase. The prices "
+                + "\nrange from cheep to how can I ever afford that. i suggest finding a "
+                + "\nway to cheat, but thats just me. each item has an item number "
+                + "\nuse this number to select the items to buy and sell. You will "
+                + "\nget the item if you can afford it or the money from selling it."
+                + "\n");
     }
-
-    private void showSellHelp() {
-        this.console.println("*** showSellHelp function called ***");
-    }
-
+   
     private void showMoneyHelp() {
         this.console.println("\n"
                 + "\nThere are 4 ways to earn money in this game. First, you earn "
