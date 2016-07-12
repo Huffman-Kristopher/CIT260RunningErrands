@@ -5,6 +5,7 @@
  */
 package cit260.runningerrands.control;
 
+import cit260.runningerrands.control.ItemControl.Items;
 import cit260.runningerrands.control.NPCControl.NPCList;
 import cit260.runningerrands.control.ObjectiveControl.Objectives;
 import cit260.runningerrands.model.Item;
@@ -55,7 +56,7 @@ public class MapControl {
         return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         
         Scene[] scenes = new Scene[30];
         Item[] item = RunningErrands.getItems();
@@ -500,6 +501,7 @@ public class MapControl {
         Scene[] scenes = RunningErrands.getScene();
         Objective[] objectives = RunningErrands.getObjective();
         Npc[] npc = RunningErrands.getNpc();
+        Item[] item = RunningErrands.getItems();
         
         scenes[LocationName.startingScene.ordinal()].setObjective(objectives[Objectives.returnVideoGame.ordinal()]);
         scenes[LocationName.mallScene.ordinal()].setObjective(objectives[Objectives.returnFreshOrgans.ordinal()]);
@@ -562,6 +564,37 @@ public class MapControl {
         scenes[LocationName.asylumScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
         scenes[LocationName.accountantScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
         scenes[LocationName.redBoxScene.ordinal()].setNpc(npc[NPCList.nikolai.ordinal()]);
+        
+        scenes[LocationName.startingScene.ordinal()].setItemToReceive(item[Items.videoGame.ordinal()]);
+        scenes[LocationName.mallScene.ordinal()].setItemToReceive(item[Items.freshOrgans.ordinal()]);
+        scenes[LocationName.GroceryScene.ordinal()].setItemToReceive(item[Items.donuts.ordinal()]);
+        scenes[LocationName.gasScene.ordinal()].setItemToReceive(item[Items.abramsTank.ordinal()]);
+        scenes[LocationName.gunShopScene.ordinal()].setItemToDeliver(item[Items.ar15.ordinal()]);
+        scenes[LocationName.sportingScene.ordinal()].setItemToReceive(item[Items.katana.ordinal()]);
+        scenes[LocationName.libraryScene.ordinal()].setItemToReceive(item[Items.ancientBookofSpells.ordinal()]);
+        scenes[LocationName.churchScene.ordinal()].setItemToDeliver(item[Items.sacramentalWine.ordinal()]);
+        scenes[LocationName.hospitalScene.ordinal()].setItemToDeliver(item[Items.freshOrgans.ordinal()]);
+        scenes[LocationName.schoolScene.ordinal()].setItemToReceive(item[Items.reportCard.ordinal()]);
+        scenes[LocationName.bankScene.ordinal()].setItemToDeliver(item[Items.loanApplication.ordinal()]);
+        scenes[LocationName.comicScene.ordinal()].setItemToReceive(item[Items.ancientBookofSpells.ordinal()]);
+        scenes[LocationName.repairScene.ordinal()].setItemToReceive(item[Items.ar15.ordinal()]);
+        scenes[LocationName.ninjaScene.ordinal()].setItemToDeliver(item[Items.katana.ordinal()]);
+        scenes[LocationName.armyScene.ordinal()].setItemToDeliver(item[Items.abramsTank.ordinal()]);
+        scenes[LocationName.postScene.ordinal()].setItemToDeliver(item[Items.taxForms.ordinal()]);
+        scenes[LocationName.fireworksScene.ordinal()].setItemToReceive(item[Items.loanApplication.ordinal()]);
+        scenes[LocationName.petScene.ordinal()].setItemToReceive(item[Items.giraffe.ordinal()]);
+        scenes[LocationName.MarinaScene.ordinal()].setItemToDeliver(item[Items.bucketOfLava.ordinal()]);
+        scenes[LocationName.improvementScene.ordinal()].setItemToReceive(item[Items.mysticalEgyptianSceptor.ordinal()]);
+        scenes[LocationName.policeScene.ordinal()].setItemToDeliver(item[Items.donuts.ordinal()]);
+        scenes[LocationName.zooScene.ordinal()].setItemToDeliver(item[Items.giraffe.ordinal()]);
+        scenes[LocationName.museumScene.ordinal()].setItemToDeliver(item[Items.mysticalEgyptianSceptor.ordinal()]);
+        scenes[LocationName.cemeteryScene.ordinal()].setItemToReceive(item[Items.grievingWidow.ordinal()]);
+        scenes[LocationName.volcanoScene.ordinal()].setItemToReceive(item[Items.bucketOfLava.ordinal()]);
+        scenes[LocationName.pizzaScene.ordinal()].setItemToDeliver(item[Items.reportCard.ordinal()]);
+        scenes[LocationName.orphanScene.ordinal()].setItemToReceive(item[Items.sacramentalWine.ordinal()]);
+        scenes[LocationName.asylumScene.ordinal()].setItemToDeliver(item[Items.grievingWidow.ordinal()]);
+        scenes[LocationName.accountantScene.ordinal()].setItemToReceive(item[Items.taxForms.ordinal()]);
+        scenes[LocationName.redBoxScene.ordinal()].setItemToDeliver(item[Items.videoGame.ordinal()]);
         
         RunningErrands.setScene(scenes);
         

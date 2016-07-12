@@ -136,10 +136,6 @@ public class PersonaControl {
         for (Scene scene : scenes) {
             scene.setBribeAttemptedToday(false);
         }
-        Npc[] npcs = RunningErrands.getNpc();
-        for (Npc npc : npcs) {
-            npc.setNpcHealth(100);
-        }
         
         ObjectiveControl.resetObjectiveCompletedTodayFlag();
         MapControl.movePersonaToNewLocation("01");

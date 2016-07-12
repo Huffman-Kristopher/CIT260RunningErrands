@@ -59,6 +59,7 @@ public class CombatMenuView extends View {
         Persona persona = RunningErrands.getPersona();
         Npc npc = persona.getLocation().getScene().getNpc();
         int npcHealth = npc.getNpcHealth();
+        npc.setStartingNpcHealth(npcHealth);
         String npcName = npc.getNpcName();
         if (npcHealth <= 0) {
             this.console.println("You have already defeated " + npcName + " today. Please try again another day.");

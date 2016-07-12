@@ -35,8 +35,10 @@ public class CombatAttackMenuView extends View {
         int npcHealth = currentScene.getNpc().getNpcHealth();
         int playerHealth = persona.getHealth();
         int playerStrength = persona.getWeaponItem().getStrength();
+        Npc npc = currentScene.getNpc();
+        String npcDescription = npc.getNpcDescription();
         String objectiveItem = persona.getLocation().getScene().getObjective().getObjectiveItem().getDescription();
-        String npcName = currentScene.getNpc().getNpcName();
+        String npcName = npc.getNpcName();
         String menu;
         menu = "\n"
                 + "\n------------------------------------"
@@ -47,7 +49,10 @@ public class CombatAttackMenuView extends View {
                 + "\nE - Escape"
                 + "\nB - Bribe"
                 + "\n"
-                + "\nYou are facing " + npcName + ", who currently has a strength of " + npcStrength + " and " + npcHealth + " health."
+                + "\n You are facing " + npcName + ". " 
+                + "\n" + npcDescription
+                + "\n"
+                + "\n" + npcName + " has currently has a strength of " + npcStrength + " and " + npcHealth + " health."
                 + "\nYour health is at " + playerHealth + ", and your strength is " + playerStrength
                 + "\nIf you defeat " + npcName + ", you will receive a " + objectiveItem + "."
                 ;
@@ -91,7 +96,7 @@ public class CombatAttackMenuView extends View {
                         }
                         if(newNpcHealth < 1 ) {
                             npc.setNpcHealth(newNpcHealth);
-                            this.console.println("Congratulations! You killed " + npcName + "You have received a " + objectiveItemDescription + ".");
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
                             ItemControl.receiveItem(objectiveItem, 1);
                             return true;
                         }
@@ -116,7 +121,7 @@ public class CombatAttackMenuView extends View {
                         int newPlayerHealth = playerHealth - playerDamage;
                         if(newNpcHealth <1) {
                             npc.setNpcHealth(newNpcHealth);
-                            this.console.println("Congratulations! You killed " + npcName + "You have received a " + objectiveItemDescription + ".");
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
                             ItemControl.receiveItem(objectiveItem, 1);
                             return true;
                         }
@@ -144,8 +149,10 @@ public class CombatAttackMenuView extends View {
                         int newPlayerHealth = playerHealth - playerDamage;
                         if (newNpcHealth < 1) {
                             npc.setNpcHealth(newNpcHealth);
-                            this.console.println("Congratulations! You killed " + npcName + "You have received a " + objectiveItemDescription + ".");
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
                             ItemControl.receiveItem(objectiveItem, 1);
+                            int beginningNpcHealth = npc.getStartingNpcHealth();
+                            npc.setNpcHealth(beginningNpcHealth);
                             String menu = "";
                             SceneMenuView sceneMenuView = new SceneMenuView(menu);
                             sceneMenuView.SceneMenuValues();
@@ -153,6 +160,8 @@ public class CombatAttackMenuView extends View {
                         }
                         if (newPlayerHealth < 1) {
                             this.console.println("Oh no! You were killed by " + npcName + "! You will now be sent home." );
+                            int beginningNpcHealth = npc.getStartingNpcHealth();
+                            npc.setNpcHealth(beginningNpcHealth);
                             this.travelHome();
                             return true;
                         }
@@ -179,6 +188,8 @@ public class CombatAttackMenuView extends View {
                     int newPlayerHealth = playerHealth - playerDamage;
                     if (newPlayerHealth < 1) {
                         this.console.println("Oh no! You were killed by " + npcName + " while trying to escape! You will now be sent home." );
+                        int beginningNpcHealth = npc.getStartingNpcHealth();
+                        npc.setNpcHealth(beginningNpcHealth);
                         this.travelHome();
                         return true;
                     }

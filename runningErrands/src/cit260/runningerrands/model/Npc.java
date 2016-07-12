@@ -18,6 +18,7 @@ public class Npc implements Serializable{
     private String npcDescription;
     private int npcStrength;
     private int npcHealth;
+    private int startingNpcHealth;
 
     public String getNpcName() {
         return npcName;
@@ -51,13 +52,22 @@ public class Npc implements Serializable{
         this.npcHealth = npcHealth;
     }
 
+    public int getStartingNpcHealth() {
+        return startingNpcHealth;
+    }
+
+    public void setStartingNpcHealth(int startingNpcHealth) {
+        this.startingNpcHealth = startingNpcHealth;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.npcName);
-        hash = 47 * hash + Objects.hashCode(this.npcDescription);
-        hash = 47 * hash + this.npcStrength;
-        hash = 47 * hash + this.npcHealth;
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.npcName);
+        hash = 41 * hash + Objects.hashCode(this.npcDescription);
+        hash = 41 * hash + this.npcStrength;
+        hash = 41 * hash + this.npcHealth;
+        hash = 41 * hash + this.startingNpcHealth;
         return hash;
     }
 
@@ -79,6 +89,9 @@ public class Npc implements Serializable{
         if (this.npcHealth != other.npcHealth) {
             return false;
         }
+        if (this.startingNpcHealth != other.startingNpcHealth) {
+            return false;
+        }
         if (!Objects.equals(this.npcName, other.npcName)) {
             return false;
         }
@@ -90,9 +103,7 @@ public class Npc implements Serializable{
 
     @Override
     public String toString() {
-        return "Npc{" + "npcName=" + npcName + ", npcDescription=" + npcDescription + ", npcStrength=" + npcStrength + ", npcHealth=" + npcHealth + '}';
+        return "Npc{" + "npcName=" + npcName + ", npcDescription=" + npcDescription + ", npcStrength=" + npcStrength + ", npcHealth=" + npcHealth + ", startingNpcHealth=" + startingNpcHealth + '}';
     }
-
     
-
 }

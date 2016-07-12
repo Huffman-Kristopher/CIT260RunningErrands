@@ -33,6 +33,11 @@ public class ConversationMenuView extends View {
         Scene currentScene = currentLocation.getScene();
         String sceneType = currentScene.getConversationMenuType();
         Objective objective = currentScene.getObjective();
+        int objectiveItemReq = objective.getObjectiveQtyRequired();
+        Objective[] objectives = RunningErrands.getObjective();
+        
+
+        
         
         switch (value) {
             case "R":
@@ -40,12 +45,21 @@ public class ConversationMenuView extends View {
                 return true;
             case "Y":
                 if (sceneType == "Give") {
-                    Item giveItem = objective.getObjectiveItem();
-                    String itemDescription = giveItem.getDescription();
-                    int giveItemQtyOnHand = giveItem.getItemQuantity();
-                    int giveItemQtyReq = objective.getObjectiveQtyRequired();
+                    int giveItemQty = 0;
+                    Item giveItem = currentScene.getItemToDeliver();
+                    int giveItemOnHand = giveItem.getItemQuantity();
+                    String giveItemDesc = giveItem.getDescription();
+                    
+                        for (Objective objectiveList : objectives ) {
+                            if(objectiveList.getObjectiveItem() == giveItem) {
+                                giveItemQty = objectiveList.getObjectiveQtyRequired();
+                            }
+                            else {
+                                /** Do nothing - keep giveItemQty at it's current setting **/
+                            } 
+                        }
 
-                    if(giveItemQtyOnHand < giveItemQtyReq) {
+                    if(giveItemOnHand < giveItemQty) {
                         String sceneFailureText = objective.getObjectiveNotEnoughText();
                         this.console.println(sceneFailureText);
                         this.openSceneMenuView();
@@ -56,7 +70,7 @@ public class ConversationMenuView extends View {
                         String sceneSuccessText = objective.getObjectiveCompleteText();
                         this.console.println(sceneSuccessText);
                         /** Remove required item from inventory**/
-                        fulfillObjective(giveItem, giveItemQtyReq);
+                        fulfillObjective(giveItem, giveItemQty);
                         markObjectiveComplete(objective);
                         this.openSceneMenuView();
                         return true;
@@ -64,10 +78,21 @@ public class ConversationMenuView extends View {
                 } 
 
                 else {
-                    Item receiveItem = objective.getObjectiveItem();
-                    int receiveItemQtyOnHand = receiveItem.getItemQuantity();
-                    int receiveItemQtyReq = objective.getObjectiveQtyRequired();
-                    if(receiveItemQtyOnHand >= receiveItemQtyReq) {
+                    Item receiveItem = currentScene.getItemToReceive();
+                    int receiveItemOnHand = receiveItem.getItemQuantity();
+                    String receiveItemDesc = receiveItem.getDescription();
+                    int receiveItemReq = 0;
+                    
+                    for (Objective objectiveList : objectives ) {
+                            if(objectiveList.getObjectiveItem() == receiveItem) {
+                                receiveItemReq = objectiveList.getObjectiveQtyRequired();
+                            }
+                            else {
+                                /** Do nothing - keep giveItemQty at it's current setting **/
+                            }
+                    }
+                            
+                    if(receiveItemOnHand >= receiveItemReq) {
                         String sceneFailureText = objective.getObjectiveAlreadyHaveItemsText();
                         this.console.println(sceneFailureText);
                         this.openSceneMenuView();
@@ -75,9 +100,10 @@ public class ConversationMenuView extends View {
                     }
 
                     else {
+                        int qtyToReceive = receiveItemReq - receiveItemOnHand;
                         String sceneSuccessText = objective.getObjectiveGiveItemText();
                         this.console.println(sceneSuccessText);
-                        receiveItem(receiveItem, receiveItemQtyReq);
+                        receiveItem(receiveItem, objectiveItemReq);
                         /** Add required item to inventory**/
                         this.openSceneMenuView();
                         return true;
