@@ -6,6 +6,7 @@
 package cit260.runningerrands.control;
 
 import static cit260.runningerrands.control.ObjectiveControl.resetObjectiveCompletedTodayFlag;
+import cit260.runningerrands.model.Email;
 import cit260.runningerrands.model.Game;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
@@ -54,6 +55,8 @@ public class GameControl {
         Objective[] objectives = ObjectiveControl.createObjectiveList();
         resetObjectiveCompletedTodayFlag();
         MapControl.assignObjectivesToScenes();
+        Email[] email = EmailControl.createInbox();
+        RunningErrands.setEmails(email);
         
     }
     public static void saveGame(Game game, String filePath)
@@ -69,6 +72,8 @@ public class GameControl {
             Player player = RunningErrands.getPlayer();
             Scene[] scenes = RunningErrands.getScene();
             Objective[] objectives = RunningErrands.getObjective();
+            Email[] email = RunningErrands.getEmails();
+
             
             output.writeObject(game); // write game object to file
             output.writeObject(investment); // write investments to file
@@ -80,6 +85,7 @@ public class GameControl {
             output.writeObject(player); //write player to file
             output.writeObject(scenes); // write scense to file
             output.writeObject(objectives); // write objectives to file
+            output.writeObject(email);// write emails to file
             
             }
         catch (Exception e) {
@@ -98,6 +104,7 @@ public class GameControl {
         Player player;
         Scene[] scenes;
         Objective[] objectives;
+        Email[] email;
         
         try( FileInputStream fips = new FileInputStream(filePath)){
             ObjectInputStream input = new ObjectInputStream(fips);
@@ -112,6 +119,7 @@ public class GameControl {
             player = (Player) input.readObject();
             scenes = (Scene[]) input.readObject();
             objectives = (Objective[]) input.readObject();
+            email = (Email[]) input.readObject();
             
             RunningErrands.setCurrentGame(game);
             RunningErrands.setInvestment(investment);
@@ -123,6 +131,7 @@ public class GameControl {
             RunningErrands.setPlayer(player);
             RunningErrands.setScene(scenes);
             RunningErrands.setObjective(objectives);
+            RunningErrands.setEmails(email);
             
             }
         catch(Exception e){
