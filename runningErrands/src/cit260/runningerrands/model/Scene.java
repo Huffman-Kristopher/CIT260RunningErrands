@@ -7,7 +7,6 @@ package cit260.runningerrands.model;
 
 import cit260.runningerrands.control.MapControl.LocationName;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
