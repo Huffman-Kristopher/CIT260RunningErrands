@@ -82,8 +82,9 @@ public class EmailMenuView extends View{
                 }
                 }catch (NumberFormatException ne) {
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
+                    return false;
                 }
-                return false;
+                
     }
     
     

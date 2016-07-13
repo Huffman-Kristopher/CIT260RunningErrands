@@ -54,7 +54,7 @@ public class SceneMenuView extends View {
                   + "\nS – Save Game"
 //                  + "\nL – Load Game"
                   + "\nQ – Quit Game"
-                  + "\nA - TEST ADDING ONE DAY"
+//                  + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
                   + "\nPlease select a menu option: ";
 
@@ -97,19 +97,19 @@ public class SceneMenuView extends View {
         switch (value) {
             case "1": //open email and get objectives.
                 this.openEmailMenu();
-                return false;
+                return true;
             case "2":
                 this.openCombatMenu();
-                return false;
+                return true;
             case "3":
                 this.openConversationMenu();
-                return false;
+                return true;
             case "4":
                 this.openStoreMenu();
-                return false;
+                return true;
             case "5": //open map.
                 this.displayMap();
-                return false;
+                return true;
             case "6": //open map.
                 if ("Home".equals(currentSceneDescription)) {
                     this.openTravelMenu();
@@ -121,26 +121,26 @@ public class SceneMenuView extends View {
                 }
             case "7": //open store.
                 this.openStatsMenu();
-                return false;
+                return true;
             case "8": //open inveestments.
                 this.openInvestmentMenu();
-                return false;
+                return true;
             case "9": //gamble.
                 this.openGamblingMenu();
-                return false;
+                return true;
             case "P":
                 this.printSceneList();
-                return false;
+                return true;
             case "S": //save the game.
                 this.OpensaveGame();
-                return false;
+                return true;
 /**            case "L": //load the game.
                 this.openLoadGame();
                 return false;
 **/
             case "H": //open help menu.
                 this.openHelpMenu();
-                return false;
+                return true;
             case "Q": //return to main menu.
                 this.openMainMenu();
                 return true;

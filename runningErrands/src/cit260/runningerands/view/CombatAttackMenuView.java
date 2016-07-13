@@ -95,6 +95,7 @@ public class CombatAttackMenuView extends View {
                             npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Oh no! You were killed by " + npcName + "! You will now be sent home." );
                             this.travelHome();
+                            return true;
                         }
                         if(newNpcHealth < 1 ) {
                             npc.setNpcHealth(newNpcHealth);
@@ -133,6 +134,7 @@ public class CombatAttackMenuView extends View {
                             npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Oh no! You were killed by " + npcName + "! You will now be sent home." );
                             this.travelHome();
+                            return true;
                         }
                         else {
                             npc.setNpcHealth(newNpcHealth);
