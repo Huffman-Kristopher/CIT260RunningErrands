@@ -65,23 +65,20 @@ public class EmailMenuView extends View{
                 return true;
             default:
                 try{
-                int emailChoice = Integer.parseInt(value);
-                int emailCount =  (emails.length - 1);
+                    int emailChoice = Integer.parseInt(value);
+                    int emailCount =  (emails.length - 1);
                 
-                if (emailChoice > emailCount)
-                
-                { this.console.println("enter a valid number or R for return to menu.");
-                    return false;}
-                
+                if (emailChoice > emailCount) {
+                    this.console.println("enter a valid number or R for return to menu.");
+                    return false;
+                }
                 else {
                         
-                Email currentEmail = emails[emailChoice];
-                String emailDescription = currentEmail.getDescription();
-                
+                    Email currentEmail = emails[emailChoice];
+                    String emailDescription = currentEmail.getDescription();
                     this.console.println(emailDescription); 
-                         
+                    return true;
                     
-                            return true;
                 }
                 }catch (NumberFormatException ne) {
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");

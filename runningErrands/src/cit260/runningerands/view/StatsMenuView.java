@@ -53,6 +53,7 @@ public class StatsMenuView extends View {
                   + "\n| Character Stats                   |" 
                   + "\n------------------------------------"
                   + "\nName: " + personaName 
+                  + "\nCurrent Day: " + currentDay
                   + "\nAge: " + personaAge
                   + "\nHealth: " + personaHealth
                   + "\nCareer: " + personaCareer
@@ -109,6 +110,7 @@ public class StatsMenuView extends View {
             case "R": //return to main menu.
                 return true;
             default:
+                this.console.println("Error reading input. Please enter R to return to main menu.");
                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please enter R to return to menu");
                 return false;
         }

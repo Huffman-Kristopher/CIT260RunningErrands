@@ -26,8 +26,8 @@ public class WinGameMenu extends View {
                 this.endGame();
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
-                return false;  
+                this.endGame();
+                return true;  
         }
         
     }    

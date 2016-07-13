@@ -109,8 +109,9 @@ public class CombatBribeMenuView extends View {
                     }
                         
                     } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
-                    return false;
+                        this.console.println("Error reading input. Please enter a number");
+                        ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                        return false;
                     }
                 
         }

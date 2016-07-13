@@ -33,6 +33,7 @@ public class PersonaNameMenuView extends View {
             return true;
         }
         if (value.length() < 2) {
+            this.console.println("Error reading input. Please enter a name greater than one character in length.");
             ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid persona name:"
                 +"The name must be greater than one character in length.");
             return false;

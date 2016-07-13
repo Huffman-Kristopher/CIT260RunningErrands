@@ -145,6 +145,7 @@ public class SceneMenuView extends View {
                 this.openMainMenu();
                 return true;
             default:
+                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid main menu selection, please try again");
                 return false;  
         }

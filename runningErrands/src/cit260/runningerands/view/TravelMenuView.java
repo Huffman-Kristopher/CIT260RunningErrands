@@ -54,6 +54,7 @@ public class TravelMenuView extends View {
             Location newLocation = map.getLocationFromSymbol(value);
             if (currentLocation == newLocation) {
                 String currentLocationDecription = currentLocation.getScene().getDescription();
+                this.console.println("You are already at " + currentLocationDecription + ", please try again.");
                 ErrorView.display(this.getClass().getName(), "\nYou are already at " + currentLocationDecription + ", please try again");
                 return false;
             }

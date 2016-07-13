@@ -65,7 +65,8 @@ public class GamblingAmountMenuView extends View {
                 break;
                 }
                 catch (NumberFormatException nf) {
-                   ErrorView.display(this.getClass().getName()," Please enter a numeric bet or R to return to the game menu.");
+                    this.console.println("Error reading input. Please enter a numeric bet or R to return to the game menu");
+                    ErrorView.display(this.getClass().getName()," Please enter a numeric bet or R to return to the game menu.");
                 }
         }
         return true;

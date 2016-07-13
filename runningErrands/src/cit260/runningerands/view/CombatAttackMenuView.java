@@ -178,7 +178,8 @@ public class CombatAttackMenuView extends View {
                         
                     }
                 } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                    this.console.println("Error reading input. Please select an option from above.");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
             case "E":
@@ -203,7 +204,8 @@ public class CombatAttackMenuView extends View {
                     }
                     
                 } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                    this.console.println("Error reading input. Please enter an option from above.");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
             case "B":
@@ -223,12 +225,14 @@ public class CombatAttackMenuView extends View {
                         return true;
                     }
                 } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                    this.console.println("Error reading input. Please enter a number");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
             default:
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
-                    return false;
+                this.console.println("Error reading input. Please enter a selection from above.");
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                return false;
                 
         }
         

@@ -14,6 +14,7 @@ import runningerrands.RunningErrands;
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class InvestmentTypeMenuView extends View {
     
 private int days;
@@ -59,6 +60,7 @@ private Investment investment;
                  this.openGameMenu();
                 break;
             default:
+                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please select an option above.");
                 break;  
         }

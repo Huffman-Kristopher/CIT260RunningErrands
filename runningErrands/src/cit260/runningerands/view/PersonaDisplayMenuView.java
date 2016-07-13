@@ -15,6 +15,7 @@ import runningerrands.RunningErrands;
  *
  *  @author Kristopher Huffman And Kirk Brown
  */
+
 public class PersonaDisplayMenuView extends View {
 
     public PersonaDisplayMenuView(String menu) {
@@ -68,6 +69,7 @@ public class PersonaDisplayMenuView extends View {
                 this.createNewPersona();
                 break;
             default:
+                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 return false;  
         }

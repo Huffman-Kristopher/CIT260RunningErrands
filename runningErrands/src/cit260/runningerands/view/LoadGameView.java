@@ -10,6 +10,7 @@ import cit260.runningerrands.control.GameControl;
 /**
  *
  *  @author Kristopher Huffman And Kirk Brown */
+
 public class LoadGameView extends View{
     public LoadGameView() {
         super("\n"

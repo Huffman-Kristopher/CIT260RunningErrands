@@ -38,6 +38,7 @@ public class StoreMenuView extends View{
             case "R": //return to game menu.
                 return true;
             default:
+                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please try again");
                 return false;  
         }

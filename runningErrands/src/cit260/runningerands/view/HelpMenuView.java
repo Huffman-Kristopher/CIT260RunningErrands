@@ -51,6 +51,7 @@ public class HelpMenuView extends View {
             case "R": //Open help menu
                 break;
             default:
+                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(),"\nInvalid selection, please try again");
                 break;  
         }

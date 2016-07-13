@@ -87,7 +87,8 @@ public class BuyItemQtyMenuView extends View{
                         }
                     }
                 } catch (NumberFormatException nf){
-                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
+                    this.console.println("Error reading input. Please enter a number");
+                    ErrorView.display(this.getClass().getName(), "Error reading input: " + "enter a valid number");
                 }
         }
                 

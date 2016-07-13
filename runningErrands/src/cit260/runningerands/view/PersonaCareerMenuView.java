@@ -15,9 +15,6 @@ import runningerrands.RunningErrands;
  */
 public class PersonaCareerMenuView extends View {
 
-
-
-        
     public PersonaCareerMenuView(String menu) {
         super(menu);
     }
@@ -96,6 +93,7 @@ public class PersonaCareerMenuView extends View {
                     this.openMainMenuView();
                     return true;
                 default:
+                    this.console.println("Error reading input. Please enter selection from above.");
                     ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                     return false;  
             }

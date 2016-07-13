@@ -44,74 +44,80 @@ public class ConversationMenuView extends View {
                 this.openSceneMenuView();
                 return true;
             case "Y":
-                if (sceneType == "Give") {
-                    int giveItemQty = 0;
-                    Item giveItem = currentScene.getItemToDeliver();
-                    int giveItemOnHand = giveItem.getItemQuantity();
-                    String giveItemDesc = giveItem.getDescription();
-                    
-                        for (Objective objectiveList : objectives ) {
-                            if(objectiveList.getObjectiveItem() == giveItem) {
-                                giveItemQty = objectiveList.getObjectiveQtyRequired();
+                try{
+                    if (sceneType == "Give") {
+                        int giveItemQty = 0;
+                        Item giveItem = currentScene.getItemToDeliver();
+                        int giveItemOnHand = giveItem.getItemQuantity();
+                        String giveItemDesc = giveItem.getDescription();
+
+                            for (Objective objectiveList : objectives ) {
+                                if(objectiveList.getObjectiveItem() == giveItem) {
+                                    giveItemQty = objectiveList.getObjectiveQtyRequired();
+                                }
+                                else {
+                                    /** Do nothing - keep giveItemQty at it's current setting **/
+                                } 
                             }
-                            else {
-                                /** Do nothing - keep giveItemQty at it's current setting **/
-                            } 
+
+                        if(giveItemOnHand < giveItemQty) {
+                            String sceneFailureText = objective.getObjectiveNotEnoughText();
+                            this.console.println(sceneFailureText);
+                            this.openSceneMenuView();
+                            return true;
                         }
 
-                    if(giveItemOnHand < giveItemQty) {
-                        String sceneFailureText = objective.getObjectiveNotEnoughText();
-                        this.console.println(sceneFailureText);
-                        this.openSceneMenuView();
-                        return true;
-                    }
+                        else {
+                            String sceneSuccessText = objective.getObjectiveCompleteText();
+                            this.console.println(sceneSuccessText);
+                            /** Remove required item from inventory**/
+                            fulfillObjective(giveItem, giveItemQty);
+                            markObjectiveComplete(objective);
+                            this.openSceneMenuView();
+                            return true;
+                        }
+                    } 
 
                     else {
-                        String sceneSuccessText = objective.getObjectiveCompleteText();
-                        this.console.println(sceneSuccessText);
-                        /** Remove required item from inventory**/
-                        fulfillObjective(giveItem, giveItemQty);
-                        markObjectiveComplete(objective);
-                        this.openSceneMenuView();
-                        return true;
-                    }
-                } 
+                        Item receiveItem = currentScene.getItemToReceive();
+                        int receiveItemOnHand = receiveItem.getItemQuantity();
+                        String receiveItemDesc = receiveItem.getDescription();
+                        int receiveItemReq = 0;
 
-                else {
-                    Item receiveItem = currentScene.getItemToReceive();
-                    int receiveItemOnHand = receiveItem.getItemQuantity();
-                    String receiveItemDesc = receiveItem.getDescription();
-                    int receiveItemReq = 0;
-                    
-                    for (Objective objectiveList : objectives ) {
-                            if(objectiveList.getObjectiveItem() == receiveItem) {
-                                receiveItemReq = objectiveList.getObjectiveQtyRequired();
-                            }
-                            else {
-                                /** Do nothing - keep giveItemQty at it's current setting **/
-                            }
-                    }
-                            
-                    if(receiveItemOnHand >= receiveItemReq) {
-                        String sceneFailureText = objective.getObjectiveAlreadyHaveItemsText();
-                        this.console.println(sceneFailureText);
-                        this.openSceneMenuView();
-                        return true;
-                    }
+                        for (Objective objectiveList : objectives ) {
+                                if(objectiveList.getObjectiveItem() == receiveItem) {
+                                    receiveItemReq = objectiveList.getObjectiveQtyRequired();
+                                }
+                                else {
+                                    /** Do nothing - keep giveItemQty at it's current setting **/
+                                }
+                        }
 
-                    else {
-                        int qtyToReceive = receiveItemReq - receiveItemOnHand;
-                        String sceneSuccessText = objective.getObjectiveGiveItemText();
-                        this.console.println(sceneSuccessText);
-                        receiveItem(receiveItem, objectiveItemReq);
-                        /** Add required item to inventory**/
-                        this.openSceneMenuView();
-                        return true;
-                    }
+                        if(receiveItemOnHand >= receiveItemReq) {
+                            String sceneFailureText = objective.getObjectiveAlreadyHaveItemsText();
+                            this.console.println(sceneFailureText);
+                            this.openSceneMenuView();
+                            return true;
+                        }
+
+                        else {
+                            int qtyToReceive = receiveItemReq - receiveItemOnHand;
+                            String sceneSuccessText = objective.getObjectiveGiveItemText();
+                            this.console.println(sceneSuccessText);
+                            receiveItem(receiveItem, objectiveItemReq);
+                            /** Add required item to inventory**/
+                            this.openSceneMenuView();
+                            return true;
+                        }
 
 
+                    }
+                } catch (NumberFormatException nf){
+                    this.console.println("Error reading input. Please press Y or R.");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
                 }
             default:
+                this.console.println("Error reading input. Please press Y or R.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 return false;  
 

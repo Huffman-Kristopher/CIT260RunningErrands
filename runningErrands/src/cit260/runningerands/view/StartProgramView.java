@@ -68,6 +68,7 @@ import java.io.IOException;
             value = value.trim(); // Trim off leading and trailing spaces
             
             if (value.length() < 1) { //value is blank
+                this.console.println("Error reading input. Please enter a your name (character name will be chosen later).");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid value: Player's Name cannot be blank");
                 continue;
             }

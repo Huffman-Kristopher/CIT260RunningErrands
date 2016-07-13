@@ -38,6 +38,7 @@ public class BuySellMenuView extends View{
                 this.openSceneMenu();
                 return true;
             default:
+                this.console.println("Invalid selection. Please enter B, S, or R.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please try again");
                 return false;  
         }

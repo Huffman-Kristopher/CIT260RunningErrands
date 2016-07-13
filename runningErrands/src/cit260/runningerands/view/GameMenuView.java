@@ -85,7 +85,8 @@ public class GameMenuView extends View{
             //    this.addOneDay();
               //  return false;
             default:
-               ErrorView.display(this.getClass().getName(), "\nInvalid main menu selection, please try again");
+                this.console.println("Error reading input. Please enter a selection from above.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid main menu selection, please try again");
                 return false;  
         }
     }

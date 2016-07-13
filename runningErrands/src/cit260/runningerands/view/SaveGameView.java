@@ -30,6 +30,7 @@ public class SaveGameView extends View {
            // save the game to the speciried file.
            GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
        } catch (Exception ex){
+           this.console.println("Error reading input. Please enter a filename to save as.");
             ErrorView.display("SceneMenuView", ex.getMessage());
        }
         return true;

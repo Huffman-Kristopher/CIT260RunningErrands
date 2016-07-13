@@ -37,22 +37,27 @@ public class BuyItemsMenu extends View{
         for (Item item : inventory) {
             String sceneToBuy = item.getSceneToBuy().getLocationSymbol();
             int itemNumber = item.getItemNumber();
-                if(sceneToBuy == currentScene) {
-                    if(itemNumber == 0) {
-                        /** Do nothing - keep Secret Ray Gun off the list **/
+                try {
+                    if(sceneToBuy == currentScene) {
+                        if(itemNumber == 0) {
+                            /** Do nothing - keep Secret Ray Gun off the list **/
+                        }
+                        else{
+
+                            int qtyOnHand = item.getItemQuantity();
+                            int itemCost = item.getItemCost();
+                            line = new StringBuilder("\n                                                                    ");
+                            line.insert(2, item.getItemNumber());
+                            line.insert(10,item.getDescription());
+                            line.insert(33, qtyOnHand);
+                            line.insert(43,"$");
+                            line.insert(44, itemCost);
+                            menu = menu + line.toString();
+                        }
                     }
-                    else{
-                        
-                        int qtyOnHand = item.getItemQuantity();
-                        int itemCost = item.getItemCost();
-                        line = new StringBuilder("\n                                                                    ");
-                        line.insert(2, item.getItemNumber());
-                        line.insert(10,item.getDescription());
-                        line.insert(33, qtyOnHand);
-                        line.insert(43,"$");
-                        line.insert(44, itemCost);
-                        menu = menu + line.toString();
-                    }
+                } catch (NumberFormatException nf){
+                    this.console.println("Error reading input. Please enter a number");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
                 }
         }
         menu = menu + "\n------------------------------------"

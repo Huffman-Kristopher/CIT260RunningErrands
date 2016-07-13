@@ -90,6 +90,7 @@ public class SellItemQtyMenuView extends View {
                     }
                     
                 } catch (NumberFormatException nf){
+                    this.console.println("Error reading input. Please enter a numeric value.");
                     ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
                 }
         }

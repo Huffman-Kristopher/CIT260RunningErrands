@@ -86,7 +86,8 @@ public String CombatSelectWeaponMenuValues() {
                         return true;
                     }
                 } catch (NumberFormatException ne) {
-                   ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                    this.console.println("Error reading input. Please enter a selectin from above.");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
         }

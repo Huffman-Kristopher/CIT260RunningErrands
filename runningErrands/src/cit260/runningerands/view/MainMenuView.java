@@ -44,7 +44,8 @@ public class MainMenuView extends View {
             case "Q": //Open help menu
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                this.console.println("Error reading input. Please enter selection from above.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection. Please enter selection from above.");
                 break;  
         }
 

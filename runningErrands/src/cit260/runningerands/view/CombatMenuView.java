@@ -41,6 +41,7 @@ public class CombatMenuView extends View {
                 this.attack();
                 break;
             default:
+                this.console.println("Error reading input. Please enter an option from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 break;  
         }

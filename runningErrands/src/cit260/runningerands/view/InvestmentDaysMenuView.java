@@ -17,13 +17,6 @@ public class InvestmentDaysMenuView extends View {
 private int investDays = 0;
 private Investment investment;
 
-
-/**     private int getMaxInvest() {
-        Persona persona = RunningErrands.getPersona();
-        int maxInvest = (persona.getMoney() - 1);
-        return maxInvest;
-    }
-**/
     public InvestmentDaysMenuView() {
         super("\n"
                   + "\n------------------------------------"
@@ -43,6 +36,7 @@ private Investment investment;
                 try {
                 int investDays = Integer.parseInt(value);
                 if (investDays < 0 || investDays > 29) {
+                    this.console.println("Error reading input. Please enter a number between 1 and 29.");
                     ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 }
                 else {
@@ -51,6 +45,7 @@ private Investment investment;
                 }
                 break;
                 } catch (NumberFormatException ne) {
+                    this.console.println("Error reading input. Please enter a number between 1 and 29.");
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
                 }
         }

@@ -61,6 +61,7 @@ public class GamblingNumbersMenuView extends View {
                 }
                 break;
                 }catch (NumberFormatException nf){
+                    this.console.println("Error reading input. Please enter a numeric value or R to return to the game menu");
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
                 }
         }
