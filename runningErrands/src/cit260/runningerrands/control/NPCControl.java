@@ -30,12 +30,12 @@ public class NPCControl {
         ,docent
         ,ghost
         ,joe
-        ,marinaMike
-        ,guru
+        ,shamWowGuy
+        ,crazyCatLady
         ,nikolai
         ,plagueMonkey
         ,sergy
-        ,hanibal
+        ,hannibal
         ,ceasar
         ,godfather
         ,jimbob
@@ -168,60 +168,173 @@ public class NPCControl {
         npcs[NPCList.giraffe.ordinal()] = giraffe;
         
         Npc docent = new Npc();
-        docent.setNpcName("Docent");
-        docent.setNpcDescription("Boring, but knows everything...");
-        docent.setNpcHealth(100);
-        docent.setNpcStrength(100);
+        docent.setNpcName("Tutankhamun");
+        docent.setNpcDescription("This big bad Pharaoh dude is seems big and bad, but he's a kid at heart. He " 
+                + "\nmay have died three thousand years ago, but he's got the forces of the " 
+                + "\nunderworld to back him up now. He is lacking in weapons, but won't hesitate " 
+                + "\nto swing his gold plated sarcophogous at you!");
+        docent.setNpcHealth(140);
+        docent.setNpcStrength(110);
         npcs[NPCList.docent.ordinal()] = docent;
         
         Npc ghost = new Npc();
-        ghost.setNpcName("Ghost");
-        ghost.setNpcDescription("Woooooooo");
-        ghost.setNpcHealth(100);
-        ghost.setNpcStrength(100);
+        ghost.setNpcName("Peeves");
+        ghost.setNpcDescription("This poltergeist loves to haunt the halls of Hogwarts and scare the students " 
+                + "\nby flying out of walls and tables, but he's a teddy beart at heart. He has no " 
+                + "\nweapon of is own, but he'll grab whatever is nearby to attack.");
+        ghost.setNpcHealth(55);
+        ghost.setNpcStrength(75);
         npcs[NPCList.ghost.ordinal()] = ghost;
         
         Npc joe = new Npc();
         joe.setNpcName("Joe");
-        joe.setNpcDescription("It's him vs. the Volcano");
+        joe.setNpcDescription("Joe was once ready to throw himself into the volcano, but has since found new " 
+                + "\ninspiration. The natives think him a god, so they'll protect him at all costs. " 
+                + "\nWatch out for the lava! He always has a bucket or two around him ready to " 
+                + "\nthrow on his enemies.");
         joe.setNpcHealth(100);
-        joe.setNpcStrength(100);
+        joe.setNpcStrength(105);
         npcs[NPCList.joe.ordinal()] = joe;
         
-        Npc marinaMike = new Npc();
-        marinaMike.setNpcName("Marina Mike");
-        marinaMike.setNpcDescription("Runs the Marina");
-        marinaMike.setNpcHealth(100);
-        marinaMike.setNpcStrength(100);
-        npcs[NPCList.marinaMike.ordinal()] = marinaMike;
+        Npc shamWowGuy = new Npc();
+        shamWowGuy.setNpcName("Sham-Wow Guy");
+        shamWowGuy.setNpcDescription("The epitome of all late night TV salesmen, the Sham-Wow Guy's sole weapon is " 
+                + "\nhis voice. Once you've heard it once, his offers of \"But wait! There's more!\" " 
+                + "\nwill haunt your nightmares for years to come.");
+        shamWowGuy.setNpcHealth(50);
+        shamWowGuy.setNpcStrength(75);
+        npcs[NPCList.shamWowGuy.ordinal()] = shamWowGuy;
         
-        Npc guru = new Npc();
-        guru.setNpcName("Guru");
-        guru.setNpcDescription("He knows all");
-        guru.setNpcHealth(100);
-        guru.setNpcStrength(100);
-        npcs[NPCList.guru.ordinal()] = guru;
+        Npc crazyCatLady = new Npc();
+        crazyCatLady.setNpcName("Crazy Cat Lady");
+        crazyCatLady.setNpcDescription("Not only does she own over thirty cats, she'll spend hours telling you about " 
+                + "\nthe organic, gluten-free, vegetarian food she makes for them from scratch. If " 
+                + "\nshe catches you in the potato chip aisle, a lecture on starches and saturated " 
+                + "\nfats is sure to ensue. Forget weapons, she'll swing her forty pound buckets of " 
+                + "\ncat litter at you!");
+        crazyCatLady.setNpcHealth(40);
+        crazyCatLady.setNpcStrength(30);
+        npcs[NPCList.crazyCatLady.ordinal()] = crazyCatLady;
         
         Npc nikolai = new Npc();
         nikolai.setNpcName("Nikolai");
-        nikolai.setNpcDescription("Russian arms dealer");
+        nikolai.setNpcDescription("Nikolai was a Spetsnaz office in the former Soviet Union, left to fend for " 
+                + "\nhimself when it collapsed. Now, he's an international arms dealer, always " 
+                + "\nwilling to sell any weapon he can get his hands on.");
         nikolai.setNpcHealth(100);
         nikolai.setNpcStrength(100);
         npcs[NPCList.nikolai.ordinal()] = nikolai;
         
         Npc plagueMonkey = new Npc();
         plagueMonkey.setNpcName("Plague Monkey");
-        plagueMonkey.setNpcDescription("He manages the store");
-        plagueMonkey.setNpcHealth(100);
-        plagueMonkey.setNpcStrength(100);
+        plagueMonkey.setNpcDescription("A troop of monkeys escaped from a local research facility. Rumor has it that they were testing a new manmade plague created by combining the Black Plague, Ebola, Zika, and Avian Flu. Get touched by one of these and you're sure to not live long.");
+        plagueMonkey.setNpcHealth(65);
+        plagueMonkey.setNpcStrength(125);
         npcs[NPCList.plagueMonkey.ordinal()] = plagueMonkey;
         
         Npc sergy = new Npc();
         sergy.setNpcName("Sergy");
-        sergy.setNpcDescription("Russian thug");
-        sergy.setNpcHealth(100);
-        sergy.setNpcStrength(100);
+        sergy.setNpcDescription("Sergy claims he was in the GRU with Nikolai, but in reality he buys all his " 
+                + "\nweapons on Craig's List. Although he's just as likely to run as to attack, he " 
+                + "\nalso has the biggest weapons around.");
+        sergy.setNpcHealth(80);
+        sergy.setNpcStrength(70);
         npcs[NPCList.sergy.ordinal()] = sergy;
+        
+        Npc hannibal = new Npc();
+        hannibal.setNpcName("Hannibal Lector");
+        hannibal.setNpcDescription("Hannibal Lector has already been sentenced to multiple life terms in prison. " 
+                + "\nBut a recent escape has him wandering free, trying to stay out of the " 
+                + "\nlimelight. Never accept his invitation to join him for dinner.");
+        hannibal.setNpcHealth(125);
+        hannibal.setNpcStrength(77);
+        npcs[NPCList.hannibal.ordinal()] = hannibal;
+        
+        Npc ceasar = new Npc();
+        ceasar.setNpcName("Julius Ceasar");
+        ceasar.setNpcDescription("Ceasar is a former ruling Emperor of Rome, during its heyday. Unfortunately, " 
+                + "\nthe warning that could have saved his throne - \"Beware the ides of March\" - " 
+                + "\ndidn't come across clearly. Now he wanders the Earth avoiding places like " 
+                + "\nSt. Louis, for fear of encountering the Eyes in the Arch. Walk softly and "
+                + "\nyou'll be able to sneak up on this hard of hearing villian.");
+        ceasar.setNpcHealth(60);
+        ceasar.setNpcStrength(150);
+        npcs[NPCList.ceasar.ordinal()] = ceasar;
+        
+        Npc godfather = new Npc();
+        godfather.setNpcName("Vito Corleone");
+        godfather.setNpcDescription("Vito, or \"Godfather\" as he is known to his crime family, fears no one. The " 
+                + "\npolice are in his pocket, and no crime is committed without his permission. " 
+                + "\nBeware the strength of his family, as you'll have to go through them to get him.");
+        godfather.setNpcHealth(200);
+        godfather.setNpcStrength(250);
+        npcs[NPCList.godfather.ordinal()] = godfather;
+        
+        Npc jimbob = new Npc();
+        jimbob.setNpcName("JimBob");
+        jimbob.setNpcDescription("JimBob hails from the deep south, where you keep your shotguns in the back " 
+                + "\nwindow of your pickup, fireworks are used to blow up real things, and overalls " 
+                + "\nare formal attire if you put a tie over your t-shirt. He may not seem like the " 
+                + "\nsharpest crayon in the box, but he knows how to use that shotgun.");
+        jimbob.setNpcHealth(40);
+        jimbob.setNpcStrength(50);
+        npcs[NPCList.jimbob.ordinal()] = jimbob;
+        
+        Npc adolf = new Npc();
+        adolf.setNpcName("Adolf Hitler");
+        adolf.setNpcDescription("Hitler's mind is a haven for all ideas barbaric. He has a talent for getting " 
+                + "\npeople to do things that they know very well would garner them the death " 
+                + "\npenalty anywhere else, but they'll do it for him because of his hypnotic " 
+                + "\nmotivational speaking style. Get past his minions and you'll encounter frail " 
+                + "\nman, hardly able to defend himself.");
+        adolf.setNpcHealth(20);
+        adolf.setNpcStrength(20);
+        npcs[NPCList.sergy.ordinal()] = adolf;
+        
+        Npc vlad = new Npc();
+        vlad.setNpcName("Vlad the Impaler");
+        vlad.setNpcDescription("Vlad \"The Impaler\", of the House of Drăculești, ruled Romania centuries ago. " 
+                + "\nThey say his antics eventually lead to the legend of Dracula and vampires. The " 
+                + "\nfact you're encountering him several hundred years later might just lead you " 
+                + "\nto believe they are real. Shine a little sunlight and you'll win this one.");
+        vlad.setNpcHealth(75);
+        vlad.setNpcStrength(95);
+        npcs[NPCList.vlad.ordinal()] = vlad;
+        
+        Npc khan = new Npc();
+        khan.setNpcName("Temüjin");
+        khan.setNpcDescription("Temüjin, also known as Genghis Khan, created the Mongolian empire in the early " 
+                + "\n13th century. His empire eventually grew to cover nearly all of Europe and " 
+                + "\nAsia, but not without major bloodshed and cruelty. It was thought that he died " 
+                + "\nwhen he fell off his horse while hunting, but... he is here in front of you now!");
+        khan.setNpcHealth(100);
+        khan.setNpcStrength(100);
+        npcs[NPCList.khan.ordinal()] = khan;
+        
+        Npc nsync = new Npc();
+        nsync.setNpcName("NSync");
+        nsync.setNpcDescription("Justin, Joey, Lance, Chris, and J.C. may be able to sing, but if they corner " 
+                + "\nyou, they'll force you to listen to Bye, Bye, Bye until you lose your mind.");
+        nsync.setNpcHealth(30);
+        nsync.setNpcStrength(15);
+        npcs[NPCList.nsync.ordinal()] = nsync;
+        
+        Npc zeus = new Npc();
+        zeus.setNpcName("Zeus");
+        zeus.setNpcDescription("Zeus, the Greek king of the gods, comes armed with thunder and lightning - and " 
+                + "\nnot the kiss your biceps kind. This is the strike you down and fry you like an " 
+                + "\negg lightning. Strike fast, and strike early. And pray to Heavenly Father that " 
+                + "\nyou survive.");
+        zeus.setNpcHealth(195);
+        zeus.setNpcStrength(300);
+        npcs[NPCList.zeus.ordinal()] = zeus;
+        
+        Npc dracula = new Npc();
+        dracula.setNpcName("Dracula");
+        dracula.setNpcDescription("Once one of the most widely feared villians in all of legend, literature, and " + "\nlore, his daughter brought him down a few notches. Now remembered more for his " + "\nvehement denials of saying \"Bleh, bleh, bleh!\", he is still a compatent foe. " + "\nFight him with light, watch your neck.");
+        dracula.setNpcHealth(115);
+        dracula.setNpcStrength(135);
+        npcs[NPCList.dracula.ordinal()] = dracula;
         
         return npcs;
         
