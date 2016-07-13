@@ -40,18 +40,24 @@ public class TravelMenuView extends View {
         mapMenuView.display();
         return menu;
     }
+    
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
+        int newValue = Integer.parseInt(value);
+        String newSymbol = String.format("%02d", newValue);
+
+
         if ("R".equals(value)) {
             this.openGameMenu();
             return true;
         }
         else {
+            
             Persona persona = RunningErrands.getPersona();
             Location currentLocation = persona.getLocation();
             Map map = RunningErrands.getMap();
-            Location newLocation = map.getLocationFromSymbol(value);
+            Location newLocation = map.getLocationFromSymbol(newSymbol);
             if (currentLocation == newLocation) {
                 String currentLocationDecription = currentLocation.getScene().getDescription();
                 this.console.println("You are already at " + currentLocationDecription + ", please try again.");
@@ -60,7 +66,7 @@ public class TravelMenuView extends View {
             }
             else {
                 
-            MapControl.movePersonaToNewLocation(value);
+            MapControl.movePersonaToNewLocation(newSymbol);
             String menu = "";
             SceneMenuView sceneMenuView = new SceneMenuView(menu);
             sceneMenuView.SceneMenuValues();

@@ -46,21 +46,22 @@ public class ConversationMenuView extends View {
             case "Y":
                 try{
                     if (sceneType == "Give") {
-                        int giveItemQty = 0;
+                        int giveItemReq = 0;
                         Item giveItem = currentScene.getItemToDeliver();
                         int giveItemOnHand = giveItem.getItemQuantity();
                         String giveItemDesc = giveItem.getDescription();
 
                             for (Objective objectiveList : objectives ) {
                                 if(objectiveList.getObjectiveItem() == giveItem) {
-                                    giveItemQty = objectiveList.getObjectiveQtyRequired();
+                                    giveItemReq = objectiveList.getObjectiveQtyRequired();
                                 }
                                 else {
                                     /** Do nothing - keep giveItemQty at it's current setting **/
-                                } 
-                            }
+                                }
+                        }
 
-                        if(giveItemOnHand < giveItemQty) {
+                        if(giveItemOnHand < giveItemReq) {
+                            
                             String sceneFailureText = objective.getObjectiveNotEnoughText();
                             this.console.println(sceneFailureText);
                             this.openSceneMenuView();
@@ -71,7 +72,7 @@ public class ConversationMenuView extends View {
                             String sceneSuccessText = objective.getObjectiveCompleteText();
                             this.console.println(sceneSuccessText);
                             /** Remove required item from inventory**/
-                            fulfillObjective(giveItem, giveItemQty);
+                            fulfillObjective(giveItem, giveItemReq);
                             markObjectiveComplete(objective);
                             this.openSceneMenuView();
                             return true;

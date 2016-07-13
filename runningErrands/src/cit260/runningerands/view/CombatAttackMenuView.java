@@ -79,6 +79,7 @@ public class CombatAttackMenuView extends View {
         int npcStrength = npc.getNpcStrength();
         int npcHealth =  npc.getNpcHealth();
         int minimumDamage = 1;
+        int npcStartingHealth = npc.getStartingNpcHealth();
         
         switch (value) {
             case "A":
@@ -91,11 +92,13 @@ public class CombatAttackMenuView extends View {
                         int npcDamage = r.nextInt(((difference - minimumDamage) /2 ) + 1) + minimumDamage;
                         int newNpcHealth = npcHealth - npcDamage;
                         if(newPlayerHealth < 1) {
+                            npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Oh no! You were killed by " + npcName + "! You will now be sent home." );
                             this.travelHome();
                         }
                         if(newNpcHealth < 1 ) {
                             npc.setNpcHealth(newNpcHealth);
+                            npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
                             ItemControl.receiveItem(objectiveItem, 1);
                             return true;
@@ -121,11 +124,13 @@ public class CombatAttackMenuView extends View {
                         int newPlayerHealth = playerHealth - playerDamage;
                         if(newNpcHealth <1) {
                             npc.setNpcHealth(newNpcHealth);
+                            npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
                             ItemControl.receiveItem(objectiveItem, 1);
                             return true;
                         }
                         if(newPlayerHealth < 1) {
+                            npc.setStartingNpcHealth(npcStartingHealth);
                             this.console.println("Oh no! You were killed by " + npcName + "! You will now be sent home." );
                             this.travelHome();
                         }

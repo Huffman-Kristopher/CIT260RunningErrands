@@ -6,6 +6,7 @@
 package cit260.runningerrands.control;
 
 import cit260.runningerrands.model.Npc;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -227,7 +228,10 @@ public class NPCControl {
         
         Npc plagueMonkey = new Npc();
         plagueMonkey.setNpcName("Plague Monkey");
-        plagueMonkey.setNpcDescription("A troop of monkeys escaped from a local research facility. Rumor has it that they were testing a new manmade plague created by combining the Black Plague, Ebola, Zika, and Avian Flu. Get touched by one of these and you're sure to not live long.");
+        plagueMonkey.setNpcDescription("A troop of monkeys escaped from a local research facility. Rumor has it that " 
+                + "\nthey were testing a new manmade plague created by combining the Black Plague, " 
+                + "\nEbola, Zika, and Avian Flu. Get touched by one of these and you're sure to not " 
+                + "\nlive long.");
         plagueMonkey.setNpcHealth(65);
         plagueMonkey.setNpcStrength(125);
         npcs[NPCList.plagueMonkey.ordinal()] = plagueMonkey;
@@ -289,7 +293,7 @@ public class NPCControl {
                 + "\nman, hardly able to defend himself.");
         adolf.setNpcHealth(20);
         adolf.setNpcStrength(20);
-        npcs[NPCList.sergy.ordinal()] = adolf;
+        npcs[NPCList.adolf.ordinal()] = adolf;
         
         Npc vlad = new Npc();
         vlad.setNpcName("Vlad the Impaler");
@@ -331,11 +335,15 @@ public class NPCControl {
         
         Npc dracula = new Npc();
         dracula.setNpcName("Dracula");
-        dracula.setNpcDescription("Once one of the most widely feared villians in all of legend, literature, and " + "\nlore, his daughter brought him down a few notches. Now remembered more for his " + "\nvehement denials of saying \"Bleh, bleh, bleh!\", he is still a compatent foe. " + "\nFight him with light, watch your neck.");
+        dracula.setNpcDescription("Once one of the most widely feared villians in all of legend, literature, and " 
+                + "\nlore, his daughter brought him down a few notches. Now remembered more for his " 
+                + "\nvehement denials of saying \"Bleh, bleh, bleh!\", he is still a compatent foe. " 
+                + "\nFight him with light, watch your neck.");
         dracula.setNpcHealth(115);
         dracula.setNpcStrength(135);
         npcs[NPCList.dracula.ordinal()] = dracula;
         
+        RunningErrands.setNpc(npcs);
         return npcs;
         
     }

@@ -49,8 +49,7 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         Location[][] locations = map.getLocations();
-        Npc[] npcs = NPCControl.createNPCList();
-        RunningErrands.setNpc(npcs);
+        NPCControl.createNPCList();
         Item[] inventoryList = ItemControl.createInventoryList();
         Objective[] objectives = ObjectiveControl.createObjectiveList();
         resetObjectiveCompletedTodayFlag();

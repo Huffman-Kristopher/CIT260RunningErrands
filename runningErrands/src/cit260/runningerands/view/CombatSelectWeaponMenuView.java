@@ -29,7 +29,7 @@ public String CombatSelectWeaponMenuValues() {
         line = new StringBuilder("                              ");
         line.insert(0, "Description");
         line.insert(20, "Required");
-        line.insert(30, "In Stock");
+        line.insert(30, "Strength");
         String menu = line.toString();
         
         for (Item item : inventory) {
@@ -40,7 +40,7 @@ public String CombatSelectWeaponMenuValues() {
                     line.insert(0,item.getItemNumber());
                     line.insert(4,item.getDescription());
                     line.insert(27, item.getRequiredAmount());
-                    line.insert(37, item.getItemQuantity());
+                    line.insert(37, item.getStrength());
 
                     menu = menu + "\n" + line.toString();
                 }

@@ -96,9 +96,9 @@ public class ObjectiveControl {
         returnAr15.setObjectiveItem(items[Items.ar15.ordinal()]);
         returnAr15.setObjectiveQtyRequired(1);
         returnAr15.setObjectiveCompleteText("Congratulations! You returned the ar15. You have now completed this objective");
-        returnAncientBookofSpells.setObjectiveNotEnoughText("I'm sorry. You dont have the AR-15 we are looking for!");
-        returnAncientBookofSpells.setObjectiveAlreadyHaveItemsText("Welcome back! We dont have anymore, OUT, O. U. T. out, so get outta here.");
-        returnAncientBookofSpells.setObjectiveGiveItemText("Here is a shiney new AR-15, fully automatic and with all the accessories you can hold, and it only weights 124 lbs.");
+        returnAr15.setObjectiveNotEnoughText("I'm sorry. You dont have the AR-15 we are looking for!");
+        returnAr15.setObjectiveAlreadyHaveItemsText("Welcome back! We dont have anymore, OUT, O. U. T. out, so get outta here.");
+        returnAr15.setObjectiveGiveItemText("Here is a shiney new AR-15, fully automatic and with all the accessories you can hold, and it only weights 124 lbs.");
         returnAr15.setObjectiveCompleteFlag(false);
         objective[Objectives.returnAr15.ordinal()] = returnAr15;
         
@@ -185,10 +185,10 @@ public class ObjectiveControl {
         Objective returnVideoGame = new Objective();
         returnVideoGame.setObjectiveItem(items[Items.videoGame.ordinal()]);
         returnVideoGame.setObjectiveQtyRequired(1);
-        returnVideoGame.setObjectiveCompleteText("Congratulations! You returned the videoGame. You have now completed this objective");
+        returnVideoGame.setObjectiveCompleteText("Congratulations! You returned the Running Errands video game. You have now completed this objective");
         returnVideoGame.setObjectiveNotEnoughText("Running Errands the game has released and you didnt get it on the first day it came out! Go get it!");
-        returnVideoGame.setObjectiveAlreadyHaveItemsText("There is so much demand you can only have one copy of Running Errands.");
-        returnVideoGame.setObjectiveGiveItemText("The collectors edition Running Errands game. Package includes a bucket of lava and a grieving widow.");
+        returnVideoGame.setObjectiveAlreadyHaveItemsText("There is so much demand you can only have one copy of the Running Errands video game.");
+        returnVideoGame.setObjectiveGiveItemText("The collectors edition Running Errands the game. Package includes a bucket of lava and a grieving widow.");
         returnVideoGame.setObjectiveCompleteFlag(false);
         objective[Objectives.returnVideoGame.ordinal()] = returnVideoGame;
         
