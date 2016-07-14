@@ -110,7 +110,6 @@ public class ItemControl {
         
         Item shirt = new Item();
         shirt.setDescription("Shirt");
-        shirt.setDescription("Shirt");
         shirt.setRequiredAmount(0);
         shirt.setItemCost(20);
         shirt.setItemValue(20);
@@ -127,7 +126,6 @@ public class ItemControl {
         item[Items.shirt.ordinal()] = shirt;
         
         Item videoGame = new Item();
-        videoGame.setDescription("Video Game");
         videoGame.setDescription("Video Game");
         videoGame.setRequiredAmount(0);
         videoGame.setItemCost(60);
@@ -161,7 +159,6 @@ public class ItemControl {
         item[Items.leatherBag.ordinal()] = leatherBag;
         
         Item mountainDew = new Item();
-        mountainDew.setDescription("Mountain Dew");
         mountainDew.setDescription("Mountain Dew");
         mountainDew.setRequiredAmount(0);
         mountainDew.setItemCost(3);
