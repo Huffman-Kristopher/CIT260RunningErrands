@@ -12,10 +12,13 @@ package cit260.runningerands.view;
 public class WinGameMenu extends View {
         
     public WinGameMenu() {
-        super("Congratulations! You have successfully" +
-            "\ncompleted all objectives and returned" +
-            "\nhome! Unfortunately the volcano still errupted"+
-            "\n and you died, buy you have won the game you're just dead!!" +
+        super("Congratulations! You have successfully completed" +
+            "\nall objectives and returned home! Unfortunately," +
+            "\nthe volcano still erupted, and you roasted to death"+
+            "\nburied in ash and lava. But you have still won the"+
+            "\ngame, you just didn't survive long enough to" +
+            "\ncelebrate your victory!"+
+            "\n"+
             "\nPlease press Q to exit the game.");
     }
 

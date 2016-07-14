@@ -191,7 +191,7 @@ public class ItemControl {
         item[Items.drPepper.ordinal()] = drPepper;
         
         Item donuts = new Item();
-        donuts.setDescription("Donuts");
+        donuts.setDescription("Donut");
         donuts.setRequiredAmount(0);
         donuts.setItemCost(4);
         donuts.setItemValue(2);

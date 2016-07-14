@@ -571,7 +571,7 @@ public class MapControl {
         scenes[LocationName.gasScene.ordinal()].setItemToReceive(item[Items.abramsTank.ordinal()]);
         scenes[LocationName.gunShopScene.ordinal()].setItemToDeliver(item[Items.ar15.ordinal()]);
         scenes[LocationName.sportingScene.ordinal()].setItemToReceive(item[Items.katana.ordinal()]);
-        scenes[LocationName.libraryScene.ordinal()].setItemToReceive(item[Items.ancientBookofSpells.ordinal()]);
+        scenes[LocationName.libraryScene.ordinal()].setItemToDeliver(item[Items.ancientBookofSpells.ordinal()]);
         scenes[LocationName.churchScene.ordinal()].setItemToDeliver(item[Items.sacramentalWine.ordinal()]);
         scenes[LocationName.hospitalScene.ordinal()].setItemToDeliver(item[Items.freshOrgans.ordinal()]);
         scenes[LocationName.schoolScene.ordinal()].setItemToReceive(item[Items.reportCard.ordinal()]);

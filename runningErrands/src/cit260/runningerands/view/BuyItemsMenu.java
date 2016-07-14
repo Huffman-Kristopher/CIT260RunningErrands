@@ -62,8 +62,7 @@ public class BuyItemsMenu extends View{
         }
         menu = menu + "\n------------------------------------"
                 + "\n"
-                + "\n Enter the item number of the item you wish to purchase"
-                + "\n or enter R to return to game menu";
+                + "\n Enter the item number you wish to purchase, or press R to return to game menu. \n";
         BuyItemsMenu buyItemsMenu = new BuyItemsMenu(menu);
         buyItemsMenu.display();        
         return menu;

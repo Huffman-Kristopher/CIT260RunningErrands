@@ -36,17 +36,16 @@ public class CombatMenuView extends View {
                 return true;
             case "S": //create and start a new game
                 this.weaponSelect();
-                break;
+                return true;
             case "A": //load saved game
                 this.attack();
-                break;
+                return true;
             default:
                 this.console.println("Error reading input. Please enter an option from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
-                break;  
+                return false;  
         }
 
-        return false;
     }
     
     private void weaponSelect() {

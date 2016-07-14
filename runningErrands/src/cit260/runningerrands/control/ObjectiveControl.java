@@ -224,7 +224,7 @@ public class ObjectiveControl {
         Objective[] objectives = RunningErrands.getObjective();
         int objectivesCompleted = 0;
         for (Objective objective : objectives) {
-            if (objective.isObjectiveCompletedTodayFlag()) {
+            if (objective.isObjectiveCompleteFlag()) {
                 objectivesCompleted = objectivesCompleted + 1;
             }
             else {

@@ -56,7 +56,7 @@ public class SceneMenuView extends View {
                   + "\nQ - Quit Game"
 //                  + "\nA - TEST ADDING ONE DAY"
                   + "\n-------------------------"
-                  + "\nPlease select a menu option: ";
+                  + "\nPlease select a menu option: \n";
 
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
         sceneMenuView.display();
@@ -80,7 +80,7 @@ public class SceneMenuView extends View {
 //                  + "\nL - Load Game"
                   + "\nQ - Quit Game"
                   + "\n-------------------------"
-                  + "\nPlease select a menu option: ";
+                  + "\nPlease select a menu option: \n";
 
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
         sceneMenuView.display();

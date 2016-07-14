@@ -34,7 +34,7 @@ public class TravelMenuView extends View {
                   + "\n------------------------------------"
                   + "\n" + menu;
         menu += "-------------------------" 
-        + "\nPlease select a location to visit or press R to return to Game Menu";
+        + "\nPlease select a location to visit or press R to return to Game Menu. \n";
         
         TravelMenuView mapMenuView = new TravelMenuView(menu);
         mapMenuView.display();

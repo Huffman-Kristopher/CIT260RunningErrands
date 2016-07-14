@@ -37,9 +37,11 @@ import java.io.IOException;
         +"\n* buy, books to return to the library. It seems that  *"
         +"\n* every time you go to do one of the tasks something  *"
         +"\n* catastrophic happens and you are faced with life    *"
-        +"\n* threatening peril.                                  *"
+        +"\n* threatening peril. Keep in mind: you only have 60   *"
+        +"\n* days to complete your objectives!                   *"
         +"\n*                                                     *"
         +"\n*******************************************************"
+                
         );
     }
 

@@ -22,7 +22,8 @@ import runningerrands.RunningErrands;
 public class ConversationMenuView extends View {
         
     public ConversationMenuView() {
-        super("Press Y to ask about your tasks.");
+        super("\nAs you wander the area, you encounter a gruff looking man who quietly motions " 
+            + "\nyou over. Press Y to talk to this stranger, or R to run away. \n");
     }
 
     @Override

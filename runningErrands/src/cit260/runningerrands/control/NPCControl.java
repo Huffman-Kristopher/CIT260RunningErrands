@@ -59,6 +59,7 @@ public class NPCControl {
                 + "\nHowever, it's his \"special\" weapons for which he is known. He is waiting for "
                 + "\nyou with his alien ray gun he calls a \"reverberating carbonizer\"." );
         shopkeeper.setNpcHealth(80);
+        shopkeeper.setStartingNpcHealth(80);
         shopkeeper.setNpcStrength(300);
         npcs[NPCList.shopkeeper.ordinal()] = shopkeeper;
         
@@ -69,6 +70,7 @@ public class NPCControl {
                 + "\nbit scarier if it's wasn't a lazy eye. He's excited to face you down with his " 
                 + "\nsword and mace.");
         wizard.setNpcHealth(150);
+        wizard.setStartingNpcHealth(150);
         wizard.setNpcStrength(225);
         npcs[NPCList.wizard.ordinal()] = wizard;
         
@@ -79,6 +81,7 @@ public class NPCControl {
                 + "\ngoal. He stands ready with his vial of Holy Water that many suspect is really " 
                 + "\npoison.");
         priest.setNpcHealth(75);
+        priest.setStartingNpcHealth(75);
         priest.setNpcStrength(90);
         npcs[NPCList.priest.ordinal()] = priest;
         
@@ -89,6 +92,7 @@ public class NPCControl {
                 + "\na bit. Kill him quickly, he's quick to return from the brink of death. Be " 
                 + "\ncareful facing him - he's known to be ruthless with his wand.");
         orphan.setNpcHealth(200);
+        orphan.setStartingNpcHealth(200);
         orphan.setNpcStrength(150);
         npcs[NPCList.orphan.ordinal()] = orphan;
         
@@ -99,6 +103,7 @@ public class NPCControl {
                 + "\nexperienced in killing and making it look like suicide. Watch out for his " 
                 + "\nneedle and IV bag!");
         doctor.setNpcHealth(70);
+        doctor.setStartingNpcHealth(70);
         doctor.setNpcStrength(60);
         npcs[NPCList.doctor.ordinal()] = doctor;
         
@@ -108,6 +113,7 @@ public class NPCControl {
                 + "\nWind up on his suspect list and you're likely to face your maker sooner than a " 
                 + "\njudge. He has many favorite weapons, but today you face his 9mm.");
         officer.setNpcHealth(100);
+        officer.setStartingNpcHealth(100);
         officer.setNpcStrength(110);
         npcs[NPCList.officer.ordinal()] = officer;
         
@@ -117,6 +123,7 @@ public class NPCControl {
                 + "\nHogwarts. Although he's just as likely to run from danger, he is also known " 
                 + "\nfor his wicked use of the dark arts in his spells.");
         principal.setNpcHealth(120);
+        principal.setStartingNpcHealth(120);
         principal.setNpcStrength(90);
         npcs[NPCList.principal.ordinal()] = principal;
         
@@ -127,6 +134,7 @@ public class NPCControl {
                 + "\ncall him Baby Face, he's liable to blow his top - and your house. He loves his " 
                 + "\nTommy Gun and shoots more for quanity, not quality.");
         babyFace.setNpcHealth(90);
+        babyFace.setStartingNpcHealth(90);
         babyFace.setNpcStrength(60);
         npcs[NPCList.babyFace.ordinal()] = babyFace;
         
@@ -137,6 +145,7 @@ public class NPCControl {
                 + "\nyou've got Shredder. He's more likely to sic his fellow ninjas on you than to " 
                 + "\nuse his katana.");
         ninja.setNpcHealth(80);
+        ninja.setStartingNpcHealth(80);
         ninja.setNpcStrength(126);
         npcs[NPCList.ninja.ordinal()] = ninja;
         
@@ -146,6 +155,7 @@ public class NPCControl {
                 + "\nanyone in history, he's not afraid to take you out. And he's not likely to " 
                 + "\nstand down.");
         soldier.setNpcHealth(50);
+        soldier.setStartingNpcHealth(50);
         soldier.setNpcStrength(110);
         npcs[NPCList.soldier.ordinal()] = soldier;
         
@@ -156,6 +166,7 @@ public class NPCControl {
                 + "\nkill you\" doesn't exactly lend itself to loyalty, but his sword will make you " 
                 + "\nregret crossing him.");
         pirate.setNpcHealth(40);
+        pirate.setStartingNpcHealth(40);
         pirate.setNpcStrength(175);
         npcs[NPCList.pirate.ordinal()] = pirate;
         
@@ -165,6 +176,7 @@ public class NPCControl {
                 + "\ngiant building of overpriced toys with half a dozen toddlers, then take your " 
                 + "\nwallet. If his high prices don't kill you, their screams of want will!");
         giraffe.setNpcHealth(60);
+        giraffe.setStartingNpcHealth(60);
         giraffe.setNpcStrength(40);
         npcs[NPCList.giraffe.ordinal()] = giraffe;
         
@@ -175,6 +187,7 @@ public class NPCControl {
                 + "\nunderworld to back him up now. He is lacking in weapons, but won't hesitate " 
                 + "\nto swing his gold plated sarcophogous at you!");
         docent.setNpcHealth(140);
+        docent.setStartingNpcHealth(140);
         docent.setNpcStrength(110);
         npcs[NPCList.docent.ordinal()] = docent;
         
@@ -184,6 +197,7 @@ public class NPCControl {
                 + "\nby flying out of walls and tables, but he's a teddy beart at heart. He has no " 
                 + "\nweapon of is own, but he'll grab whatever is nearby to attack.");
         ghost.setNpcHealth(55);
+        ghost.setStartingNpcHealth(55);
         ghost.setNpcStrength(75);
         npcs[NPCList.ghost.ordinal()] = ghost;
         
@@ -194,6 +208,7 @@ public class NPCControl {
                 + "\nWatch out for the lava! He always has a bucket or two around him ready to " 
                 + "\nthrow on his enemies.");
         joe.setNpcHealth(100);
+        joe.setStartingNpcHealth(100);
         joe.setNpcStrength(105);
         npcs[NPCList.joe.ordinal()] = joe;
         
@@ -203,6 +218,7 @@ public class NPCControl {
                 + "\nhis voice. Once you've heard it once, his offers of \"But wait! There's more!\" " 
                 + "\nwill haunt your nightmares for years to come.");
         shamWowGuy.setNpcHealth(50);
+        shamWowGuy.setStartingNpcHealth(50);
         shamWowGuy.setNpcStrength(75);
         npcs[NPCList.shamWowGuy.ordinal()] = shamWowGuy;
         
@@ -214,6 +230,7 @@ public class NPCControl {
                 + "\nfats is sure to ensue. Forget weapons, she'll swing her forty pound buckets of " 
                 + "\ncat litter at you!");
         crazyCatLady.setNpcHealth(40);
+        crazyCatLady.setStartingNpcHealth(40);
         crazyCatLady.setNpcStrength(30);
         npcs[NPCList.crazyCatLady.ordinal()] = crazyCatLady;
         
@@ -223,6 +240,7 @@ public class NPCControl {
                 + "\nhimself when it collapsed. Now, he's an international arms dealer, always " 
                 + "\nwilling to sell any weapon he can get his hands on.");
         nikolai.setNpcHealth(100);
+        nikolai.setStartingNpcHealth(100);
         nikolai.setNpcStrength(100);
         npcs[NPCList.nikolai.ordinal()] = nikolai;
         
@@ -233,6 +251,7 @@ public class NPCControl {
                 + "\nEbola, Zika, and Avian Flu. Get touched by one of these and you're sure to not " 
                 + "\nlive long.");
         plagueMonkey.setNpcHealth(65);
+        plagueMonkey.setStartingNpcHealth(65);
         plagueMonkey.setNpcStrength(125);
         npcs[NPCList.plagueMonkey.ordinal()] = plagueMonkey;
         
@@ -242,6 +261,7 @@ public class NPCControl {
                 + "\nweapons on Craig's List. Although he's just as likely to run as to attack, he " 
                 + "\nalso has the biggest weapons around.");
         sergy.setNpcHealth(80);
+        sergy.setStartingNpcHealth(80);
         sergy.setNpcStrength(70);
         npcs[NPCList.sergy.ordinal()] = sergy;
         
@@ -251,6 +271,7 @@ public class NPCControl {
                 + "\nBut a recent escape has him wandering free, trying to stay out of the " 
                 + "\nlimelight. Never accept his invitation to join him for dinner.");
         hannibal.setNpcHealth(125);
+        hannibal.setStartingNpcHealth(125);
         hannibal.setNpcStrength(77);
         npcs[NPCList.hannibal.ordinal()] = hannibal;
         
@@ -262,6 +283,7 @@ public class NPCControl {
                 + "\nSt. Louis, for fear of encountering the Eyes in the Arch. Walk softly and "
                 + "\nyou'll be able to sneak up on this hard of hearing villian.");
         ceasar.setNpcHealth(60);
+        ceasar.setStartingNpcHealth(60);
         ceasar.setNpcStrength(150);
         npcs[NPCList.ceasar.ordinal()] = ceasar;
         
@@ -271,6 +293,7 @@ public class NPCControl {
                 + "\npolice are in his pocket, and no crime is committed without his permission. " 
                 + "\nBeware the strength of his family, as you'll have to go through them to get him.");
         godfather.setNpcHealth(200);
+        godfather.setStartingNpcHealth(200);
         godfather.setNpcStrength(250);
         npcs[NPCList.godfather.ordinal()] = godfather;
         
@@ -281,6 +304,7 @@ public class NPCControl {
                 + "\nare formal attire if you put a tie over your t-shirt. He may not seem like the " 
                 + "\nsharpest crayon in the box, but he knows how to use that shotgun.");
         jimbob.setNpcHealth(40);
+        jimbob.setStartingNpcHealth(40);
         jimbob.setNpcStrength(50);
         npcs[NPCList.jimbob.ordinal()] = jimbob;
         
@@ -289,9 +313,10 @@ public class NPCControl {
         adolf.setNpcDescription("Hitler's mind is a haven for all ideas barbaric. He has a talent for getting " 
                 + "\npeople to do things that they know very well would garner them the death " 
                 + "\npenalty anywhere else, but they'll do it for him because of his hypnotic " 
-                + "\nmotivational speaking style. Get past his minions and you'll encounter frail " 
+                + "\nmotivational speaking style. Get past his minions and you'll encounter a frail " 
                 + "\nman, hardly able to defend himself.");
         adolf.setNpcHealth(20);
+        adolf.setStartingNpcHealth(20);
         adolf.setNpcStrength(20);
         npcs[NPCList.adolf.ordinal()] = adolf;
         
@@ -302,6 +327,7 @@ public class NPCControl {
                 + "\nfact you're encountering him several hundred years later might just lead you " 
                 + "\nto believe they are real. Shine a little sunlight and you'll win this one.");
         vlad.setNpcHealth(75);
+        vlad.setStartingNpcHealth(75);
         vlad.setNpcStrength(95);
         npcs[NPCList.vlad.ordinal()] = vlad;
         
@@ -312,6 +338,7 @@ public class NPCControl {
                 + "\nAsia, but not without major bloodshed and cruelty. It was thought that he died " 
                 + "\nwhen he fell off his horse while hunting, but... he is here in front of you now!");
         khan.setNpcHealth(100);
+        khan.setStartingNpcHealth(100);
         khan.setNpcStrength(100);
         npcs[NPCList.khan.ordinal()] = khan;
         
@@ -320,6 +347,7 @@ public class NPCControl {
         nsync.setNpcDescription("Justin, Joey, Lance, Chris, and J.C. may be able to sing, but if they corner " 
                 + "\nyou, they'll force you to listen to Bye, Bye, Bye until you lose your mind.");
         nsync.setNpcHealth(30);
+        nsync.setStartingNpcHealth(30);
         nsync.setNpcStrength(15);
         npcs[NPCList.nsync.ordinal()] = nsync;
         
@@ -329,8 +357,9 @@ public class NPCControl {
                 + "\nnot the kiss your biceps kind. This is the strike you down and fry you like an " 
                 + "\negg lightning. Strike fast, and strike early. And pray to Heavenly Father that " 
                 + "\nyou survive.");
-        zeus.setNpcHealth(195);
+        zeus.setStartingNpcHealth(300);
         zeus.setNpcStrength(300);
+        zeus.setNpcHealth(195);
         npcs[NPCList.zeus.ordinal()] = zeus;
         
         Npc dracula = new Npc();
@@ -340,6 +369,7 @@ public class NPCControl {
                 + "\nvehement denials of saying \"Bleh, bleh, bleh!\", he is still a compatent foe. " 
                 + "\nFight him with light, watch your neck.");
         dracula.setNpcHealth(115);
+        dracula.setStartingNpcHealth(115);
         dracula.setNpcStrength(135);
         npcs[NPCList.dracula.ordinal()] = dracula;
         
