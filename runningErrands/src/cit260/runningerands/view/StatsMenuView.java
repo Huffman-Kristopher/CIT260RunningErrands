@@ -5,6 +5,7 @@
  */
 package cit260.runningerands.view;
 
+import cit260.runningerrands.control.ObjectiveControl;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
 import cit260.runningerrands.model.Persona;
@@ -41,6 +42,9 @@ public class StatsMenuView extends View {
         String investmentMessage;
         String itemList = this.viewInventory();
         String weaponItemDescription = persona.getWeaponItem().getDescription();
+        int totalObjectiveCount = ObjectiveControl.countTotalObjectivces();
+        int totalObjectivesCompletedCount = ObjectiveControl.countObjectivcesCompleted();
+        int totalObjectivesRemaining = totalObjectiveCount - totalObjectivesCompletedCount;
         int weaponItemStrength = persona.getWeaponItem().getStrength();
         if (investmentReturn == 0) {
             investmentMessage = "\nYou do not currently have any investments pending.";
@@ -63,6 +67,8 @@ public class StatsMenuView extends View {
                   + itemList
                   + "\nCurrent Weapon: " + weaponItemDescription
                   + "\nWeapon Strength: " + weaponItemStrength
+                  + "\n"
+                  + "\nYou have completed " + totalObjectivesCompletedCount + " of " + totalObjectiveCount + " objectives. You have " + totalObjectivesRemaining + " objectives remaining."
                   + "\n-------------------------"
                   + "\nR - Return to main menu");
         StatsMenuView StatsMenuView = new StatsMenuView(menu);

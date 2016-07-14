@@ -97,50 +97,50 @@ public class SceneMenuView extends View {
         switch (value) {
             case "1": //open email and get objectives.
                 this.openEmailMenu();
-                return true;
+                return false;
             case "2":
                 this.openCombatMenu();
-                return true;
+                return false;
             case "3":
                 this.openConversationMenu();
-                return true;
+                return false;
             case "4":
                 this.openStoreMenu();
-                return true;
+                return false;
             case "5": //open map.
                 this.displayMap();
-                return true;
+                return false;
             case "6": //open map.
                 if ("Home".equals(currentSceneDescription)) {
                     this.openTravelMenu();
-                    return true;
+                    return false;
                 }
                 else {
                     this.travelHome();
-                    return true;
+                    return false;
                 }
             case "7": //open store.
                 this.openStatsMenu();
-                return true;
+                return false;
             case "8": //open inveestments.
                 this.openInvestmentMenu();
-                return true;
+                return false;
             case "9": //gamble.
                 this.openGamblingMenu();
-                return true;
+                return false;
             case "P":
                 this.printSceneList();
-                return true;
+                return false;
             case "S": //save the game.
                 this.OpensaveGame();
-                return true;
+                return false;
 /**            case "L": //load the game.
                 this.openLoadGame();
                 return false;
 **/
             case "H": //open help menu.
                 this.openHelpMenu();
-                return true;
+                return false;
             case "Q": //return to main menu.
                 this.openMainMenu();
                 return true;
