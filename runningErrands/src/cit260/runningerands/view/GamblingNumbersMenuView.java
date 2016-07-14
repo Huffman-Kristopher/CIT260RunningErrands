@@ -19,8 +19,6 @@ import runningerrands.RunningErrands;
 
 public class GamblingNumbersMenuView extends View {
     int betAmount = 0;
-    private int winningNumber;
-    private int winningsTotal;
 
     private int getMaxBet() {
         Persona persona = RunningErrands.getPersona();

@@ -17,7 +17,7 @@ import java.io.IOException;
 
     public class StartProgramView extends View{
 
-        private String promptMessage;
+        private String promptMessage = "";
         public StartProgramView() {
             this.promptMessage = "\nPlease enter your name: ";
             this.displayBanner();

@@ -35,9 +35,5 @@ public class WinGameMenu extends View {
     private void endGame() {
         System.exit(0);
     }
-    private void openMainMenu() {
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();    
-    }
-        
+
 }

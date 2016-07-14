@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package cit260.runningerrands.control;
+import cit260.runningerands.view.LoseGameMenuView;
 import cit260.runningerrands.control.ItemControl.Items;
 import cit260.runningerrands.model.Investment;
 import cit260.runningerrands.model.Item;
-import cit260.runningerrands.model.Npc;
 import cit260.runningerrands.model.Persona;
 import cit260.runningerrands.model.Scene;
 import java.util.concurrent.ThreadLocalRandom;
@@ -115,6 +115,12 @@ public class PersonaControl {
         Investment investment = RunningErrands.getInvestment();
         int currentDay = persona.getDay();
         int newDay = currentDay + 1;
+        
+        if (newDay == 60) {
+            LoseGameMenuView loseGameMenuView = new LoseGameMenuView();
+            loseGameMenuView.display();
+        }
+        
         persona.setDay(newDay);
         int investmentReturn = investment.getInvestReturn();
         int investmentMatureDay = investment.getInvestMatureDay();

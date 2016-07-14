@@ -19,7 +19,7 @@ import runningerrands.RunningErrands;
 
 /**
  *
- * @author reddo
+ *  @author Kristopher Huffman And Kirk Brown
  */
 public class CombatAttackMenuView extends View {
     
