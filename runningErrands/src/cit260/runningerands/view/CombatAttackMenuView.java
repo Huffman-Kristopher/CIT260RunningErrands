@@ -37,7 +37,8 @@ public class CombatAttackMenuView extends View {
         int playerStrength = persona.getWeaponItem().getStrength();
         Npc npc = currentScene.getNpc();
         String npcDescription = npc.getNpcDescription();
-        String objectiveItem = persona.getLocation().getScene().getObjective().getObjectiveItem().getDescription();
+        Item combatWinItem = persona.getLocation().getScene().getCombatWinItem();
+        String combatWinItemDescription = combatWinItem.getDescription();
         String npcName = npc.getNpcName();
         String menu;
         menu = "\n"
@@ -54,7 +55,7 @@ public class CombatAttackMenuView extends View {
                 + "\n"
                 + "\n" + npcName + " has currently has a strength of " + npcStrength + " and " + npcHealth + " health."
                 + "\nYour health is at " + playerHealth + ", and your strength is " + playerStrength
-                + "\nIf you defeat " + npcName + ", you will receive a " + objectiveItem + "."
+                + "\nIf you defeat " + npcName + ", you will receive a " + combatWinItemDescription + "."
                 ;
         
         CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
@@ -68,8 +69,8 @@ public class CombatAttackMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase();
         Persona persona = RunningErrands.getPersona();
-        Item objectiveItem = persona.getLocation().getScene().getObjective().getObjectiveItem();
-        String objectiveItemDescription = objectiveItem.getDescription();
+        Item combatWinItem = persona.getLocation().getScene().getCombatWinItem();
+        String combatWinItemDescription = combatWinItem.getDescription();
         Item weaponItem = persona.getWeaponItem();
         int playerStrength = weaponItem.getStrength();
         int playerHealth = persona.getHealth();
@@ -100,8 +101,8 @@ public class CombatAttackMenuView extends View {
                         if(newNpcHealth < 1 ) {
                             npc.setNpcHealth(newNpcHealth);
                             npc.setStartingNpcHealth(npcStartingHealth);
-                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
-                            ItemControl.receiveItem(objectiveItem, 1);
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + combatWinItemDescription + ".");
+                            ItemControl.receiveItem(combatWinItem, 1);
                             return true;
                         }
                         else {
@@ -126,8 +127,8 @@ public class CombatAttackMenuView extends View {
                         if(newNpcHealth <1) {
                             npc.setNpcHealth(newNpcHealth);
                             npc.setStartingNpcHealth(npcStartingHealth);
-                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
-                            ItemControl.receiveItem(objectiveItem, 1);
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + combatWinItemDescription + ".");
+                            ItemControl.receiveItem(combatWinItem, 1);
                             return true;
                         }
                         if(newPlayerHealth < 1) {
@@ -156,8 +157,8 @@ public class CombatAttackMenuView extends View {
                         int newPlayerHealth = playerHealth - playerDamage;
                         if (newNpcHealth < 1) {
                             npc.setNpcHealth(newNpcHealth);
-                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + objectiveItemDescription + ".");
-                            ItemControl.receiveItem(objectiveItem, 1);
+                            this.console.println("Congratulations! You killed " + npcName + ". You have received a " + combatWinItemDescription + ".");
+                            ItemControl.receiveItem(combatWinItem, 1);
                             int beginningNpcHealth = npc.getStartingNpcHealth();
                             npc.setNpcHealth(beginningNpcHealth);
                             String menu = "";

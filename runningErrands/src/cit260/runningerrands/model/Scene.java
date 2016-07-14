@@ -31,6 +31,7 @@ public class Scene implements Serializable{
     private Objective objective;
     private Npc npc;
     private boolean bribeAttemptedToday;
+    private Item combatWinItem;
 
     public String getDescription() {
         return description;
@@ -152,24 +153,33 @@ public class Scene implements Serializable{
         this.bribeAttemptedToday = bribeAttemptedToday;
     }
 
+    public Item getCombatWinItem() {
+        return combatWinItem;
+    }
+
+    public void setCombatWinItem(Item combatWinItem) {
+        this.combatWinItem = combatWinItem;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.locationSymbol);
-        hash = 59 * hash + Objects.hashCode(this.location);
-        hash = 59 * hash + Objects.hashCode(this.type);
-        hash = 59 * hash + Objects.hashCode(this.itemToDeliver);
-        hash = 59 * hash + Objects.hashCode(this.menuOption1);
-        hash = 59 * hash + Objects.hashCode(this.menuOption2);
-        hash = 59 * hash + Objects.hashCode(this.menuOption3);
-        hash = 59 * hash + Objects.hashCode(this.conversationMenuType);
-        hash = 59 * hash + Objects.hashCode(this.itemToReceive);
-        hash = 59 * hash + Objects.hashCode(this.objective);
-        hash = 59 * hash + Objects.hashCode(this.npc);
-        hash = 59 * hash + (this.bribeAttemptedToday ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.description);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.locationSymbol);
+        hash = 97 * hash + Objects.hashCode(this.location);
+        hash = 97 * hash + Objects.hashCode(this.type);
+        hash = 97 * hash + Objects.hashCode(this.itemToDeliver);
+        hash = 97 * hash + Objects.hashCode(this.menuOption1);
+        hash = 97 * hash + Objects.hashCode(this.menuOption2);
+        hash = 97 * hash + Objects.hashCode(this.menuOption3);
+        hash = 97 * hash + Objects.hashCode(this.conversationMenuType);
+        hash = 97 * hash + Objects.hashCode(this.itemToReceive);
+        hash = 97 * hash + Objects.hashCode(this.objective);
+        hash = 97 * hash + Objects.hashCode(this.npc);
+        hash = 97 * hash + (this.bribeAttemptedToday ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.combatWinItem);
         return hash;
     }
 
@@ -230,13 +240,16 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.npc, other.npc)) {
             return false;
         }
+        if (!Objects.equals(this.combatWinItem, other.combatWinItem)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationMenuType=" + conversationMenuType + ", itemToReceive=" + itemToReceive + ", objective=" + objective + ", npc=" + npc + ", bribeAttemptedToday=" + bribeAttemptedToday + '}';
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", distance=" + distance + ", locationSymbol=" + locationSymbol + ", location=" + location + ", type=" + type + ", itemToDeliver=" + itemToDeliver + ", menuOption1=" + menuOption1 + ", menuOption2=" + menuOption2 + ", menuOption3=" + menuOption3 + ", conversationMenuType=" + conversationMenuType + ", itemToReceive=" + itemToReceive + ", objective=" + objective + ", npc=" + npc + ", bribeAttemptedToday=" + bribeAttemptedToday + ", combatWinItem=" + combatWinItem + '}';
     }
 
-    
+
 }

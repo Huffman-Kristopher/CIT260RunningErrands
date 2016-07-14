@@ -35,7 +35,8 @@ public class CombatBribeMenuView extends View {
         int npcHealth = currentScene.getNpc().getNpcHealth();
         int playerHealth = persona.getHealth();
         int playerStrength = persona.getWeaponItem().getStrength();
-        String objectiveItem = persona.getLocation().getScene().getObjective().getObjectiveItem().getDescription();
+        Item combatWinItem = persona.getLocation().getScene().getCombatWinItem();
+        String combatWinItemDescription = combatWinItem.getDescription();
         String npcName = currentScene.getNpc().getNpcName();
         String menu;
         menu = "\n"
@@ -59,8 +60,8 @@ public class CombatBribeMenuView extends View {
     public boolean doAction(String value) {
         value = value.toUpperCase();
         Persona persona = RunningErrands.getPersona();
-        Item objectiveItem = persona.getLocation().getScene().getObjective().getObjectiveItem();
-        String objectiveItemDescription = objectiveItem.getDescription();
+        Item combatWinItem = persona.getLocation().getScene().getCombatWinItem();
+        String combatWinItemDescription = combatWinItem.getDescription();
         Item weaponItem = persona.getWeaponItem();
         int maxBribe = (persona.getMoney() / 2);
         int startingBalance = persona.getMoney();
@@ -89,8 +90,8 @@ public class CombatBribeMenuView extends View {
                         Random r = new Random();
                         int bribeNeeded = r.nextInt(((npcStrength * npcHealth)) + 1) + npcStrength;
                         if(bribeAmount >= bribeNeeded) {
-                            this.console.println("Congratulations! " + npcName + " accepted your bribe. You have received a " + objectiveItemDescription + ".");
-                            ItemControl.receiveItem(objectiveItem, 1);
+                            this.console.println("Congratulations! " + npcName + " accepted your bribe. You have received a " + combatWinItemDescription + ".");
+                            ItemControl.receiveItem(combatWinItem, 1);
                             int newBalance = startingBalance - bribeAmount;
                             persona.setMoney(newBalance);
                             scene.setBribeAttemptedToday(true);

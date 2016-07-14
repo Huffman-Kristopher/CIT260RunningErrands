@@ -596,6 +596,37 @@ public class MapControl {
         scenes[LocationName.accountantScene.ordinal()].setItemToReceive(item[Items.taxForms.ordinal()]);
         scenes[LocationName.redBoxScene.ordinal()].setItemToDeliver(item[Items.videoGame.ordinal()]);
         
+        scenes[LocationName.startingScene.ordinal()].setCombatWinItem(item[Items.bowstaff.ordinal()]);
+        scenes[LocationName.mallScene.ordinal()].setCombatWinItem(item[Items.nunchucks.ordinal()]);
+        scenes[LocationName.GroceryScene.ordinal()].setCombatWinItem(item[Items.supermanComic.ordinal()]);
+        scenes[LocationName.gasScene.ordinal()].setCombatWinItem(item[Items.throwingStars.ordinal()]);
+        scenes[LocationName.gunShopScene.ordinal()].setCombatWinItem(item[Items.altarBoyVestments.ordinal()]);
+        scenes[LocationName.sportingScene.ordinal()].setCombatWinItem(item[Items.mintYoda.ordinal()]);
+        scenes[LocationName.libraryScene.ordinal()].setCombatWinItem(item[Items.bookOfStamps.ordinal()]);
+        scenes[LocationName.churchScene.ordinal()].setCombatWinItem(item[Items.armyUniform.ordinal()]);
+        scenes[LocationName.hospitalScene.ordinal()].setCombatWinItem(item[Items.bottleRockets.ordinal()]);
+        scenes[LocationName.schoolScene.ordinal()].setCombatWinItem(item[Items.chinchilla.ordinal()]);
+        scenes[LocationName.bankScene.ordinal()].setCombatWinItem(item[Items.canOfWorms.ordinal()]);
+        scenes[LocationName.comicScene.ordinal()].setCombatWinItem(item[Items.usedNeedles.ordinal()]);
+        scenes[LocationName.repairScene.ordinal()].setCombatWinItem(item[Items.nerveGas.ordinal()]);
+        scenes[LocationName.ninjaScene.ordinal()].setCombatWinItem(item[Items.holyWater.ordinal()]);
+        scenes[LocationName.armyScene.ordinal()].setCombatWinItem(item[Items.dumbbells.ordinal()]);
+        scenes[LocationName.postScene.ordinal()].setCombatWinItem(item[Items.bagOfMoney.ordinal()]);
+        scenes[LocationName.fireworksScene.ordinal()].setCombatWinItem(item[Items.textbook.ordinal()]);
+        scenes[LocationName.petScene.ordinal()].setCombatWinItem(item[Items.catnip.ordinal()]);
+        scenes[LocationName.MarinaScene.ordinal()].setCombatWinItem(item[Items.tireIron.ordinal()]);
+        scenes[LocationName.improvementScene.ordinal()].setCombatWinItem(item[Items.m80.ordinal()]);
+        scenes[LocationName.policeScene.ordinal()].setCombatWinItem(item[Items.chainsaw.ordinal()]);
+        scenes[LocationName.zooScene.ordinal()].setCombatWinItem(item[Items.headstone.ordinal()]);
+        scenes[LocationName.museumScene.ordinal()].setCombatWinItem(item[Items.pizzaCutter.ordinal()]);
+        scenes[LocationName.cemeteryScene.ordinal()].setCombatWinItem(item[Items.catapult.ordinal()]);
+        scenes[LocationName.volcanoScene.ordinal()].setCombatWinItem(item[Items.tRex.ordinal()]);
+        scenes[LocationName.pizzaScene.ordinal()].setCombatWinItem(item[Items.handcuffs.ordinal()]);
+        scenes[LocationName.orphanScene.ordinal()].setCombatWinItem(item[Items.axe.ordinal()]);
+        scenes[LocationName.asylumScene.ordinal()].setCombatWinItem(item[Items.corpse.ordinal()]);
+        scenes[LocationName.accountantScene.ordinal()].setCombatWinItem(item[Items.junkMail.ordinal()]);
+        scenes[LocationName.redBoxScene.ordinal()].setCombatWinItem(item[Items.bazooka.ordinal()]);
+        
         RunningErrands.setScene(scenes);
         
     }
