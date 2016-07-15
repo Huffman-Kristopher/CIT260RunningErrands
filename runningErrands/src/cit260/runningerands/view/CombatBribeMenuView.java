@@ -75,8 +75,6 @@ public class CombatBribeMenuView extends View {
         
         switch (value) {
             case "R": //Return to game menu.
-                CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
-                combatAttackMenuView.CombatAttackMenuValues();
                 return true;
             default:
                 try {
@@ -96,13 +94,11 @@ public class CombatBribeMenuView extends View {
                             persona.setMoney(newBalance);
                             scene.setBribeAttemptedToday(true);
                             npc.setNpcHealth(0);
-                            SceneMenuView sceneMenuView = new SceneMenuView(menu);
-                            sceneMenuView.SceneMenuValues();
                             return true;
                         }
                         else {
                             this.console.println("I'm sorry. " + npcName + " did not accept your bribe. Unfortunately, you're still facing him!");
-                            combatAttackMenuView = new CombatAttackMenuView(menu);
+                            CombatAttackMenuView combatAttackMenuView = new CombatAttackMenuView(menu);
                             combatAttackMenuView.CombatAttackMenuValues();
                             scene.setBribeAttemptedToday(true);
                             return true;
@@ -134,5 +130,11 @@ public class CombatBribeMenuView extends View {
             SceneMenuView sceneMenuView = new SceneMenuView(menu);
             sceneMenuView.SceneMenuValues();
         }
+    }
+    
+    private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
 }

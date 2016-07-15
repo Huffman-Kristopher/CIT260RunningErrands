@@ -41,8 +41,8 @@ public class GamblingNumbersMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
-                this.openGameMenu();
-                break;
+                this.openSceneMenu();
+                return true;
             default:
                 try{
                int betNumbers = Integer.parseInt(value);
@@ -50,20 +50,22 @@ public class GamblingNumbersMenuView extends View {
                 Gambling gambling = RunningErrands.getGambling();
                 if (betNumbers <1 || betNumbers > 99999 ) {
                     this.console.println("\nPlease enter a bet between 1 and 99999");
+                    return false;
                 }
                 else {
                     GamblingControl.setBetNumbers(betNumbers);
                     int betAmount = gambling.getBetAmount();
                     betNumbers = gambling.getBetNumbers();
                     this.calculatePayout();
+                    this.openSceneMenu();
+                    return true;
                 }
-                break;
+                
                 }catch (NumberFormatException nf){
-                    this.console.println("Error reading input. Please enter a numeric value or R to return to the game menu");
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
+                    return false;
                 }
         }
-        return true;
     }    
     
 
@@ -88,14 +90,14 @@ public class GamblingNumbersMenuView extends View {
         } catch (GamblingControlExceptions error) {
             ErrorView.display(this.getClass().getName(), "Error reading input:" + error.getMessage());
         }
-        this.openGameMenu();
+        
     }
 
-    private void openGameMenu() {
-         String menu = "";
+    private void openSceneMenu() {
+        String menu = "";
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
-        sceneMenuView.display();   
-        }
+        sceneMenuView.SceneMenuValues();
+    }
     
 }
 

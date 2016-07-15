@@ -36,7 +36,7 @@ public class CombatMenuView extends View {
                 return true;
             case "S": //create and start a new game
                 this.weaponSelect();
-                return true;
+                return false;
             case "A": //load saved game
                 this.attack();
                 return true;
@@ -78,6 +78,12 @@ public class CombatMenuView extends View {
         String menu = "";
         CombatBribeMenuView combatBribeMenuView = new CombatBribeMenuView(menu);
         combatBribeMenuView.CombatBribeMenuValues();
+    }
+    
+private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
     
 }

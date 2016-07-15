@@ -47,26 +47,22 @@ private Investment investment;
             case "3": //create a stock investment.
                 investment = InvestmentControl.setInvestmentType(value);
                 this.selectInvestDays();
-                break;
+                return true;
             case "2": //create a bond inveestment.
                 investment = InvestmentControl.setInvestmentType(value);
                 this.selectInvestDays();
-                break;
+                return true;
             case "1": //Create a money market investment.
                 investment = InvestmentControl.setInvestmentType(value);
                 this.selectInvestDays();
-                break;
+                return true;
             case "R": //Create a money market investment.
                  this.openGameMenu();
-                break;
+                return true;
             default:
-                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please select an option above.");
-                break;  
+                return false;  
         }
-
-        return false;
-
 
 }
     private void selectInvestDays() {

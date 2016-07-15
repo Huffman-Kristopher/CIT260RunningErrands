@@ -55,8 +55,7 @@ public class BuyItemQtyMenuView extends View{
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a buy menu.
-                this.openGameMenu();
-                break;
+                return true;
             default:
               try{
                 
@@ -80,14 +79,10 @@ public class BuyItemQtyMenuView extends View{
                         else {
                             this.console.println("You have successfully completed your purchase of " + itemToTradeName + " at a cost of $" + purchasePrice);
                             ItemControl.buyItem(itemToTrade, buyQty);
-                            String menu = "";
-                            SceneMenuView sceneMenuView = new SceneMenuView(menu);
-                            sceneMenuView.SceneMenuValues();
                             return true;
                         }
                     }
                 } catch (NumberFormatException nf){
-                    this.console.println("Error reading input. Please enter a number");
                     ErrorView.display(this.getClass().getName(), "Error reading input: " + "enter a valid number");
                 }
         }
@@ -95,7 +90,7 @@ public class BuyItemQtyMenuView extends View{
         return false;
         }
 
-     private void openGameMenu() {
+    private void openSceneMenu() {
         String menu = "";
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
         sceneMenuView.SceneMenuValues();

@@ -74,7 +74,6 @@ public String CombatSelectWeaponMenuValues() {
                     Item[] inventory = persona.getItem();
                     Item currentItem = inventory[itemChoice];
                     if (currentItem.getItemType() != "Weapon") {
-
                         this.console.println("\nPlease select a weapon item.");
                         return false;
                     }
@@ -86,13 +85,16 @@ public String CombatSelectWeaponMenuValues() {
                         return true;
                     }
                 } catch (NumberFormatException ne) {
-                    this.console.println("Error reading input. Please enter a selectin from above.");
                     ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
         }
-        
-        
-        }
+    }
+    
+    private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
+    }
 }
     

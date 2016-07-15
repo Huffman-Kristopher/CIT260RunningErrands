@@ -31,25 +31,24 @@ private Investment investment;
         switch (value) {
             case "R": //create a stock investment.
                 this.openGameMenu();
-                break;
+                return true;
             default:
                 try {
                 int investDays = Integer.parseInt(value);
                 if (investDays < 0 || investDays > 29) {
-                    this.console.println("Error reading input. Please enter a number between 1 and 29.");
-                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid selection: Please enter a numeric value or R to return to the game menu.");
+                    return false;
                 }
                 else {
                     investment = InvestmentControl.setInvestmentDays(investDays);
                     this.selectInvestAmount();
+                    return true;
                 }
-                break;
                 } catch (NumberFormatException ne) {
-                    this.console.println("Error reading input. Please enter a number between 1 and 29.");
-                    ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
+                    ErrorView.display(this.getClass().getName(), "Invalid selection: Please enter a numeric value or R to return to the game menu.");
+                    return false;
                 }
         }
-        return false;
 }
     private void selectInvestAmount() {
         //Display Help Menu

@@ -64,16 +64,15 @@ public class PersonaDisplayMenuView extends View {
         switch (value) {
             case "Y": //Set gender to Female and career to Secretary
                 this.openSceneMenuView();
-                break;
+                return true;
             case "N": //Set gender to Female and career to Nurse
                 this.createNewPersona();
-                break;
+                return true;
             default:
-                this.console.println("Error reading input. Please enter selection from above.");
-                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(), "\nIError reading input. Please enter selection from above.");
                 return false;  
         }
-        return true;
+        
         }
     private void createNewPersona() {
         // Display game menu

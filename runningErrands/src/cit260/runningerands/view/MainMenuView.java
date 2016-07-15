@@ -44,7 +44,6 @@ public class MainMenuView extends View {
             case "Q": //quit game
                 return true;
             default:
-                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection. Please enter selection from above.");
                 break;  
         }

@@ -33,31 +33,27 @@ public class HelpMenuView extends View {
         switch (value) {
             case "O": 
                 this.showObjectiveHelp();
-                break;
+                return true;
             case "M": 
                 this.showMovementHelp();
-                break;
-           
+                return true;
             case "C": 
                 this.showCombatHelp();
-                break;
+                return true;
             case "P": 
                 this.showPurchaseHelp();
-                break;
+                return true;
             
             case "E": 
                 this.showMoneyHelp();
-                break;
+                return true;
             case "R": 
-                break;
+                return true;
             default:
                 this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(),"\nInvalid selection, please try again");
-                break;  
+                return false;  
         }
-
-        return true;
-
 
 }
 

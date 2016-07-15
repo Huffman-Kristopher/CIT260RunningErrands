@@ -35,20 +35,19 @@ public class PersonaGenderMenuView extends View {
             case 'F': //Display Feale Career Options
                 PersonaControl.createPersona(gender);
                 this.openCareerMenu();
-                break;
+                return true;
             case 'M': //load saved game
                 PersonaControl.createPersona(gender);
                 this.openCareerMenu();
-                break;
+                return true;
             case 'Q': //load saved game
                 return true;
             default:
-                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
                 return false;  
         }
 
-        return true;
+        
     }
 
     private void openMainMenuView() {

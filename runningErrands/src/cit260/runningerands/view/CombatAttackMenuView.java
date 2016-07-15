@@ -159,9 +159,6 @@ public class CombatAttackMenuView extends View {
                             npc.setNpcHealth(npcStartingHealth);
                             this.console.println("Congratulations! You killed " + npcName + ". You have received a " + combatWinItemDescription + ".");
                             ItemControl.receiveItem(combatWinItem, 1);
-                            String menu = "";
-                            SceneMenuView sceneMenuView = new SceneMenuView(menu);
-                            sceneMenuView.SceneMenuValues();
                             return true;    
                         }
                         if (newPlayerHealth < 1) {
@@ -209,7 +206,6 @@ public class CombatAttackMenuView extends View {
                     }
                     
                 } catch (NumberFormatException ne) {
-                    this.console.println("Error reading input. Please enter an option from above.");
                     ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
@@ -230,12 +226,10 @@ public class CombatAttackMenuView extends View {
                         return true;
                     }
                 } catch (NumberFormatException ne) {
-                    this.console.println("Error reading input. Please enter a number");
                     ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                     return false;
                 }
             default:
-                this.console.println("Error reading input. Please enter a selection from above.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
                 return false;
                 
@@ -259,5 +253,11 @@ public class CombatAttackMenuView extends View {
             SceneMenuView sceneMenuView = new SceneMenuView(menu);
             sceneMenuView.SceneMenuValues();
         }
+    }
+    
+    private void openSceneMenu() {
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
     }
 }

@@ -94,7 +94,7 @@ public class GameMenuView extends View{
     private void openMapMenu() {
         String menu = "";
         TravelMenuView mapMenuView = new TravelMenuView(menu);
-        mapMenuView.MapMenuValues();
+        mapMenuView.TravelMenuValues();
         
     }
 

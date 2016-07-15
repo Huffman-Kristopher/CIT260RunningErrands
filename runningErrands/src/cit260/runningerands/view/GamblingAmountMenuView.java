@@ -48,28 +48,29 @@ public class GamblingAmountMenuView extends View {
         switch (value) {
             case "R": //create a stock investment.
                 this.openSceneMenu();
-                break;
+                return true;
             default:
                 try {
-                int betAmount = Integer.parseInt(value);
-                Gambling gambling = RunningErrands.getGambling();
-                Persona persona = RunningErrands.getPersona();
-                int maxBet = persona.getMoney() - 1 ;
-                if (betAmount == 0 || betAmount > maxBet) {
-                    this.console.println("\nPlease enter a bet between 1 and " + maxBet);
-                }
-                else {
-                    gambling = GamblingControl.createBet(betAmount);
-                    this.openGamblingNumbersMenuView();
-                }
-                break;
+                    int betAmount = Integer.parseInt(value);
+                    Gambling gambling = RunningErrands.getGambling();
+                    Persona persona = RunningErrands.getPersona();
+                    int maxBet = persona.getMoney() - 1 ;
+                    if (betAmount == 0 || betAmount > maxBet) {
+                        this.console.println("\nPlease enter a bet between 1 and " + maxBet);
+                        return false;
+                    }
+                    else {
+                        gambling = GamblingControl.createBet(betAmount);
+                        this.openGamblingNumbersMenuView();
+                        return true;
+                    }
                 }
                 catch (NumberFormatException nf) {
-                    this.console.println("Error reading input. Please enter a numeric bet or R to return to the game menu");
                     ErrorView.display(this.getClass().getName()," Please enter a numeric bet or R to return to the game menu.");
+                    return false;
                 }
         }
-        return true;
+        
     }    
 
     private void openGamblingNumbersMenuView() {

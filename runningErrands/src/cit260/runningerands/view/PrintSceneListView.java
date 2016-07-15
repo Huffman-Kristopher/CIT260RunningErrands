@@ -55,8 +55,9 @@ public class PrintSceneListView extends View{
             return true;
         } catch (Exception ex){
             ErrorView.display("PrintSceneListView", ex.getMessage());
+            return false;
         }
-    return true;
+    
     
     }
 }

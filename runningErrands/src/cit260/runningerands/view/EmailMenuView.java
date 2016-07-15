@@ -61,7 +61,6 @@ public class EmailMenuView extends View{
         switch (value) {
             
             case "R":
-                this.openSceneMenu();
                 return true;
             default:
                 try{
@@ -90,9 +89,9 @@ public class EmailMenuView extends View{
     
 }
     private void openSceneMenu() {
-       String menu = "";
+        String menu = "";
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
-        sceneMenuView.display();   
-        }
+        sceneMenuView.SceneMenuValues();
+    }
     
     }

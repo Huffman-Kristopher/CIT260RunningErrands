@@ -18,10 +18,7 @@ public class ErrorView {
     private static final PrintWriter logFile = RunningErrands.getLogFile();
     public static void display(String className, String errorMessage){
         
-        errorFile.println(
-                            "---------------------------------------------------"
-                           +"\n- ERROR -"
-                         +"\n---------------------------------------------------");
+        errorFile.println(errorMessage);
     // log Error
     logFile.println(className + " - " + errorMessage);
     

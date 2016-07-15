@@ -134,7 +134,6 @@ public class SceneMenuView extends View {
             case "S": //save the game.
                 this.OpensaveGame();
                 return false;
-
             case "H": //open help menu.
                 this.openHelpMenu();
                 return false;
@@ -142,7 +141,6 @@ public class SceneMenuView extends View {
                 this.quitGame();
                 return true;
             default:
-                this.console.println("Error reading input. Please enter selection from above.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid main menu selection, please try again");
                 return false;  
         }
@@ -151,8 +149,8 @@ public class SceneMenuView extends View {
 
     private void openTravelMenu() {
         String menu = "";
-        TravelMenuView mapMenuView = new TravelMenuView(menu);
-        mapMenuView.MapMenuValues();
+        TravelMenuView travelMenuView = new TravelMenuView(menu);
+        travelMenuView.TravelMenuValues();
         
     }
 
@@ -265,8 +263,10 @@ public class SceneMenuView extends View {
         else {
             PersonaControl.addOneDay();
             MapControl.movePersonaToNewLocation("01");
-            this.SceneMenuValues();
-            this.display();
+            
+        String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.SceneMenuValues();
         }
     }
 

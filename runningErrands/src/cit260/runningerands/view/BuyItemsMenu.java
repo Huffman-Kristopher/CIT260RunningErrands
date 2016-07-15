@@ -13,6 +13,7 @@ import runningerrands.RunningErrands;
  *
  * @author Kristopher Huffman And Kirk Brown
  */
+
 public class BuyItemsMenu extends View{
 
     public BuyItemsMenu(String menu) {
@@ -25,7 +26,6 @@ public class BuyItemsMenu extends View{
         Persona persona = RunningErrands.getPersona();
         Item[] inventory = RunningErrands.getItems();
         String currentScene = persona.getLocation().getScene().getLocationSymbol();
-        
         String menu = "\n"
                   + "\n------------------------------------"
                   + "\n| Buy Menu                            |" 
@@ -33,11 +33,10 @@ public class BuyItemsMenu extends View{
                   + "\n"
                   + "Item #  Description            # Owned   Buy Price"
                   + "\n";
-
+        
         for (Item item : inventory) {
             String sceneToBuy = item.getSceneToBuy().getLocationSymbol();
             int itemNumber = item.getItemNumber();
-                try {
                     if(sceneToBuy == currentScene) {
                         if(itemNumber == 0) {
                             /** Do nothing - keep Secret Ray Gun off the list **/
@@ -55,16 +54,12 @@ public class BuyItemsMenu extends View{
                             menu = menu + line.toString();
                         }
                     }
-                } catch (NumberFormatException nf){
-                    this.console.println("Error reading input. Please enter a number");
-                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
-                }
         }
         menu = menu + "\n------------------------------------"
                 + "\n"
-                + "\n Enter the item number you wish to purchase, or press R to return to game menu. \n";
+                + "\n Enter the item number you wish to purchase, or press R to return to game menu.";
         BuyItemsMenu buyItemsMenu = new BuyItemsMenu(menu);
-        buyItemsMenu.display();        
+        buyItemsMenu.display();
         return menu;
     }
 
@@ -73,29 +68,32 @@ public class BuyItemsMenu extends View{
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a buy menu.
-                this.openSceneMenu();
-                break;
+                return true;
             default:
-                int itemChoice = Integer.parseInt(value);
-                Persona persona = RunningErrands.getPersona();
-                Item[] inventory = persona.getItem();
-                Item currentItem = inventory[itemChoice];
-                String currentLocationSymbol = persona.getLocation().getScene().getLocationSymbol();
-                String itemBuyLocationSymbol = currentItem.getSceneToBuy().getLocationSymbol();
-                if (currentLocationSymbol != itemBuyLocationSymbol) {
-                        this.console.println("Selected Item cannot be purchased at this location.");
+                try {
+                    int itemChoice = Integer.parseInt(value);
+                    Persona persona = RunningErrands.getPersona();
+                    Item[] inventory = persona.getItem();
+                    Item currentItem = inventory[itemChoice];
+                    String currentLocationSymbol = persona.getLocation().getScene().getLocationSymbol();
+                    String itemBuyLocationSymbol = currentItem.getSceneToBuy().getLocationSymbol();
+                    if (currentLocationSymbol != itemBuyLocationSymbol) {
+                            this.console.println("Selected Item cannot be purchased at this location.");
+                        return false;
+                    }
+                    else {
+                        persona.setItemToTrade(currentItem);
+                        String menu = "";
+                        BuyItemQtyMenuView buyItemQtyMenuView = new BuyItemQtyMenuView(menu);
+                        buyItemQtyMenuView.getMenuValues(currentItem);
+                        return true;
+                    }
+                } catch (NumberFormatException nf){
+                    ErrorView.display(this.getClass().getName(), "Error reading input: " + "enter a valid number");
                     return false;
                 }
-                else {
-                    persona.setItemToTrade(currentItem);
-                    String menu = "";
-                    BuyItemQtyMenuView buyItemQtyMenuView = new BuyItemQtyMenuView(menu);
-                    menu = buyItemQtyMenuView.getMenuValues(currentItem);
-                    buyItemQtyMenuView.display();
-                    return true;
-                }
         }
-        return false;  
+         
     }
 
      private void openSceneMenu() {

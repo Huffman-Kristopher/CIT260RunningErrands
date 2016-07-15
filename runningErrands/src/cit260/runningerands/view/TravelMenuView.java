@@ -22,7 +22,7 @@ public class TravelMenuView extends View {
         super(menu);
     }
 
-    public String MapMenuValues() {
+    public String TravelMenuValues() {
         
         Persona persona = RunningErrands.getPersona();
         Location currentlocation = persona.getLocation();
@@ -36,36 +36,49 @@ public class TravelMenuView extends View {
         menu += "-------------------------" 
         + "\nPlease select a location to visit \n";
         
-        TravelMenuView mapMenuView = new TravelMenuView(menu);
-        mapMenuView.display();
+        TravelMenuView travelMenuView = new TravelMenuView(menu);
+        travelMenuView.display();
         return menu;
     }
     
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        int newValue = Integer.parseInt(value);
-        String newSymbol = String.format("%02d", newValue);
-
-            Persona persona = RunningErrands.getPersona();
-            Location currentLocation = persona.getLocation();
-            Map map = RunningErrands.getMap();
-            Location newLocation = map.getLocationFromSymbol(newSymbol);
-            if (currentLocation == newLocation) {
-                String currentLocationDecription = currentLocation.getScene().getDescription();
-                this.console.println("You are already at " + currentLocationDecription + ", please try again.");
-                ErrorView.display(this.getClass().getName(), "\nYou are already at " + currentLocationDecription + ", please try again");
-                return false;
-            }
-            else {
-                
-            MapControl.movePersonaToNewLocation(newSymbol);
-            String menu = "";
-            SceneMenuView sceneMenuView = new SceneMenuView(menu);
-            sceneMenuView.SceneMenuValues();
-            return true;
-            }
+        int newValue = 0;
+        try {
+            newValue = Integer.parseInt(value);
+        } catch (NumberFormatException ne) {
+            ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+            return false;
         }
+        String newSymbol = String.format("%02d", newValue);
+        switch (value) {
+
+            default:
+                try {
+                    Persona persona = RunningErrands.getPersona();
+                    Location currentLocation = persona.getLocation();
+                    Map map = RunningErrands.getMap();
+                    Location newLocation = map.getLocationFromSymbol(newSymbol);
+                    if (currentLocation == newLocation) {
+                        String currentLocationDecription = currentLocation.getScene().getDescription();
+                        ErrorView.display(this.getClass().getName(), "\nYou are already at " + currentLocationDecription + ", please try again");
+                        return false;
+                    }
+                    else {
+                        MapControl.movePersonaToNewLocation(newSymbol);
+                        String menu = "";
+                        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+                        sceneMenuView.SceneMenuValues();
+                        return true;
+                    }
+                } catch (NumberFormatException ne) {
+                        ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please select an option above.");
+                        return false;
+                }
+        }
+               
+    }
 
     private void openMapMenu() {
         this.console.println("\n ***Runs Map menu function ***");

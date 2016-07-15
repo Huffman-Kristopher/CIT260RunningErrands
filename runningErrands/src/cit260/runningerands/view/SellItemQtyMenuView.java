@@ -57,8 +57,7 @@ public class SellItemQtyMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a buy menu.
-                this.openGameMenu();
-                break;
+                return true;
             default:
               try{
                 
@@ -74,6 +73,7 @@ public class SellItemQtyMenuView extends View {
                     else {
                         if (sellQty > qtyOnHand) {
                             this.console.println("Quantity to buy cannot be greater than the quantity on hand.");
+                            return false;
                         }
                         else {
 
@@ -90,12 +90,10 @@ public class SellItemQtyMenuView extends View {
                     }
                     
                 } catch (NumberFormatException nf){
-                    this.console.println("Error reading input. Please enter a numeric value.");
                     ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
+                    return false;
                 }
         }
-                
-        return false;
     }
 
      private void openGameMenu() {

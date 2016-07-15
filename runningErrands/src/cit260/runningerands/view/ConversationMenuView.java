@@ -65,7 +65,6 @@ public class ConversationMenuView extends View {
                             
                             String sceneFailureText = objective.getObjectiveNotEnoughText();
                             this.console.println(sceneFailureText);
-                            this.openSceneMenuView();
                             return true;
                         }
 
@@ -75,7 +74,6 @@ public class ConversationMenuView extends View {
                             /** Remove required item from inventory**/
                             fulfillObjective(giveItem, giveItemReq);
                             markObjectiveComplete(objective);
-                            this.openSceneMenuView();
                             return true;
                         }
                     } 
@@ -98,7 +96,6 @@ public class ConversationMenuView extends View {
                         if(receiveItemOnHand >= receiveItemReq) {
                             String sceneFailureText = objective.getObjectiveAlreadyHaveItemsText();
                             this.console.println(sceneFailureText);
-                            this.openSceneMenuView();
                             return true;
                         }
 
@@ -108,19 +105,17 @@ public class ConversationMenuView extends View {
                             this.console.println(sceneSuccessText);
                             receiveItem(receiveItem, objectiveItemReq);
                             /** Add required item to inventory**/
-                            this.openSceneMenuView();
                             return true;
                         }
 
 
                     }
                 } catch (NumberFormatException nf){
-                    this.console.println("Error reading input. Please press Y or R.");
-                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter a valid number");
+                    ErrorView.display(this.getClass().getName(), "Error reading input:" + "enter Y or R");
                 }
             default:
                 this.console.println("Error reading input. Please press Y or R.");
-                ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                ErrorView.display(this.getClass().getName(),"Error reading input:" + "enter Y or R");
                 return false;  
 
         }

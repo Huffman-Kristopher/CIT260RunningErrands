@@ -35,10 +35,8 @@ public class BuySellMenuView extends View{
                 this.openSellMenu();
                 return true;
             case "R": //return to game menu.
-                this.openSceneMenu();
                 return true;
             default:
-                this.console.println("Invalid selection. Please enter B, S, or R.");
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + "\nInvalid selection, please try again");
                 return false;  
         }
@@ -46,20 +44,20 @@ public class BuySellMenuView extends View{
 }
 
     private void openBuyMenu() {
-       String menu = "";
+        String menu = "";
         BuyItemsMenu buyItemsMenu = new BuyItemsMenu(menu);
-        menu = buyItemsMenu.getMenuValues();
-        buyItemsMenu.display();
+        buyItemsMenu.getMenuValues();
     }
 
     private void openSellMenu() {
         String menu = "";
         SellItemsMenu sellItemsMenu = new SellItemsMenu(menu);
-        menu = sellItemsMenu.getMenuValues();
+        sellItemsMenu.getMenuValues();
     }
-    private void openSceneMenu(){
+    
+    private void openSceneMenu() {
         String menu = "";
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
-        sceneMenuView.display();   
-        }
+        sceneMenuView.SceneMenuValues();
+    }
 }

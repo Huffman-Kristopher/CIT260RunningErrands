@@ -68,33 +68,32 @@ public class PersonaCareerMenuView extends View {
                     career = "Secretary";
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "N": //Set gender to Female and career to Nurse
                     career = "Nurse";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "H": //Set gender to Female and career to Hair Dresser
                     career = "Hair Dresser";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "T": //Set gender to Female and career to Teacher
                     career = "Teacher";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "M": //Set gender to Female and career to Teacher
                     career = "Megastar";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "Q":
                     this.openMainMenuView();
                     return true;
                 default:
-                    this.console.println("Error reading input. Please enter selection from above.");
-                    ErrorView.display(this.getClass().getName(), "\nInvalid selection, please try again");
+                    ErrorView.display(this.getClass().getName(), "\nError reading input. Please enter selection from above.");
                     return false;  
             }
         }
@@ -104,27 +103,27 @@ public class PersonaCareerMenuView extends View {
                     career = "Janitor";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "M": //Set gender to Male and career to Mail Clerk
                     career = "Mail Clerk";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "P": //Set gender to Male and career to Pizza Delivery
                     career = "Pizza Delivery Driver";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "A": //Set gender to Male and career to Auto Mechanic
                     career = "Auto Mechanic";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break;
+                    return true;
                 case "C": //Set gender to Male and career to Auto Mechanic
                     career = "CEO";                   
                     PersonaControl.setPersonaCareer(career);
                     this.openPersonaNameView();
-                    break; 
+                    return true; 
                 case "Q":
                     this.openMainMenuView();
                     return true;

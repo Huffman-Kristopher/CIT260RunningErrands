@@ -33,8 +33,8 @@ private Investment investment;
         value = value.toUpperCase();
         switch (value) {
             case "R": //create a stock investment.
-                this.openGameMenu();
-                break;
+                this.openSceneMenu();
+                return true;
             default:
                 try {
                     int investAmount = Integer.parseInt(value);
@@ -43,18 +43,20 @@ private Investment investment;
                     
                     if (investAmount < 1 || investAmount > maxBet) {
                         this.console.println("\nPlease enter a bet between 1 and " + maxBet);
+                        return false;
                     }
                     else {
                         investment = InvestmentControl.setInvestmentAmount(investAmount);
                         this.calculateInvesmentReturn(investAmount);
+                        return true;
                     }
-                    break;
+                    
                 } catch (NumberFormatException ne) {
-                    this.console.println("Error reading input. Please enter numeric value or R.");
                     ErrorView.display(this.getClass().getName(), "Please enter a numeric value or R to return to the game menu.");
+                    return false;
                 }
         }
-        return false;
+        
 }
     private void calculateInvesmentReturn(int investAmount) {
         //Display Help Menu
@@ -71,7 +73,7 @@ private Investment investment;
         
     }
     
-    private void openGameMenu() {
+    private void openSceneMenu() {
          String menu = "";
         SceneMenuView sceneMenuView = new SceneMenuView(menu);
         sceneMenuView.display();   
