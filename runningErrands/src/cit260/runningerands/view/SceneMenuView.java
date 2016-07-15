@@ -113,11 +113,11 @@ public class SceneMenuView extends View {
             case "6": //open map.
                 if ("Home".equals(currentSceneDescription)) {
                     this.openTravelMenu();
-                    return false;
+                    return true;
                 }
                 else {
                     this.travelHome();
-                    return false;
+                    return true;
                 }
             case "7": //open store.
                 this.openStatsMenu();
@@ -134,15 +134,12 @@ public class SceneMenuView extends View {
             case "S": //save the game.
                 this.OpensaveGame();
                 return false;
-/**            case "L": //load the game.
-                this.openLoadGame();
-                return false;
-**/
+
             case "H": //open help menu.
                 this.openHelpMenu();
                 return false;
             case "Q": //return to main menu.
-                this.openMainMenu();
+                this.quitGame();
                 return true;
             default:
                 this.console.println("Error reading input. Please enter selection from above.");
@@ -180,11 +177,6 @@ public class SceneMenuView extends View {
         saveGameView.display();
     }
 
-    private void openLoadGame() {
-         LoadGameView loadGameView = new LoadGameView();
-        loadGameView.display();
-    }
-
     private void openEmailMenu() {
         String menu = "";
         EmailMenuView emailMenuView = new EmailMenuView(menu);
@@ -208,9 +200,8 @@ public class SceneMenuView extends View {
         storeMenuView.display();
     }
 
-    private void openMainMenu() {
-    MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();    
+    private void quitGame() {
+        System.exit(0);    
     }
 
     private void addOneDay() {

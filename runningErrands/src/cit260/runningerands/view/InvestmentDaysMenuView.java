@@ -58,7 +58,8 @@ private Investment investment;
     }
         
     private void openGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-    }
+         String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.display();   
+        }
 }

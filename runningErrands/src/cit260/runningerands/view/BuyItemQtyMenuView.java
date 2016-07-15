@@ -63,7 +63,7 @@ public class BuyItemQtyMenuView extends View{
                     Persona persona = RunningErrands.getPersona();
                     int buyQty = Integer.parseInt(value);
                     Item itemToTrade = persona.getItemToTrade();
-                    String itemToTradeName = itemToTrade.getItemName();
+                    String itemToTradeName = itemToTrade.getDescription();
                     if(buyQty < 1) {
                         this.console.println("Quantity to buy must be greater than zero.");
                         return false;
@@ -78,7 +78,7 @@ public class BuyItemQtyMenuView extends View{
                             return false;
                         }
                         else {
-                            this.console.println("You have successfully completed your purchase of " + itemToTradeName + " at a cost of " + purchasePrice);
+                            this.console.println("You have successfully completed your purchase of " + itemToTradeName + " at a cost of $" + purchasePrice);
                             ItemControl.buyItem(itemToTrade, buyQty);
                             String menu = "";
                             SceneMenuView sceneMenuView = new SceneMenuView(menu);

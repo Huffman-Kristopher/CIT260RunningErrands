@@ -64,13 +64,16 @@ private Investment investment;
         int currentBalance = persona.getMoney();
         int updatedBalance = currentBalance - investAmount;
         persona.setMoney(updatedBalance);
-        GameMenuView GameMenuView = new GameMenuView();
-        GameMenuView.display();  
+         String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.display();   
+          
         
     }
     
     private void openGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-    }
+         String menu = "";
+        SceneMenuView sceneMenuView = new SceneMenuView(menu);
+        sceneMenuView.display();   
+        }
 }

@@ -31,24 +31,24 @@ public class HelpMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
-            case "O": //create and start a new game
+            case "O": 
                 this.showObjectiveHelp();
                 break;
-            case "M": //load saved game
+            case "M": 
                 this.showMovementHelp();
                 break;
            
-            case "C": //Open help menu
+            case "C": 
                 this.showCombatHelp();
                 break;
-            case "P": //Open help menu
+            case "P": 
                 this.showPurchaseHelp();
                 break;
             
-            case "E": //Open help menu
+            case "E": 
                 this.showMoneyHelp();
                 break;
-            case "R": //Open help menu
+            case "R": 
                 break;
             default:
                 this.console.println("Error reading input. Please enter selection from above.");
@@ -72,7 +72,7 @@ public class HelpMenuView extends View {
     private void showMovementHelp() {
         this.console.println("\n"
                 + "\nBring up the travel menu and select a destination by typing "
-                + "\nits corrisponding number. Youwill then go to that location"
+                + "\nits corrisponding number. You will then go to that location"
                 + "\n and have options based on the location you are in. "
                 + "\n");
     }
@@ -96,7 +96,7 @@ public class HelpMenuView extends View {
     private void showPurchaseHelp() {
         this.console.println("\n"
                 + "\nDifferent places have different things to purchase. The prices "
-                + "\nrange from cheep to how can I ever afford that. i suggest finding a "
+                + "\nrange from cheep to how can I ever afford that. I suggest finding a "
                 + "\nway to cheat, but thats just me. each item has an item number "
                 + "\nuse this number to select the items to buy and sell. You will "
                 + "\nget the item if you can afford it or the money from selling it."

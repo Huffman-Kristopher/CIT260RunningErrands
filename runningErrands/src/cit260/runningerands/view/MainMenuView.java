@@ -41,7 +41,7 @@ public class MainMenuView extends View {
             case "H": //Open help menu
                 this.openHelpMenu();
                 break;
-            case "Q": //Open help menu
+            case "Q": //quit game
                 return true;
             default:
                 this.console.println("Error reading input. Please enter selection from above.");

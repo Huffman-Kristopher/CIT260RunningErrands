@@ -34,7 +34,7 @@ public class TravelMenuView extends View {
                   + "\n------------------------------------"
                   + "\n" + menu;
         menu += "-------------------------" 
-        + "\nPlease select a location to visit or press R to return to Game Menu. \n";
+        + "\nPlease select a location to visit \n";
         
         TravelMenuView mapMenuView = new TravelMenuView(menu);
         mapMenuView.display();
@@ -47,13 +47,6 @@ public class TravelMenuView extends View {
         int newValue = Integer.parseInt(value);
         String newSymbol = String.format("%02d", newValue);
 
-
-        if ("R".equals(value)) {
-            this.openGameMenu();
-            return true;
-        }
-        else {
-            
             Persona persona = RunningErrands.getPersona();
             Location currentLocation = persona.getLocation();
             Map map = RunningErrands.getMap();
@@ -73,8 +66,6 @@ public class TravelMenuView extends View {
             return true;
             }
         }
-
-}
 
     private void openMapMenu() {
         this.console.println("\n ***Runs Map menu function ***");
@@ -140,8 +131,9 @@ public class TravelMenuView extends View {
     }
 
     private void openGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();   
+        String menu = "";
+            SceneMenuView sceneMenuView = new SceneMenuView(menu);
+            sceneMenuView.SceneMenuValues();   
     }
 
     private void travelHome() {
